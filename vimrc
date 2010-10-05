@@ -159,11 +159,11 @@ set ignorecase
 " Ouverture d'un nouvel onglet via la touche F4
 "map <F4> :tabnew<cr>
 
-" Exécuter le fichier actuel avec python via la touche F5
-map <F5> :!/usr/bin/python2.5 %<cr>
-
-" Exécuter le fichier actuel avec C via la touche F6
-map <F6> :!/usr/bin/gcc -o %:r % && ./%:r<cr>
+" Exécuter le fichier
+au BufEnter *.py map <F6> :!/usr/bin/python %<cr>
+au BufEnter *.c map <F6> :!/usr/bin/gcc -o %:r % && ./%:r<cr>
+au BufEnter *.vala map <F6> :!/usr/bin/vala %<cr>
+au BufEnter *.gs map <F6> :!/usr/bin/vala %<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 map <F7> :!/usr/bin/x-www-browser %<cr>
