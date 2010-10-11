@@ -94,10 +94,8 @@ set hidden
 set history=100
 
 " Récupérer la position du curseur entre 2 ouvertures de fichiers
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
-endif
 
 " Afficher les espaces superflus et les tabulations
 :hi ExtraWhitespace ctermbg=darkred
@@ -105,6 +103,9 @@ endif
 
 " Supression automatique des espaces superflu
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Se place dans le répertoire du fichier éditer
+autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Changement automatique de répertoire (execution après compil)
 set autochdir
