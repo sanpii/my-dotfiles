@@ -84,6 +84,9 @@ set ruler
 " Afficher partiellement la commande dans la ligne de status
 set showcmd
 
+" Format the statusline
+set statusline=%<%F\ %m%r%14.(%y[%{&encoding}]%)%=%-14.(%l,%v%)\ %P
+
 " Afficher la correspondance des parenthèses
 set showmatch
 
