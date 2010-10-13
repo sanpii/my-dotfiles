@@ -53,8 +53,8 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 " Afficher une liste lors de complétion de commandes/fichiers
-set wildmenu                           "affiche le menu
-set wildmode=list:longest,list:full    "affiche toutes les possibilités
+"set wildmenu                           "affiche le menu
+"set wildmode=list:longest,list:full    "affiche toutes les possibilités
 
 " Mesure de sécurité
 set nomodeline
@@ -70,7 +70,7 @@ set cursorline
 :hi CursorLine cterm=bold
 
 " Activer la souris (molette, sélection, etc.)
-set mouse=a
+"set mouse=a
 
 " Afficher des infos dans la barre de status
 set laststatus=2
