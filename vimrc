@@ -137,6 +137,25 @@ set encoding=utf-8
 " Coller dans Vim sans tabulations incrémentées
 set paste
 
+" correction orthographique
+" version Nemolivier
+set nospell spelllang=fr
+" automatique pour les fichiers .tex
+augroup filetypedetect
+au BufNewFile,BufRead *.tex setlocal spell spelllang=fr
+augroup END
+" F10 active/desactive la correction orthographique
+function! ToggleSpell()
+  if &spell
+     set nospell
+  else
+     set spell
+  end
+endfunction
+noremap <F10> :call ToggleSpell()<cr>
+inoremap <F10> <Esc> :call ToggleSpell()<cr>
+vnoremap <F10> <Esc> :call ToggleSpell()<cr>
+
 """"""""""""""""""""""""""""""" RECHERCHES """""""""""""""""""""""""""""
 
 " Utiliser la recherche incrémentielle
