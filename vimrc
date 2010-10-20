@@ -1,6 +1,9 @@
 " Désactive la compatibilité avec VI (doit être la première ligne!)
 set nocompatible
 
+" Accélère le rendu graphique dans les terminaux véloces
+set ttyfast
+
 " Coloration syntaxique
 syntax on
 
