@@ -37,6 +37,9 @@ set softtabstop=2
 " Remplacer les tabulations par des espaces
 set expandtab
 
+" Pas d'espace pour les Makefile
+autocmd FileType make setlocal noexpandtab
+
 " Affiche la limite de 80 caractères
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
