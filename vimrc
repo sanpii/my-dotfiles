@@ -226,8 +226,10 @@ set backup
 "map <F3> :e .<cr>
 "map <F3> :browse e<cr>
 
-" Ouverture d'un nouvel onglet via la touche F4
+" Gestion des onglets
 "map <F4> :tabnew<cr>
+map <C-A-PageDown> :tabnext<cr>
+map <C-A-PageUp> :tabprevious<cr>
 
 " Exécuter le fichier
 au BufEnter *.py map <F6> :!/usr/bin/python %<cr>
