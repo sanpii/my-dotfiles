@@ -2,11 +2,11 @@
 " Général
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Encodage en UTF-8
-set encoding=utf-8
-
 " Désactive la compatibilité avec VI (doit être la première ligne!)
 set nocompatible
+
+" Encodage en UTF-8
+set encoding=utf-8
 
 " Accélère le rendu graphique dans les terminaux véloces
 set ttyfast
