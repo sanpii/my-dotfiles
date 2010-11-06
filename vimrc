@@ -232,13 +232,22 @@ map <C-A-PageDown> :tabnext<cr>
 map <C-A-PageUp> :tabprevious<cr>
 
 " Exécuter le fichier
-au BufEnter *.py map <F6> :!/usr/bin/python %<cr>
-au BufEnter *.c map <F6> :!/usr/bin/gcc -o %:r % && ./%:r<cr>
-au BufEnter *.vala map <F6> :!/usr/bin/vala %<cr>
-au BufEnter *.gs map <F6> :!/usr/bin/vala %<cr>
+au BufEnter *.py map <F6> :!/usr/bin/python '%'<cr>
+au BufEnter *.c map <F6> :!/usr/bin/gcc -o '%:r' % && ./%:r<cr>
+au BufEnter *.vala map <F6> :!/usr/bin/vala '%'<cr>
+au BufEnter *.gs map <F6> :!/usr/bin/vala '%'<cr>
+au BufEnter *.tex map <F6> :!/usr/bin/pdflatex '%' && /usr/bin/evince '%:r.pdf'<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 map <F7> :!/usr/bin/x-www-browser %<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Configuration du plugin Vimoutliner
+au BufEnter TODO setfiletype vo_base
+colorscheme vo_dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI
