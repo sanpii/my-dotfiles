@@ -17,9 +17,6 @@ syntax on
 " Détection du type de fichier
 filetype on
 
-" Chargement des reffons en fonction du type
-filetype plugin on
-
 " Afficher une liste lors de complétion de commandes/fichiers
 "set wildmenu                           "affiche le menu
 "set wildmode=list:longest,list:full    "affiche toutes les possibilités
@@ -27,8 +24,8 @@ filetype plugin on
 " Mesure de sécurité
 set nomodeline
 
-" Activer la souris (molette, sélection, etc.)
-"set mouse=a
+" Désactiver la souris (molette, sélection, etc.)
+set mouse=""
 
 " Afficher des infos dans la barre de statut
 set laststatus=2
@@ -90,12 +87,17 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+set completeopt=longest,menuone
+
+let php_sql_query = 1
+let php_htmlInStrings = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Apparence
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Police
-set gfn=Monospace\ 10
+"set gfn=Monospace\ 10
 "set gfn=Inconsolata\ 10
 "set gfn=Terminus\ 13
 
@@ -132,16 +134,16 @@ set smartindent
 set noexpandtab
 
 " Largeur de l'autoindentation
-set shiftwidth=2
+set shiftwidth=4
 
 " Arrondit la valeur de l'indentation
 set shiftround
 
 " Largeur du caractère TAB
-set tabstop=2
+set tabstop=4
 
 " Largeur de l'indentation de la touche TAB
-set softtabstop=2
+set softtabstop=4
 
 " Remplacer les tabulations par des espaces
 set expandtab
@@ -232,22 +234,37 @@ map <C-A-PageDown> :tabnext<cr>
 map <C-A-PageUp> :tabprevious<cr>
 
 " Exécuter le fichier
-au BufEnter *.py map <F6> :!/usr/bin/python '%'<cr>
-au BufEnter *.c map <F6> :!/usr/bin/gcc -o '%:r' % && ./%:r<cr>
-au BufEnter *.vala map <F6> :!/usr/bin/vala '%'<cr>
-au BufEnter *.gs map <F6> :!/usr/bin/vala '%'<cr>
-au BufEnter *.tex map <F6> :!/usr/bin/pdflatex '%' && /usr/bin/evince '%:r.pdf'<cr>
+au BufEnter *.py map <F6> :!python "%"<cr>
+au BufEnter *.c map <F6> :!gcc -o "%:r" % && ./%:r<cr>
+au BufEnter *.vala map <F6> :!vala "%"<cr>
+au BufEnter *.gs map <F6> :!vala "%"<cr>
+au BufEnter *.tex map <F6> :!pdflatex "%" && evince "%:r.pdf"<cr>
+au BufEnter *.php map <F6> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
-map <F7> :!/usr/bin/x-www-browser %<cr>
+function! Browser(uri)
+  let uri = a:uri
+
+  if uri == ""
+    let uri = expand("%:p")
+  endif
+  exec ":silent !firefox ".uri
+endfunction
+map <F7> :call Browser("")<cr>
+au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Chargement des reffons en fonction du type
+filetype plugin on
+
 " Configuration du plugin Vimoutliner
 au BufEnter TODO setfiletype vo_base
-colorscheme vo_dark
+
+"colorscheme vo_dark
+colorscheme desert
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI
