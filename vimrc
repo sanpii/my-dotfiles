@@ -122,6 +122,12 @@ set cursorline
 "colorscheme vo_dark
 colorscheme desert
 
+" Nombre de ligne minimal en dessous ou au dessus du curseur
+set scrolloff=3
+
+" Idem sur les côtés
+set sidescrolloff=3
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
