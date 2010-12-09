@@ -10,8 +10,8 @@ set encoding=utf-8
 " Accélère le rendu graphique dans les terminaux véloces
 set ttyfast
 
-" Coloration syntaxique
-syntax on
+" Support du type de format unix uniquement
+set fileformats=unix
 
 " Détection du type de fichier
 filetype on
@@ -103,6 +103,9 @@ let php_htmlInStrings = 1
 "set gfn=Monospace\ 10
 "set gfn=Inconsolata\ 10
 "set gfn=Terminus\ 13
+"
+" Coloration syntaxique
+syntax on
 
 " Utiliser des couleurs correctes sur un fond sombre
 set background=dark
