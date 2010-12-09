@@ -116,6 +116,8 @@ set cursorline
 
 " Thème de couleur pour Vim
 "colorscheme devbox
+"colorscheme vo_dark
+colorscheme desert
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,13 +269,21 @@ au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://lo
 " Plugins {{{
 
 " Chargement des reffons en fonction du type
-filetype plugin on
+filetype plugin indent on
 
 " Configuration du plugin Vimoutliner
 au BufEnter TODO setfiletype vo_base
 
-"colorscheme vo_dark
-colorscheme desert
+" taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+let Tlist_Auto_Open = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Process_File_Always = 1
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Enable_Fold_Column = 0
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
