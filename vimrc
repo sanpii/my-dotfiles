@@ -1,9 +1,11 @@
 " README {{{
 "
-" Plugins:
+" Greffons
 "     http://www.vim.org/scripts/script.php?script_id=1658
 "     http://www.vim.org/scripts/script.php?script_id=273
 "     http://www.vim.org/scripts/script.php?script_id=1302
+"
+" http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,6 +275,10 @@ function! Browser(uri)
 endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
+
+" Ouvrir l'URL sous le curseur dans un navigateur
+map gu :call Browser(expand('<cWORD>'))<cr>
+
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
