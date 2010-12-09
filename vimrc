@@ -228,11 +228,8 @@ set backup
 " Remonter la ligne courante d'une ligne
 "map <C-S-Up> dd kk 0 P
 
-" Dupliquer la ligne courante via Ctrl-d (!!! désactive le scroll)
+" Dupliquer la ligne courante via Ctrl-d (/!\ désactive le scroll)
 "map <C-d> yy p
-
-" Ouverture de la liste des tags via la touche F2
-"map <F2> :TlistToggle<cr>
 
 " Ouverture de l'explorateur de fichiers avec la touche F3
 "map <F3> :e .<cr>
