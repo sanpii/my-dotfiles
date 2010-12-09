@@ -1,6 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Général
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Général {{{
 
 " Désactive la compatibilité avec VI (doit être la première ligne!)
 set nocompatible
@@ -44,6 +43,9 @@ set statusline=%<%F\ %m%r%14.(%y[%{&encoding}]%)%=%-14.(%l,%v%)\ %P
 
 " Afficher la correspondance des parenthèses
 set showmatch
+
+" Replie de code à l'aide de marqueurs
+set foldmethod=marker
 
 " Cacher les tampons quand ils sont abandonnés
 set hidden
@@ -92,9 +94,10 @@ set completeopt=longest,menuone
 let php_sql_query = 1
 let php_htmlInStrings = 1
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Apparence
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Apparence {{{
 
 " Police
 "set gfn=Monospace\ 10
@@ -114,9 +117,10 @@ set cursorline
 " Thème de couleur pour Vim
 "colorscheme devbox
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation {{{
 
 " Indentation en fonction du type de fichier
 filetype indent on
@@ -154,9 +158,10 @@ autocmd FileType make setlocal noexpandtab
 " Coller dans Vim sans tabulations incrémentées
 set paste
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Correction orthographique
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Correction orthographique {{{
 
 " version Nemolivier
 set nospell spelllang=fr
@@ -176,9 +181,10 @@ noremap <F10> :call ToggleSpell()<cr>
 inoremap <F10> <Esc> :call ToggleSpell()<cr>
 vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Recherches
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Recherches {{{
 
 " Utiliser la recherche incrémentielle
 set incsearch
@@ -198,9 +204,10 @@ set smartcase
 " (indépendant du précédent mais de priorité plus faible)
 set ignorecase
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sauvegardes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sauvegardes {{{
 
 " répertoire de sauvegarde automatique
 set backupdir=$HOME/.vim/backup
@@ -208,9 +215,10 @@ set backupdir=$HOME/.vim/backup
 " activation de la sauvegarde
 set backup
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappage
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappage {{{
 
 " Descendre la ligne courante d'une ligne
 "map <C-S-Down> dd p
@@ -253,9 +261,10 @@ endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins {{{
 
 " Chargement des reffons en fonction du type
 filetype plugin on
@@ -266,9 +275,10 @@ au BufEnter TODO setfiletype vo_base
 "colorscheme vo_dark
 colorscheme desert
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GUI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI {{{
 
 " Désactiver la barre de menu (m), d'outils (T) et de scroll (r+l)
 set noequalalways " don't auto-resize when a window is closed
@@ -279,4 +289,7 @@ set guioptions-=l " disable the left hand scrollbar
 set guioptions-=L " disable the left hand scrollbar for vertically split window
 set guioptions-=b " disable the bottom/horizontal scrollbar
 set guioptions-=m " disable the menu
+
+" }}}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
