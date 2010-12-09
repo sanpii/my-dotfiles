@@ -1,3 +1,11 @@
+" README {{{
+"
+" Plugins:
+"     http://www.vim.org/scripts/script.php?script_id=1658
+"     http://www.vim.org/scripts/script.php?script_id=273
+"     http://www.vim.org/scripts/script.php?script_id=1302
+" }}}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Général {{{
 
@@ -58,7 +66,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
 " Afficher les espaces superflus et les tabulations
-:hi ExtraWhitespace ctermbg=darkred
+:hi ExtraWhitespace ctermbg=darkred guibg=darkred
 :match ExtraWhitespace /\s\+$\|\t/
 
 " Suppression automatique des espaces superflu
@@ -91,8 +99,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 set completeopt=longest,menuone
 
-let php_sql_query = 1
-let php_htmlInStrings = 1
+let php_sql_query=1
+let php_htmlInStrings=1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,12 +118,9 @@ syntax on
 " Utiliser des couleurs correctes sur un fond sombre
 set background=dark
 
-" Le complément du précédent, devine tout seul la couleur du fond
-set background&
-
 " Afficher une ligne à la position du curseur
 set cursorline
-:hi CursorLine cterm=bold
+:hi CursorLine cterm=bold gui=bold
 
 " Thème de couleur pour Vim
 "colorscheme devbox
@@ -259,10 +264,10 @@ au BufEnter *.php map <F6> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 function! Browser(uri)
-  let uri = a:uri
+  let uri=a:uri
 
   if uri == ""
-    let uri = expand("%:p")
+    let uri=expand("%:p")
   endif
   exec ":silent !firefox ".uri
 endfunction
@@ -282,14 +287,18 @@ au BufEnter TODO setfiletype vo_base
 
 " taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
-let Tlist_Auto_Open = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Process_File_Always = 1
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Enable_Fold_Column = 0
+let Tlist_Auto_Open=1
+let Tlist_Compact_Format=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Process_File_Always=1
+let Tlist_Show_One_File=1
+let Tlist_Use_Right_Window=1
+let Tlist_Enable_Fold_Column=0
+
+" nerdtree
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
