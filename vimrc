@@ -21,6 +21,12 @@ function! MySys()
     endif
 endfunction
 
+if MySys() == "win32"
+    let vimfiles=$HOME . "/vimfiles"
+elseif MySys() == "unix"
+    let vimfiles=$HOME . ".vim"
+endif
+
 " Désactive la compatibilité avec VI (doit être la première ligne!)
 set nocompatible
 
@@ -68,7 +74,7 @@ set showmatch
 set foldmethod=marker
 
 " Sauvegarde des marqueurs
-set viewdir=$HOME/.vim/view
+exec "set viewdir=" . vimfiles . "/view"
 au BufWinLeave *? mkview
 au BufWinEnter *? silent loadview
 
@@ -133,14 +139,14 @@ let php_htmlInStrings=1
 
 " Set font according to system
 if MySys() == "mac"
-  set gfn=Menlo:h14
-  set shell=/bin/bash
+    set gfn=Menlo:h14
+    set shell=/bin/bash
 elseif MySys() == "win32"
-  set gfn=Consolas:h11
-  set shell=c:\Programs\msys\1.0\bin\bash
+    set gfn=Consolas:h11
+    set shell=c:\Programs\msys\1.0\bin\bash
 elseif MySys() == "unix"
-  set gfn=Monospace\ 10
-  set shell=/bin/bash
+    set gfn=Monospace\ 10
+    set shell=/bin/bash
 endif
 
 
@@ -258,7 +264,7 @@ set ignorecase
 " Sauvegardes {{{
 
 " répertoire de sauvegarde automatique
-set backupdir=$HOME/.vim/backup
+exec "set backupdir=" . vimfiles . "/backup"
 
 " activation de la sauvegarde
 set backup
