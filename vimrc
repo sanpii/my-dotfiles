@@ -11,6 +11,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Général {{{
 
+function! MySys()
+    if has("win32")
+        return "win32"
+    elseif has("unix")
+        return "unix"
+    else
+        return "mac"
+    endif
+endfunction
+
 " Désactive la compatibilité avec VI (doit être la première ligne!)
 set nocompatible
 
@@ -120,6 +130,20 @@ let php_htmlInStrings=1
 "set gfn=Inconsolata\ 10
 "set gfn=Terminus\ 13
 "
+
+" Set font according to system
+if MySys() == "mac"
+  set gfn=Menlo:h14
+  set shell=/bin/bash
+elseif MySys() == "win32"
+  set gfn=Consolas:h11
+  set shell=c:\Programs\msys\1.0\bin\bash
+elseif MySys() == "unix"
+  set gfn=Monospace\ 10
+  set shell=/bin/bash
+endif
+
+
 " Coloration syntaxique
 syntax on
 
@@ -316,15 +340,17 @@ let NERDTreeQuitOnOpen=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI {{{
 
-" Désactiver la barre de menu (m), d'outils (T) et de scroll (r+l)
-set noequalalways " don't auto-resize when a window is closed
-set guioptions-=T " disable the toolbar
-set guioptions-=r " disable the right hand scrollbar
-set guioptions-=R " disable the right hand scrollbar for vertically split window
-set guioptions-=l " disable the left hand scrollbar
-set guioptions-=L " disable the left hand scrollbar for vertically split window
-set guioptions-=b " disable the bottom/horizontal scrollbar
-set guioptions-=m " disable the menu
+if has("gui_running")
+    " Désactiver la barre de menu (m), d'outils (T) et de scroll (r+l)
+    set noequalalways " don't auto-resize when a window is closed
+    set guioptions-=T " disable the toolbar
+    set guioptions-=r " disable the right hand scrollbar
+    set guioptions-=R " disable the right hand scrollbar for vsplit window
+    set guioptions-=l " disable the left hand scrollbar
+    set guioptions-=L " disable the left hand scrollbar for vsplit window
+    set guioptions-=b " disable the bottom/horizontal scrollbar
+    set guioptions-=m " disable the menu
+endif
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
