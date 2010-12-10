@@ -57,6 +57,12 @@ set showmatch
 " Replie de code à l'aide de marqueurs
 set foldmethod=marker
 
+" Sauvegarde des marqueurs
+set viewdir=$HOME/.vim/view
+au BufWinLeave *? mkview
+au BufWinEnter *? silent loadview
+
+
 " Cacher les tampons quand ils sont abandonnés
 set hidden
 
