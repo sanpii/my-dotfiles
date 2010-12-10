@@ -293,7 +293,6 @@ au BufEnter TODO setfiletype vo_base
 
 " taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
-let Tlist_Auto_Open=1
 let Tlist_Compact_Format=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
