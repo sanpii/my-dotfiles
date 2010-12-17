@@ -4,6 +4,7 @@
 "     http://www.vim.org/scripts/script.php?script_id=1658
 "     http://www.vim.org/scripts/script.php?script_id=273
 "     http://www.vim.org/scripts/script.php?script_id=1302
+"     http://www.vim.org/scripts/script.php?script_id=2204
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " }}}
@@ -148,7 +149,6 @@ elseif MySys() == "unix"
     set gfn=Monospace\ 10
     set shell=/bin/bash
 endif
-
 
 " Coloration syntaxique
 syntax on
@@ -315,7 +315,6 @@ au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://lo
 " Ouvrir l'URL sous le curseur dans un navigateur
 map gu :call Browser(expand('<cWORD>'))<cr>
 
-
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -340,6 +339,11 @@ let Tlist_Enable_Fold_Column=0
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+
+" TwitVim
+let twitvim_login_b64="Z2VnZTIwNjE6cGFzc21vaXNp"
+let twitvim_api_root="http://identi.ca/api"
+let twitvim_proxy="192.168.1.232:8080"
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
