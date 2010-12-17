@@ -341,9 +341,8 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " TwitVim
-let twitvim_login_b64="Z2VnZTIwNjE6cGFzc21vaXNp"
+let twitvim_login_b64=""
 let twitvim_api_root="http://identi.ca/api"
-let twitvim_proxy="192.168.1.232:8080"
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
