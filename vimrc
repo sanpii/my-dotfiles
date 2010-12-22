@@ -38,7 +38,7 @@ set encoding=utf-8
 set ttyfast
 
 " Support du type de format unix uniquement
-set fileformats=unix
+set fileformats=unix,dos,mac
 
 " Détection du type de fichier
 filetype on
@@ -66,7 +66,7 @@ set ruler
 set showcmd
 
 " Format de la ligne de statut
-set statusline=%<%F\ %m%r%14.(%y[%{&encoding}]%)%=%-14.(%l,%v%)\ %P
+set statusline=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
 
 " Afficher la correspondance des parenthèses
 set showmatch
@@ -75,10 +75,13 @@ set showmatch
 set foldmethod=marker
 
 " Sauvegarde des marqueurs
-exec "set viewdir=" . vimfiles . "/view"
-au BufWinLeave *? mkview
-au BufWinEnter *? silent loadview
-
+let view_dir=vimfiles . "/view"
+if isdirectory(view_dir)
+    exec "set viewdir=" . view_dir
+    au BufWinLeave *? mkview
+    au BufWinEnter *? silent loadview
+endif
+unlet view_dir
 
 " Cacher les tampons quand ils sont abandonnés
 set hidden
@@ -131,12 +134,6 @@ let php_htmlInStrings=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Apparence {{{
-
-" Police
-"set gfn=Monospace\ 10
-"set gfn=Inconsolata\ 10
-"set gfn=Terminus\ 13
-"
 
 " Set font according to system
 if MySys() == "mac"
@@ -262,12 +259,15 @@ set ignorecase
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sauvegardes {{{
+let backup_dir=vimfiles . "/backup"
+if isdirectory(backup_dir)
+    " répertoire de sauvegarde automatique
+    exec "set backupdir=" . backup_dir
 
-" répertoire de sauvegarde automatique
-exec "set backupdir=" . vimfiles . "/backup"
-
-" activation de la sauvegarde
-set backup
+    " activation de la sauvegarde
+    set backup
+endif
+unlet backup_dir
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -339,10 +339,6 @@ let Tlist_Enable_Fold_Column=0
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
-
-" TwitVim
-let twitvim_login_b64=""
-let twitvim_api_root="http://identi.ca/api"
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
