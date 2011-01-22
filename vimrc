@@ -5,6 +5,7 @@
 "     http://www.vim.org/scripts/script.php?script_id=273
 "     http://www.vim.org/scripts/script.php?script_id=1302
 "     http://www.vim.org/scripts/script.php?script_id=2204
+"     http://www.vim.org/scripts/script.php?script_id=2390
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
@@ -26,7 +27,11 @@ endfunction
 if MySys() == "win32"
     let vimfiles=$HOME . "/vimfiles"
 elseif MySys() == "unix"
-    let vimfiles=$HOME . ".vim"
+    let vimfiles=$HOME . "/.vim"
+endif
+
+if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
+    set t_Co=256
 endif
 
 " Désactive la compatibilité avec VI (doit être la première ligne!)
@@ -308,7 +313,7 @@ function! Browser(uri)
   if uri == ""
     let uri=expand("%:p")
   endif
-  exec ":silent !firefox ".uri
+  exec ":silent !x-www-browser ".uri
 endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
