@@ -1,10 +1,13 @@
 " README {{{
 "
 " Greffons
-"     http://www.vim.org/scripts/script.php?script_id=1658
-"     http://www.vim.org/scripts/script.php?script_id=273
-"     http://www.vim.org/scripts/script.php?script_id=1302
-"     http://www.vim.org/scripts/script.php?script_id=2204
+"     - The NERD tree : http://www.vim.org/scripts/script.php?script_id=1658
+"     - taglist : http://www.vim.org/scripts/script.php?script_id=273
+"     - maximize : http://www.vim.org/scripts/script.php?script_id=1302
+"     - TwitVim  : http://www.vim.org/scripts/script.php?script_id=2204
+"     - PHP debugger : http://www.vim.org/scripts/script.php?script_id=1152
+"     - vimwiki : http://www.vim.org/scripts/script.php?script_id=2226
+"     - matchit : http://www.vim.org/scripts/script.php?script_id=39
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " }}}
@@ -28,7 +31,7 @@ elseif MySys() == "unix"
     let vimfiles=$HOME . ".vim"
 endif
 
-" Désactive la compatibilité avec VI (doit être la première ligne!)
+" Désactive la compatibilité avec VI
 set nocompatible
 
 " Encodage en UTF-8
@@ -141,7 +144,7 @@ if MySys() == "mac"
     set shell=/bin/bash
 elseif MySys() == "win32"
     set gfn=Consolas:h11
-    set shell=c:\Programs\msys\1.0\bin\bash
+    set shell=c:\Programs\msys\1.0\bin\sh
 elseif MySys() == "unix"
     set gfn=Monospace\ 10
     set shell=/bin/bash
@@ -333,12 +336,18 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Process_File_Always=1
 let Tlist_Show_One_File=1
-let Tlist_Use_Right_Window=1
 let Tlist_Enable_Fold_Column=0
+let Tlist_Short_Type="name"
+let Tlist_Use_Right_Window=1
+
+let tlist_php_settings = 'php;c:class;d:constant;f:function'
 
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+
+" vimwiki
+let tlist_vimwiki_settings = 'wiki;h:Headers'
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
