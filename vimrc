@@ -316,7 +316,11 @@ function! Browser(uri)
   if uri == ""
     let uri=expand("%:p")
   endif
-  exec ":silent !x-www-browser ".uri
+  if Mysys() == "unix"
+    exec ":silent !x-www-browser ".uri
+  elseif MySys() == "win32"
+    exec ":silent !firefox ".uri
+  endif
 endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
@@ -352,10 +356,9 @@ let tlist_php_settings = 'php;c:class;d:constant;f:function'
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
-<<<<<<< HEAD
 " vimwiki
 let tlist_vimwiki_settings = 'wiki;h:Headers'
-=======
+
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
@@ -368,7 +371,6 @@ let vala_space_errors=1 " Highlight space errors
 "let vala_no_trail_space_error=1 " Disable trailing space errors
 "let vala_no_tab_space_error=1 " Disable space-tab-space errors
 "let vala_minlines = 120 " Minimum lines used for comment syncing (default 50)
->>>>>>> fbac30c5668c087b3f636f5dc936e6202e918e2d
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
