@@ -316,7 +316,7 @@ function! Browser(uri)
   if uri == ""
     let uri=expand("%:p")
   endif
-  if Mysys() == "unix"
+  if MySys() == "unix"
     exec ":silent !x-www-browser ".uri
   elseif MySys() == "win32"
     exec ":silent !firefox ".uri
