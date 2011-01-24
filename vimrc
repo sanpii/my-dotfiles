@@ -8,8 +8,10 @@
 "     - PHP debugger : http://www.vim.org/scripts/script.php?script_id=1152
 "     - vimwiki : http://www.vim.org/scripts/script.php?script_id=2226
 "     - matchit : http://www.vim.org/scripts/script.php?script_id=39
+"     - CSApprox : http://www.vim.org/scripts/script.php?script_id=2390
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
+" http://live.gnome.org/Vala/Vim
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,7 +30,11 @@ endfunction
 if MySys() == "win32"
     let vimfiles=$HOME . "/vimfiles"
 elseif MySys() == "unix"
-    let vimfiles=$HOME . ".vim"
+    let vimfiles=$HOME . "/.vim"
+endif
+
+if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
+    set t_Co=256
 endif
 
 " Désactive la compatibilité avec VI
@@ -310,7 +316,7 @@ function! Browser(uri)
   if uri == ""
     let uri=expand("%:p")
   endif
-  exec ":silent !firefox ".uri
+  exec ":silent !x-www-browser ".uri
 endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
@@ -346,8 +352,23 @@ let tlist_php_settings = 'php;c:class;d:constant;f:function'
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
+<<<<<<< HEAD
 " vimwiki
 let tlist_vimwiki_settings = 'wiki;h:Headers'
+=======
+" vala
+autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala            setfiletype vala
+au BufRead,BufNewFile *.vapi            setfiletype vala
+
+"let vala_ignore_valadoc=1 " Disable valadoc syntax highlight
+let vala_comment_strings=1 " Enable comment strings
+let vala_space_errors=1 " Highlight space errors
+"let vala_no_trail_space_error=1 " Disable trailing space errors
+"let vala_no_tab_space_error=1 " Disable space-tab-space errors
+"let vala_minlines = 120 " Minimum lines used for comment syncing (default 50)
+>>>>>>> fbac30c5668c087b3f636f5dc936e6202e918e2d
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
