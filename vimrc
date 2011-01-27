@@ -106,11 +106,6 @@ set history=100
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
-" Afficher les caractères spéciaux
-"set list listchars=tab:»·,trail:·,eol:¶
-set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
-highlight Tab ctermfg=lightblue guibg=lightblue
-
 " Ne pas couper les lignes trop longues
 set nowrap
 
@@ -153,6 +148,17 @@ let php_htmlInStrings=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Apparence {{{
 
+" Utiliser des couleurs correctes sur un fond sombre
+set background=dark
+
+" Coloration syntaxique
+syntax on
+
+" Thème de couleur pour Vim
+"colorscheme devbox
+"colorscheme vo_dark
+colorscheme desert
+
 " Set font according to system
 if MySys() == "mac"
     set gfn=Menlo:h14
@@ -165,20 +171,13 @@ elseif MySys() == "unix"
     set shell=/bin/bash
 endif
 
-" Coloration syntaxique
-syntax on
-
-" Utiliser des couleurs correctes sur un fond sombre
-set background=dark
+" Afficher les caractères spéciaux
+"set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗,eol:¶
+set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
 
 " Afficher une ligne à la position du curseur
 set cursorline
-:hi CursorLine cterm=bold gui=bold
-
-" Thème de couleur pour Vim
-"colorscheme devbox
-"colorscheme vo_dark
-colorscheme desert
+highlight CursorLine cterm=bold ctermbg=darkgrey
 
 " Nombre de ligne minimal en dessous ou au dessus du curseur
 set scrolloff=3
