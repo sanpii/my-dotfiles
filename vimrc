@@ -31,11 +31,15 @@ if MySys() == "win32"
     let vimfiles=$HOME . "/vimfiles"
 elseif MySys() == "unix"
     let vimfiles=$HOME . "/.vim"
+    let g:loaded_maximize=1
 endif
 
 if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
+
+" Pour utiliser vim comme lecteur de page man
+let $PAGER=''
 
 " Désactive la compatibilité avec VI
 set nocompatible
@@ -102,9 +106,13 @@ set history=100
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
-" Afficher les espaces superflus et les tabulations
-:hi ExtraWhitespace ctermbg=darkred guibg=darkred
-:match ExtraWhitespace /\s\+$\|\t/
+" Afficher les caractères spéciaux
+"set list listchars=tab:»·,trail:·,eol:¶
+set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
+highlight Tab ctermfg=lightblue guibg=lightblue
+
+" Ne pas couper les lignes trop longues
+set nowrap
 
 " Suppression automatique des espaces superflu
 autocmd BufWritePre * :%s/\s\+$//e
@@ -123,7 +131,8 @@ set backspace=2
 "set browsedir=current
 
 " Affiche la limite de 80 caractères
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+"autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+set colorcolumn=81
 
 " Omni-completion
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -302,12 +311,12 @@ map <C-A-PageDown> :tabnext<cr>
 map <C-A-PageUp> :tabprevious<cr>
 
 " Exécuter le fichier
-au BufEnter *.py map <F6> :!python "%"<cr>
-au BufEnter *.c map <F6> :!gcc -o "%:r" % && ./%:r<cr>
-au BufEnter *.vala map <F6> :!vala "%"<cr>
-au BufEnter *.gs map <F6> :!vala "%"<cr>
-au BufEnter *.tex map <F6> :!pdflatex "%" && evince "%:r.pdf"<cr>
-au BufEnter *.php map <F6> :!php "%"<cr>
+au BufEnter *.py map <F9> :!python "%"<cr>
+au BufEnter *.c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
+au BufEnter *.vala map <F9> :!vala "%"<cr>
+au BufEnter *.gs map <F9> :!vala "%"<cr>
+au BufEnter *.tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
+au BufEnter *.php map <F9> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 function! Browser(uri)
