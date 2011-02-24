@@ -114,7 +114,7 @@ set nowrap
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Se place dans le répertoire du fichier éditer
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Changement automatique de répertoire (exécution après compil)
 set autochdir
@@ -311,6 +311,15 @@ unlet backup_dir
 "map <F4> :tabnew<cr>
 map <C-A-PageDown> :tabnext<cr>
 map <C-A-PageUp> :tabprevious<cr>
+
+" Gestion des fenêtres
+map <S-Up> :wincmd k<cr>
+map <S-Down> :wincmd j<cr>
+map <S-Left> :wincmd h<cr>
+map <S-Right> :wincmd l<cr>
+
+map <C-S-Right> :wincmd H<cr>
+map <C-S-Left> :windo wincmd K<cr>
 
 " Exécuter le fichier
 au BufEnter *.py map <F9> :!python "%"<cr>
