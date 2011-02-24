@@ -332,6 +332,7 @@ function! Browser(uri)
   elseif MySys() == "win32"
     exec ":silent !firefox ".uri
   endif
+  redraw!
 endfunction
 map <F7> :call Browser("")<cr>
 au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
