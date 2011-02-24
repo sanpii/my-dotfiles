@@ -349,6 +349,43 @@ au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://lo
 " Ouvrir l'URL sous le curseur dans un navigateur
 map gu :call Browser(expand('<cWORD>'))<cr>
 
+" Move content up
+nmap <M-S-Up> :m .-2<Enter>
+nmap <M-S-k> <M-S-Up>
+vmap <M-S-Up> :m .-2<Enter>gv
+vmap <M-S-k> <M-S-Up>
+
+" Move content down
+nmap <M-S-Down> :m .+1<Enter>
+nmap <M-S-j> <M-S-Down>
+vmap <M-S-Down> :m '>+1<Enter>gv
+vmap <M-S-j> <M-S-Down>
+
+" Copy content up
+nmap <C-S-Up> :co .-1<Enter>
+nmap <C-S-k> <C-S-Up>
+vmap <C-S-Up> :co '><Enter>gv
+vmap <C-S-k> <C-S-Up>
+
+" Copy content down
+nmap <C-S-Down> :co .<Enter>
+nmap <C-S-j> <C-S-Down>
+vmap <C-S-Down> :co .-1<Enter>gv
+vmap <C-S-j> <C-S-Down>
+
+" Shifts content left
+nmap <M-S-Left> <<
+nmap <M-S-h> <M-S-Left>
+vmap <M-S-Right> <gv
+vmap <M-S-h> <M-S-Left>
+
+" Shifts content right
+nmap <M-S-Right> >>
+nmap <M-S-l> <M-S-Right>
+vmap <M-S-Right> >gv
+vmap <M-S-l> <M-S-Right>
+
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
