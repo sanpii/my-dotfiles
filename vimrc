@@ -9,6 +9,7 @@
 "     - vimwiki : http://www.vim.org/scripts/script.php?script_id=2226
 "     - matchit : http://www.vim.org/scripts/script.php?script_id=39
 "     - CSApprox : http://www.vim.org/scripts/script.php?script_id=2390
+"     - Conque Shell : http://www.vim.org/scripts/script.php?script_id=2771
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
@@ -398,7 +399,7 @@ filetype plugin indent on
 au BufEnter TODO setfiletype vo_base
 
 " taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F8> :TlistToggle<cr>
 let Tlist_Compact_Format=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
@@ -411,11 +412,16 @@ let Tlist_Use_Right_Window=1
 let Tlist_php_settings='php;c:class;d:constant;f:function'
 
 " nerdtree
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
 
 " vimwiki
 let Tlist_vimwiki_settings='wiki;h:Headers'
+
+" conque
+nnoremap <silent> <F2> :ConqueTermSplit bash<cr>
+autocmd FileType conque_term :set bufhidden=delete
+autocmd FileType conque_term :set list listchars=
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
