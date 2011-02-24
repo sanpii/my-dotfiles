@@ -12,6 +12,7 @@
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
+" http://live.gnome.org/Vala/Vim
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,7 +52,7 @@ set encoding=utf-8
 set ttyfast
 
 " Support du type de format unix uniquement
-set fileformats=unix,dos,mac
+set fileformats=unix
 
 " Détection du type de fichier
 filetype on
@@ -174,10 +175,12 @@ endif
 " Afficher les caractères spéciaux
 "set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗,eol:¶
 set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
+highlight NonText cterm=bold ctermfg=darkgrey
+highlight SpecialKey cterm=bold ctermfg=darkgrey
 
 " Afficher une ligne à la position du curseur
 set cursorline
-highlight CursorLine cterm=bold ctermbg=darkgrey
+highlight CursorLine cterm=bold ctermbg=none gui=bold guibg=grey20
 
 " Nombre de ligne minimal en dessous ou au dessus du curseur
 set scrolloff=3
@@ -312,8 +315,8 @@ map <C-A-PageUp> :tabprevious<cr>
 " Exécuter le fichier
 au BufEnter *.py map <F9> :!python "%"<cr>
 au BufEnter *.c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
-au BufEnter *.vala map <F9> :!vala "%"<cr>
-au BufEnter *.gs map <F9> :!vala "%"<cr>
+au BufEnter *.vala map <F9> :!valac "%" && ./%:r<cr>
+au BufEnter *.gs map <F9> :!valac "%" && ./%:r<cr>
 au BufEnter *.tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
 au BufEnter *.php map <F9> :!php "%"<cr>
 
@@ -358,14 +361,14 @@ let Tlist_Enable_Fold_Column=0
 let Tlist_Short_Type="name"
 let Tlist_Use_Right_Window=1
 
-let tlist_php_settings = 'php;c:class;d:constant;f:function'
+let Tlist_php_settings='php;c:class;d:constant;f:function'
 
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " vimwiki
-let tlist_vimwiki_settings = 'wiki;h:Headers'
+let Tlist_vimwiki_settings='wiki;h:Headers'
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
