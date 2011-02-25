@@ -10,6 +10,7 @@
 "     - matchit : http://www.vim.org/scripts/script.php?script_id=39
 "     - CSApprox : http://www.vim.org/scripts/script.php?script_id=2390
 "     - Conque Shell : http://www.vim.org/scripts/script.php?script_id=2771
+"     - php omnicomplete : http://www.vim.org/scripts/script.php?script_id=3171
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
@@ -53,7 +54,7 @@ set encoding=utf-8
 set ttyfast
 
 " Support du type de format unix uniquement
-set fileformats=unix
+set fileformats=unix,dos
 
 " Détection du type de fichier
 filetype on
@@ -93,8 +94,8 @@ set foldmethod=marker
 let view_dir=vimfiles . "/view"
 if isdirectory(view_dir)
     exec "set viewdir=" . view_dir
-    au BufWinLeave *? mkview
-    au BufWinEnter *? silent loadview
+    autocmd BufWinLeave *? mkview
+    autocmd BufWinEnter *? silent loadview
 endif
 unlet view_dir
 
@@ -144,6 +145,10 @@ set completeopt=longest,menuone
 
 let php_sql_query=1
 let php_htmlInStrings=1
+"autocmd FileType php set tags+=~/.vim/mytags/zend
+"autocmd FileType php set tags+=~/.vim/mytags/doctrine
+"autocmd FileType php set tags+=~/.vim/mytags/magento
+autocmd FileType php set tags+=~/.vim/mytags/drupal6
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,7 +175,7 @@ elseif MySys() == "win32"
     set shell=c:\Programs\msys\1.0\bin\sh
 elseif MySys() == "unix"
     set gfn=Monospace\ 10
-    set shell=/bin/bash
+    set shell=bash
 endif
 
 " Afficher les caractères spéciaux
@@ -239,7 +244,7 @@ set paste
 set nospell spelllang=fr
 " automatique pour les fichiers .tex
 augroup filetypedetect
-au BufNewFile,BufRead *.tex setlocal spell spelllang=fr
+autocmd BufNewFile,BufRead *.tex setlocal spell spelllang=fr
 augroup END
 " F10 active/désactive la correction orthographique
 function! ToggleSpell()
@@ -295,6 +300,10 @@ unlet backup_dir
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappage {{{
 
+" Aide
+autocmd FileType vim nmap <F1> :help <cword><CR>
+autocmd FileType php nmap <F1> :tag <cword><CR>
+
 " Descendre la ligne courante d'une ligne
 "map <C-S-Down> dd p
 
@@ -323,12 +332,12 @@ map <C-S-Right> :wincmd H<cr>
 map <C-S-Left> :windo wincmd K<cr>
 
 " Exécuter le fichier
-au BufEnter *.py map <F9> :!python "%"<cr>
-au BufEnter *.c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
-au BufEnter *.vala map <F9> :!valac "%" && ./%:r<cr>
-au BufEnter *.gs map <F9> :!valac "%" && ./%:r<cr>
-au BufEnter *.tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
-au BufEnter *.php map <F9> :!php "%"<cr>
+autocmd BufEnter *.py map <F9> :!python "%"<cr>
+autocmd BufEnter *.c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
+autocmd BufEnter *.vala map <F9> :!valac "%" && ./%:r<cr>
+autocmd BufEnter *.gs map <F9> :!valac "%" && ./%:r<cr>
+autocmd BufEnter *.tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
+autocmd BufEnter *.php map <F9> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 function! Browser(uri)
@@ -345,7 +354,7 @@ function! Browser(uri)
   redraw!
 endfunction
 map <F7> :call Browser("")<cr>
-au BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
+autocmd BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 
 " Ouvrir l'URL sous le curseur dans un navigateur
 map gu :call Browser(expand('<cWORD>'))<cr>
@@ -396,7 +405,7 @@ vmap <M-S-l> <M-S-Right>
 filetype plugin indent on
 
 " Configuration du plugin Vimoutliner
-au BufEnter TODO setfiletype vo_base
+autocmd BufEnter TODO setfiletype vo_base
 
 " taglist
 nnoremap <silent> <F8> :TlistToggle<cr>
@@ -419,15 +428,15 @@ let NERDTreeQuitOnOpen=1
 let Tlist_vimwiki_settings='wiki;h:Headers'
 
 " conque
-nnoremap <silent> <F2> :ConqueTermSplit bash<cr>
+nmap <silent> <F2> :ConqueTermSplit bash<cr>
 autocmd FileType conque_term :set bufhidden=delete
 autocmd FileType conque_term :set list listchars=
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala            setfiletype vala
-au BufRead,BufNewFile *.vapi            setfiletype vala
+autocmd BufRead,BufNewFile *.vala            setfiletype vala
+autocmd BufRead,BufNewFile *.vapi            setfiletype vala
 
 "let vala_ignore_valadoc=1 " Disable valadoc syntax highlight
 let vala_comment_strings=1 " Enable comment strings
