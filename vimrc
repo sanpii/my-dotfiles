@@ -129,7 +129,6 @@ set backspace=2
 "set browsedir=current
 
 " Affiche la limite de 80 caractères
-"autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 set colorcolumn=81
 
 " Omni-completion
@@ -201,6 +200,10 @@ set sidescrolloff=3
 
 " Indentation en fonction du type de fichier
 filetype indent on
+autocmd BufEnter *.vala setfiletype vala
+autocmd BufEnter *.gs setfiletype genie
+autocmd BufEnter *.tex setfiletype tex
+autocmd BufEnter *.module setfiletype php
 
 " Indispensable pour ne pas tout casser avec ce qui va suivre
 set preserveindent
@@ -232,6 +235,11 @@ set expandtab
 " Pas d'espace pour les Makefile
 autocmd FileType make setlocal noexpandtab
 
+" Indentation de deux espaces pour les modules Drupal
+autocmd BufEnter *.module setlocal shiftwidth=2
+autocmd BufEnter *.module setlocal tabstop=2
+autocmd BufEnter *.module setlocal softtabstop=2
+
 " Coller dans Vim sans tabulations incrémentées
 set paste
 
@@ -242,10 +250,11 @@ set paste
 
 " version Nemolivier
 set nospell spelllang=fr
-" automatique pour les fichiers .tex
+" automatique pour les fichiers tex
 augroup filetypedetect
-autocmd BufNewFile,BufRead *.tex setlocal spell spelllang=fr
+autocmd FileType tex setlocal spell spelllang=fr
 augroup END
+
 " F10 active/désactive la correction orthographique
 function! ToggleSpell()
   if &spell
@@ -332,12 +341,12 @@ map <C-S-Right> :wincmd H<cr>
 map <C-S-Left> :windo wincmd K<cr>
 
 " Exécuter le fichier
-autocmd BufEnter *.py map <F9> :!python "%"<cr>
-autocmd BufEnter *.c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
-autocmd BufEnter *.vala map <F9> :!valac "%" && ./%:r<cr>
-autocmd BufEnter *.gs map <F9> :!valac "%" && ./%:r<cr>
-autocmd BufEnter *.tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
-autocmd BufEnter *.php map <F9> :!php "%"<cr>
+autocmd FileType python map <F9> :!python "%"<cr>
+autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
+autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
+autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
+autocmd FileType tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
+autocmd FileType php map <F9> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
 function! Browser(uri)
