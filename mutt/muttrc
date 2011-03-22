@@ -1,0 +1,101 @@
+set editor="vim"
+set sort=threads
+
+set from="gege2061@homecomputing.fr"
+set use_from=yes
+set envelope_from="yes"
+set realname="Nicolas Joseph"
+set edit_headers
+
+set collapse_unread=no
+
+set date_format="%m/%d/%y à %H:%M"
+set attribution="Le %d, %n a écrit :"
+set folder_format="%4C [%t%N] %f %> %t %8s %d"
+set index_format="%4C [%Z] %-15.15L %?y?(%.20Y) ?%s %> %D"
+
+set crypt_autosign=yes
+set crypt_replyencrypt=yes
+
+# Header {{{
+ignore *
+
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Mail-Followup-To:
+unignore Subject:
+unignore Date:
+unignore CC:
+unignore BCC:
+unignore User-Agent:
+unignore X-Spam-Status:
+unignore X-Label:
+unignore X-Troll:
+
+hdr_order Date: From: To: CC: BCC: Reply-To: Mail-Followup-To: Subject: User-Agent: X-Label: X-Troll:
+# }}}
+
+source ~/.mutt/colors.`tty -s && tput colors || echo 8`
+
+# Maildir {{{
+set mbox_type=Maildir
+
+set spoolfile="~/Maildir/"
+set folder="~/Maildir/"
+set mask="!^\\.[^.]"
+set record="+.Sent"
+set postponed="+.Drafts"
+
+mailboxes ! + `\
+ for file in ~/Maildir/.*; do \
+   box=$(basename "$file"); \
+   if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
+       -a ! "$box" = '.subscriptions' ]; then \
+     echo -n "\"+$box\" "; \
+   fi; \
+ done`
+
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# }}}
+# Vim like keybinds {{{
+bind pager j next-line
+bind pager k previous-line
+bind pager / search
+bind pager gg top
+bind pager G bottom
+macro index za '<esc>v'
+macro index zr '<esc>V'
+macro index zm '<esc>V'
+
+bind index gg first-entry
+bind index G last-entry
+macro pager za '<esc>v'
+macro pager zr '<esc>V'
+macro pager zm '<esc>V'
+
+# }}}
+# Perso keybinds {{{
+bind index <pagedown>  next-page
+bind index <pageup> previous-page
+# }}}
+# Sidebar {{{
+set sidebar_delim       = '|'
+set sidebar_visible     = yes
+set sidebar_width       = 32
+
+color sidebar_new brightyellow default
+
+# bindings
+bind index,pager \CN    sidebar-next
+bind index,pager \CP    sidebar-prev
+bind index,pager \CO    sidebar-open
+# }}}
+# Labels {{{
+# }}}
+
