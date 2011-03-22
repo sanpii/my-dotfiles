@@ -1,0 +1,37 @@
+#color object    foreground     background
+color normal     white          default # normal text
+color indicator  white          blue    # actual message
+color status     blue           white   # status line
+color error      brightred      default # errors
+color message    green          default # info messages
+color signature  yellow         default # signature
+color attachment green          default # MIME attachments
+color search     white          blue    # search matches
+color hdrdefault cyan           default # default header lines
+color markers    yellow         default # markers (when line wraps)
+color quoted     red            default # quoted text
+color quoted1    cyan           default
+color quoted2    red            default
+color quoted3    cyan           default
+color quoted4    red            default
+color quoted5    cyan           default
+color quoted6    red            default
+color quoted7    cyan           default
+color quoted8    red            default
+color quoted9    cyan           default
+
+#
+#     object     foreground     backg.   RegExp
+#
+color header     green          default  "^(to|from|subject|date|cc):"
+color body       yellow         default  "(((https?|ftp|gopher)://|(file|news|mailto):)[^\' <>\"]+|(www[0-9]?|web|w3)\\.)[^\' ,;<>\":]+"
+color body       green          default  "[a-z0-9._-]+@[a-z0-9._-]+[a-z]{2}"
+color body       green          default  "^gpg:.*"
+
+color index      green          default ~A      # All messages
+color index      white          default ~p      # Personal
+color index      cyan           default ~N|~O   # New or Old
+color index      yellow         default ~F      # Flagged
+color index      red            default ~D      # Deleted
+color index      magenta        default ~T      # Tagged
+
