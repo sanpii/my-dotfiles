@@ -1,0 +1,3 @@
+highlight NonText cterm=bold ctermfg=darkgrey                                                                                                                  
+highlight SpecialKey cterm=bold ctermfg=darkgrey
+
