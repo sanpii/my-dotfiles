@@ -4,7 +4,6 @@
 "     - The NERD tree : http://www.vim.org/scripts/script.php?script_id=1658
 "     - taglist : http://www.vim.org/scripts/script.php?script_id=273
 "     - maximize : http://www.vim.org/scripts/script.php?script_id=1302
-"     - TwitVim  : http://www.vim.org/scripts/script.php?script_id=2204
 "     - PHP debugger : http://www.vim.org/scripts/script.php?script_id=1152
 "     - vimwiki : http://www.vim.org/scripts/script.php?script_id=2226
 "     - matchit : http://www.vim.org/scripts/script.php?script_id=39
@@ -13,7 +12,6 @@
 "     - php omnicomplete : http://www.vim.org/scripts/script.php?script_id=3171
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
-" http://live.gnome.org/Vala/Vim
 " http://live.gnome.org/Vala/Vim
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -129,7 +127,9 @@ set backspace=2
 "set browsedir=current
 
 " Affiche la limite de 80 caractères
-set colorcolumn=81
+if v:version >= 703
+    set colorcolumn=81
+endif
 
 " Omni-completion
 autocmd FileType python set omnifunc=pythoncomplete#Complete
