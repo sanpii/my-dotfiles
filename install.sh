@@ -1,11 +1,12 @@
 #!/bin/sh
 
-cwd=`pwd`;
 home=$HOME;
+cwd=$(dirname $0);
+scriptname=$(basename $0);
 
 for file in *; do
-  if [ "$cwd/$file" != "$0" ]; then
-    echo ln -s "$cwd/$file" "$home/.$file"
+  if [ "$file" != "$scriptname" ]; then
+    ln -s "$cwd/$file" "$home/.$file"
   fi
 done;
 
