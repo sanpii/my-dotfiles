@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xterm -e ssh -t homecomputing.fr "screen -d -r irc"
+
