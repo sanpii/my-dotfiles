@@ -1,0 +1,39 @@
+style "geany-viewport"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+style "geany-scrolled"
+{
+	xthickness				= 3
+	ythickness				= 3
+	bg[NORMAL]				= @bg_color
+	bg_pixmap[NORMAL]			= "Fixes/none.png"
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		image
+		{
+			function		= SHADOW
+			recolorable		= TRUE
+			file			= "Apps/Geany/shadow-in.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}
+	}
+}
+
+widget "GeanyMainWindow.GtkVBox.GtkVPaned.GtkHPaned.GtkNotebook.GtkScrolledWindow.GtkViewport"	style "geany-viewport"
+widget "GeanyMainWindow.GtkVBox.GtkVPaned.GtkScrolledWindow.GtkViewport"			style "geany-viewport"
+
+widget "GeanyMainWindow.GtkVBox.GtkVPaned.GtkHPaned.GtkNotebook.GtkScrolledWindow"		style "geany-scrolled"
+widget "GeanyMainWindow.GtkVBox.GtkVPaned.GtkScrolledWindow"					style "geany-scrolled"

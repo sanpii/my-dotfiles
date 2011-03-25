@@ -1,0 +1,83 @@
+style "chromium-toolbar"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Apps/Chromium/toolbar.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "chromium-bookmarks"
+{
+		engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Apps/Chromium/bookmarks.png"
+			border			= { 0, 0, 0, 3}
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "chromium-entry"				= "entry"
+{
+	GtkWidget::interior_focus		= 1
+	GtkEntry::inner_border			= { 0, 0, 0, 0}
+
+	engine "pixmap"
+	{
+		# Text-entry 
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			shadow			= OUT
+			state			= NORMAL
+			file			= "Apps/Chromium/chrome-entry.png"
+			border			= { 4, 4, 5, 4}
+			stretch			= TRUE
+		}	
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+			detail			= "entry"
+			shadow			= IN
+			recolorable		= TRUE
+			file			= "Apps/Chromium/chrome-entry.png"
+			border			= { 4, 4, 5, 4}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "chromium-statusbar"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Apps/Chromium/chrome-statusbar.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+	}
+}
+
+widget "GtkWindow.chrome-custom-frame-border.*.chrome-toolbar"		style "chromium-toolbar"
+
+widget "GtkWindow.chrome-custom-frame-border.*.chrome-bookmark-bar"		style "chromium-bookmarks"
+widget "GtkWindow.chrome-custom-frame-border.*.chrome-find-in-page-entry"	style "chromium-entry"
+widget_class "GtkEntry"								style "chromium-entry"
+widget "GtkWindow.chrome-custom-frame-border.*GtkExpandedContainer.GtkEventBox.GtkVBox.GtkEventBox"	style:highest "chromium-statusbar"

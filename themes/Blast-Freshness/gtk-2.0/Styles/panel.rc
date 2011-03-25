@@ -1,0 +1,246 @@
+style "panel"
+{
+	xthickness				= 0
+	ythickness				= 0
+
+	bg_pixmap[NORMAL]			= "/Panel/panel.png"
+	bg_pixmap[PRELIGHT]			= "/Panel/panel.png"
+	bg_pixmap[ACTIVE]			= "/Panel/panel.png"
+	bg_pixmap[SELECTED]			= "/Panel/panel.png"
+	bg_pixmap[INSENSITIVE]			= "/Panel/panel.png"
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FOCUS
+		}
+	}
+}
+
+style "panel-handle" 
+{
+	engine "pixmap"
+	{    
+		image
+		{
+			function		= HANDLE
+		}    
+	}
+}
+
+style "pager"
+{
+	xthickness 				= 0
+	ythickness 				= 0
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+style "panel-menu-arrow"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function		= ARROW
+			arrow_direction		= DOWN
+		}
+	}
+}
+style "panel-button" 				#= "default"
+{
+	GtkButton::inner-border			= { 4, 4, 2, 2}
+	GtkButton::outside-border 		= { 0, 0, 0, 0}
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= BOX
+			detail			= "buttondefault"
+		}
+		image
+		{
+			function		= BOX
+			state			= NORMAL
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= OUT
+			file			= "Panel/button-normal.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= IN
+			file			= "Panel/button-active-prelight.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= OUT
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= IN
+		}
+		image
+		{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Panel/button-active.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "taskbar-button" 				#= "default"
+{
+	GtkButton::inner-border			= { 3, 3, 2, 2}
+	GtkButton::child-displacement-y		= 0
+
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= BOX
+			detail			= "buttondefault"
+		}
+		image
+		{
+			function		= BOX
+			state			= NORMAL
+			recolorable		= TRUE
+			file			= "Panel/button-normal.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= OUT
+			file			= "Panel/button-prelight.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= IN
+			file			= "Panel/button-active-prelight.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= OUT
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= IN
+		}
+		image
+		{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Panel/button-active.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+	}
+}
+
+
+############
+# XFCE     #
+############
+
+style "xfce4-tray"				= "panel-dark"
+{
+	bg_pixmap[NORMAL]			= "Panel/tray.png"
+		
+}
+
+style "xfce4-tray-frame"
+{
+	xthickness				= 0
+	ythickness				= 0
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+
+################
+# Declarations #
+################
+
+widget "Panel.*.XfceTrayWidget.GtkSocket" 	style:highest "xfce4-tray"
+
+class "PanelToplevel"				style "panel-handle"
+class "PanelApp*"				style "panel"
+class "PanelToplevel*"				style "panel"
+class "*Xfce*Panel*"				style "panel"
+
+widget "*fast-user-switch*"			style "panel"
+widget "PanelToplevel*PanelAppletFrame"		style "panel"
+widget "PanelToplevel*PanelMenuBar"		style "panel"
+widget "PanelToplevel*PanelWidget*"		style "panel"
+widget "*Xfce*Panel*"				style "panel"
+
+widget_class "BonoboPlug*Panel*"		style "panel"
+widget_class "*tray*"				style "panel"
+
+widget "*PanelApplet*"				style "panel"
+
+widget_class "Panel*<GtkButton>"		style "panel-button"
+widget_class "BonoboPlug*Applet*<GtkButton>"	style "panel-button"
+
+widget_class "*Tasklist.*<GtkButton>"		style:highest "taskbar-button"
+
+class "WnckPager"				style "pager"
+widget "*FishApplet*"				style "pager"
+
+class "PanelAppletFrame" 			style:highest "panel-handle"
+
+widget "PanelToplevel*PanelMenuButton"		style "panel-menu-arrow"
+
+widget_class "PanelToplevel*<GtkMenuBar>*<GtkMenuItem>*"	style:highest "menubar-item"
+
+widget "Panel.XfceItembar.XfceInternalPanelPlugin.GtkFrame"	style "xfce4-tray-frame"
+
+
