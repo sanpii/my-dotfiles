@@ -1,0 +1,536 @@
+#Minty Freshness by SkiesOfAzel.
+#License GPL3
+
+gtk_color_scheme	= "bg_color:#f0f0f1\nselected_bg_color:#accd8a\nbase_color:#FFFFFF"	# Background, base
+gtk_color_scheme	= "focus_color:#94b06f"							# Focus, tooltips
+gtk_color_scheme	= "fg_color:#4D4D4D\nselected_fg_color:#FFFFFF\ntext_color:#4D4D4D"	# Foreground, text
+gtk_color_scheme 	= "sidebar_color:#e2e2e2"						# Sidebar
+gtk_color_scheme	= "tooltip_bg_color:#000\ntooltip_fg_color:#FFF" 			# Tooltips
+gtk_color_scheme	= "link_color:#08c"							# Hyperlinks
+gtk_color_scheme	= "frame_color:#f0f0f1\ninactive_frame_color:#f0f0f1"			# Fix for Chrome
+gtk_color_scheme	= "bg_color_dark:#383838\ntext_color_dark:#FFFFFF"			# Dark colors
+gtk-icon-sizes 		= "panel-menu=22,22:gtk-button=16,16"
+
+gtk-auto-mnemonics 						= 1
+
+style "default" 
+{
+	GnomeHRef	::link_color  				= shade(0.80, @selected_bg_color)		
+	GtkHTML		::link-color				= shade(0.80, @selected_bg_color)
+ 	GtkIMHtmlr	::hyperlink-color 			= shade(0.80, @selected_bg_color)
+	GtkIMHtml	::hyperlink-color			= shade(0.80, @selected_bg_color)
+	GtkWidget	::link-color				= shade(0.80, @selected_bg_color)
+	GtkWidget	::visited-link-color			= @text_color
+
+	GtkButton	::child-displacement-x 			= 0
+	GtkButton	::child-displacement-y 			= 0
+	GtkButton	::default-border       			= { 0, 0, 0, 0 }
+
+	GtkCheckButton	::indicator-size       			= 15
+
+	GtkEntry	::honors-transparent-bg-hint 		= 1
+	GtkEntry	::progress-border			= { 3, 3, 3, 3 }
+	GtkEntry	::state-hint 				= 0
+
+	GtkImage	::x-ayatana-indicator-dynamic 		= 1
+
+	GtkMenu		::horizontal-padding			= 0
+	GtkMenu		::vertical-padding			= 0
+
+	GtkMenuBar	::internal-padding			= 0
+	GtkMenuBar	::window-dragging			= 1
+
+
+	GtkPaned	::handle-size          			= 6
+
+ 	GtkExpander	::expander-size				= 13
+	GtkToolbar	::internal-padding			= 0
+	GtkTreeView	::expander-size				= 13
+	GtkTreeView	::vertical-separator			= 0
+
+	GtkWidget	::new-tooltip-style			= 1
+	GtkWidget	::focus-line-width			= 1
+	GtkWidget	::focus-padding				= 0
+	GtkWidget	::interior-focus			= 0
+	GtkWidget	::focus-padding				= 0
+
+#	GtkArrow	::arrow-scaling				= 0.6
+#	GtkScrolledWindow::shadow_type 				= GTK_SHADOW_NONE
+	GtkMenuBar::shadow_type 				= GTK_SHADOW_NONE
+	GtkStatusbar::shadow_type 				= GTK_SHADOW_NONE
+#	GtkMenu::shadow_type 					= GTK_SHADOW_NONE
+#	GtkFrame::shadow_type 					= GTK_SHADOW_NONE
+
+	GtkScale::slider-length       		  	= 18
+	GtkScale::slider-width       		  	= 18
+	GtkScale::trough-side-details 		  	= 1
+	#####################
+	# Color Definitions #
+	#####################
+	base[NORMAL]				= @base_color
+	base[PRELIGHT]				= shade (0.85, @bg_color)
+	base[ACTIVE]      			= @selected_bg_color
+	base[SELECTED]    			= @selected_bg_color
+	base[INSENSITIVE] 			= @bg_color
+
+	bg[NORMAL]				= @bg_color
+	bg[PRELIGHT]      			= shade (0.912, @bg_color)
+	bg[SELECTED]	  			= @selected_bg_color
+	bg[INSENSITIVE]   			= @bg_color
+	bg[ACTIVE]        			= shade (0.934, @bg_color)
+
+	fg[NORMAL]        			= @fg_color
+	fg[PRELIGHT]      			= @fg_color
+	fg[SELECTED]      			= @selected_fg_color
+	fg[ACTIVE]        			= @fg_color
+	fg[INSENSITIVE]				= darker (@bg_color)
+
+	text[NORMAL]				= @text_color
+	text[PRELIGHT]				= @text_color
+	text[ACTIVE]				= @selected_fg_color
+	text[SELECTED]				= @selected_fg_color
+	text[INSENSITIVE]			= darker (@bg_color)
+
+	engine "murrine" 
+	{
+		contrast 			= 0.8
+		arrowstyle 			= 0
+		reliefstyle 			= 3
+		highlight_shade 		= 1.0
+		gradient_shades 		= {1.4, 1.2, 1.2, 1.0}
+		shadow_shades 			= { 0.8, 3.2 }
+		roundness 			= 2
+		lightborder_shade 		= 1.60
+		lightborderstyle 		= 0
+
+		border_shades 			= {1.0, 0.9}
+		glazestyle 			= 0
+		sliderstyle			= 1
+
+		listviewstyle 			= 2
+		progressbarstyle 		= 1
+		colorize_scrollbar 		= FALSE
+		menubaritemstyle 		= 1
+		menubarstyle 			= 2
+		menustyle 			= 2
+		sliderstyle 			= 3
+		scrollbarstyle 			= 2
+		stepperstyle 			= 3
+		separatorstyle 			= 1
+		textstyle 			= 0
+		toolbarstyle			= 2
+#		rgba = TRUE
+	}
+}
+
+style "tooltips" 
+{
+	xthickness 				= 4
+	ythickness 				= 4
+
+	bg[NORMAL]        			= @tooltip_bg_color
+	fg[NORMAL]        			= @tooltip_fg_color
+	bg[SELECTED]      			= "#000000"
+
+	engine "murrine" 
+	{
+		rgba 				= TRUE
+	}
+}
+
+style "arrows"					= "default"
+{
+	engine "murrine"
+	{
+		contrast			= 10.2	
+	}
+}
+
+style "arrow"
+{
+	xthickness = 0
+	ythickness = 0
+	
+
+	engine "pixmap"
+	{	
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= NORMAL
+			overlay_file		= "Arrows/arrow-up.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= PRELIGHT
+			overlay_file		= "Arrows/arrow-up.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= SELECTED
+			overlay_file		= "Arrows/arrow-up.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= ACTIVE
+			overlay_file		= "Arrows/arrow-up.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= INSENSITIVE
+			overlay_file		= "Arrows/arrow-up-ins.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= NORMAL
+			overlay_file		= "Arrows/arrow-down.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= PRELIGHT
+			overlay_file		= "Arrows/arrow-down.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= SELECTED
+			overlay_file		= "Arrows/arrow-down.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= ACTIVE
+			overlay_file		= "Arrows/arrow-down.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= INSENSITIVE
+			overlay_file		= "Arrows/arrow-down-ins.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}     
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= NORMAL
+			overlay_file		= "Arrows/arrow-left.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= PRELIGHT
+			overlay_file		= "Arrows/arrow-left.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= SELECTED
+			overlay_file		= "Arrows/arrow-left.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= ACTIVE
+			overlay_file		= "Arrows/arrow-left.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state 			= INSENSITIVE
+			overlay_file		= "Arrows/arrow-left-ins.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state			= NORMAL
+			overlay_file		= "Arrows/arrow-right.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state			= PRELIGHT
+			overlay_file		= "Arrows/arrow-right.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state			= SELECTED
+			overlay_file		= "Arrows/arrow-right.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state			= ACTIVE
+			overlay_file		= "Arrows/arrow-right.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			state			= INSENSITIVE
+			overlay_file		= "Arrows/arrow-right-ins.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+	}
+}
+
+############
+# Includes #
+############
+include "Styles/gradient.rc"
+include "Styles/button.rc"
+include "Styles/entry.rc"
+include "Styles/list.rc"
+include "Styles/menu.rc"
+include "Styles/notebook.rc"
+include "Styles/sliders.rc"
+include "Styles/shadows.rc"
+include "Styles/panel.rc"
+
+###############################################################################
+# The following part of the gtkrc applies the different styles to the widgets #
+###############################################################################
+
+# The default style is applied to every widget
+class "GtkWidget" 				style "default"
+
+#full window gradient
+class "GtkWindow"				style "window"
+#Toolbar gradient
+class "GtkToolbar" 				style "toolbar"
+#Frame
+class "GtkFrame"				style "frame"
+#Separators
+class "GtkSeparator" 				style "separator"
+#Entry
+class "GtkEntry"     				style "text-entry"
+class "GtkEditable"				style "text-entry"
+class "GtkOldEditable" 				style "text-entry"
+#Text view
+class "GtkTextView"				style "text-view"
+#Spin Button
+class "GtkSpinButton"  				style "spinbutton"
+#Scale sliders
+class "GtkScale"       				style "scale"
+#Scrollbar
+class "GtkScrollbar"   				style "scrollbar"
+#Scrolled window shadow
+class "GtkScrolledWindow"			style "scrolled-window"
+#Notebook surface
+class "GtkNotebook"				style "notebook"
+
+class "GtkArrow"				style "arrow"
+
+class "GtkExpander" 				style "expander"
+class "GtkTreeView" 				style "expander"
+class "GtkCTree" 				style "expander"
+
+# General matching follows. The order is choosen so that the right styles override
+# each other. EG. progressbar needs to be more important than the menu match.
+
+#Notebook tabs
+widget_class "*<GtkNotebook>"			style "tabs"
+#Notebook uniformity fixes
+widget_class "*<GtkNotebook>*<GtkEventBox>"	style "notebook-fix"
+#breaks gimp
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"	style "notebook-fix"
+widget_class "*<GtkNotebook>*<GtkLayout>"	style "notebook-fix"
+
+#buttons
+widget_class "*<GtkButton>"			style "button"
+
+#Statusbar
+widget_class "*<GtkStatusbar>*"			style "statusbar"
+#statusbar color fix
+widget_class "*<GtkStatusbar>*<GtkEventBox>"	style "statusbar-fix"
+widget_class "*<GtkStatusbar>*ComboBox"		style "statusbar-fix"
+
+#Combo button entries
+widget_class "*<GtkComboBoxEntry>*<GtkEntry>"	style "comboentry"
+widget_class "*<GtkCombo>*<GtkEntry>"		style "comboentry"
+
+#Menubar gradient
+widget_class "*<GtkMenuBar>*" 			style "menubar"
+
+#Menu and menu items
+widget_class "*<GtkMenu>*"              		style "menu"
+widget_class "*<GtkMenuItem>*"      	    		style "menu-item"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*"    		style "menubar-item"
+widget_class "*<GtkMenuItem>.*.<GtkScale>" 		style "scale"
+widget_class "*<GtkSeparatorMenuItem>*" 		style "menu-separator"
+
+#Progress bars
+widget_class "*<GtkProgress>" 			style "progressbar"
+widget_class "*<GtkProgressBar>"		style "progressbar"
+
+#Toolbar Buttons
+widget_class "*<GtkToolbar>*<GtkButton>"	style "toolbar-button"
+widget_class "*<GtkToolbar>*<GtkToggleButton>"	style "toolbar-button"
+widget_class "*<GtkSeparatorToolItem>"		style "toolbar-separator"
+
+#Tree view and icon view
+widget_class "*.<GtkTreeView>*"        		style "treeview"
+widget_class "*.<GtkIconView>*"        		style "iconview"
+
+# Treeview header
+widget_class "*.<GtkTreeView>.<GtkButton>" 	style "treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>"    	style "treeview-header"
+widget_class "*.<GtkList>.<GtkButton>"     	style "treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>"    	style "treeview-header"
+
+#Check and Radio buttons
+widget_class "*<GtkCheckButton>"     		style "checkbutton"
+widget_class "*<GtkRadioButton>"     		style "radiobutton"
+
+widget_class "*<GtkComboBoxEntry>*<GtkToggleButton>"	style "combobutton"
+widget_class "*<GtkCombo>*<GtkButton>"			style "combobutton"
+
+###############
+# Workarounds #
+###############
+
+#Toolbar and specific entry fixes
+include "Styles/entry-fixes.rc"
+
+# Workarounds for Evolution
+widget_class "*.EDateEdit.GtkEntry"		style:highest "comboentry"
+widget_class "*.EDateEdit.GtkButton"		style:highest "combobutton"
+
+widget_class "*.MessageList.ECanvas"   		style "treeview-header"
+widget_class "*.ETaskTable.ECanvas"    		style "treeview-header"
+widget_class "*.EMemoTable.ECanvas"    		style "treeview-header"
+widget_class "*.ETable.ECanvas"    		style "treeview-header"
+widget_class "*.ETree.ECanvas"    		style "treeview-header"
+
+#synaptic buttons fix
+widget "GtkWindow.GtkVBox.GtkHPaned.GtkVBox.GtkTable.GtkRadioButton"	style:highest "button"
+
+#Handlebox gradient fix
+widget "window_main*handlebox_button_toolbar"	style "handlebox-toolbar"
+widget "GtkWindow.GtkVBox.GtkHandleBox" 	style "handlebox-toolbar"
+
+#Fspot menu button
+#widget "F-Spot.*__gtksharp_1_FSpot_Widgets_Sidebar.*GtkEventBox*"	style "statusbar"
+
+style "text-is-fg-color"
+{
+	text[NORMAL]        = @fg_color
+	text[PRELIGHT]      = @selected_fg_color
+	text[SELECTED]      = @selected_fg_color
+	text[ACTIVE]        = @fg_color
+	text[INSENSITIVE]   = darker (@bg_color)
+}
+
+widget "*.gtk-combobox-popup-menu.*"		style "text-is-fg-color"
+
+#Ensure expander size
+style "expander-size"
+{
+	GtkTreeView::expander-size		= 13
+}
+
+widget_class "*<GtkTreeView>"			style:highest "expander-size"
+
+
+#######################
+#Application Specific #
+#######################
+
+include "Apps/inkscape.rc"
+include "Apps/im.rc"
+include "Apps/media-players.rc"
+include "Apps/mintmenu.rc"
+include "Apps/mintinstall.rc"
+include "Apps/deluge.rc"
+include "Apps/chromium.rc"
+include "Apps/gimp.rc"
+include "Apps/geany.rc"
+include "Apps/glade.rc"
+include "Apps/gnome-calculator.rc"
+include "Apps/gnome-control-center.rc"
+include "Apps/nautilus.rc"
+include "Apps/non-gtk.rc"
+include "Apps/gdm.rc"

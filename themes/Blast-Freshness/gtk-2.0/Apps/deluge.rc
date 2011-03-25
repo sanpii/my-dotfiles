@@ -1,0 +1,89 @@
+style "deluge"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	bg[NORMAL]				= shade(0.892, @bg_color)
+
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Apps/Deluge/notebook.png"
+			border			= { 0, 0, 4, 0}
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "deluge-options"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	bg[NORMAL]				= shade(0.892, @bg_color)
+
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Notebook/notebook-fix.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "deluge-preferences"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	bg_pixmap[NORMAL]			= "Apps/Deluge/notebook-bg.png"
+
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Notebook/notebook-fix.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "deluge-preferences-info"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	bg_pixmap[NORMAL]			= "Fixes/none.png"
+	bg[NORMAL]				= shade(0.892, @bg_color)
+
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= FLAT_BOX
+			recolorable     	= TRUE
+			file			= "Apps/Deluge/viewport.png"
+			border			= { 1, 1, 1, 1}
+			stretch         	= TRUE
+		}
+	}
+}
+
+widget "main_window*torrent_info.*viewport?"	style "deluge"
+widget "main_window*torrent_info.*viewport3"	style "deluge-options"
+
+widget"pref_dialog.*.notebook.*viewport?"	style "deluge-preferences"
+widget"pref_dialog.*.notebook.*viewport??"	style "deluge-preferences"
+widget"pref_dialog.*.notebook.*GtkViewport"	style "deluge-preferences"
+
+widget"pref_dialog.*.notebook.*viewport12"	style "deluge-preferences-info"

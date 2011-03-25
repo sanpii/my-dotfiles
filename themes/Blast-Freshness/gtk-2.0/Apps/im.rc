@@ -1,0 +1,10 @@
+#xchat
+widget "GtkWindow.GtkTable.GtkHBox.GtkHBox.GtkViewport"				style "statusbar-fix"
+widget "pl3_win.vbox1.vbox_control.hpaned1.GtkVPaned.GtkEventBox"		style "statusbar-fix"
+widget "GtkWindow.GtkVBox.GtkVBox.GtkHPaned.GtkVPaned.GtkEventBox"		style "statusbar-fix"
+widget "pl3_win.vbox1.hbox1.status-icon-hbox.GtkEventBox"			style "statusbar-fix"
+widget "GtkWindow.GtkVBox.GtkHBox.GtkHBox.GtkEventBox"				style "statusbar-fix"
+
+#fix for download frame in emesene 
+widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkHBox.GtkLayout" 		style:highest "statusbar-fix"
+widget "GtkWindow.GtkVBox.GtkHPaned.GtkVBox.GtkVBox.GtkNotebook.GtkEventBox*" 	style:highest "statusbar-fix"
