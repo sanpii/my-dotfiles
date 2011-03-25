@@ -1,0 +1,209 @@
+style "treeview" 				= "default"
+{
+	xthickness				= 0
+	ythickness				= 0
+	GtkTreeView	::expander-size		= 13
+
+	engine "pixmap" 
+	{
+		image
+		{
+			function        	= FOCUS
+		}
+		# Normal
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			shadow          	= IN
+			state			= NORMAL
+			file            	= "List/progressbar.png"
+			border          	= { 3, 3, 4, 2}
+			stretch         	= TRUE
+		}
+		# Prelight / Mouseover
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			file            	= "List/progressbar-detail.png"
+			border          	= { 2, 2, 2, 2}
+			stretch         	= FALSE
+			overlay_file		= "List/progressbar-fill.png"
+			overlay_border		= { 2, 2, 2, 2}
+			overlay_stretch		= TRUE
+		}
+		image
+		{
+			function 		= FLAT_BOX
+			state    		= SELECTED
+			border   		= { 2, 2, 3, 3}
+			file     		= "List/list-header-highlight.png"
+			stretch         	= TRUE
+		}
+	}
+}
+
+style "treeview-header" 			= "default"
+{
+	ythickness 				= 0
+	xthickness				= 0	
+
+	GtkWidget	::focus-padding		= 0
+
+	bg[NORMAL]      			= shade (1.08, @bg_color)
+	bg[PRELIGHT]    			= mix (0.852,shade(1.08, @bg_color), @focus_color)
+	bg[INSENSITIVE] 			= shade (1.04, @bg_color)
+
+	engine "murrine" 
+	{
+		gradient_shades     		= {0.96,1.04,1.05,1.18}
+		glazestyle 			= 1
+		contrast 			= 0.8
+		roundness			= 0
+		border_shades 			= {1.0, 1.0}
+	}
+}
+
+
+style "iconview" 
+{
+	engine "pixmap"
+	{	
+		image 
+      		{
+			function		= FLAT_BOX
+			recolorable		= TRUE
+			file			= "List/icon-view.png" 
+			border			= { 8, 8, 8, 9}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "iconview1" 
+{
+	engine "murrine" 
+	{
+		roundness 			= 6
+		border_shades 			= {1.16, 1.0}
+		glow_shade 			= 1.1
+		gradient_shades 		= {1.2, 1.1, 1.1, 1.0}
+		glowstyle 			= 5
+	}
+}
+
+style "expander"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= EXPANDED
+			state			= NORMAL
+			file			= "List/expander-expanded.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= EXPANDED
+			state			= PRELIGHT
+			file			= "List/expander-expanded.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= EXPANDED
+			state			= ACTIVE
+			file			= "List/expander-expanded-active.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_EXPANDED
+			state			= NORMAL
+			file			= "List/expander-semi.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_EXPANDED
+			state			= PRELIGHT
+			file			= "List/expander-semi.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_EXPANDED
+			state			= ACTIVE
+			file			= "List/expander-semi-active.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= COLLAPSED
+			state			= NORMAL
+			file			= "List/expander-collapsed.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= COLLAPSED
+			state			= PRELIGHT
+			file			= "List/expander-collapsed.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= COLLAPSED
+			state			= ACTIVE
+			file			= "List/expander-collapsed-active.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_COLLAPSED
+			state			= NORMAL
+			file			= "List/expander-semi.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_COLLAPSED
+			state			= PRELIGHT
+			file			= "List/expander-semi.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+		image
+		{
+			function        	= EXPANDER
+			expander_style		= SEMI_COLLAPSED
+			state			= ACTIVE
+			file			= "List/expander-semi-active.png"
+			border			= { 0, 0, 0, 0}
+			stretch         	= TRUE
+		}
+	}
+}

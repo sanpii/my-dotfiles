@@ -1,0 +1,546 @@
+#############
+# Gradients #
+#############
+
+style "no-gtk-menubar"
+{
+	bg_pixmap[NORMAL]			= "Fixes/none.png"
+	bg_pixmap[PRELIGHT]			= "Fixes/none.png"
+	bg_pixmap[SELECTED]			= "Fixes/none.png"
+	bg_pixmap[ACTIVE]			= "Fixes/none.png"
+	bg_pixmap[INSENSITIVE]			= "Fixes/none.png"
+
+	engine "murrine" 
+	{
+		gradient_shades 		= {1.0, 1.0, 1.0, 1.0}
+		lightborder_shade 		= 21.0
+	}
+
+}
+
+style "no-gtk-toolbar"				= "default"
+{
+	GtkToolbar::shadow_type 		= GTK_SHADOW_IN
+
+	bg_pixmap[NORMAL]			= "Fixes/none.png"
+	bg_pixmap[PRELIGHT]			= "Fixes/none.png"
+	bg_pixmap[SELECTED]			= "Fixes/none.png"
+	bg_pixmap[ACTIVE]			= "Fixes/none.png"
+	bg_pixmap[INSENSITIVE]			= "Fixes/none.png"
+
+	engine "murrine" 
+	{
+		toolbarstyle			= 1
+		contrast			= 1.10
+		lightborder_shade		= 1.0
+		gradient_shades     		= {1.0,0.95,0.95,0.90}
+	}
+}
+
+###########
+# Entries #
+###########
+
+style "text-entry-nogtk"			= "default"
+{
+	xthickness 				= 3
+	ythickness 				= 3
+
+	GtkWidget::focus-line-width		= 0
+	GtkWidget::interior-focus		= 0
+
+	GtkEntry::inner_border			= { 0, 0, 0, 0}
+
+	base[INSENSITIVE]			= @base_color
+
+	engine "pixmap"
+	{
+		# Entry (focused)
+		image
+		{
+			function		= FOCUS
+			recolorable		= TRUE
+			file			= "Entry/text-entry-in.png"
+			border			= { 5, 5, 5, 5}
+			stretch			= TRUE
+		}
+		# Arrow
+		image
+		{
+			function		= ARROW
+		}
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+			detail			= "entry"
+			shadow			= IN
+			recolorable		= TRUE
+			file			= "Entry/No-Gtk/text-entry.png"
+			border			= { 5, 5, 5, 5}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "comboentry-nogtk"			= "default"
+{
+
+	xthickness 				= 3
+	ythickness 				= 3
+
+	GtkWidget::interior_focus		= 0
+	GtkEntry::inner_border			= { 0, 0, 0, 0}
+
+	base[INSENSITIVE]			= @base_color
+
+	engine "pixmap"
+	{
+		# Entry (focused)
+		image
+		{
+			function		= FOCUS
+			recolorable		= TRUE
+			file			= "Entry/entry-in.png"
+			border			= { 5, 0, 5, 5}
+			stretch			= TRUE
+		}
+		# Arrow
+		image
+		{
+			function		= ARROW
+		}
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+			detail			= "entry"
+			shadow			= IN
+			recolorable		= TRUE
+			file			= "Entry/No-Gtk/entry.png"
+			border			= { 5, 0, 5, 5}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "combobutton-nogtk"			= "default"
+{
+	xthickness 				= 0
+	ythickness 				= 0
+
+	GtkButton::inner-border			= { 0, 4, 0, 0}
+	GtkButton::outside-border 		= { 0, 0, 0, 0}
+	GtkWidget::focus-line-width		= 0
+
+	base[INSENSITIVE]			= @base_color
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		image
+		{
+			function		= BOX
+			file			= "Entry/No-Gtk/entry-end.png"
+			border			= { 0, 5, 5, 5}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "spinbutton-nogtk"			= "default"
+{
+
+	xthickness 				= 0
+	ythickness 				= 3
+
+	GtkWidget::focus-line-width		= 0
+	GtkWidget::interior-focus		= 0
+
+	GtkSpinButton::inner-border		= { 0, 0, 0, 0}
+
+	base[INSENSITIVE]			= @base_color
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FOCUS
+			recolorable		= TRUE
+			file			= "Entry/entry-in.png"
+			border			= { 5, 0, 5, 5}
+			stretch			= TRUE
+		}
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+			#detail			= "entry"
+			shadow			= IN
+			recolorable		= TRUE
+			file			= "Entry/No-Gtk/entry.png"
+			border			= { 5, 0, 5, 5}
+			stretch			= TRUE
+		}
+		# Up
+		image
+		{
+			function		= BOX
+			state 			= NORMAL
+			detail			= "spinbutton_up"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-up.png"
+			border			= { 5, 5, 5, 0}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-up.png"
+			overlay_stretch		= FALSE
+		}
+		# Up (mouse over)
+		image
+		{
+			function		= BOX
+			state 			= PRELIGHT
+			detail			= "spinbutton_up"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-up.png"
+			border			= { 5, 5, 5, 0}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-up-prelight.png"
+			overlay_stretch		= FALSE
+		}
+		# Up (disabled)
+		image
+		{
+			function		= BOX
+			state 			= INSENSITIVE
+			detail			= "spinbutton_up"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-up.png"
+			border			= { 5, 5, 5, 0}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-up-disable.png"
+			overlay_stretch		= FALSE
+		}
+		# Up (mouse over)
+		image
+		{
+			function		= BOX
+			state 			= ACTIVE
+			detail			= "spinbutton_up"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-up.png"
+			border			= { 5, 5, 5, 0}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-up-prelight.png"
+			overlay_stretch		= FALSE
+		}
+		# Down
+		image
+		{
+			function		= BOX
+			state 			= NORMAL
+			detail			= "spinbutton_down"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-down.png"
+			border			= { 5, 5, 0, 5}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-down.png"
+			overlay_stretch		= FALSE
+		}
+		# Down (mouse over)
+		image
+		{
+			function		= BOX
+			state 			= PRELIGHT
+			detail			= "spinbutton_down"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-down.png"
+			border			= { 5, 5, 0, 5}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-down-prelight.png"
+			overlay_stretch		= FALSE
+		}
+		# Down (disabled)
+		image
+		{
+			function		= BOX
+			state 			= INSENSITIVE
+			detail			= "spinbutton_down"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-down.png"
+			border			= { 5, 5, 0, 5}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-down-disable.png"
+			overlay_stretch		= FALSE
+		}
+		# Down (mouse over)
+		image
+		{
+			function		= BOX
+			state 			= ACTIVE
+			detail			= "spinbutton_down"
+			recolorable		= TRUE
+			file			= "Spin/No-Gtk/spinbutton-down.png"
+			border			= { 5, 5, 0, 5}
+			stretch			= TRUE
+			overlay_file		= "Spin/spin-down-prelight.png"
+			overlay_stretch		= FALSE
+		}
+	}
+}
+
+############
+# Notebook #
+############
+
+style "mozilla-notebook"			= "default"
+{
+	xthickness				= 6
+	ythickness				= 3
+
+	engine "pixmap" 
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		# How to draw boxes with a gap on one side (ie the page of a notebook)
+		image 
+		{
+			function		= BOX_GAP
+			recolorable		= TRUE
+			file			= "Notebook/notebook-top.png" 
+			border			= { 10, 10, 7, 0}
+			stretch			= TRUE
+			gap_file		= "Apps/Mozilla/gap-top.png"
+			gap_border     		= { 4, 7, 2, 0}
+			gap_start_file		= "Notebook/gap-top-start.png"
+			gap_start_border     	= { 6, 6, 6, 6}
+			gap_end_file		= "Notebook/gap-top-stop.png"
+			gap_end_border     	= { 6, 6, 6, 6}
+			gap_side		= TOP
+		}
+	}
+}
+
+###########
+# Buttons #
+###########
+
+style "nogtk-button"				= "button"
+{	
+	bg[NORMAL]        			= @bg_color 
+	bg[PRELIGHT]    			= mix (0.802, @bg_color, @focus_color)
+	bg[ACTIVE]        			= shade (0.90, @bg_color) 
+	bg[SELECTED]      			= @focus_color  
+	bg[INSENSITIVE]   			= shade (0.982, @bg_color)
+
+	engine "murrine"
+	{
+		gradient_shades     		= {1.10, 1.00, 1.00, 0.90}
+	}
+}
+
+##############
+# Scrollbars #
+##############
+
+style "nogtk-scrollbar"				= "scrollbar"
+{
+	GtkRange::stepper_size 			= 26
+	GtkRange::slider_width 			= 16
+
+	engine "pixmap"
+	{
+		image 
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			detail          	= "trough"
+			file            	= "Apps/No-Gtk/vertical_trough.png"
+			border          	= { 3, 3, 26, 26}
+			stretch         	= TRUE
+			orientation     	= VERTICAL
+		}
+		#The trough for horizontal scrollbars.
+		image 
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			detail          	= "trough"
+			file            	= "Apps/No-Gtk/horizontal_trough.png"
+			border          	= { 26, 26, 3, 3}
+			stretch         	= TRUE
+			orientation     	= HORIZONTAL
+		}
+	}
+}
+
+style "nogtk-tabs"					= "default"
+{
+	GtkNotebook::tab-overlap 		= 3
+
+	xthickness    		        	= 6
+	ythickness    		        	= 3
+
+	engine "pixmap" 
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		image 
+		{
+			function		= BOX_GAP
+			recolorable		= TRUE
+			file			= "Notebook/notebook-top.png" 
+			border			= { 10, 10, 7, 0}
+			stretch			= TRUE
+			gap_file		= "Apps/No-Gtk/gap-top.png"
+			gap_border     		= { 4, 4, 2, 0}
+			gap_start_file		= "Notebook/gap-top-start.png"
+			gap_start_border     	= { 6, 6, 6, 6}
+			gap_end_file		= "Notebook/gap-top-stop.png"
+			gap_end_border     	= { 6, 6, 6, 6}
+			gap_side		= TOP
+		}
+		# How to draw boxes with a gap on one side (ie the page of a notebook)
+		image 
+		{
+			function		= BOX_GAP
+			recolorable		= TRUE
+			file			= "Notebook/notebook-bottom.png" 
+			border			= { 10, 10, 0, 7}
+			stretch			= TRUE
+			gap_file		= "Apps/No-Gtk/gap-bottom.png"
+			gap_border     		= { 4, 4, 0, 2}
+			gap_start_file		= "Notebook/gap-bottom-start.png"
+			gap_start_border     	= { 6, 6, 6, 6}
+			gap_end_file		= "Notebook/gap-bottom-stop.png"
+			gap_end_border     	= { 6, 6, 6, 6}
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Apps/No-Gtk/tab-bottom.png"
+			border			= { 8, 8, 1, 7}
+			stretch			= TRUE
+			gap_side		= TOP
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Apps/No-Gtk/tab-top.png"
+			border			= { 8, 8, 7, 1}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Apps/No-Gtk/tab-left.png"
+			border			= { 8, 8, 9, 11}
+			stretch			= TRUE
+			gap_side		= RIGHT
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Apps/No-Gtk/tab-right.png"
+			border			= { 8, 8, 9, 11}
+			stretch			= TRUE
+			gap_side		= LEFT
+		}	
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Apps/No-Gtk/tab-active-top.png"
+			border			= { 8, 8, 12, 0}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Apps/No-Gtk/tab-active-bottom.png"
+			border			= { 8, 8, 0, 12}
+			stretch			= TRUE
+			gap_side		= TOP
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Apps/No-Gtk/tab-active-left.png"
+			border			= { 11, 9, 8, 12}
+			stretch			= TRUE
+			gap_side		= RIGHT
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Apps/No-Gtk/tab-active-right.png"
+			border			= { 9, 11, 8, 12}
+			stretch			= TRUE
+			gap_side		= LEFT
+		}
+	}
+}
+widget "GtkWindow.GtkFixed.*GtkMenuBar"		style:highest "no-gtk-menubar"
+widget "MozillaGtkWidget.GtkFixed.*GtkMenuBar"	style:highest "no-gtk-menubar"
+
+widget "GtkWindow.GtkFixed.*GtkToolbar"		style:highest "no-gtk-toolbar"
+widget "MozillaGtkWidget.GtkFixed.*GtkToolbar"	style:highest "no-gtk-toolbar"
+
+widget_class "GtkWindow.GtkFixed.*<GtkButton>"	style "nogtk-button"
+widget_class "GtkWindow.GtkFixed.*GtkTool*<GtkButton>"	style "toolbar-button"
+
+widget "GtkWindow.GtkFixed.GtkEntry"		style "text-entry-nogtk"
+widget "MozillaGtkWidget*GtkEntry"		style "text-entry-nogtk"
+
+widget "GtkWindow.GtkFixed*GtkCombo*GtkEntry"		style "comboentry-nogtk"
+widget "MozillaGtkWidget.GtkFixed*GtkCombo*GtkEntry"	style "comboentry-nogtk"
+
+widget "GtkWindow.GtkFixed.*GtkComboBoxEntry.*GtkToggleButton"		style "combobutton-nogtk"
+widget "GtkWindow.GtkFixed.*GtkCombo.*GtkButton"			style "combobutton-nogtk"
+widget "MozillaGtkWidget.GtkFixed.*GtkComboBoxEntry.*GtkToggleButton"	style "combobutton-nogtk"
+widget "MozillaGtkWidget.GtkFixed.*GtkCombo.*GtkButton"			style "combobutton-nogtk"
+
+widget "GtkWindow.GtkFixed.*GtkSpinButton"		style "spinbutton-nogtk"
+widget "MozillaGtkWidget.GtkFixed.*GtkSpinButton"	style "spinbutton-nogtk"
+
+widget "MozillaGtkWidget.*GtkNotebook"		style "nogtk-tabs"
+widget "MozillaGtkWidget.*GtkNotebook"		style "mozilla-notebook"
+widget "GtkWindow.GtkFixed.*GtkNotebook"	style "nogtk-tabs"
+
+widget "GtkWindow.GtkFixed.*GtkHScrollbar"	style "nogtk-scrollbar"
+widget "GtkWindow.GtkFixed.*GtkVScrollbar"	style "nogtk-scrollbar"
+widget "GtkWindow.GtkFixed.*GtkVScrollbar"	style "nogtk-scrollbar"
+
+#widget "?.GtkScrolledWindow" 			style:highest "nogtk-scrolled-window"
+
+# Treeview header
+widget_class "GtkWindow.GtkFixed.*<GtkTreeView>.<GtkButton>" 	style:highest "treeview-header"
+widget_class "GtkWindow.GtkFixed.*<GtkCTree>.<GtkButton>"    	style:highest "treeview-header"
+widget_class "GtkWindow.GtkFixed.*<GtkList>.<GtkButton>"     	style:highest "treeview-header"
+widget_class "GtkWindow.GtkFixed.*<GtkCList>.<GtkButton>"    	style:highest "treeview-header"
+
+#Check and Radio buttons
+widget_class "GtkWindow.GtkFixed.*<GtkCheckButton>"     		style:highest "checkbutton"
+widget_class "GtkWindow.GtkFixed.*<GtkRadioButton>"     		style:highest "radiobutton"
+

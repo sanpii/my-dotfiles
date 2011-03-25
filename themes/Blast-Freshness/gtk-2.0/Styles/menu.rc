@@ -1,0 +1,80 @@
+style "menu" 
+{
+	xthickness 				= 3
+	ythickness 				= 3
+
+	bg[NORMAL]				= shade (0.95, @bg_color)
+	text[NORMAL]	   			= @fg_color
+	fg[PRELIGHT] 				= @selected_fg_color
+	fg[SELECTED] 				= @selected_fg_color
+	fg[INSENSITIVE]   			= shade (0.54, @bg_color)
+
+	engine "murrine"
+	{
+		roundness 			= 0
+		#glowstyle			= 0
+		#glow_shade 			= 5.0
+  		contrast			= 0.6
+	}
+}
+
+style "menu-item" 				= "menu" 
+{
+	xthickness 				= 2
+	ythickness 				= 2
+
+	GtkMenuItem::horizontal-padding		= 5
+	GtkMenuItem::toggle-spacing		= 6
+	GtkMenuItem::arrow-scaling		= 0.7
+
+	bg[SELECTED]				= shade(0.95, @selected_bg_color)
+	fg[PRELIGHT] 				= @selected_fg_color
+	fg[SELECTED] 				= @selected_fg_color
+
+	engine "murrine" 
+	{
+		roundness 			= 10
+  		contrast			= 0.7
+  		glazestyle 			= 1
+ 		gradient_shades     		= {1.20, 1.10, 1.00, 0.90}
+		border_shades       		= {1.1, 0.9}
+		shadow_shades       		= {1.4, 0.0}
+		lightborder_shade   		= 1.3
+	}
+}
+
+style "menubar"					= "default"
+{
+	xthickness				= 0
+	ythickness				= 0
+
+	bg_pixmap[NORMAL]			= "Fixes/gradient.png"
+	bg_pixmap[PRELIGHT]			= "Fixes/gradient.png"
+	bg_pixmap[SELECTED]			= "Fixes/gradient.png"
+	bg_pixmap[ACTIVE]			= "Fixes/gradient.png"
+	bg_pixmap[INSENSITIVE]			= "Fixes/gradient.png"
+}
+
+style "menubar-item" 				= "menu_item" 
+{
+	xthickness 				= 2
+	ythickness 				= 3
+
+	bg[PRELIGHT]				= shade(0.95, @selected_bg_color)
+	fg[PRELIGHT] 				= @selected_fg_color
+	fg[SELECTED] 				= @selected_fg_color
+
+	engine "murrine" 
+	{
+		roundness			= 5
+		lightborder_shade   		= 1.3
+	}
+}
+
+style "menu-separator"				= "menu"
+{
+	engine "murrine"
+	{
+		contrast			= .8
+	}
+}

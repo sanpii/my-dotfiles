@@ -1,0 +1,100 @@
+style "gdm-user-switcher"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FLAT_BOX
+			recolorable		= TRUE
+			file			= "Apps/Gdm/user-switcher.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "gdm-menu"				= "default"
+{
+	xthickness 				= 1
+	ythickness 				= 1
+
+	engine "pixmap"
+	{
+		# Entry (focused)
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+
+		}
+	}
+}
+
+style "gdm-menu-item"				= "default"
+{
+	xthickness 				= 2
+	ythickness 				= 2
+
+	GtkTreeView::odd_row_color		= shade (0.95, @bg_color)
+	GtkTreeView::even_row_color 		= @bg_color
+	GtkTreeView::odd_col_color		= @bg_color
+	GtkTreeView::even_col_color 		= @bg_color
+
+	GtkTreeView::horizontal-separator	= 0
+	GtkTreeView::vertical-separator		= 0
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FLAT_BOX
+			state    		= SELECTED
+			border   		= { 10, 10, 10, 10}
+			file     		= "Apps/Gdm/menuitem.png"
+			stretch         	= TRUE
+		}
+		image
+		{
+			function		= HLINE
+		}
+		image
+		{
+			function		= VLINE
+		}
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+style "gdm-entry"
+{
+
+	xthickness 				= 3
+	ythickness 				= 3
+
+	engine "pixmap"
+	{
+		# Entry (focused)
+		# Text-entry
+		image
+		{
+			function		= SHADOW
+			recolorable		= TRUE
+			file			= "Apps/Gdm/entry.png"
+			border			= { 5, 5, 6, 6}
+			stretch			= TRUE
+		}
+	}
+}
+
+widget "gtk-combobox-popup-window.GtkScrolledWindow"	style:highest "gdm-menu"
+widget "gtk-combobox-popup-window.GtkScrolledWindow.GtkTreeView"	style:highest "gdm-menu-item"
+
+widget "GdmGreeterPanel"			style:highest "panel"
+
+widget "GdmGreeterPanel**GtkComboBox.GtkFrame"	style:highest "gdm-entry"
+widget_class "GdmGreeterPanel*<GtkButton>"	style:highest "panel-button"
+
+widget "*GdmUserChooserWidget.*GtkTreeView"	style:highest "gdm-user-switcher"
