@@ -1,0 +1,23 @@
+widget "Gimp*GimpScaleComboBox*<GtkEntry>"	style:highest "comboentry"
+widget "*GimpToolOptionsEditor.GtkScrolledWindow.GtkViewport"	style "statusbar-fix"
+
+#image window navigate box background
+widget "GimpDisplayShell.GtkVBox.GtkVBox.GtkHBox.GtkEventBox"	style "statusbar-fix"
+
+#image window image menu button background
+widget "GimpDisplayShell.GtkVBox.GtkVBox.GtkHBox.GtkTable.GtkEventBox"	style "handlebox-toolbar"
+#gimp color picker
+widget "*.GimpFgBgEditor*"				style:highest "statusbar-fix"
+widget "*GimpColorEditor.GtkHBox.GimpFgBgEditor"	style:highest "default"
+
+#Layers dock spinbutton
+widget_class "GimpMenuDock.*GimpLayerTreeView.*.GtkSpinButton"	style:highest "spinbutton-toolbar"
+
+#Radiobutton fixes
+widget_class "GimpMenuDock*GimpColorSelect*<GtkRadioButton>*"	style:highest "button"
+widget_class "GimpMenuDock*GimpColorEditor*<GtkRadioButton>*"	style:highest "button"
+
+widget_class "GimpToolbox.*GtkHWrapBox.*<GtkRadioButton>*"	style:highest "button"
+widget_class "GimpToolbox.*GimpToolOptionsEditor.GtkScrolledWindow.GtkViewport.GtkVBox.GtkVBox.GtkHBox.GtkHBox.<GtkRadioButton>*"	style:highest "button"
+widget_class "GimpToolbox.*GimpToolOptionsEditor.GtkScrolledWindow.GtkViewport.GtkVBox.GtkVBox.GtkTable.GtkHBox.GtkHBox.<GtkRadioButton>*"	style:highest "button"
+widget_class "GimpToolbox.*GimpToolOptionsEditor.GtkScrolledWindow.GtkViewport.GtkVBox.GtkVBox.GtkVBox.GimpFrame.GtkVBox.GtkHBox.GtkHBox.<GtkRadioButton>*"	style:highest "button"
