@@ -111,3 +111,7 @@ PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 export PAGER;
 
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+    startx
+fi
+
