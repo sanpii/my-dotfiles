@@ -1,4 +1,4 @@
-#!/bin/sh -f
+#!/bin/sh
 # Configure wmii
 
 MODKEY=Mod4
@@ -27,6 +27,9 @@ Key $MODKEY-Control-$DOWN
     wmiir xwrite /tag/sel/ctl grow sel sel down 1
 Key $MODKEY-Control-$UP
     wmiir xwrite /tag/sel/ctl grow sel sel down -1
+
+Key $MODKEY-e
+    pcmanfm
 !
 }
 
