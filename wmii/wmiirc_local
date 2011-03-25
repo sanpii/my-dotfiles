@@ -11,3 +11,22 @@ status() {
     echo -n  $(date +"%d/%m/%Y %T")
 }
 
+# Column Rules
+wmiir write /colrules <<!
+/.*/ -> 50+50
+!
+
+local_events() {
+        cat <<'!'
+# Keyboard resize
+Key $MODKEY-Control-$LEFT
+    wmiir xwrite /tag/sel/ctl grow sel sel right -1
+Key $MODKEY-Control-$RIGHT
+    wmiir xwrite /tag/sel/ctl grow sel sel right 1
+Key $MODKEY-Control-$DOWN
+    wmiir xwrite /tag/sel/ctl grow sel sel down 1
+Key $MODKEY-Control-$UP
+    wmiir xwrite /tag/sel/ctl grow sel sel down -1
+!
+}
+
