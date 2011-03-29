@@ -29,7 +29,7 @@ Key $MODKEY-Control-$UP
     wmiir xwrite /tag/sel/ctl grow sel sel down -1
 
 Key $MODKEY-e
-    pcmanfm
+    pcmanfm &
 !
 }
 
