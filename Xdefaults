@@ -1,50 +1,6 @@
 ! Xterm {{{
-xterm*underLine: on
-xterm*colorMode: on
-xterm*colorBD: lightyellow
-!xterm*colorBDMode: off
-xterm*colorUL: yellow
-xterm*colorULMode: on
-xterm*dynamicColors: off
-xterm*highlightSelection: true
-
-! Colorscheme based on the gvim colorscheme desert
 xterm*background: #313031
 xterm*foreground: White
-
-!colors
-!(unknown)
-xterm*color0: #000000
-xterm*color7: #bebebe
-xterm*color8: #666666
-xterm*color9: #cf6171
-xterm*color10: #c5f779
-xterm*color11: #fff796
-xterm*color12: #4186be
-xterm*color13: #cf9ebe
-xterm*color14: #71bebe
-xterm*color15: #ffffff
-
-!(1 is an option color in .Xdefaults)
-xterm*color1: #ffa2a5
-
-!(2 is a resource color in .Xdefaults)
-xterm*color2: #bdb66b
-
-!(3 is for def/return color in python)
-xterm*color3: #f7e78c
-
-!(4 is for comments color in python)
-xterm*color4: #84cfef
-
-!(5 is for import/from color in python)
-xterm*color5: #ce5d5a
-
-!(6 is for function color in python)
-xterm*color6: #87ff87
-
-!set the font, and fond size
-! this also uses a antialias/scalable font
 xterm*faceName: Andale Mono
 xterm*faceSize: 10
 ! }}}
