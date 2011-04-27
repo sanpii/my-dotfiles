@@ -13,7 +13,7 @@ $VERSION = '1.00';
     contact     => 'gege2061@homecomputing.fr',
     name        => 'Seeks',
     description => 'This script queries seeks and returns the results.',
-    license     => 'Public Domain',
+    license     => 'Beerware',
 );
 
 ## Usage:
