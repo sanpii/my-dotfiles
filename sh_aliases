@@ -20,3 +20,5 @@ alias la='ls -A'
 alias l='ls -CF'
 alias irc='ssh -t homecomputing.fr "screen -d -r irc"'
 
+export MAIL=~/Maildir
+
