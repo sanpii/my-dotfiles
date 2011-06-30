@@ -442,8 +442,12 @@ autocmd FileType conque_term :set list listchars=
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead,BufNewFile *.vala            setfiletype vala
-autocmd BufRead,BufNewFile *.vapi            setfiletype vala
+autocmd BufRead,BufNewFile *.vala setfiletype vala
+autocmd BufRead,BufNewFile *.vapi setfiletype vala
+
+" mail
+autocmd FileType mail :source ~/.vim/mail.vim
+autocmd FileType mkd :source ~/.vim/mail.vim
 
 "let vala_ignore_valadoc=1 " Disable valadoc syntax highlight
 let vala_comment_strings=1 " Enable comment strings

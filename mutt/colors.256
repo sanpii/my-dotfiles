@@ -25,8 +25,8 @@ color quoted7    green          default
 #     object     foreground     backg.   RegExp
 #
 color header     color65        default  '.*'
-color header     color101       default  '^subject:.*$'
-color header     red            default  '^X-Troll:.*$'
+color header     color101       default  '^subject'
+color header     red            default  '^X-Troll'
 color body       color94        default  "(((https?|ftp|gopher)://|(file|news|mailto):)[^\' <>\"]+|(www[0-9]?|web|w3)\\.)[^\' ,;<>\":]+"
 color body       color29        default  "[a-z0-9._-]+@[a-z0-9._-]+[a-z]{2}"
 color body       color55        default  "^gpg:.*"
