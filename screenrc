@@ -1,7 +1,9 @@
-tartup_message off
+term xterm-256color
 
-screen -t irc 2 irssi
-screen -t mails 1 mutt
+startup_message off
+
+#screen -t irc 2 irssi
+#screen -t mails 1 mutt
 
 hardstatus alwayslastline
 
