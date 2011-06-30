@@ -16,6 +16,11 @@ wmiir write /colrules <<!
 /.*/ -> 50+50
 !
 
+# Tagging Rules
+wmiir write /rules <<!
+    /LibreOffice|pgAdmin/ floating=off
+!
+
 local_events() {
         cat <<'!'
 # Keyboard resize
