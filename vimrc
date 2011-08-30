@@ -198,10 +198,12 @@ set sidescrolloff=3
 
 " Indentation en fonction du type de fichier
 filetype indent on
-autocmd BufEnter *.vala setfiletype vala
-autocmd BufEnter *.gs setfiletype genie
-autocmd BufEnter *.tex setfiletype tex
-autocmd BufEnter *.module setfiletype php
+autocmd BufEnter *.vala set filetype=vala
+autocmd BufEnter *.gs set filetype=genie
+autocmd BufEnter *.tex set filetype=tex
+autocmd BufEnter *.module set filetype=php
+autocmd BufEnter *.less set filetype=less
+
 
 " Indispensable pour ne pas tout casser avec ce qui va suivre
 set preserveindent
