@@ -35,6 +35,14 @@ elseif MySys() == "unix"
     let g:loaded_maximize=1
 endif
 
+"" mapping du clavier bépo->qwerty en mode normal
+noremap c h
+noremap t j
+noremap s k
+noremap r l
+noremap x c
+noremap y x
+
 set t_Co=256
 
 " Pour utiliser vim comme lecteur de page man
