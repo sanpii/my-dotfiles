@@ -22,6 +22,8 @@ $VERSION = "0.2";
 
 sub notify {
     my ($summary, $message) = @_;
+    $summary =~ s/'/'"'"'/g ;
+    $message =~ s/'/'"'"'/g ;
     system("notify-send '$summary' '$message'");
 }
 
