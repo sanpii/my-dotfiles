@@ -1,4 +1,4 @@
-Host homecomputing.fr
+Host irc.homecomputing.fr
 PermitLocalCommand yes
 LocalCommand ~/.ssh/notify-listener.py
 RemoteForward 4222 localhost:4222
