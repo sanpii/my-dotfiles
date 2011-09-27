@@ -50,7 +50,7 @@ set encoding=utf-8
 set ttyfast
 
 " Support du type de format unix uniquement
-set fileformats=unix,dos
+set fileformats=unix
 
 " Détection du type de fichier
 filetype on
@@ -202,6 +202,7 @@ autocmd BufEnter *.vala setfiletype vala
 autocmd BufEnter *.gs setfiletype genie
 autocmd BufEnter *.tex setfiletype tex
 autocmd BufEnter *.module setfiletype php
+autocmd BufEnter *.install setfiletype php
 
 " Indispensable pour ne pas tout casser avec ce qui va suivre
 set preserveindent
@@ -237,6 +238,9 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufEnter *.module setlocal shiftwidth=2
 autocmd BufEnter *.module setlocal tabstop=2
 autocmd BufEnter *.module setlocal softtabstop=2
+autocmd BufEnter *.install setlocal shiftwidth=2
+autocmd BufEnter *.install setlocal tabstop=2
+autocmd BufEnter *.install setlocal softtabstop=2
 
 " Coller dans Vim sans tabulations incrémentées
 set paste
@@ -456,11 +460,6 @@ let vala_space_errors=1 " Highlight space errors
 autocmd FileType mail :source ~/.vim/mail.vim
 autocmd FileType mkd :source ~/.vim/mail.vim
 
-" minibufexpl
-nnoremap <silent> <F4> :TMiniBufExplorer<cr>
-let g:miniBufExplSplitBelow = 1
-let g:miniBufExplModSelTarget = 1
-
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -476,6 +475,7 @@ if has("gui_running")
     set guioptions-=L " disable the left hand scrollbar for vsplit window
     set guioptions-=b " disable the bottom/horizontal scrollbar
     set guioptions-=m " disable the menu
+    set guicursor+=a:blinkon0 " disable all blinking
 endif
 
 " }}}
