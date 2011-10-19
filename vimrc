@@ -10,6 +10,8 @@
 "     - CSApprox : http://www.vim.org/scripts/script.php?script_id=2390
 "     - Conque Shell : http://www.vim.org/scripts/script.php?script_id=2771
 "     - php omnicomplete : http://www.vim.org/scripts/script.php?script_id=3171
+"     - TakList : http://www.vim.org/scripts/script.php?script_id=2607
+"     - CompView : http://www.vim.org/scripts/script.php?script_id=1803
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
@@ -56,8 +58,7 @@ set fileformats=unix
 filetype on
 
 " Afficher une liste lors de complétion de commandes/fichiers
-"set wildmenu                           "affiche le menu
-"set wildmode=list:longest,list:full    "affiche toutes les possibilités
+set wildmenu
 
 " Mesure de sécurité
 set nomodeline
@@ -81,7 +82,7 @@ set showcmd
 set statusline=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
 
 " Afficher la correspondance des parenthèses
-set showmatch
+set noshowmatch
 
 " Replie de code à l'aide de marqueurs
 set foldmethod=marker
@@ -135,17 +136,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 set completeopt=longest,menuone
-
-let php_sql_query=1
-let php_htmlInStrings=1
-"autocmd FileType php set tags+=~/.vim/mytags/zend
-"autocmd FileType php set tags+=~/.vim/mytags/doctrine
-"autocmd FileType php set tags+=~/.vim/mytags/magento
-autocmd FileType php set tags+=~/.vim/mytags/drupal6
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -198,11 +191,6 @@ set sidescrolloff=3
 
 " Indentation en fonction du type de fichier
 filetype indent on
-autocmd BufEnter *.gs set filetype=genie
-autocmd BufEnter *.tex set filetype=tex
-autocmd BufEnter *.module set filetype=php
-autocmd BufEnter *.install set filetype=php
-autocmd BufEnter *.less set filetype=less
 
 " Indispensable pour ne pas tout casser avec ce qui va suivre
 set preserveindent
@@ -217,16 +205,16 @@ set smartindent
 set noexpandtab
 
 " Largeur de l'autoindentation
-set shiftwidth=4
+set shiftwidth=2
 
 " Arrondit la valeur de l'indentation
 set shiftround
 
 " Largeur du caractère TAB
-set tabstop=4
+set tabstop=2
 
 " Largeur de l'indentation de la touche TAB
-set softtabstop=4
+set softtabstop=2
 
 " Remplacer les tabulations par des espaces
 set expandtab
@@ -234,16 +222,8 @@ set expandtab
 " Pas d'espace pour les Makefile
 autocmd FileType make setlocal noexpandtab
 
-" Indentation de deux espaces pour les modules Drupal
-autocmd BufEnter *.module setlocal shiftwidth=2
-autocmd BufEnter *.module setlocal tabstop=2
-autocmd BufEnter *.module setlocal softtabstop=2
-autocmd BufEnter *.install setlocal shiftwidth=2
-autocmd BufEnter *.install setlocal tabstop=2
-autocmd BufEnter *.install setlocal softtabstop=2
-
 " Coller dans Vim sans tabulations incrémentées
-set paste
+"set paste
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -312,8 +292,7 @@ unlet backup_dir
 " Mappage {{{
 
 " Aide
-autocmd FileType vim nmap <F1> :help <cword><CR>
-autocmd FileType php nmap <F1> :tag <cword><CR>
+nnoremap <F12> :help expand('<cword>')<CR>
 
 " Descendre la ligne courante d'une ligne
 "map <C-S-Down> dd p
@@ -418,18 +397,9 @@ filetype plugin indent on
 " Configuration du plugin Vimoutliner
 autocmd BufEnter TODO setfiletype vo_base
 
-" taglist
-nnoremap <silent> <F8> :TlistToggle<cr>
-let Tlist_Compact_Format=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_GainFocus_On_ToggleOpen=1
-let Tlist_Process_File_Always=1
-let Tlist_Show_One_File=1
-let Tlist_Enable_Fold_Column=0
-let Tlist_Short_Type="name"
-let Tlist_Use_Right_Window=1
-
-let Tlist_php_settings='php;c:class;d:constant;f:function'
+" tagbar
+nnoremap <silent> <F8> :TagbarToggle<cr>
+let g:tagbar_autoshowtag = 1
 
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
@@ -459,6 +429,9 @@ let vala_space_errors=1 " Highlight space errors
 " mail
 autocmd FileType mail :source ~/.vim/mail.vim
 autocmd FileType mkd :source ~/.vim/mail.vim
+
+" PHP
+autocmd FileType php :source ~/.vim/php.vim
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
