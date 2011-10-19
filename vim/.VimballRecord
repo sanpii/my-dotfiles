@@ -1,0 +1,2 @@
+manpageview.vba: call delete('/home/gege2061/.vim/plugin/manpageviewPlugin.vim')|call delete('/home/gege2061/.vim/autoload/manpageview.vim')|call delete('/home/gege2061/.vim/syntax/man.vim')|call delete('/home/gege2061/.vim/syntax/mankey.vim')|call delete('/home/gege2061/.vim/syntax/info.vim')|call delete('/home/gege2061/.vim/syntax/manphp.vim')|call delete('/home/gege2061/.vim/doc/manpageview.txt')
+tagbar-1.vba: call delete('/home/gege2061/.vim/plugin/tagbar.vim')|call delete('/home/gege2061/.vim/syntax/tagbar.vim')|call delete('/home/gege2061/.vim/doc/tagbar.txt')
