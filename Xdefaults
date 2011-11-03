@@ -1,9 +1,3 @@
-! Xterm {{{
-xterm.background: #313031
-xterm.foreground: White
-xterm.faceName: Andale Mono
-xterm.faceSize: 10
-! }}}
 ! urxvt {{{
 
 ! Font
