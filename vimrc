@@ -79,7 +79,10 @@ set ruler
 set showcmd
 
 " Format de la ligne de statut
-set statusline=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
+set statusline=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
 
 " Afficher la correspondance des parenthèses
 set noshowmatch
@@ -292,7 +295,8 @@ unlet backup_dir
 " Mappage {{{
 
 " Aide
-nnoremap <F12> :help expand('<cword>')<CR>
+inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
+nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
 
 " Descendre la ligne courante d'une ligne
 "map <C-S-Down> dd p
@@ -385,7 +389,6 @@ nmap <M-S-l> <M-S-Right>
 vmap <M-S-Right> >gv
 vmap <M-S-l> <M-S-Right>
 
-
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -432,6 +435,9 @@ autocmd FileType mkd :source ~/.vim/mail.vim
 
 " PHP
 autocmd FileType php :source ~/.vim/php.vim
+
+" Syntastic
+let g:syntastic_enable_signs=1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
