@@ -5,17 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-# ... or force ignoredups and ignorespace
-export HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -89,4 +78,30 @@ export PAGER;
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
+
+export PATH=$PATH:~/.applications/bin
+
+# {{{ History
+export HISTCONTROL=ignoreboth
+export HISTSIZE=9000
+export HISTFILESIZE=$HISTSIZE
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+_bash_history_sync() {
+  builtin history -a
+  HISTFILESIZE=$HISTFILESIZE
+  builtin history -c
+  builtin history -r
+}
+
+PROMPT_COMMAND=_bash_history_sync
+# }}}
 
