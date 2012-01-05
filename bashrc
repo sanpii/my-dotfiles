@@ -38,10 +38,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function formattedGitBranch {
+    _branch="$(git branch 2>/dev/null | sed -e "/^\s/d" -e "s/^\*\s//")"
+    test -n "$_branch" && echo -e "[\e[0;32m$_branch\e[0m]"
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(formattedGitBranch)\[\e[0m\]\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(formattedGitBranch)\[\e[0m\]\$ "
 fi
 unset color_prompt force_color_prompt
 
@@ -67,6 +72,9 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+fi
+if [ -f /etc/bash_completion.d/git ]; then
+    . /etc/bash_completion.d/git
 fi
 
 PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
