@@ -12,6 +12,7 @@
 "     - php omnicomplete : http://www.vim.org/scripts/script.php?script_id=3171
 "     - TakList : http://www.vim.org/scripts/script.php?script_id=2607
 "     - CompView : http://www.vim.org/scripts/script.php?script_id=1803
+"     - php.vim : http://www.vim.org/scripts/script.php?script_id=2874
 "
 " http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
 " http://live.gnome.org/Vala/Vim
@@ -81,6 +82,7 @@ set showcmd
 " Format de la ligne de statut
 set statusline=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 set statusline+=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
 
@@ -208,16 +210,16 @@ set smartindent
 set noexpandtab
 
 " Largeur de l'autoindentation
-set shiftwidth=2
+set shiftwidth=4
 
 " Arrondit la valeur de l'indentation
 set shiftround
 
 " Largeur du caractère TAB
-set tabstop=2
+set tabstop=4
 
 " Largeur de l'indentation de la touche TAB
-set softtabstop=2
+set softtabstop=4
 
 " Remplacer les tabulations par des espaces
 set expandtab
@@ -317,10 +319,10 @@ map <C-A-PageDown> :tabnext<cr>
 map <C-A-PageUp> :tabprevious<cr>
 
 " Gestion des fenêtres
-map <S-Up> :wincmd k<cr>
-map <S-Down> :wincmd j<cr>
-map <S-Left> :wincmd h<cr>
-map <S-Right> :wincmd l<cr>
+"map <S-Up> :wincmd k<cr>
+"map <S-Down> :wincmd j<cr>
+"map <S-Left> :wincmd h<cr>
+"map <S-Right> :wincmd l<cr>
 
 map <C-S-Right> :wincmd H<cr>
 map <C-S-Left> :windo wincmd K<cr>
@@ -330,7 +332,7 @@ autocmd FileType python map <F9> :!python "%"<cr>
 autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
 autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
 autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
-autocmd FileType tex map <F9> :!pdflatex "%" && evince "%:r.pdf"<cr>
+autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
 autocmd FileType php map <F9> :!php "%"<cr>
 
 " Exécuter le fichier actuel dans le navigateur via F7
@@ -352,6 +354,16 @@ autocmd BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http
 
 " Ouvrir l'URL sous le curseur dans un navigateur
 map gu :call Browser(expand('<cWORD>'))<cr>
+
+function! WinMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  new
+  silent put=message
+  set nomodified
+endfunction
+command! -nargs=+ -complete=command WinMessage call WinMessage(<q-args>)
 
 " Move content up
 nmap <M-S-Up> :m .-2<Enter>
@@ -401,8 +413,19 @@ filetype plugin indent on
 autocmd BufEnter TODO setfiletype vo_base
 
 " tagbar
-nnoremap <silent> <F8> :TagbarToggle<cr>
-let g:tagbar_autoshowtag = 1
+nnoremap <silent> <F8> :TlistToggle<cr>
+let g:Tlist_Auto_Update = 1
+let g:Tlist_Close_On_Select = 1
+"let g:Tlist_Display_Prototype = 0
+let g:Tlist_Display_Tag_Scope = 1
+let g:Tlist_Enable_Fold_Column = 0
+let g:Tlist_Exit_OnlyWindow = 1
+let g:Tlist_File_Fold_Auto_Close = 1
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Show_One_File = 1
+let g:Tlist_Sort_Type = 'name'
+let g:Tlist_Use_Right_Window = 1
+let tlist_php_settings = 'php;c:class;f:function'
 
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
@@ -438,6 +461,9 @@ autocmd FileType php :source ~/.vim/php.vim
 
 " Syntastic
 let g:syntastic_enable_signs=1
+
+" Project
+let g:proj_flags="cgsStTv"
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
