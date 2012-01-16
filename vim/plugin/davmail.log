@@ -1,0 +1,895 @@
+2011-12-19 17:10:49,315 INFO  [main] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:10:55,611 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:13:33,082 ERROR [AWT-EventQueue-0] davmail  - Invalid URL: null
+2011-12-19 17:13:33,092 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:13:33,775 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:13:41,889 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:13:42,683 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:14:34,217 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:15:57,788 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:17:22,477 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:17:22,496 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:17:22,518 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:17:22,568 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:17:37,006 DEBUG [ImapConnection-44408] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:17:37,020 ERROR [ImapConnection-44408] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:17:37,035 ERROR [ImapConnection-44408] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+davmail.exception.DavMailException: DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+	at davmail.exchange.ExchangeSessionFactory.handleNetworkDown(ExchangeSessionFactory.java:261)
+	at davmail.exchange.ExchangeSessionFactory.checkConfig(ExchangeSessionFactory.java:236)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:83)
+2011-12-19 17:17:37,140 DEBUG [ImapConnection-44408] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:18:59,984 DEBUG [ImapConnection-44412] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:18:59,993 WARN  [ImapConnection-44412] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:19:00,005 WARN  [ImapConnection-44412] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:19:00,014 DEBUG [ImapConnection-44412] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:19:46,622 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:19:47,349 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:20:25,004 DEBUG [ImapConnection-44451] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:20:25,006 DEBUG [SmtpConnection-49633] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:20:25,008 DEBUG [ImapConnection-44452] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:20:25,015 ERROR [ImapConnection-44451] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,022 ERROR [ImapConnection-44451] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+davmail.exception.DavMailException: DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+	at davmail.exchange.ExchangeSessionFactory.handleNetworkDown(ExchangeSessionFactory.java:261)
+	at davmail.exchange.ExchangeSessionFactory.checkConfig(ExchangeSessionFactory.java:236)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:83)
+2011-12-19 17:20:25,028 DEBUG [ImapConnection-44451] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,019 WARN  [SmtpConnection-49633] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,031 WARN  [SmtpConnection-49633] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,019 WARN  [ImapConnection-44452] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,033 WARN  [ImapConnection-44452] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,049 DEBUG [SmtpConnection-49633] davmail  - > 500 DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,053 DEBUG [ImapConnection-44452] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,083 WARN  [ImapConnection-44452] davmail  - Exception sending error to client Socket closed
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:116)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at davmail.AbstractConnection.sendClient(AbstractConnection.java:183)
+	at davmail.AbstractConnection.sendClient(AbstractConnection.java:163)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:609)
+2011-12-19 17:20:25,087 DEBUG [SmtpConnection-49633] davmail  - Exception sending error to client Socket closed
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:116)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at davmail.AbstractConnection.sendClient(AbstractConnection.java:183)
+	at davmail.AbstractConnection.sendClient(AbstractConnection.java:163)
+	at davmail.smtp.SmtpConnection.run(SmtpConnection.java:206)
+2011-12-19 17:20:25,993 DEBUG [ImapConnection-44450] davmail.exchange.ExchangeSession  - Test configuration status: 504
+2011-12-19 17:20:25,995 WARN  [ImapConnection-44450] davmail.exchange.ExchangeSession  - Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:25,997 WARN  [ImapConnection-44450] davmail  - DavMail configuration exception:
+Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:20:26,018 DEBUG [ImapConnection-44450] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: davmail.exception.DavMailException Unable to connect to OWA at http://exchange.si.francetelecom.fr:8081/owa, status code 504, check configuration
+2011-12-19 17:25:13,600 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:13,607 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:13,611 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:13,614 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:25:36,107 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:36,111 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:36,132 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:25:36,154 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:26:00,966 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:26:00,983 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:26:26,357 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:26:30,695 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:26:30,703 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:26:33,054 INFO  [SWT] davmail  - DavMail gateway stopped
+2011-12-19 17:26:41,103 INFO  [main] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:26:51,838 INFO  [SWT] davmail  - DavMail gateway stopped
+2011-12-19 17:26:57,821 INFO  [main] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:27:07,105 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:27:07,110 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:27:41,776 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:27:42,546 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:27:55,374 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:27:55,433 DEBUG [CheckRelease] davmail  - Unable to get released version
+2011-12-19 17:27:59,942 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:27:59,948 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:27:59,986 WARN  [SmtpConnection-49717] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:27:59,993 WARN  [SmtpConnection-49717] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:27:59,997 ERROR [ImapConnection-44536] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:00,010 ERROR [ImapConnection-44536] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+davmail.exception.DavMailException: DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+	at davmail.exchange.ExchangeSessionFactory.handleNetworkDown(ExchangeSessionFactory.java:261)
+	at davmail.exchange.ExchangeSessionFactory.checkConfig(ExchangeSessionFactory.java:236)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:83)
+2011-12-19 17:28:00,061 DEBUG [ImapConnection-44536] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:00,062 DEBUG [SmtpConnection-49717] davmail  - > 500 DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,028 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:28:28,086 WARN  [ImapConnection-44538] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,090 WARN  [ImapConnection-44538] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,107 DEBUG [ImapConnection-44538] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,149 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:28:28,157 WARN  [ImapConnection-44539] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,163 WARN  [ImapConnection-44539] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:28,167 DEBUG [ImapConnection-44539] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,855 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:28:55,927 WARN  [ImapConnection-44540] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,931 WARN  [ImapConnection-44540] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,937 DEBUG [ImapConnection-44540] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,955 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:28:55,965 WARN  [ImapConnection-44541] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,970 WARN  [ImapConnection-44541] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:28:55,974 DEBUG [ImapConnection-44541] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,823 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:29:02,851 WARN  [ImapConnection-44542] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,855 WARN  [ImapConnection-44542] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,869 DEBUG [ImapConnection-44542] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,901 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:29:02,912 WARN  [ImapConnection-44543] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,926 WARN  [ImapConnection-44543] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:02,944 DEBUG [ImapConnection-44543] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:29:38,709 INFO  [SWT] davmail  - DavMail gateway stopped
+2011-12-19 17:32:32,374 INFO  [main] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:32:32,555 DEBUG [CheckRelease] davmail  - Unable to get released version
+2011-12-19 17:32:43,797 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:32:43,874 DEBUG [CheckRelease] davmail  - Unable to get released version
+2011-12-19 17:36:10,965 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:10,976 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:36:11,021 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:36:11,031 DEBUG [davmail.smtp.SmtpServer] davmail  - Connection from /127.0.0.1 on port 1025
+2011-12-19 17:36:11,039 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:11,042 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:11,151 ERROR [SmtpConnection-49782] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,152 WARN  [ImapConnection-44599] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,152 WARN  [SmtpConnection-49783] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,162 WARN  [SmtpConnection-49783] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,151 WARN  [SmtpConnection-49781] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,169 WARN  [SmtpConnection-49781] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,152 WARN  [ImapConnection-44600] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,173 WARN  [ImapConnection-44600] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,151 WARN  [ImapConnection-44598] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,175 WARN  [ImapConnection-44598] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,176 DEBUG [SmtpConnection-49781] davmail  - > 500 DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,167 DEBUG [SmtpConnection-49783] davmail  - > 500 DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,159 WARN  [ImapConnection-44599] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,156 ERROR [SmtpConnection-49782] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+davmail.exception.DavMailException: DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+	at davmail.exchange.ExchangeSessionFactory.handleNetworkDown(ExchangeSessionFactory.java:261)
+	at davmail.exchange.ExchangeSessionFactory.checkConfig(ExchangeSessionFactory.java:236)
+	at davmail.smtp.SmtpConnection.run(SmtpConnection.java:64)
+2011-12-19 17:36:11,194 DEBUG [ImapConnection-44600] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,193 DEBUG [ImapConnection-44598] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,204 DEBUG [SmtpConnection-49782] davmail  - > 500 DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:11,211 DEBUG [ImapConnection-44599] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:18,908 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:18,917 WARN  [ImapConnection-44604] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:18,919 WARN  [ImapConnection-44604] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:18,938 DEBUG [ImapConnection-44604] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:18,993 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:18,997 WARN  [ImapConnection-44605] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:18,999 WARN  [ImapConnection-44605] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:19,001 DEBUG [ImapConnection-44605] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,875 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:25,931 WARN  [ImapConnection-44606] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,933 WARN  [ImapConnection-44606] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,938 DEBUG [ImapConnection-44606] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,969 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:25,978 WARN  [ImapConnection-44607] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,980 WARN  [ImapConnection-44607] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:25,986 DEBUG [ImapConnection-44607] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,513 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:33,519 WARN  [ImapConnection-44608] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,520 WARN  [ImapConnection-44608] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,551 DEBUG [ImapConnection-44608] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,595 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:36:33,600 WARN  [ImapConnection-44609] davmail.exchange.ExchangeSession  - Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,601 WARN  [ImapConnection-44609] davmail  - DavMail configuration exception:
+Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:36:33,604 DEBUG [ImapConnection-44609] davmail  - > * BAD unable to handle request: DavMail configuration exception: Connect exception: java.net.UnknownHostException http://www-cache.aql.fr
+2011-12-19 17:38:09,251 INFO  [AWT-EventQueue-0] davmail  - DavMail Gateway 3.9.6-1843 listening on SMTP port 1025 POP port 1110 IMAP port 1143 CALDAV port 1080 LDAP port 1389 
+2011-12-19 17:38:09,952 DEBUG [CheckRelease] davmail.DavGateway  - DavMail released version: 3.9.6-1843
+2011-12-19 17:38:17,937 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:38:18,210 DEBUG [ImapConnection-44611] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:38:18,212 DEBUG [ImapConnection-44611] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:38:18,219 DEBUG [ImapConnection-44611] davmail  - < 1 authenticate login
+2011-12-19 17:38:18,225 DEBUG [ImapConnection-44611] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:38:18,227 DEBUG [ImapConnection-44611] davmail  - < bmljb2xhcy5qb3NlcGg=
+2011-12-19 17:38:18,228 DEBUG [ImapConnection-44611] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:38:18,230 DEBUG [ImapConnection-44611] davmail  - < ********
+2011-12-19 17:38:18,505 DEBUG [ImapConnection-44611] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:38:18,637 DEBUG [ImapConnection-44611] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:38:19,175 DEBUG [ImapConnection-44611] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:38:19,180 DEBUG [ImapConnection-44611] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:38:19,404 ERROR [ImapConnection-44611] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:38:19,404 ERROR [ImapConnection-44611] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:38:19,407 DEBUG [ImapConnection-44611] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:38:19,421 DEBUG [ImapConnection-44611] davmail  - < LOGIN ********
+2011-12-19 17:38:19,461 DEBUG [ImapConnection-44611] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:38:19,564 DEBUG [ImapConnection-44611] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:38:19,572 DEBUG [ImapConnection-44611] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:38:19,572 DEBUG [ImapConnection-44611] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:38:19,741 ERROR [ImapConnection-44611] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:38:19,741 ERROR [ImapConnection-44611] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:38:19,743 DEBUG [ImapConnection-44611] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:38:19,752 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:38:20,804 DEBUG [ImapConnection-44612] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:38:20,978 DEBUG [ImapConnection-44612] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:38:20,984 DEBUG [ImapConnection-44612] davmail  - < 1 authenticate login
+2011-12-19 17:38:20,987 DEBUG [ImapConnection-44612] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:38:20,989 DEBUG [ImapConnection-44612] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:38:20,990 DEBUG [ImapConnection-44612] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:38:20,991 DEBUG [ImapConnection-44612] davmail  - < ********
+2011-12-19 17:38:21,024 DEBUG [ImapConnection-44612] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:38:21,149 DEBUG [ImapConnection-44612] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:38:21,156 DEBUG [ImapConnection-44612] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:38:21,157 DEBUG [ImapConnection-44612] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:38:33,732 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:38:33,744 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:38:33,750 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:38:33,982 DEBUG [ImapConnection-44615] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:38:33,987 DEBUG [ImapConnection-44615] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:38:33,993 DEBUG [ImapConnection-44615] davmail  - < 1 CAPABILITY
+2011-12-19 17:38:33,997 DEBUG [ImapConnection-44615] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:38:33,999 DEBUG [ImapConnection-44615] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:38:34,000 DEBUG [ImapConnection-44613] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:38:34,004 DEBUG [ImapConnection-44613] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:38:34,009 DEBUG [ImapConnection-44615] davmail  - < 2 LOGOUT
+2011-12-19 17:38:34,010 DEBUG [ImapConnection-44615] davmail  - > * BYE Closing connection
+2011-12-19 17:38:34,010 DEBUG [ImapConnection-44615] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:38:34,019 DEBUG [ImapConnection-44613] davmail  - < 1 CAPABILITY
+2011-12-19 17:38:34,019 DEBUG [ImapConnection-44613] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:38:34,019 DEBUG [ImapConnection-44613] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:38:34,031 DEBUG [ImapConnection-44613] davmail  - < 2 LOGOUT
+2011-12-19 17:38:34,032 DEBUG [ImapConnection-44613] davmail  - > * BYE Closing connection
+2011-12-19 17:38:34,032 DEBUG [ImapConnection-44613] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:38:37,003 DEBUG [ImapConnection-44614] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:38:37,170 DEBUG [ImapConnection-44614] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:38:37,175 DEBUG [ImapConnection-44614] davmail  - < �U  <     �  �  8  �  5  9  E  D  3  2  �  A      /     ��  
+2011-12-19 17:38:37,182 DEBUG [ImapConnection-44614] davmail  - > �U  <     �  �  8  �  5  9  E  D  3  2  �  A      /     ��   BAD missing command
+2011-12-19 17:38:45,839 DEBUG [ImapConnection-44614] davmail  - <   ��[��"+_��E��4"*
+2011-12-19 17:38:45,895 DEBUG [ImapConnection-44614] davmail  - >   ��[��"+_��E��4"* BAD missing command
+2011-12-19 17:39:03,340 ERROR [ImapConnection-44612] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:03,353 ERROR [ImapConnection-44612] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:03,363 DEBUG [ImapConnection-44612] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:03,372 DEBUG [ImapConnection-44612] davmail  - < LOGIN ********
+2011-12-19 17:39:03,406 DEBUG [ImapConnection-44612] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:03,521 DEBUG [ImapConnection-44612] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:03,533 DEBUG [ImapConnection-44612] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:03,535 DEBUG [ImapConnection-44612] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:03,741 ERROR [ImapConnection-44612] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:03,741 ERROR [ImapConnection-44612] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:03,747 DEBUG [ImapConnection-44612] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:03,771 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:06,376 DEBUG [ImapConnection-44616] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:06,557 DEBUG [ImapConnection-44616] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:06,563 DEBUG [ImapConnection-44616] davmail  - < 1 authenticate login
+2011-12-19 17:39:06,568 DEBUG [ImapConnection-44616] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:06,571 DEBUG [ImapConnection-44616] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:39:06,572 DEBUG [ImapConnection-44616] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:06,575 DEBUG [ImapConnection-44616] davmail  - < ********
+2011-12-19 17:39:06,591 DEBUG [ImapConnection-44616] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:06,704 DEBUG [ImapConnection-44616] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:06,707 DEBUG [ImapConnection-44616] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:06,708 DEBUG [ImapConnection-44616] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:06,884 ERROR [ImapConnection-44616] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:06,884 ERROR [ImapConnection-44616] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:06,886 DEBUG [ImapConnection-44616] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:06,900 DEBUG [ImapConnection-44616] davmail  - < LOGIN ********
+2011-12-19 17:39:06,921 DEBUG [ImapConnection-44616] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:07,033 DEBUG [ImapConnection-44616] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:07,037 DEBUG [ImapConnection-44616] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:07,037 DEBUG [ImapConnection-44616] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:09,988 ERROR [ImapConnection-44616] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:09,990 ERROR [ImapConnection-44616] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:09,991 DEBUG [ImapConnection-44616] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:10,505 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:10,633 DEBUG [ImapConnection-44617] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:10,636 DEBUG [ImapConnection-44617] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:10,641 DEBUG [ImapConnection-44617] davmail  - < 1 authenticate login
+2011-12-19 17:39:10,645 DEBUG [ImapConnection-44617] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:10,647 DEBUG [ImapConnection-44617] davmail  - < QURccmJoeDIwMzU=
+2011-12-19 17:39:10,650 DEBUG [ImapConnection-44617] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:10,652 DEBUG [ImapConnection-44617] davmail  - < ********
+2011-12-19 17:39:10,669 DEBUG [ImapConnection-44617] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:10,793 DEBUG [ImapConnection-44617] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:10,797 DEBUG [ImapConnection-44617] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:10,798 DEBUG [ImapConnection-44617] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:11,469 ERROR [ImapConnection-44617] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:39:11,472 ERROR [ImapConnection-44617] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:11,474 DEBUG [ImapConnection-44617] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:11,486 DEBUG [ImapConnection-44617] davmail  - < LOGIN ********
+2011-12-19 17:39:11,510 DEBUG [ImapConnection-44617] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:11,620 DEBUG [ImapConnection-44617] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:11,656 DEBUG [ImapConnection-44617] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:11,659 DEBUG [ImapConnection-44617] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:13,208 ERROR [ImapConnection-44617] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:39:13,208 ERROR [ImapConnection-44617] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:13,209 DEBUG [ImapConnection-44617] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:13,228 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:13,351 DEBUG [ImapConnection-44618] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:13,353 DEBUG [ImapConnection-44618] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:13,356 DEBUG [ImapConnection-44618] davmail  - < 1 authenticate login
+2011-12-19 17:39:13,357 DEBUG [ImapConnection-44618] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:13,360 DEBUG [ImapConnection-44618] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:39:13,361 DEBUG [ImapConnection-44618] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:13,363 DEBUG [ImapConnection-44618] davmail  - < ********
+2011-12-19 17:39:13,385 DEBUG [ImapConnection-44618] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:13,507 DEBUG [ImapConnection-44618] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:14,002 DEBUG [ImapConnection-44618] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:14,006 DEBUG [ImapConnection-44618] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:15,316 ERROR [ImapConnection-44618] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:15,322 ERROR [ImapConnection-44618] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:15,323 DEBUG [ImapConnection-44618] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:15,337 DEBUG [ImapConnection-44618] davmail  - < LOGIN ********
+2011-12-19 17:39:15,354 DEBUG [ImapConnection-44618] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:16,685 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:16,689 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:16,691 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:16,808 DEBUG [ImapConnection-44621] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:16,810 DEBUG [ImapConnection-44621] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:16,814 DEBUG [ImapConnection-44621] davmail  - < 1 CAPABILITY
+2011-12-19 17:39:16,818 DEBUG [ImapConnection-44621] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:39:16,818 DEBUG [ImapConnection-44619] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:16,822 DEBUG [ImapConnection-44619] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:16,821 DEBUG [ImapConnection-44621] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:39:16,827 DEBUG [ImapConnection-44619] davmail  - < 1 CAPABILITY
+2011-12-19 17:39:16,828 DEBUG [ImapConnection-44619] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:39:16,830 DEBUG [ImapConnection-44619] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:39:16,832 DEBUG [ImapConnection-44621] davmail  - < 2 LOGOUT
+2011-12-19 17:39:16,833 DEBUG [ImapConnection-44621] davmail  - > * BYE Closing connection
+2011-12-19 17:39:16,833 DEBUG [ImapConnection-44621] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:39:16,843 DEBUG [ImapConnection-44619] davmail  - < 2 LOGOUT
+2011-12-19 17:39:16,843 DEBUG [ImapConnection-44619] davmail  - > * BYE Closing connection
+2011-12-19 17:39:16,844 DEBUG [ImapConnection-44619] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:39:16,893 DEBUG [ImapConnection-44620] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:16,896 DEBUG [ImapConnection-44620] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:16,903 DEBUG [ImapConnection-44620] davmail  - <  �  �N�h�[=��a Aa��e7e_E\�4  H ��
+2011-12-19 17:39:16,905 DEBUG [ImapConnection-44620] davmail  - >  �  �N�h�[=��a Aa��e7e_E\�4  H �� BAD missing command
+2011-12-19 17:39:16,907 WARN  [ImapConnection-44620] davmail.imap.ImapConnection  - Client closed connection
+2011-12-19 17:39:17,987 DEBUG [ImapConnection-44618] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:20,077 DEBUG [ImapConnection-44618] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:20,079 DEBUG [ImapConnection-44618] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:20,300 ERROR [ImapConnection-44618] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:20,301 ERROR [ImapConnection-44618] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:20,302 DEBUG [ImapConnection-44618] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:20,314 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:23,443 DEBUG [ImapConnection-44622] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:23,453 DEBUG [ImapConnection-44622] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:23,457 DEBUG [ImapConnection-44622] davmail  - < 1 authenticate login
+2011-12-19 17:39:23,460 DEBUG [ImapConnection-44622] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:23,463 DEBUG [ImapConnection-44622] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:39:23,463 DEBUG [ImapConnection-44622] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:23,465 DEBUG [ImapConnection-44622] davmail  - < ********
+2011-12-19 17:39:23,485 DEBUG [ImapConnection-44622] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:25,419 DEBUG [ImapConnection-44622] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:25,614 DEBUG [ImapConnection-44622] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:25,615 DEBUG [ImapConnection-44622] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:25,810 ERROR [ImapConnection-44622] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:25,812 ERROR [ImapConnection-44622] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:25,815 DEBUG [ImapConnection-44622] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:25,836 DEBUG [ImapConnection-44622] davmail  - < LOGIN ********
+2011-12-19 17:39:25,861 DEBUG [ImapConnection-44622] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:28,474 DEBUG [ImapConnection-44622] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:28,659 DEBUG [ImapConnection-44622] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:28,664 DEBUG [ImapConnection-44622] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:28,857 ERROR [ImapConnection-44622] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:28,858 ERROR [ImapConnection-44622] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:28,861 DEBUG [ImapConnection-44622] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:42,932 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:43,094 DEBUG [ImapConnection-44623] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:43,098 DEBUG [ImapConnection-44623] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:43,102 DEBUG [ImapConnection-44623] davmail  - < 1 authenticate login
+2011-12-19 17:39:43,108 DEBUG [ImapConnection-44623] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:43,110 DEBUG [ImapConnection-44623] davmail  - < QURccmJoeDIwMzU=
+2011-12-19 17:39:43,111 DEBUG [ImapConnection-44623] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:43,114 DEBUG [ImapConnection-44623] davmail  - < ********
+2011-12-19 17:39:43,134 DEBUG [ImapConnection-44623] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:43,232 DEBUG [ImapConnection-44623] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:43,235 DEBUG [ImapConnection-44623] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:43,236 DEBUG [ImapConnection-44623] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:46,511 ERROR [ImapConnection-44623] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:39:46,512 ERROR [ImapConnection-44623] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:46,512 DEBUG [ImapConnection-44623] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:46,529 DEBUG [ImapConnection-44623] davmail  - < LOGIN ********
+2011-12-19 17:39:46,553 DEBUG [ImapConnection-44623] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:46,675 DEBUG [ImapConnection-44623] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:46,677 DEBUG [ImapConnection-44623] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:46,678 DEBUG [ImapConnection-44623] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:46,731 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:46,737 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:46,739 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:46,854 DEBUG [ImapConnection-44624] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:46,857 DEBUG [ImapConnection-44624] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:46,860 DEBUG [ImapConnection-44624] davmail  - < 1 CAPABILITY
+2011-12-19 17:39:46,864 DEBUG [ImapConnection-44624] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:39:46,867 DEBUG [ImapConnection-44624] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:39:46,873 DEBUG [ImapConnection-44624] davmail  - < 2 LOGOUT
+2011-12-19 17:39:46,874 DEBUG [ImapConnection-44624] davmail  - > * BYE Closing connection
+2011-12-19 17:39:46,875 DEBUG [ImapConnection-44624] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:39:46,879 DEBUG [ImapConnection-44625] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:46,881 DEBUG [ImapConnection-44625] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:46,882 DEBUG [ImapConnection-44626] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:46,893 DEBUG [ImapConnection-44626] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:46,883 DEBUG [ImapConnection-44625] davmail  - <  �  �N�h�e�u/=m����k١H�Ľ_\J'��r�&  H ��
+2011-12-19 17:39:46,901 ERROR [ImapConnection-44623] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:39:46,905 ERROR [ImapConnection-44623] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:46,896 DEBUG [ImapConnection-44626] davmail  - < 1 CAPABILITY
+2011-12-19 17:39:46,914 DEBUG [ImapConnection-44626] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:39:46,914 DEBUG [ImapConnection-44625] davmail  - >  �  �N�h�e�u/=m����k١H�Ľ_\J'��r�&  H �� BAD missing command
+2011-12-19 17:39:46,913 DEBUG [ImapConnection-44623] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:46,914 DEBUG [ImapConnection-44626] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:39:46,917 WARN  [ImapConnection-44625] davmail.imap.ImapConnection  - Client closed connection
+2011-12-19 17:39:46,932 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:46,945 DEBUG [ImapConnection-44626] davmail  - < 2 LOGOUT
+2011-12-19 17:39:46,945 DEBUG [ImapConnection-44626] davmail  - > * BYE Closing connection
+2011-12-19 17:39:46,946 DEBUG [ImapConnection-44626] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:39:47,063 DEBUG [ImapConnection-44627] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:47,065 DEBUG [ImapConnection-44627] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:47,068 DEBUG [ImapConnection-44627] davmail  - < 1 authenticate login
+2011-12-19 17:39:47,069 DEBUG [ImapConnection-44627] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:47,071 DEBUG [ImapConnection-44627] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:39:47,072 DEBUG [ImapConnection-44627] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:47,074 DEBUG [ImapConnection-44627] davmail  - < ********
+2011-12-19 17:39:47,089 DEBUG [ImapConnection-44627] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:47,189 DEBUG [ImapConnection-44627] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:47,191 DEBUG [ImapConnection-44627] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:47,192 DEBUG [ImapConnection-44627] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:47,385 ERROR [ImapConnection-44627] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:47,386 ERROR [ImapConnection-44627] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:47,387 DEBUG [ImapConnection-44627] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:47,458 DEBUG [ImapConnection-44627] davmail  - < LOGIN ********
+2011-12-19 17:39:47,483 DEBUG [ImapConnection-44627] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:47,575 DEBUG [ImapConnection-44627] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:47,577 DEBUG [ImapConnection-44627] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:47,578 DEBUG [ImapConnection-44627] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:47,760 ERROR [ImapConnection-44627] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:47,761 ERROR [ImapConnection-44627] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:47,762 DEBUG [ImapConnection-44627] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:39:50,945 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:39:51,060 DEBUG [ImapConnection-44628] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:39:51,065 DEBUG [ImapConnection-44628] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:39:51,070 DEBUG [ImapConnection-44628] davmail  - < 1 authenticate login
+2011-12-19 17:39:51,074 DEBUG [ImapConnection-44628] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:39:51,077 DEBUG [ImapConnection-44628] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:39:51,078 DEBUG [ImapConnection-44628] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:39:51,084 DEBUG [ImapConnection-44628] davmail  - < ********
+2011-12-19 17:39:51,105 DEBUG [ImapConnection-44628] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:51,229 DEBUG [ImapConnection-44628] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:51,232 DEBUG [ImapConnection-44628] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:51,233 DEBUG [ImapConnection-44628] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:51,936 ERROR [ImapConnection-44628] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:51,936 ERROR [ImapConnection-44628] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:39:51,940 DEBUG [ImapConnection-44628] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:39:51,953 DEBUG [ImapConnection-44628] davmail  - < LOGIN ********
+2011-12-19 17:39:51,976 DEBUG [ImapConnection-44628] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:39:52,085 DEBUG [ImapConnection-44628] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:39:52,087 DEBUG [ImapConnection-44628] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:39:52,088 DEBUG [ImapConnection-44628] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:39:52,274 ERROR [ImapConnection-44628] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:39:52,275 ERROR [ImapConnection-44628] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:39:52,278 DEBUG [ImapConnection-44628] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:40:01,945 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:02,102 DEBUG [ImapConnection-44629] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:02,106 DEBUG [ImapConnection-44629] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:02,109 DEBUG [ImapConnection-44629] davmail  - < 1 authenticate login
+2011-12-19 17:40:02,113 DEBUG [ImapConnection-44629] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:40:02,116 DEBUG [ImapConnection-44629] davmail  - < QURccmJoeDIwMzU=
+2011-12-19 17:40:02,116 DEBUG [ImapConnection-44629] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:40:02,118 DEBUG [ImapConnection-44629] davmail  - < ********
+2011-12-19 17:40:02,138 DEBUG [ImapConnection-44629] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:02,249 DEBUG [ImapConnection-44629] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:02,251 DEBUG [ImapConnection-44629] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:02,252 DEBUG [ImapConnection-44629] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:02,425 ERROR [ImapConnection-44629] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:02,426 ERROR [ImapConnection-44629] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:40:02,428 DEBUG [ImapConnection-44629] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:40:02,445 DEBUG [ImapConnection-44629] davmail  - < LOGIN ********
+2011-12-19 17:40:02,484 DEBUG [ImapConnection-44629] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:02,627 DEBUG [ImapConnection-44629] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:02,632 DEBUG [ImapConnection-44629] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:02,633 DEBUG [ImapConnection-44629] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:02,845 ERROR [ImapConnection-44629] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:02,846 ERROR [ImapConnection-44629] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:02,850 DEBUG [ImapConnection-44629] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:40:02,866 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:03,002 DEBUG [ImapConnection-44630] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:03,005 DEBUG [ImapConnection-44630] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:03,013 DEBUG [ImapConnection-44630] davmail  - < 1 authenticate login
+2011-12-19 17:40:03,014 DEBUG [ImapConnection-44630] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:40:03,016 DEBUG [ImapConnection-44630] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:40:03,017 DEBUG [ImapConnection-44630] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:40:03,022 DEBUG [ImapConnection-44630] davmail  - < ********
+2011-12-19 17:40:03,040 DEBUG [ImapConnection-44630] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:03,146 DEBUG [ImapConnection-44630] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:03,149 DEBUG [ImapConnection-44630] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:03,150 DEBUG [ImapConnection-44630] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:03,340 ERROR [ImapConnection-44630] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:40:03,342 ERROR [ImapConnection-44630] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:40:03,343 DEBUG [ImapConnection-44630] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:40:03,357 DEBUG [ImapConnection-44630] davmail  - < LOGIN ********
+2011-12-19 17:40:03,381 DEBUG [ImapConnection-44630] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:03,514 DEBUG [ImapConnection-44630] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:03,518 DEBUG [ImapConnection-44630] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:03,518 DEBUG [ImapConnection-44630] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:05,598 ERROR [ImapConnection-44630] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:40:05,599 ERROR [ImapConnection-44630] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:05,602 DEBUG [ImapConnection-44630] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:40:10,729 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:10,733 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:10,735 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:10,878 DEBUG [ImapConnection-44631] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:10,881 DEBUG [ImapConnection-44631] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:10,886 DEBUG [ImapConnection-44631] davmail  - < 1 CAPABILITY
+2011-12-19 17:40:10,888 DEBUG [ImapConnection-44633] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:10,893 DEBUG [ImapConnection-44633] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:10,889 DEBUG [ImapConnection-44632] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:10,895 DEBUG [ImapConnection-44632] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:10,896 DEBUG [ImapConnection-44633] davmail  - < 1 CAPABILITY
+2011-12-19 17:40:10,897 DEBUG [ImapConnection-44632] davmail  - <  �  �N�h�%���ؤ�"0 c��rwdz^�Pm)Ҫ�  H ��
+2011-12-19 17:40:10,902 DEBUG [ImapConnection-44631] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:40:10,903 DEBUG [ImapConnection-44631] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:40:10,907 DEBUG [ImapConnection-44633] davmail  - > * CAPABILITY IMAP4REV1 AUTH=LOGIN
+2011-12-19 17:40:10,908 DEBUG [ImapConnection-44633] davmail  - > 1 OK CAPABILITY completed
+2011-12-19 17:40:10,917 DEBUG [ImapConnection-44632] davmail  - >  �  �N�h�%���ؤ�"0 c��rwdz^�Pm)Ҫ�  H �� BAD missing command
+2011-12-19 17:40:10,918 WARN  [ImapConnection-44632] davmail.imap.ImapConnection  - Client closed connection
+2011-12-19 17:40:10,925 DEBUG [ImapConnection-44631] davmail  - < 2 LOGOUT
+2011-12-19 17:40:10,926 DEBUG [ImapConnection-44631] davmail  - > * BYE Closing connection
+2011-12-19 17:40:10,926 DEBUG [ImapConnection-44631] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:40:10,935 DEBUG [ImapConnection-44633] davmail  - < 2 LOGOUT
+2011-12-19 17:40:10,935 DEBUG [ImapConnection-44633] davmail  - > * BYE Closing connection
+2011-12-19 17:40:10,935 DEBUG [ImapConnection-44633] davmail  - > 2 OK LOGOUT completed
+2011-12-19 17:40:12,957 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:13,118 DEBUG [ImapConnection-44634] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:13,121 DEBUG [ImapConnection-44634] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:13,126 DEBUG [ImapConnection-44634] davmail  - < 1 authenticate login
+2011-12-19 17:40:13,130 DEBUG [ImapConnection-44634] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:40:13,132 DEBUG [ImapConnection-44634] davmail  - < YWRccmJoeDIwMzU=
+2011-12-19 17:40:13,133 DEBUG [ImapConnection-44634] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:40:13,134 DEBUG [ImapConnection-44634] davmail  - < ********
+2011-12-19 17:40:14,288 DEBUG [ImapConnection-44634] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:14,385 DEBUG [ImapConnection-44634] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:14,390 DEBUG [ImapConnection-44634] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:14,391 DEBUG [ImapConnection-44634] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:14,565 ERROR [ImapConnection-44634] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:14,568 ERROR [ImapConnection-44634] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:40:14,570 DEBUG [ImapConnection-44634] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:40:14,584 DEBUG [ImapConnection-44634] davmail  - < LOGIN ********
+2011-12-19 17:40:14,620 DEBUG [ImapConnection-44634] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:14,733 DEBUG [ImapConnection-44634] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:14,737 DEBUG [ImapConnection-44634] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:14,739 DEBUG [ImapConnection-44634] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:14,957 ERROR [ImapConnection-44634] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:14,964 ERROR [ImapConnection-44634] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:14,975 DEBUG [ImapConnection-44634] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:40:14,995 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:15,117 DEBUG [ImapConnection-44635] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:15,120 DEBUG [ImapConnection-44635] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:15,124 DEBUG [ImapConnection-44635] davmail  - < 1 authenticate login
+2011-12-19 17:40:15,125 DEBUG [ImapConnection-44635] davmail  - > + VXNlcm5hbWU6
+2011-12-19 17:40:15,129 DEBUG [ImapConnection-44635] davmail  - < bmljb2xhcy5qb3NlcGhAb3JhbmdlLmNvbQ==
+2011-12-19 17:40:15,129 DEBUG [ImapConnection-44635] davmail  - > + UGFzc3dvcmQ6
+2011-12-19 17:40:15,132 DEBUG [ImapConnection-44635] davmail  - < ********
+2011-12-19 17:40:15,144 DEBUG [ImapConnection-44635] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:15,251 DEBUG [ImapConnection-44635] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:15,253 DEBUG [ImapConnection-44635] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:15,254 DEBUG [ImapConnection-44635] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:15,455 ERROR [ImapConnection-44635] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:40:15,455 ERROR [ImapConnection-44635] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:135)
+2011-12-19 17:40:15,457 DEBUG [ImapConnection-44635] davmail  - > 1 NO LOGIN failed
+2011-12-19 17:40:15,469 DEBUG [ImapConnection-44635] davmail  - < LOGIN ********
+2011-12-19 17:40:15,495 DEBUG [ImapConnection-44635] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:15,609 DEBUG [ImapConnection-44635] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:15,611 DEBUG [ImapConnection-44635] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:15,612 DEBUG [ImapConnection-44635] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:15,800 ERROR [ImapConnection-44635] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+2011-12-19 17:40:15,800 ERROR [ImapConnection-44635] davmail  - Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password, retry with domain\user or use default domain setting
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:628)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:15,803 DEBUG [ImapConnection-44635] davmail  - > 3 NO LOGIN failed
+2011-12-19 17:40:26,294 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:26,427 DEBUG [ImapConnection-44636] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:26,437 DEBUG [ImapConnection-44636] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:32,150 DEBUG [ImapConnection-44636] davmail  - < LOGIN ********
+2011-12-19 17:40:32,194 DEBUG [ImapConnection-44636] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:32,312 DEBUG [ImapConnection-44636] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:32,318 DEBUG [ImapConnection-44636] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:32,319 DEBUG [ImapConnection-44636] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:32,516 ERROR [ImapConnection-44636] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:32,516 ERROR [ImapConnection-44636] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:32,517 DEBUG [ImapConnection-44636] davmail  - > A00000 NO LOGIN failed
+2011-12-19 17:40:32,524 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:32,649 DEBUG [ImapConnection-44637] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:32,652 DEBUG [ImapConnection-44637] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:39,664 DEBUG [ImapConnection-44637] davmail  - < LOGIN ********
+2011-12-19 17:40:39,741 DEBUG [ImapConnection-44637] davmail  - executeFollowRedirects(http://PUEXCB2C.nanterre.francetelecom.fr/)
+2011-12-19 17:40:39,843 DEBUG [ImapConnection-44637] davmail.exchange.ExchangeSession  - Form based authentication detected
+2011-12-19 17:40:39,847 DEBUG [ImapConnection-44637] davmail.exchange.ExchangeSession  - Authentication form not found at http://PUEXCB2C.nanterre.francetelecom.fr/, trying default url
+2011-12-19 17:40:39,848 DEBUG [ImapConnection-44637] davmail  - executeFollowRedirects(/owa/auth/owaauth.dll)
+2011-12-19 17:40:40,057 ERROR [ImapConnection-44637] davmail.exchange.ExchangeSession  - Authentication failed: invalid user or password
+2011-12-19 17:40:40,059 ERROR [ImapConnection-44637] davmail  - Authentication failed: invalid user or password
+davmail.exception.DavMailAuthenticationException: Authentication failed: invalid user or password
+	at davmail.exchange.ExchangeSession.throwAuthenticationFailed(ExchangeSession.java:626)
+	at davmail.exchange.ExchangeSession.postLogonMethod(ExchangeSession.java:516)
+	at davmail.exchange.ExchangeSession.formLogin(ExchangeSession.java:536)
+	at davmail.exchange.ExchangeSession.<init>(ExchangeSession.java:192)
+	at davmail.exchange.dav.DavExchangeSession.<init>(DavExchangeSession.java:499)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:147)
+	at davmail.exchange.ExchangeSessionFactory.getInstance(ExchangeSessionFactory.java:95)
+	at davmail.imap.ImapConnection.run(ImapConnection.java:114)
+2011-12-19 17:40:40,060 DEBUG [ImapConnection-44637] davmail  - > A00001 NO LOGIN failed
+2011-12-19 17:40:40,063 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:40,177 DEBUG [ImapConnection-44638] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:40,180 DEBUG [ImapConnection-44638] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:40:42,555 DEBUG [davmail.imap.ImapServer] davmail  - Connection from /127.0.0.1 on port 1143
+2011-12-19 17:40:42,695 DEBUG [ImapConnection-44639] davmail.exchange.ExchangeSession  - Test configuration status: 200
+2011-12-19 17:40:42,697 DEBUG [ImapConnection-44639] davmail  - > * OK [CAPABILITY IMAP4REV1 AUTH=LOGIN] IMAP4rev1 DavMail 3.9.6-1843 server ready
+2011-12-19 17:41:32,600 INFO  [SWT] davmail  - DavMail gateway stopped
