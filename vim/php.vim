@@ -3,9 +3,6 @@ set showfulltag
 
 set omnifunc=phpcomplete#CompletePHP
 
-"source ~/.vim/plugin/word_complete.vim
-"call DoWordComplete()
-
 let php_sql_query=1
 let php_htmlInStrings=1
 "set tags+=~/.vim/mytags/zend

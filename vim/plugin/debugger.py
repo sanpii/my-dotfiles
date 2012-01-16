@@ -469,7 +469,7 @@ class DebugUI:
     """ set srcview windows to file:line and replace current sign """
 
     # bug avec msys
-    file = file[1:0]
+    #file = file[1:0]
 
     if file == self.file and self.line == line:
       return
