@@ -1,0 +1,10 @@
+[user]
+	name = gege2061
+	email = gege2061@homecomputing.fr
+[color]
+	ui = auto
+[core]
+	editor = vim
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
