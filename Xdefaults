@@ -34,6 +34,9 @@ URxvt*color21: #888830308888
 URxvt*color22: #303088888888
 URxvt*color23: #d8d8d8d8d8d8
 
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+
 ! Extensions
 URxvt*perl-lib: .urxvt/perl
 URxvt*perl-ext-common:selection,url-select,keyboard-select,clipboard,tabbedex
