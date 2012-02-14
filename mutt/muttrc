@@ -5,12 +5,12 @@ source ~/.mutt/colors.`tty -s && tput colors || echo 8`
 set editor="vim"
 set sort=threads
 
-set from="gege2061@homecomputing.fr"
+set from="sanpi@homecomputing.fr"
 alternates nicolas.joseph@valaide.org nicolas.joseph@homecomputing.fr
 set reverse_name
 set use_from=yes
 set envelope_from="yes"
-set realname="Nicolas Joseph"
+set realname="Nicolas"
 set edit_headers
 set pager_stop
 set pager_index_lines=10
@@ -45,7 +45,7 @@ set record="+Sent"
 set postponed="+Drafts"
 set certificate_file=~/Maildir/certs
 
-mailboxes `cd /home/gege2061/Maildir; find . '(' -type d '(' -name 'cur' -o -name 'new' ')' -prune -printf '%h\n' ')' | sort -u | sed 's/\.\//=/' | tr '\n' ' '`
+mailboxes `cd /home/sanpi/Maildir; find . '(' -type d '(' -name 'cur' -o -name 'new' ')' -prune -printf '%h\n' ')' | sort -u | sed 's/\.\//=/' | tr '\n' ' '`
 
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
