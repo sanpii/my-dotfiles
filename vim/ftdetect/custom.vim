@@ -5,4 +5,6 @@ autocmd BufEnter,BufRead,BufNewFile *.module,*.inc,*.install,*.test set filetype
 autocmd BufEnter,BufRead,BufNewFile *.less set filetype=less
 autocmd BufEnter,BufRead,BufNewFile *.ini.append.php-dist set filetype=dosini
 autocmd BufEnter,BufRead,BufNewFile *.ini.append.php set filetype=dosini
+autocmd BufEnter,BufRead,BufNewFile *.twig set syntax=twig
+autocmd BufEnter,BufRead,BufNewFile *.html.twig set syntax=htmltwig
 
