@@ -1,10 +1,13 @@
 [user]
-	name = gege2061
-	email = gege2061@homecomputing.fr
+	name = sanpi
+	email = sanpi@homecomputing.fr
 [color]
 	ui = auto
 [core]
 	editor = vim
+	pager = less
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
+[http]
+	proxy = http://rbhx2035:FTjoni_1@www-cache.aql.fr:3128

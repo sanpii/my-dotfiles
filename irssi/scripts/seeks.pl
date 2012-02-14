@@ -9,8 +9,8 @@ use vars qw($VERSION %IRSSI);
 
 $VERSION = '1.00';
 %IRSSI = (
-    authors     => 'gege2061',
-    contact     => 'gege2061@homecomputing.fr',
+    authors     => 'sanpi',
+    contact     => 'sanpi@homecomputing.fr',
     name        => 'Seeks',
     description => 'This script queries seeks and returns the results.',
     license     => 'Beerware',
