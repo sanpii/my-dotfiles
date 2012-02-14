@@ -9,6 +9,9 @@ fi
 
 for file in *; do
     if [ "$file" != "$scriptname" ]; then
+        if [ -h "$home/.$file" ]; then
+            rm "$home/.$file";
+        fi;
         if [ ! -e "$home/.$file" ]; then
             ln -s "$cwd/$file" "$home/.$file";
         else
