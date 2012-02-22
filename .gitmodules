@@ -34,3 +34,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
+[submodule "vim/bundle/piv"]
+	path = vim/bundle/piv
+	url = https://github.com/spf13/PIV.git
