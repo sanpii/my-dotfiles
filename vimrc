@@ -388,7 +388,6 @@ nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --ex
 " Powerline
 let g:Powerline_symbols = 'unicode'
 
-
 let g:Powerline#Segments#segments = Pl#Segment#Init(
     \ Pl#Segment#Create('SPLIT'   , '__split__'),
     \ Pl#Segment#Create('TRUNCATE', '__truncate__'),
@@ -401,6 +400,7 @@ let g:Powerline#Segments#segments = Pl#Segment#Init(
         \ Pl#Segment#Create('flags.type'  , '%H%W'),
     \ ),
     \ Pl#Segment#Create('filename'        , '%F'),
+    \ Pl#Segment#Create('func_name'       , '%{cfi#get_func_name()}'),
     \ Pl#Segment#Create('filesize'        , '%{Powerline#Functions#GetFilesize()}', Pl#Segment#Modes('!N')),
     \ Pl#Segment#Create('pwd'             , '%{Powerline#Functions#GetPwd()}'),
     \ Pl#Segment#Create('static_str'      , '%%{"%s"}'),
@@ -475,6 +475,9 @@ let g:syntastic_enable_signs=1
 
 " Project
 let g:proj_flags="cgsStTv"
+
+" cfi
+let g:cfi_php_show_params=1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
