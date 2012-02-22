@@ -1,6 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Général {{{
 
+call pathogen#infect()
+
 function! MySys()
     if has("win32")
         return "win32"
@@ -129,7 +131,7 @@ syntax on
 " Thème de couleur pour Vim
 "colorscheme devbox
 "colorscheme vo_dark
-colorscheme desert
+colorscheme desert-warm-256
 
 " Set font according to system
 if MySys() == "mac"
@@ -380,8 +382,6 @@ nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --ex
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins {{{
 "
-" Pathogen
-call pathogen#infect()
 
 " Powerline
 let g:Powerline_symbols = 'unicode'
