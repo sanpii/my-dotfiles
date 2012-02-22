@@ -20,10 +20,6 @@ elseif MySys() == "unix"
     let g:loaded_maximize=1
 endif
 
-set t_Co=256
-
-let mapleader=","
-
 " Pour utiliser vim comme lecteur de page man
 let $PAGER=''
 
