@@ -1,23 +1,3 @@
-" README {{{
-"
-" Greffons
-"     - The NERD tree : http://www.vim.org/scripts/script.php?script_id=1658
-"     - taglist : http://www.vim.org/scripts/script.php?script_id=273
-"     - maximize : http://www.vim.org/scripts/script.php?script_id=1302
-"     - PHP debugger : http://www.vim.org/scripts/script.php?script_id=1152
-"     - vimwiki : http://www.vim.org/scripts/script.php?script_id=2226
-"     - matchit : http://www.vim.org/scripts/script.php?script_id=39
-"     - CSApprox : http://www.vim.org/scripts/script.php?script_id=2390
-"     - Conque Shell : http://www.vim.org/scripts/script.php?script_id=2771
-"     - php omnicomplete : http://www.vim.org/scripts/script.php?script_id=3171
-"     - TakList : http://www.vim.org/scripts/script.php?script_id=2607
-"     - CompView : http://www.vim.org/scripts/script.php?script_id=1803
-"     - php.vim : http://www.vim.org/scripts/script.php?script_id=2874
-"
-" http://vim.wikia.com/wiki/PHP_manual_in_Vim_help_format
-" http://live.gnome.org/Vala/Vim
-" }}}
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Général {{{
 
