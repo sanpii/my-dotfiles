@@ -10,18 +10,12 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/CSApprox"]
-	path = vim/bundle/CSApprox
-	url = https://github.com/vim-scripts/CSApprox.git
 [submodule "vim/bundle/desert256"]
 	path = vim/bundle/desert256
 	url = https://github.com/vim-scripts/desert-warm-256.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/vim-scripts/Syntastic.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
