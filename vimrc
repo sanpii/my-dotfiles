@@ -213,9 +213,6 @@ function! ToggleSpell()
      set spell
   end
 endfunction
-noremap <F10> :call ToggleSpell()<cr>
-inoremap <F10> <Esc> :call ToggleSpell()<cr>
-vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -256,9 +253,12 @@ unlet backup_dir
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappage {{{
 
-" Aide
+" Help
 inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
 nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
+
+" Rebuild tag index
+nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
@@ -285,10 +285,11 @@ autocmd FileType php map <F9> :!php "%"<cr>
 "autocmd FileType php map <C-F9> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 autocmd FileType html map <F9> :call Browser("")<cr>
 
-silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
+noremap <F10> :call ToggleSpell()<cr>
+inoremap <F10> <Esc> :call ToggleSpell()<cr>
+vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
-" Rebuild tag index
-nnoremap <silent> <F9> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -364,9 +365,6 @@ autocmd FileType php :source ~/.vim/php.vim
 
 " Syntastic
 let g:syntastic_enable_signs=1
-
-" Project
-let g:proj_flags="cgsStTv"
 
 " cfi
 let g:cfi_php_show_params=1
