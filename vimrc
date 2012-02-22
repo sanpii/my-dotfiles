@@ -117,18 +117,8 @@ set nowrap
 " Suppression automatique des espaces superflu
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Se place dans le répertoire du fichier éditer
-"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
-
-" Changement automatique de répertoire (exécution après compil)
-set autochdir
-
 " Permettre l'utilisation de la touche backspace dans tous les cas
 set backspace=2
-
-" Démarrer dans le répertoire Code
-":chdir $HOME/code/
-"set browsedir=current
 
 " Affiche la limite de 80 caractères
 if v:version >= 703
@@ -401,10 +391,49 @@ nmap <M-S-l> <M-S-Right>
 vmap <M-S-Right> >gv
 vmap <M-S-l> <M-S-Right>
 
+silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
+" Rebuild tag index
+nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins {{{
+"
+" Pathogen
+call pathogen#infect()
+
+" Powerline
+let g:Powerline_symbols = 'unicode'
+
+
+let g:Powerline#Segments#segments = Pl#Segment#Init(
+    \ Pl#Segment#Create('SPLIT'   , '__split__'),
+    \ Pl#Segment#Create('TRUNCATE', '__truncate__'),
+    \
+    \ Pl#Segment#Create('mode_indicator'  , '%{Powerline#Functions#GetMode()}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('fileinfo',
+        \ Pl#Segment#Create('flags.ro'    , '%{&readonly ? "$RO" : ""}'),
+        \ Pl#Segment#Create('name'        , '%F'),
+        \ Pl#Segment#Create('flags.mod'   , '%M'),
+        \ Pl#Segment#Create('flags.type'  , '%H%W'),
+    \ ),
+    \ Pl#Segment#Create('filename'        , '%F'),
+    \ Pl#Segment#Create('filesize'        , '%{Powerline#Functions#GetFilesize()}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('pwd'             , '%{Powerline#Functions#GetPwd()}'),
+    \ Pl#Segment#Create('static_str'      , '%%{"%s"}'),
+    \ Pl#Segment#Create('raw'             , '%s'),
+    \ Pl#Segment#Create('fileformat'      , '%{&fileformat}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('fileencoding'    , '%{(&fenc == "" ? &enc : &fenc)}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('filetype'        , '%{strlen(&ft) ? &ft : "no ft"}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('scrollpercent'   , '%3p%%'),
+    \ Pl#Segment#Create('lineinfo',
+        \ Pl#Segment#Create('line.cur'    , '$LINE %3l'),
+        \ Pl#Segment#Create('line.tot'    , '$COL %-2c'),
+    \ ),
+    \ Pl#Segment#Create('charcode'        , '%{Powerline#Functions#GetCharCode()}', Pl#Segment#Modes('!N')),
+    \ Pl#Segment#Create('currhigroup'     , '%{synIDattr(synID(line("."), col("."), 1), "name")}', Pl#Segment#Modes('!N'))
+\ )
 
 " Chargement des reffons en fonction du type
 filetype plugin indent on
@@ -485,4 +514,6 @@ endif
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+source ~/.vim/obs.vim
 
