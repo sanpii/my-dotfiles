@@ -20,9 +20,6 @@ elseif MySys() == "unix"
     let g:loaded_maximize=1
 endif
 
-" Pour utiliser vim comme lecteur de page man
-let $PAGER=''
-
 " Désactive la compatibilité avec VI
 set nocompatible
 
@@ -87,7 +84,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 " Ne pas couper les lignes trop longues
 set nowrap
 
-" Suppression automatique des espaces superflu
+" Suppression automatique des espaces superflus
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Permettre l'utilisation de la touche backspace dans tous les cas
@@ -112,9 +109,6 @@ set completeopt=longest,menuone
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Apparence {{{
-
-" Utiliser des couleurs correctes sur un fond sombre
-set background=dark
 
 " Coloration syntaxique
 syntax on
