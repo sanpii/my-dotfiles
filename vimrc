@@ -260,19 +260,6 @@ unlet backup_dir
 inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
 nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
 
-" Descendre la ligne courante d'une ligne
-"map <C-S-Down> dd p
-
-" Remonter la ligne courante d'une ligne
-"map <C-S-Up> dd kk 0 P
-
-" Dupliquer la ligne courante via Ctrl-d (/!\ désactive le scroll)
-"map <C-d> yy p
-
-" Ouverture de l'explorateur de fichiers avec la touche F3
-"map <F3> :e .<cr>
-"map <F3> :browse e<cr>
-
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
   let uri=a:uri
@@ -297,42 +284,6 @@ autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
 autocmd FileType php map <F9> :!php "%"<cr>
 "autocmd FileType php map <C-F9> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 autocmd FileType html map <F9> :call Browser("")<cr>
-
-" Move content up
-nmap <M-S-Up> :m .-2<Enter>
-nmap <M-S-k> <M-S-Up>
-vmap <M-S-Up> :m .-2<Enter>gv
-vmap <M-S-k> <M-S-Up>
-
-" Move content down
-nmap <M-S-Down> :m .+1<Enter>
-nmap <M-S-j> <M-S-Down>
-vmap <M-S-Down> :m '>+1<Enter>gv
-vmap <M-S-j> <M-S-Down>
-
-" Copy content up
-nmap <C-S-Up> :co .-1<Enter>
-nmap <C-S-k> <C-S-Up>
-vmap <C-S-Up> :co '><Enter>gv
-vmap <C-S-k> <C-S-Up>
-
-" Copy content down
-nmap <C-S-Down> :co .<Enter>
-nmap <C-S-j> <C-S-Down>
-vmap <C-S-Down> :co .-1<Enter>gv
-vmap <C-S-j> <C-S-Down>
-
-" Shifts content left
-nmap <M-S-Left> <<
-nmap <M-S-h> <M-S-Left>
-vmap <M-S-Right> <gv
-vmap <M-S-h> <M-S-Left>
-
-" Shifts content right
-nmap <M-S-Right> >>
-nmap <M-S-l> <M-S-Right>
-vmap <M-S-Right> >gv
-vmap <M-S-l> <M-S-Right>
 
 silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
 
