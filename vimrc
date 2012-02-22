@@ -63,13 +63,6 @@ set ruler
 " Afficher partiellement la commande dans la ligne de statut
 set showcmd
 
-" Format de la ligne de statut
-set statusline=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%{fugitive#statusline()}
-set statusline+=%*
-set statusline+=%<%F\ %m%r\ %14.(%y[%{&encoding}][%{&ff}]%)%=%-14.(%l,%v%)\ %P
-
 " Afficher la correspondance des parenthèses
 set noshowmatch
 
@@ -148,7 +141,6 @@ elseif MySys() == "unix"
 endif
 
 " Afficher les caractères spéciaux
-"set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗,eol:¶
 set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
 highlight NonText cterm=bold ctermfg=darkgrey
 highlight SpecialKey cterm=bold ctermfg=darkgrey
@@ -201,9 +193,6 @@ set expandtab
 " Pas d'espace pour les Makefile
 autocmd FileType make setlocal noexpandtab
 
-" Coller dans Vim sans tabulations incrémentées
-"set paste
-
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -235,9 +224,6 @@ vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
 " Utiliser la recherche incrémentielle
 set incsearch
-
-" Ne pas surligner les résultats de recherche
-"set nohlsearch
 
 " Surligner les résultats de recherche
 set hlsearch
@@ -287,29 +273,7 @@ nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
 "map <F3> :e .<cr>
 "map <F3> :browse e<cr>
 
-" Gestion des onglets
-"map <F4> :tabnew<cr>
-map <C-A-PageDown> :tabnext<cr>
-map <C-A-PageUp> :tabprevious<cr>
-
-" Gestion des fenêtres
-"map <S-Up> :wincmd k<cr>
-"map <S-Down> :wincmd j<cr>
-"map <S-Left> :wincmd h<cr>
-"map <S-Right> :wincmd l<cr>
-
-map <C-S-Right> :wincmd H<cr>
-map <C-S-Left> :windo wincmd K<cr>
-
-" Exécuter le fichier
-autocmd FileType python map <F9> :!python "%"<cr>
-autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
-autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
-autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
-autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
-autocmd FileType php map <F9> :!php "%"<cr>
-
-" Exécuter le fichier actuel dans le navigateur via F7
+" Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
   let uri=a:uri
 
@@ -323,21 +287,16 @@ function! Browser(uri)
   endif
   redraw!
 endfunction
-map <F7> :call Browser("")<cr>
-autocmd BufEnter *.php map <F7> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 
-" Ouvrir l'URL sous le curseur dans un navigateur
-map gu :call Browser(expand('<cWORD>'))<cr>
-
-function! WinMessage(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  new
-  silent put=message
-  set nomodified
-endfunction
-command! -nargs=+ -complete=command WinMessage call WinMessage(<q-args>)
+" Exécuter le fichier
+autocmd FileType python map <F9> :!python "%"<cr>
+autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
+autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
+autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
+autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
+autocmd FileType php map <F9> :!php "%"<cr>
+"autocmd FileType php map <C-F9> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
+autocmd FileType html map <F9> :call Browser("")<cr>
 
 " Move content up
 nmap <M-S-Up> :m .-2<Enter>
@@ -376,14 +335,17 @@ vmap <M-S-Right> >gv
 vmap <M-S-l> <M-S-Right>
 
 silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
+
 " Rebuild tag index
-nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+nnoremap <silent> <F9> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins {{{
-"
+
+" Chargement des reffons en fonction du type
+filetype plugin indent on
 
 " Powerline
 let g:Powerline_symbols = 'unicode'
@@ -417,12 +379,6 @@ let g:Powerline#Segments#segments = Pl#Segment#Init(
     \ Pl#Segment#Create('currhigroup'     , '%{synIDattr(synID(line("."), col("."), 1), "name")}', Pl#Segment#Modes('!N'))
 \ )
 
-" Chargement des reffons en fonction du type
-filetype plugin indent on
-
-" Configuration du plugin Vimoutliner
-autocmd BufEnter TODO setfiletype vo_base
-
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=1
@@ -434,11 +390,6 @@ let NERDTreeQuitOnOpen=1
 
 " vimwiki
 let Tlist_vimwiki_settings='wiki;h:Headers'
-
-" conque
-nmap <silent> <F2> :ConqueTermSplit bash<cr>
-autocmd FileType conque_term :set bufhidden=delete
-autocmd FileType conque_term :set list listchars=
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
