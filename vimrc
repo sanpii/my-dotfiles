@@ -424,19 +424,9 @@ filetype plugin indent on
 autocmd BufEnter TODO setfiletype vo_base
 
 " tagbar
-nnoremap <silent> <F8> :TlistToggle<cr>
-let g:Tlist_Auto_Update = 1
-let g:Tlist_Close_On_Select = 1
-"let g:Tlist_Display_Prototype = 0
-let g:Tlist_Display_Tag_Scope = 1
-let g:Tlist_Enable_Fold_Column = 0
-let g:Tlist_Exit_OnlyWindow = 1
-let g:Tlist_File_Fold_Auto_Close = 1
-let g:Tlist_GainFocus_On_ToggleOpen = 1
-let g:Tlist_Show_One_File = 1
-let g:Tlist_Sort_Type = 'name'
-let g:Tlist_Use_Right_Window = 1
-let tlist_php_settings = 'php;c:class;f:function'
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autoclose=1
+let g:tagbar_autofocus=1
 
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
