@@ -289,7 +289,7 @@ noremap <F10> :call ToggleSpell()<cr>
 inoremap <F10> <Esc> :call ToggleSpell()<cr>
 vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
-silent! nnoremap <unique> <silent> <Leader>l :CommandT<CR>
+silent! nnoremap <unique> <silent> <leader>l :CommandT<CR>
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -368,6 +368,9 @@ let g:syntastic_enable_signs=1
 
 " cfi
 let g:cfi_php_show_params=1
+
+" piv
+let g:DisableAutoPHPFolding = 1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
