@@ -400,6 +400,7 @@ let g:cfi_php_show_params=1
 
 " piv
 let g:DisableAutoPHPFolding = 1
+let php_folding = 0
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
