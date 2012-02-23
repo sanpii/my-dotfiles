@@ -361,6 +361,10 @@ let vala_space_errors=1 " Highlight space errors
 autocmd FileType mail :source ~/.vim/mail.vim
 autocmd FileType mkd :source ~/.vim/mail.vim
 
+" php-namespace
+imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
+map <buffer> <leader>u :call PhpInsertUse()<CR>
+
 " Symfony2 {{{
 " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
 
