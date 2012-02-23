@@ -326,6 +326,17 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=1
 let g:tagbar_autofocus=1
 
+let g:tagbar_type_php = {
+    \ 'ctagstype' : 'php',
+    \ 'kinds' : [
+        \ 'i:interfaces',
+        \ 'c:classes',
+        \ 'd:constant definitions',
+        \ 'f:functions',
+        \ 'j:javascript functions:1'
+    \ ]
+  \ }
+
 " nerdtree
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
