@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-symfony"]
 	path = vim/bundle/vim-symfony
 	url = https://github.com/docteurklein/vim-symfony.git
+[submodule "vim/bundle/auto_mkdir"]
+	path = vim/bundle/auto_mkdir
+	url = https://github.com/DataWraith/auto_mkdir.git
