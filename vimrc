@@ -248,7 +248,7 @@ inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
 nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
 
 " Rebuild tag index
-nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
@@ -389,6 +389,8 @@ com! SfJumpToView call s:SfJumpToView()
 
 " create a mapping only in a Controller file
 autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
+
+set wildignore=data/**,app/cache/**,web/bundles/**
 
 " }}}
 
