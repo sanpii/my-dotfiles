@@ -1,0 +1,8 @@
+id_rsa
+*.pub
+*.ppk
+known_hosts
+agent-*
+*.pyc
+vim/.netrwhist
+
