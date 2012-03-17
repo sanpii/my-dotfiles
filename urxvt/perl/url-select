@@ -104,9 +104,9 @@ sub key_press {
 		$self->selection(${$self->{found}[$self->{n}]}[4]);
 		$self->selection_grab($event->{time});
 		deactivate($self);
-	} elsif ($char eq 'k') {
+	} elsif ($char eq 's') {
 		select_next($self, -1);
-	} elsif ($char eq 'j') {
+	} elsif ($char eq 't') {
 		select_next($self, 1);
 	} elsif ($char eq 'g') {
 		$self->{row} = $self->top_row - 1;
