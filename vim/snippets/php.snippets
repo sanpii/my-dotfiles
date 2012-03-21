@@ -1,7 +1,3 @@
-snippet php
-	<?php
-		${1}
-
 snippet sfclass
 	<?php
 
@@ -12,6 +8,29 @@ snippet sfclass
 		${1}
 	}
 
+snippet sfctrl
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
+	class `Filename()` extends Controller
+	{
+		${1}
+	}
+
+snippet sfaction
+	/**
+	 * @Template()
+	 */
+	public function ${1}Action(${2})
+	{
+		${3}
+	}
 snippet sfinterface
 	<?php
 
@@ -47,9 +66,9 @@ snippet sfentity
 	{
 		/**
 		 * @ORM\Id
-		 * @ORM\GeneratedValue
-		 * @ORM\Column(type="integer")
-		*/
+		 * @ORM\GeneratedValue(strategy="AUTO")
+		 * @ORM\Column(name="id", type="integer")
+		 */
 		private $_id;
 
 		${1}
@@ -119,6 +138,44 @@ snippet sfcommand
 		protected function execute(InputInterface $input, OutputInterface $output)
 		{
 			${2}
+		}
+	}
+
+snippet sfdf
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Doctrine\Common\Persistence\ObjectManager;
+	use Doctrine\Common\DataFixtures\FixtureInterface;
+
+	class `Filename()` implements FixtureInterface
+	{
+		public function load(ObjectManager $em)
+		{
+			${1}
+		}
+	}
+
+snippet sfdfo
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Doctrine\Common\Persistence\ObjectManager;
+	use Doctrine\Common\DataFixtures\AbstractFixture;
+	use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+
+	class `Filename()` extends AbstractFixture implements OrderedFixtureInterface
+	{
+		public function load(ObjectManager $em)
+		{
+			${2}
+		}
+
+		public function getOrder()
+		{
+			return ${1};
 		}
 	}
 
