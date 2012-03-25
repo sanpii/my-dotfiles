@@ -1,5 +1,14 @@
+Host *
+    Compression yes
+
 Host irc.homecomputing.fr
     PermitLocalCommand yes
     LocalCommand ~/.ssh/ssh-listener.py
     RemoteForward 8088 localhost:8088
+
+Host faimaison.fr *.faimaison.net
+    IdentityFile ~/.ssh/faimaison
+
+Host megauplol.fr vpn.homecomputing.fr
+    IdentityFile  ~/.ssh/megauplol
 
