@@ -19,6 +19,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias irc='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
+alias sf='php app/console'
 
 export MAIL=~/Maildir
 
