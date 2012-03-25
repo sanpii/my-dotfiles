@@ -51,18 +51,11 @@ if [ -f /etc/bash_completion.d/git ]; then
     . /etc/bash_completion.d/git
 fi
 
-PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-    vim -R -c 'set nomod nolist' -c 'map q :q<CR>' \
-    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
-export PAGER;
-
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
 
 export PATH=$PATH:~/.applications/bin
-
 # {{{ History
 export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
