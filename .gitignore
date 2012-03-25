@@ -3,3 +3,6 @@ ssh/*.pub
 ssh/*.ppk
 ssh/authorized_keys
 vim/.netrwhist
+vim/backup
+vim/view
+
