@@ -6,7 +6,7 @@ set editor="vim"
 set sort=threads
 
 set from="sanpi@homecomputing.fr"
-alternates nicolas.joseph@valaide.org nicolas.joseph@homecomputing.fr
+alternates nicolas.joseph@valaide.org nicolas.joseph@homecomputing.fr gege2061@homecomputing.fr
 set reverse_name
 set use_from=yes
 set envelope_from="yes"
@@ -27,13 +27,17 @@ set crypt_replyencrypt=yes
 
 set fast_reply
 
+set query_command = "lbdbq '%s'"
+
 folder-hook . "exec collapse-all"
 # }}}
 # Header {{{
 unignore X-Label
 unignore X-Troll
+unignore X-URL
 
 hdr_order Date From To CC BCC User-Agent Subject X-Label X-Troll
+my_hdr X-URL: http://sanpi.homecomputing.fr
 # }}}
 # Maildir {{{
 set mbox_type=Maildir
@@ -45,7 +49,7 @@ set record="+Sent"
 set postponed="+Drafts"
 set certificate_file=~/Maildir/certs
 
-mailboxes `cd /home/sanpi/Maildir; find . '(' -type d '(' -name 'cur' -o -name 'new' ')' -prune -printf '%h\n' ')' | sort -u | sed 's/\.\//=/' | tr '\n' ' '`
+mailboxes `cd /home/sanpi/Maildir; find . '(' -type d '(' -name 'cur' -o -name 'new' ')' -prune -printf '"%h"\n' ')' | sort -u | sed 's/\".\//="/' | tr '\n' ' '`
 
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
@@ -61,8 +65,8 @@ set timeout=10
 set header_cache=~/Maildir/.hcache
 # }}}
 # Vim like keybinds {{{
-bind pager j next-line
-bind pager k previous-line
+bind pager t next-line
+bind pager s previous-line
 bind pager / search
 bind pager gg top
 bind pager G bottom
@@ -91,9 +95,9 @@ set sidebar_width = 32
 color sidebar_new brightyellow default
 # }}}
 # bindings {{{
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cj sidebar-next
-bind index,pager \Cl sidebar-open
+bind index,pager \Cs sidebar-prev
+bind index,pager \Ct sidebar-next
+bind index,pager \Cr sidebar-open
 # }}}
 # Labels {{{
 # }}}
@@ -109,4 +113,4 @@ macro index \et "<pipe-entry>spamassassin -t\n<enter-command>set wait_key\n" "Te
 # Mime types {{{
 auto_view text/html
 # }}}
-
+#
