@@ -1,0 +1,181 @@
+snippet sfclass
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	class `Filename()`
+	{
+		${1}
+	}
+
+snippet sfctrl
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
+	class `Filename()` extends Controller
+	{
+		${1}
+	}
+
+snippet sfaction
+	/**
+	 * @Template()
+	 */
+	public function ${1}Action(${2})
+	{
+		${3}
+	}
+snippet sfinterface
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	interface `Filename()`
+	{
+		${1}
+	}
+
+snippet sftestcase
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	class `Filename()` extends \PHPUnit_Framework_TestCase
+	{
+		${1}
+	}
+
+snippet sfentity
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Doctrine\ORM\Mapping as ORM;
+	// use Symfony\Component\Validator\Constraints as Assert;
+
+	/**
+	 * @ORM\Entity
+	 */
+	class `Filename()`
+	{
+		/**
+		 * @ORM\Id
+		 * @ORM\GeneratedValue(strategy="AUTO")
+		 * @ORM\Column(name="id", type="integer")
+		 */
+		private $_id;
+
+		${1}
+	}
+
+snippet sftype
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Symfony\Component\Form\AbstractType;
+	use Symfony\Component\Form\FormBuilder;
+
+	class `Filename()` extends AbstractType
+	{
+		/**
+		 * {@inheritDoc}
+		 */
+		public function buildForm(FormBuilder $builder, array $options)
+		{
+			$builder
+				->add('${2}')
+			;
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		public function getName()
+		{
+			return '${1}';
+		}
+	}
+
+snippet sfcommand
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+	use Symfony\Component\Console\Input\InputInterface;
+	use Symfony\Component\Console\Input\InputArgument;
+	use Symfony\Component\Console\Input\InputOption;
+	use Symfony\Component\Console\Output\OutputInterface;
+
+	class `Filename()` extends ContainerAwareCommand
+	{
+		/**
+		 * {@inheritDoc}
+		 */
+		protected function configure()
+		{
+			$this
+				->setName('${1}')
+				// ->setDescription()
+				// ->setHelp()
+				// add some arguments:
+				// ->addArgument($name, $mode = null, $description = '', $default = null)
+				// and options:
+				// ->addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)
+			;
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		protected function execute(InputInterface $input, OutputInterface $output)
+		{
+			${2}
+		}
+	}
+
+snippet sfdf
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Doctrine\Common\Persistence\ObjectManager;
+	use Doctrine\Common\DataFixtures\FixtureInterface;
+
+	class `Filename()` implements FixtureInterface
+	{
+		public function load(ObjectManager $em)
+		{
+			${1}
+		}
+	}
+
+snippet sfdfo
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Doctrine\Common\Persistence\ObjectManager;
+	use Doctrine\Common\DataFixtures\AbstractFixture;
+	use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+
+	class `Filename()` extends AbstractFixture implements OrderedFixtureInterface
+	{
+		public function load(ObjectManager $em)
+		{
+			${2}
+		}
+
+		public function getOrder()
+		{
+			return ${1};
+		}
+	}
+
