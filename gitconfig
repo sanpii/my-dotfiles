@@ -8,6 +8,3 @@
 	pager = less
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
-[http]
-	proxy = http://rbhx2035:FTjoni_1@www-cache.aql.fr:3128
