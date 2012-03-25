@@ -252,17 +252,17 @@ nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --excl
 
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
-  let uri=a:uri
+    let uri=a:uri
 
-  if uri == ""
-    let uri=expand("%:p")
-  endif
-  if MySys() == "unix"
-    exec ":silent !x-www-browser ".uri
-  elseif MySys() == "win32"
-    exec ":silent !firefox ".uri
-  endif
-  redraw!
+    if uri == ""
+        let uri=expand("%:p")
+    endif
+    if MySys() == "unix"
+        exec ":silent !x-www-browser ".uri
+    elseif MySys() == "win32"
+        exec ":silent !firefox ".uri
+    endif
+    redraw!
 endfunction
 
 " Exécuter le fichier
@@ -280,6 +280,10 @@ inoremap <F10> <Esc> :call ToggleSpell()<cr>
 vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
 silent! nnoremap <unique> <silent> <leader>l :CommandT<CR>
+
+if !empty(system("setxkbmap -print|grep bepo"))
+    source ~/.vim/bepo.vim
+endif
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
