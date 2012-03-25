@@ -69,6 +69,12 @@ sub cmd_seeks {
 
     my $json = new JSON;
     my $json_data = $json->allow_nonref->decode($content);
+    if ( $mode eq "public") {
+      $witem->command("/msg * seeks?q=$data");
+    }
+    else {
+      Irssi::active_win()->print("seeks?q=$data");
+    }
     foreach my $snippet(@{$json_data->{snippets}}){
         $i++;
         utf8::decode($snippet->{title});
