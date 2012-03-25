@@ -7,8 +7,8 @@ Host irc.homecomputing.fr
     RemoteForward 8088 localhost:8088
 
 Host faimaison.fr *.faimaison.net
-    IdentityFile ~/.ssh/faimaison
+    IdentityFile ~/.ssh/faimaison.ppk
 
 Host megauplol.fr vpn.homecomputing.fr
-    IdentityFile  ~/.ssh/megauplol
+    IdentityFile  ~/.ssh/megauplol.ppk
 
