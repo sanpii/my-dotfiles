@@ -55,7 +55,7 @@ if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
 
-export PATH=$PATH:~/.applications/bin
+export PATH=$PATH:$HOME/.applications/bin
 # {{{ History
 export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
