@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# disable XON/XOFF flow control (^s/^q)
+stty -ixon
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -51,18 +54,11 @@ if [ -f /etc/bash_completion.d/git ]; then
     . /etc/bash_completion.d/git
 fi
 
-PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-    vim -R -c 'set nomod nolist' -c 'map q :q<CR>' \
-    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
-export PAGER;
-
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
 
-export PATH=$PATH:~/.applications/bin
-
+export PATH=$PATH:$HOME/.applications/bin
 # {{{ History
 export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
