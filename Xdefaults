@@ -60,3 +60,32 @@ URxvt*title: false
 
 ! }}}
 
+! Xterm {{{
+xterm*foreground: #eeeeeeeeecec
+xterm*background: #323232323232
+xterm*color0: #2e2e34343636
+xterm*color1: #cccc00000000
+xterm*color2: #4e4e9a9a0606
+xterm*color3: #c4c4a0a00000
+xterm*color4: #34346565a4a4
+xterm*color5: #757550507b7b
+xterm*color6: #060698989a9a
+xterm*color7: #d3d3d7d7cfcf
+xterm*color8: #555557575353
+xterm*color9: #efef29292929
+xterm*color10: #8a8ae2e23434
+xterm*color11: #fcfce9e94f4f
+xterm*color12: #72729f9fcfcf
+xterm*color13: #adad7f7fa8a8
+xterm*color14: #3434e2e2e2e2
+xterm*color15: #eeeeeeeeecec
+xterm*color16: #4c4c4c4c4c4c
+xterm*color17: #a8a830303030
+xterm*color18: #202088882020
+xterm*color19: #a8a888880000
+xterm*color20: #555555559898
+xterm*color21: #888830308888
+xterm*color22: #303088888888
+xterm*color23: #d8d8d8d8d8d8
+! }}}
+
