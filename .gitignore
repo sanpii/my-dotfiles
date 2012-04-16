@@ -1,4 +1,5 @@
 *.pyc
+gitconfig.obs
 ssh/id_rsa
 ssh/*.pub
 ssh/*.ppk
@@ -7,4 +8,5 @@ ssh/known_hosts
 vim/.netrwhist
 vim/backup
 vim/view
+vim/obs.vim
 
