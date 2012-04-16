@@ -290,6 +290,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins {{{
 
+set tags=/home/mco/tags,./tags,../tags,../../tags
+
 " Chargement des reffons en fonction du type
 filetype plugin indent on
 
@@ -429,7 +431,5 @@ endif
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if filereadable("~/.vim/obs.vim")
-    source ~/.vim/obs.vim
-endif
+source ~/.vim/obs.vim
 
