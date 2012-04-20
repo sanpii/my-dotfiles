@@ -64,3 +64,6 @@
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
 	url = git@github.com:sanpii/snipmate-snippets.git
+[submodule "vim/bundle/behat"]
+	path = vim/bundle/behat
+	url = https://github.com/veloce/vim-behat.git
