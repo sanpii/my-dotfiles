@@ -310,7 +310,6 @@ let g:Powerline#Segments#segments = Pl#Segment#Init(
         \ Pl#Segment#Create('flags.type'  , '%H%W'),
     \ ),
     \ Pl#Segment#Create('filename'        , '%<%F'),
-    \ Pl#Segment#Create('func_name'       , '%{cfi#get_func_name()}'),
     \ Pl#Segment#Create('filesize'        , '%{Powerline#Functions#GetFilesize()}', Pl#Segment#Modes('!N')),
     \ Pl#Segment#Create('pwd'             , '%{Powerline#Functions#GetPwd()}'),
     \ Pl#Segment#Create('static_str'      , '%%{"%s"}'),
@@ -349,6 +348,7 @@ let NERDTreeQuitOnOpen=1
 
 " vimwiki
 let Tlist_vimwiki_settings='wiki;h:Headers'
+let g:vimwiki_use_calendar=1
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m

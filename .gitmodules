@@ -31,9 +31,6 @@
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion.git
-[submodule "vim/bundle/current-func-info"]
-	path = vim/bundle/current-func-info
-	url = https://github.com/tyru/current-func-info.vim.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
