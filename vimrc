@@ -349,6 +349,7 @@ let NERDTreeQuitOnOpen=1
 " vimwiki
 let Tlist_vimwiki_settings='wiki;h:Headers'
 let g:vimwiki_use_calendar=1
+let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'path_html': '~/Documents/wiki/html'}]
 
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
