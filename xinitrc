@@ -12,6 +12,10 @@ if [ -x /usr/bin/VBoxClient ]; then
     /usr/bin/VBoxClient --clipboard &
 fi;
 
+if [ -x /usr/bin/owncloud ]; then
+    /usr/bin/owncloud &
+fi;
+
 if [ -x /usr/bin/parcellite ]; then
     /usr/bin/parcellite &
 fi;
