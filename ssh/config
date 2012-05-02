@@ -7,7 +7,7 @@ Host irc.homecomputing.fr
     RemoteForward 8088 localhost:8088
 
 Host megauplol.fr vpn.homecomputing.fr 10.5.82.1
-    IdentityFile ~/.ssh/megauplol.pph
+    IdentityFile ~/.ssh/megauplol.ppk
 
 Host faimaison.fr
     IdentityFile ~/.ssh/faimaison.ppk
