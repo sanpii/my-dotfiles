@@ -64,3 +64,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/tasklist"]
+	path = vim/bundle/tasklist
+	url = https://github.com/vim-scripts/TaskList.vim
+[submodule "vim/bundle/wiki"]
+	path = vim/bundle/wiki
+	url = https://github.com/vim-scripts/vimwiki
