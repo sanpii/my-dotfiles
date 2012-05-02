@@ -36,6 +36,8 @@ case "$TERM" in
     ;;
 esac
 
+PS1="\[\033[G\]$PS1"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -58,7 +60,7 @@ if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
 
-export PATH=$PATH:$HOME/.applications/bin
+export PATH=$PATH:$HOME/.applications/bin:$HOME/bin
 # {{{ History
 export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
