@@ -28,8 +28,8 @@ bindsym $mod+e exec pcmanfm
 # kill focused window
 bindsym $mod+Shift+X kill
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run -b
+# start program launcher
+bindsym $mod+p exec kupfer
 
 # change focus
 bindsym $mod+c focus left
