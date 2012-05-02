@@ -20,3 +20,6 @@ for file in *; do
     fi;
 done;
 
+touch $home/.gitconfig.obs
+touch $home/.vim/obs.vim
+
