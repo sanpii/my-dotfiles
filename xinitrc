@@ -36,5 +36,5 @@ if [ -x /usr/bin/x-terminal-emulator ]; then
     /usr/bin/x-terminal-emulator &
 fi;
 
-exec i3
+exec i3 --force-xinerama
 
