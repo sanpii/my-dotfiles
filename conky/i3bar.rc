@@ -9,5 +9,7 @@ if_up_strictness address
 use_spacer left
 
 TEXT
-${time %x %X}
-
+${image ~/.conky/icons/cpu.xbm} ${cpu cpu0}% \
+${image ~/.conky/icons/cpu.xbm} ${cpu cpu1}% \
+${image ~/.conky/icons/mem.xbm} $memperc% \
+${image ~/.conky/icons/clock.xbm} ${time %x %X}
