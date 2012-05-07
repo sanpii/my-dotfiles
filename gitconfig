@@ -36,3 +36,5 @@
 	path = .gitconfig.obs
 [rerere]
 	enabled = 1
+[merge]
+	tool = vimdiff
