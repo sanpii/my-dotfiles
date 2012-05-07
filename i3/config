@@ -158,6 +158,6 @@ mode "resize" {
 bindsym $mod+o mode "resize"
 
 bar {
- status_command conky -c ~/.conky/i3bar.rc
+    status_command conky -c ~/.conky/i3bar.rc
 }
 
