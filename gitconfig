@@ -30,3 +30,5 @@
 [include]
 	path = .gitconfig.obs
 
+[rerere]
+	enabled = 1
