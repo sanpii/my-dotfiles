@@ -20,7 +20,15 @@
 [core]
 	editor = vim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /home/sanpi/.gitignore/Global/vim.gitignore
 [alias]
+	co = checkout
+	st = status
+	s = status -s
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	vim = !vim $(git ls-files -m -z | xargs -0 echo)
+	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
+	serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [pager]
 	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
@@ -28,4 +36,7 @@
 	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [include]
 	path = .gitconfig.obs
-
+[rerere]
+	enabled = 1
+[merge]
+	tool = vimdiff

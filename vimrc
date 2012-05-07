@@ -77,10 +77,6 @@ set hidden
 " Nombre de commandes maximale dans l'historique
 set history=100
 
-" Récupérer la position du curseur entre 2 ouvertures de fichiers
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-
 " Ne pas couper les lignes trop longues
 set nowrap
 
@@ -369,7 +365,7 @@ com! SfJumpToView call s:SfJumpToView()
 " create a mapping only in a Controller file
 autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
 
-set wildignore=data/**,app/cache/**,web/bundles/**
+set wildignore=data/**,app/cache/**,web/bundles/**,*/.git_externals/**
 
 " }}}
 
@@ -382,6 +378,10 @@ let g:cfi_php_show_params=1
 " piv
 let g:DisableAutoPHPFolding = 1
 let php_folding = 0
+
+" gitv
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_WrapLines = 0
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

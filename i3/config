@@ -112,6 +112,12 @@ bindsym $mod+Shift+I restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+equal move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+equal scratchpad show
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
@@ -152,6 +158,5 @@ mode "resize" {
 bindsym $mod+o mode "resize"
 
 bar {
- status_command conky -c ~/.conky/i3bar.rc
+    status_command conky -c ~/.conky/i3bar.rc
 }
-
