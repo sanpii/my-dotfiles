@@ -1,5 +1,6 @@
 *.pyc
 gitconfig.obs
+ssh/config
 ssh/id_rsa
 ssh/*.pub
 ssh/*.ppk
