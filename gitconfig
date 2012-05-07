@@ -20,6 +20,7 @@
 [core]
 	editor = vim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /home/sanpi/.gitignore/Global/vim.gitignore
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [pager]
