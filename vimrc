@@ -77,10 +77,6 @@ set hidden
 " Nombre de commandes maximale dans l'historique
 set history=100
 
-" Récupérer la position du curseur entre 2 ouvertures de fichiers
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-
 " Ne pas couper les lignes trop longues
 set nowrap
 
