@@ -1,13 +1,65 @@
 out_to_x no
-background no
 out_to_console yes
-update_interval 1.0
 total_run_times 0
-use_spacer none
-short_units yes
+update_interval 1
+
 if_up_strictness address
-use_spacer left
+template0 ┆
 
+# not really readable system info formating follows
+# preview:
+# 5% 0.80 GHz 49° ┆ 100%  0.0 ↑ ↓ 0.0 ┆ ~53% ┆ ▉ 100% ┆ sun.26/02 00:34
+# with mpd running:
+# 5% 0.80 GHz 49° ┆ 100%  0.5 ↑ ↓ 0.5 ┆ ► Primordial Breath - Slania - Eluveitie [0:31 / 4:19] ┆ ~53% ┆ ▉ 100% ┆ sun.26/02 00:34
 TEXT
-${time %x %X}
-
+CPU ${cpu cpu0}% ${cpu cpu1}% \
+$template0 \
+MEM ${memperc}% \
+$template0 \
+${if_up wlan0}\
+${wireless_link_qual_perc wlan0}%  \
+${upspeedf wlan0} ↑ \
+↓ ${downspeedf wlan0} \
+$template0 \
+$endif\
+$if_mpd_playing\
+${if_match "$mpd_status"=="Paused"}\
+"\
+${else}\
+►\
+$endif\
+ ${mpd_title 50} - ${mpd_album 50}\
+${if_match "$mpd_artist"!=""}\
+ - ${mpd_artist 50}\
+$endif\
+ [$mpd_elapsed / $mpd_length] \
+$template0 \
+$endif\
+${if_mixer_mute}\
+┄\
+${else}\
+~$mixer%\
+$endif\
+ $template0 \
+${if_match "$battery_short"!="N"}\
+${if_match "$battery_short"<"D"}\
+≃\
+$else\
+${if_match $battery_percent>75}\
+▉\
+$else\
+${if_match $battery_percent>40}\
+▃\
+$else\
+${if_match $battery_percent>20}\
+▁\
+${else}\
+…\
+$endif\
+$endif\
+$endif\
+$endif\
+ $battery_percent% \
+$template0 \
+$endif\
+${time %x %X}\
