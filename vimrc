@@ -383,6 +383,9 @@ let g:cfi_php_show_params=1
 let g:DisableAutoPHPFolding = 1
 let php_folding = 0
 
+" gitv
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_WrapLines = 0
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
