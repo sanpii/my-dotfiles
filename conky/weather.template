@@ -1,9 +1,0 @@
-${image [--datatype=WI] -p 0,540 -s 90x90}${voffset 7}${offset 120}[--datatype=LT]/[--datatype=HT]
-
-${offset 120}[--datatype=WS]
-${image [--datatype=BI] -p 240,550 -s 80x80}
-${image /usr/share/conkyforecast/images/weathericons/32.png -p 0,620 -s 90x90}${voffset 20}${offset 120}Leve : [--datatype=SR]
-${offset 120}Couche : [--datatype=SS]
-${image ~/.conky/images/moon.png -p 262,645 -s 50x50}
-${image [--datatype=MI] -p 260,645 -s 50x50}
-
