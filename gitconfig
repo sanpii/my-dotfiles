@@ -30,6 +30,7 @@
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
 	serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
 [pager]
 	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
