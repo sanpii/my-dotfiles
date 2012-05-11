@@ -25,7 +25,7 @@
 	co = checkout
 	st = status
 	s = status -s
-	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	new = !sh -c 'git log -p $1@{1}..$1@{0} "$@"'
 	vim = !vim $(git ls-files -m -z | xargs -0 echo)
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
 	serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
