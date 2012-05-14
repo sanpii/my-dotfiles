@@ -275,8 +275,6 @@ noremap <F10> :call ToggleSpell()<cr>
 inoremap <F10> <Esc> :call ToggleSpell()<cr>
 vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
-silent! nnoremap <unique> <silent> <leader>l :CommandT<CR>
-
 if !empty(system("setxkbmap -print|grep bepo"))
     source ~/.vim/bepo.vim
 endif
