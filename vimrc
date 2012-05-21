@@ -239,6 +239,8 @@ unlet backup_dir
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappage {{{
 
+let mapleader = ","
+
 " Help
 inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
 nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
@@ -427,4 +429,3 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 source ~/.vim/obs.vim
-
