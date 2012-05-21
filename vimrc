@@ -385,6 +385,26 @@ let g:Gitv_WrapLines = 0
 imap <C-S-P> <Esc> :CtrlP %:h<CR>
 map <C-S-P> :CtrlP %:h<CR>
 
+" xdebug
+let g:debuggerMapDefaultKeys = 0
+
+map <leader><F1> :python debugger_resize()<cr>
+map <leader><F2> :python debugger_command('step_into')<cr>
+map <leader><F3> :python debugger_command('step_over')<cr>
+map <leader><F4> :python debugger_command('step_out')<cr>
+
+map <leader><F5> :python debugger_run()<cr>
+map <leader><F6> :python debugger_quit()<cr>
+
+map <leader><F7> :python debugger_command('step_into')<cr>
+map <leader><F8> :python debugger_command('step_over')<cr>
+map <leader><F9> :python debugger_command('step_out')<cr>
+
+map <leader><F11> :python debugger_context()<cr>
+map <leader><F12> :python debugger_property()<cr>
+map <leader><F11> :python debugger_watch_input("context_get")<cr>A<cr>
+map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
