@@ -79,3 +79,6 @@
 [submodule "vim/bundle/lastpos"]
 	path = vim/bundle/lastpos
 	url = https://github.com/vim-scripts/lastpos.vim.git
+[submodule "vim/bundle/xdebug"]
+	path = vim/bundle/xdebug
+	url = https://github.com/vim-scripts/XDebug-DBGp-client-for-PHP.git
