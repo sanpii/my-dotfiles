@@ -8,9 +8,7 @@ template0 ┆
 
 # not really readable system info formating follows
 # preview:
-# 5% 0.80 GHz 49° ┆ 100%  0.0 ↑ ↓ 0.0 ┆ ~53% ┆ ▉ 100% ┆ sun.26/02 00:34
-# with mpd running:
-# 5% 0.80 GHz 49° ┆ 100%  0.5 ↑ ↓ 0.5 ┆ ► Primordial Breath - Slania - Eluveitie [0:31 / 4:19] ┆ ~53% ┆ ▉ 100% ┆ sun.26/02 00:34
+# 5% 0.80 GHz 49° ┆ 100%  0.0 ↑ ↓ 0.0 ┆ < 53% ┆ ▉ 100% ┆ sun.26/02 00:34
 TEXT
 CPU ${cpu cpu0}% ${cpu cpu1}% \
 $template0 \
@@ -29,7 +27,8 @@ ${else}\
 $endif\
  $template0 \
 ${if_match "$battery_short"!="N"}\
-${if_match "$battery_short"<"D"}\
+${if_match "$battery_short"!="U"}\
+${if_match "$battery_short"="C"}\
 ≃\
 $else\
 ${if_match $battery_percent>75}\
@@ -40,13 +39,12 @@ ${if_match $battery_percent>40}\
 $else\
 ${if_match $battery_percent>20}\
 ▁\
-${else}\
-…\
 $endif\
 $endif\
 $endif\
 $endif\
  $battery_percent% \
 $template0 \
+$endif\
 $endif\
 ${time %x %X}\
