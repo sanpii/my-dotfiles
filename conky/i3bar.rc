@@ -23,9 +23,9 @@ ${upspeedf wlan0} ↑ \
 $template0 \
 $endif\
 ${if_mixer_mute}\
-┄\
+< ┄\
 ${else}\
-~$mixer%\
+< $mixer%\
 $endif\
  $template0 \
 ${if_match "$battery_short"!="N"}\
