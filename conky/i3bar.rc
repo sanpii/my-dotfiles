@@ -4,11 +4,11 @@ total_run_times 0
 update_interval 1
 
 if_up_strictness address
-template0 ┆
+template0 |
 
 # not really readable system info formating follows
 # preview:
-# 5% 0.80 GHz 49° ┆ 100%  0.0 ↑ ↓ 0.0 ┆ < 53% ┆ ▉ 100% ┆ sun.26/02 00:34
+# CPU 5% | MEM 100% | 0.0 ↑ ↓ 0.0 | < 53% | ▉ 100% | 26/02/2012 00:34:10
 TEXT
 CPU ${cpu cpu0}% ${cpu cpu1}% \
 $template0 \
