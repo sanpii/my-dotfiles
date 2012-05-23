@@ -8,7 +8,6 @@ snippet sfbundle
 	class `Filename()` extends Bundle
 	{
 	}
-
 snippet sfclass
 	<?php
 
@@ -18,7 +17,6 @@ snippet sfclass
 	{
 		${1}
 	}
-
 snippet sfctrl
 	<?php
 
@@ -33,7 +31,6 @@ snippet sfctrl
 	{
 		${1}
 	}
-
 snippet sfaction
 	/**
 	 * @Template()
@@ -51,7 +48,6 @@ snippet sfinterface
 	{
 		${1}
 	}
-
 snippet sftestcase
 	<?php
 
@@ -61,7 +57,6 @@ snippet sftestcase
 	{
 		${1}
 	}
-
 snippet sfentity
 	<?php
 
@@ -86,7 +81,6 @@ snippet sfentity
 
 		${1}
 	}
-
 snippet sftype
 	<?php
 
@@ -115,7 +109,6 @@ snippet sftype
 			return '${1}';
 		}
 	}
-
 snippet sfcommand
 	<?php
 
@@ -153,7 +146,6 @@ snippet sfcommand
 			${2}
 		}
 	}
-
 snippet sfdf
 	<?php
 
@@ -169,7 +161,6 @@ snippet sfdf
 			${1}
 		}
 	}
-
 snippet sfdfo
 	<?php
 
@@ -190,5 +181,54 @@ snippet sfdfo
 		{
 			return ${1};
 		}
-	}
+snippet sftwig
+	<?php
 
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Twig_Extension;
+	use Twig_Filter_Method;
+	use Twig_Function_Method;
+
+	class `Filename()` extends Twig_Extension
+	{
+		public function getFilters()
+		{
+			return array(
+				'${2}' => new Twig_Filter_Method($this, '${2}Filter'),
+			);
+		}
+
+		public function ${2}Filter(${3})
+		{
+			${4}
+		}
+
+		public function getName()
+		{
+			return '${1}';
+		}
+	}
+snippet sfdic
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+
+	use Symfony\Component\DependencyInjection\ContainerBuilder;
+	use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+	use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+	use Symfony\Component\Config\FileLocator;
+
+	class `Filename()` extends Extension
+	{
+		public function load(array $configs, ContainerBuilder $container)
+		{
+			$loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+			$loader->load('${2:services.yml}');
+		}
+
+		public function getAlias()
+		{
+			return '${1}';
+		}
+	}
