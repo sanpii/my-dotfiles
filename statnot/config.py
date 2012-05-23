@@ -32,7 +32,6 @@ import subprocess
 def update_text(text):
     if text:
         p1 = subprocess.Popen(['echo', text], stdout=subprocess.PIPE)
-        p2 = subprocess.Popen('dzen2 -p 3 -fg white -bg darkred'.split(' '), stdin=p1.stdout, stdout=subprocess.PIPE)
+        p2 = subprocess.Popen('dzen2 -p 3 -fg white -bg darkred -xs 1'.split(' '), stdin=p1.stdout, stdout=subprocess.PIPE)
         p1.stdout.close()
         output = p2.communicate()[0]
-
