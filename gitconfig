@@ -36,9 +36,9 @@
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
 	svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
 [pager]
-	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	log = perl ~/.git/diff-highlight | less
+	show = perl ~/.git/diff-highlight | less
+	diff = perl ~/.git/diff-highlight | less
 [include]
 	path = .gitconfig.obs
 [rerere]
