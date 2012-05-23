@@ -22,19 +22,6 @@ ${upspeedf wlan0} ↑ \
 ↓ ${downspeedf wlan0} \
 $template0 \
 $endif\
-$if_mpd_playing\
-${if_match "$mpd_status"=="Paused"}\
-"\
-${else}\
-►\
-$endif\
- ${mpd_title 50} - ${mpd_album 50}\
-${if_match "$mpd_artist"!=""}\
- - ${mpd_artist 50}\
-$endif\
- [$mpd_elapsed / $mpd_length] \
-$template0 \
-$endif\
 ${if_mixer_mute}\
 ┄\
 ${else}\
