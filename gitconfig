@@ -25,10 +25,13 @@
 	a = add
 	b = branch
 	d = diff
+	h = help
 	s = status -s
 	co = checkout
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lo = log --stat
+	pr = pull --rebase
 	st = status
 	new = !sh -c 'git log -p $1@{1}..$1@{0} "$@"'
 	vim = !vim $(git ls-files -m -z | xargs -0 echo)
