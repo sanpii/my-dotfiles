@@ -407,6 +407,10 @@ map <leader><F12> :python debugger_property()<cr>
 map <leader><F11> :python debugger_watch_input("context_get")<cr>A<cr>
 map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 
+" php-cs-fixer
+let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
+let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
