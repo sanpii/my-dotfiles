@@ -82,3 +82,6 @@
 [submodule "vim/bundle/xdebug"]
 	path = vim/bundle/xdebug
 	url = https://github.com/vim-scripts/XDebug-DBGp-client-for-PHP.git
+[submodule "vim/bundle/php-cs-fixer"]
+	path = vim/bundle/php-cs-fixer
+	url = https://github.com/stephpy/vim-php-cs-fixer.git
