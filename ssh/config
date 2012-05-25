@@ -11,3 +11,6 @@ Host megauplol.fr vpn.homecomputing.fr 10.5.82.1
 
 Host *.faimaison.fr *.faimaison.net
     IdentityFile ~/.ssh/faimaison.ppk
+
+Host 192.168.* *.aql.fr
+    IdentityFile ~/.ssh/obs.ppk
