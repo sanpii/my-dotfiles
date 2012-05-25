@@ -67,9 +67,6 @@
 [submodule "vim/bundle/tasklist"]
 	path = vim/bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim
-[submodule "vim/bundle/wiki"]
-	path = vim/bundle/wiki
-	url = https://github.com/vim-scripts/vimwiki
 [submodule "gitignore"]
 	path = gitignore
 	url = https://github.com/github/gitignore.git
@@ -85,3 +82,6 @@
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
 	url = https://github.com/stephpy/vim-php-cs-fixer.git
+[submodule "vim/bundle/notes"]
+	path = vim/bundle/notes
+	url = https://github.com/xolox/vim-notes.git

@@ -314,11 +314,6 @@ let g:tagbar_type_php = {
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
 
-" vimwiki
-let Tlist_vimwiki_settings='wiki;h:Headers'
-let g:vimwiki_use_calendar=1
-let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'path_html': '~/Documents/wiki/html'}]
-
 " vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
@@ -410,6 +405,10 @@ map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<c
 " php-cs-fixer
 let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
 let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
+
+" notes
+let g:notes_directory = '~/Documents/notes'
+let g:notes_title_sync = 'rename_file'
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
