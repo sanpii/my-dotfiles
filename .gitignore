@@ -1,6 +1,10 @@
 *.pyc
 gitconfig.obs
 pentadactyl/info
+irssi/away.log
+irssi/config
+irssi/config.autosave
+irssi/friends
 ssh/config
 ssh/id_rsa
 ssh/*.pub

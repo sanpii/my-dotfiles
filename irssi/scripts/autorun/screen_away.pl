@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/screen_away.pl
