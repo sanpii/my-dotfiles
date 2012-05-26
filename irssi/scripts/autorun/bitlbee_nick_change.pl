@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/bitlbee_nick_change.pl

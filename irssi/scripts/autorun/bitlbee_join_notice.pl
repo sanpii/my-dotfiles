@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/bitlbee_join_notice.pl
