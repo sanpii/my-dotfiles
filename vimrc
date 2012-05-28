@@ -361,11 +361,7 @@ com! SfJumpToView call s:SfJumpToView()
 autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
 
 set wildignore=data/**,app/cache/**,web/bundles/**,*/.git_externals/**
-
 " }}}
-
-" Syntastic
-let g:syntastic_enable_signs=1
 
 " cfi
 let g:cfi_php_show_params=1
@@ -409,6 +405,9 @@ let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,sh
 " notes
 let g:notes_directory = '~/Documents/notes'
 let g:notes_title_sync = 'rename_file'
+
+" organizer
+source ~/.vim/bundle/organizer/_vimrc
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
