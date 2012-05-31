@@ -1,0 +1,63 @@
+group bépo -description "bépo layout" -nopersist
+
+" [HJKL] -> {CTSR}
+" ————————————————
+" {cr} = « gauche / droite »
+noremap c h
+noremap r l
+" {ts} = « haut / bas »
+noremap t j
+noremap s k
+" {CR} = « haut / bas de l'écran »
+noremap C H
+noremap R L
+
+"T et S pour descendre/monter d'une demi page
+noremap T <C-d>
+noremap S <C-u>
+
+
+" {HJKL} <- [CTSR]
+" ————————————————
+" j ouverture dans nouvel onglet
+noremap j t
+noremap J T
+" utilité ?
+noremap l c
+noremap L C
+" h = reload
+noremap h r
+noremap H R
+" C-k = gh (go home)
+noremap k s
+noremap K S
+
+" Désambiguation de {g}
+" —————————————————————
+" ligne précédante/suivante (à l'intérieur d'une phrase)
+noremap gs gk
+noremap gt gj
+" onglet précédant/suivant
+noremap gb gT
+noremap gé gt
+" le mode visuel passe en I et i/e servent à passer à l'onglet suivant/précédent
+noremap I i
+noremap i gT
+noremap e gt
+" précédent/suivant dans l'historique
+noremap <C-i> -ex back
+noremap <C-e> -ex forward
+
+" premier/dernier onglet
+noremap gi g^
+noremap ge g0
+
+" suivre liens précédent/suivant
+noremap « [[
+noremap » ]]
+
+" utiliser les touches centrales
+set hintkeys=auie,ctsrnmbépoèvdljz
+
+map <C-t> <C-v>j
+map <C-s> <C-v>k
