@@ -246,7 +246,7 @@ inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
 nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
 
 " Rebuild tag index
-nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>
 
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
@@ -360,7 +360,7 @@ com! SfJumpToView call s:SfJumpToView()
 " create a mapping only in a Controller file
 autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
 
-set wildignore=data/**,app/cache/**,web/bundles/**,*/.git_externals/**
+set wildignore=data/**,app/cache/**,web/bundles/**
 " }}}
 
 " cfi
@@ -377,6 +377,9 @@ let g:Gitv_WrapLines = 0
 " ctrlp
 imap <C-S-P> <Esc> :CtrlP %:h<CR>
 map <C-S-P> :CtrlP %:h<CR>
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 0
+let g:ctrlp_default_input = 1
 
 " xdebug
 let g:debuggerMapDefaultKeys = 0
