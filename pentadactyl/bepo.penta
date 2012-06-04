@@ -57,7 +57,7 @@ noremap « [[
 noremap » ]]
 
 " utiliser les touches centrales
-set hintkeys=auie,ctsrnmbépoèvdljz
+set hintkeys=auiectsrnmbépoèvdljz
 
 map <C-t> <C-v>j
 map <C-s> <C-v>k
