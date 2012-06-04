@@ -29,6 +29,7 @@
 	s = status -s
 	co = checkout
 	dc = diff --cached
+	fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lo = log --stat
 	pr = pull --rebase
@@ -39,6 +40,7 @@
 	serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
 	svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
+	fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
 [pager]
 	log = perl ~/.git-contrib/diff-highlight | less
 	show = perl ~/.git-contrib/diff-highlight | less
