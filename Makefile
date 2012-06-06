@@ -1,4 +1,4 @@
-dotfiles = $(filter-out Makefile, $(wildcard *))
+dotfiles = $(filter-out Makefile dpkg.selections, $(wildcard *))
 
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
