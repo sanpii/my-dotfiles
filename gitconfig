@@ -34,7 +34,7 @@
 	lo = log --stat
 	pr = pull --rebase
 	st = status
-	new = !sh -c 'git log -p $1@{1}..$1@{0} "$@"'
+	new = !sh -c 'git log "$@" @{1}..@{0}'
 	vim = !vim $(git ls-files -m -z | xargs -0 echo)
 	info = !~/.git-contrib/git-info
 	serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
