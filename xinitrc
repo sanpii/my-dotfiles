@@ -8,14 +8,6 @@ if [ -x ~/.applications/bin/statnot ]; then
     ~/.applications/bin/statnot ~/.statnot/config.py &
 fi;
 
-if [ -x /usr/bin/VBoxClient ]; then
-    /usr/bin/VBoxClient --clipboard &
-fi;
-
-if [ -x /usr/bin/parcellite ]; then
-    /usr/bin/parcellite &
-fi;
-
 if [ -x /usr/bin/davmail ]; then
     /usr/bin/davmail &
 fi;
@@ -33,7 +25,7 @@ if [ -x /usr/bin/x-terminal-emulator ]; then
 fi;
 
 if [ -x /usr/bin/xautolock ]; then
-    /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.i3/lockscreen.png'
+    /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.i3/lockscreen.png' &
 fi;
 
 exec i3 --force-xinerama
