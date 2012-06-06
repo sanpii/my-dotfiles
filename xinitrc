@@ -12,10 +12,6 @@ if [ -x /usr/bin/VBoxClient ]; then
     /usr/bin/VBoxClient --clipboard &
 fi;
 
-if [ -x /usr/bin/owncloud ]; then
-    /usr/bin/owncloud &
-fi;
-
 if [ -x /usr/bin/parcellite ]; then
     /usr/bin/parcellite &
 fi;
@@ -36,5 +32,8 @@ if [ -x /usr/bin/x-terminal-emulator ]; then
     /usr/bin/x-terminal-emulator &
 fi;
 
-exec i3 --force-xinerama
+if [ -x /usr/bin/xautolock ]; then
+    /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.i3/lockscreen.png'
+fi;
 
+exec i3 --force-xinerama

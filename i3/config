@@ -25,6 +25,8 @@ bindsym $mod+Return exec x-terminal-emulator
 
 bindsym $mod+e exec pcmanfm
 
+bindsym $mod+l exec xautolock -locknow
+
 # kill focused window
 bindsym $mod+Shift+X kill
 
