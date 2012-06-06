@@ -100,3 +100,6 @@
 [submodule "pentadactyl/plugins/firebug"]
 	path = pentadactyl/plugins/firebug
 	url = https://github.com/maksimr/firebug-pentadactyl.git
+[submodule "vim/bundle/LanguageTool"]
+	path = vim/bundle/LanguageTool
+	url = https://github.com/vim-scripts/LanguageTool.git
