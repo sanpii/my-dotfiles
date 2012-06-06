@@ -135,6 +135,10 @@ highlight SpecialKey cterm=bold ctermfg=darkgrey
 set cursorline
 highlight CursorLine cterm=bold ctermbg=none gui=bold guibg=grey20
 
+highlight SpellBad cterm=underline ctermfg=red ctermbg=none
+highlight SpellCap cterm=underline ctermfg=green ctermbg=none
+highlight LanguageToolError cterm=underline ctermfg=green ctermbg=none
+
 " Nombre de ligne minimal en dessous ou au dessus du curseur
 set scrolloff=3
 
@@ -411,6 +415,9 @@ let g:notes_title_sync = 'rename_file'
 
 " organizer
 source ~/.vim/bundle/organizer/_vimrc
+
+" LanguageTool
+let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
