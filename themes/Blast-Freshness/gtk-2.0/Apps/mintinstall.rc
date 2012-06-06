@@ -1,6 +1,0 @@
-style "mintinstall-pathbar"
-{
-	bg_pixmap[NORMAL]			= "Apps/Mintinstall/pathbar.png"
-}
-
-widget "main_window.vbox1.vbox4.toolbar.GtkHBox.GtkDrawingArea" style "mintinstall-pathbar"
