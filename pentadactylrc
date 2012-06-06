@@ -1,6 +1,6 @@
 source ~/.pentadactyl/bepo.penta
 
-set defsearch=seeks
+set defsearch=seeks-search
 set newtab=all
 set titlestring="RFC 2616 bot"
 set mapleader=","
