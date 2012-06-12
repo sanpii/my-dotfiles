@@ -26,7 +26,7 @@
 	b = branch
 	d = diff
 	h = help
-	s = status -s
+	s = status -sb
 	co = checkout
 	dc = diff --cached
 	fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
