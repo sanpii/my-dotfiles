@@ -3,22 +3,7 @@
 
 call pathogen#infect()
 
-function! MySys()
-    if has("win32")
-        return "win32"
-    elseif has("unix")
-        return "unix"
-    else
-        return "mac"
-    endif
-endfunction
-
-if MySys() == "win32"
-    let vimfiles=$HOME . "/vimfiles"
-elseif MySys() == "unix"
-    let vimfiles=$HOME . "/.vim"
-    let g:loaded_maximize=1
-endif
+let vimfiles=$HOME . "/.vim"
 
 " Désactive la compatibilité avec VI
 set nocompatible
@@ -113,17 +98,6 @@ syntax on
 "colorscheme devbox
 "colorscheme vo_dark
 colorscheme desert-warm-256
-
-" Set font according to system
-if MySys() == "mac"
-    set gfn=Menlo:h14
-    set shell=/bin/bash
-elseif MySys() == "win32"
-    set gfn=Consolas:h11
-    set shell=c:\Programs\msys\1.0\bin\sh
-elseif MySys() == "unix"
-    set shell=bash
-endif
 
 " Afficher les caractères spéciaux
 set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
@@ -268,11 +242,7 @@ function! Browser(uri)
     if uri == ""
         let uri=expand("%:p")
     endif
-    if MySys() == "unix"
-        exec ":silent !x-www-browser ".uri
-    elseif MySys() == "win32"
-        exec ":silent !firefox ".uri
-    endif
+    exec ":silent !x-www-browser ".uri
     redraw!
 endfunction
 
