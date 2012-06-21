@@ -299,6 +299,10 @@ vnoremap <Tab> %
 noremap H ^
 noremap L g_
 
+" Permet de placer au milieu de l'écran l'occurence de la recherche
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 if !empty(system("setxkbmap -print|grep bepo"))
     source ~/.vim/bepo.vim
 endif
