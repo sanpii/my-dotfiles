@@ -122,7 +122,6 @@ elseif MySys() == "win32"
     set gfn=Consolas:h11
     set shell=c:\Programs\msys\1.0\bin\sh
 elseif MySys() == "unix"
-    set gfn=Monospace\ 10
     set shell=bash
 endif
 
