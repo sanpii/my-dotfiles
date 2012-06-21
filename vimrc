@@ -238,6 +238,16 @@ if isdirectory(backup_dir)
 endif
 unlet backup_dir
 
+let undo_dir=vimfiles . "/undo"
+if isdirectory(undo_dir)
+    " répertoire de sauvegarde automatique
+    exec "set undodir=" . undo_dir
+
+    " activation de la sauvegarde
+    set undofile
+endif
+unlet undo_dir
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
