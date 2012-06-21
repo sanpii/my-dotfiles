@@ -9,5 +9,6 @@ ssh/authorized_keys
 ssh/known_hosts
 vim/.netrwhist
 vim/backup/*
+vim/undo/*
 vim/view/*
 vim/obs.vim
