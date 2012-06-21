@@ -291,6 +291,10 @@ noremap <F10> :call ToggleSpell()<cr>
 inoremap <F10> <Esc> :call ToggleSpell()<cr>
 vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 
+" simple matching pairs easily, with Tab
+nnoremap <Tab> %
+vnoremap <Tab> %
+
 if !empty(system("setxkbmap -print|grep bepo"))
     source ~/.vim/bepo.vim
 endif
