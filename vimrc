@@ -295,6 +295,10 @@ vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 nnoremap <Tab> %
 vnoremap <Tab> %
 
+" Permet d'aller au debut et a la fin d'une ligne plus facilement
+noremap H ^
+noremap L g_
+
 if !empty(system("setxkbmap -print|grep bepo"))
     source ~/.vim/bepo.vim
 endif
