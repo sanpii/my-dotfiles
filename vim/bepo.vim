@@ -69,3 +69,5 @@ noremap » >
 noremap è ^
 noremap È 0
 
+noremap C ^
+noremap R g_
