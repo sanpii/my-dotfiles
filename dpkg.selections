@@ -33,7 +33,7 @@ ntpdate
 nvidia-glx
 pcmanfm
 php5
-rxvt-unicode
+rxvt-unicode-256color
 subversion
 sudo
 synaptic
