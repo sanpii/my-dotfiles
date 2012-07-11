@@ -186,27 +186,23 @@ snippet sftwig
 
 	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
 
-	use Twig_Extension;
-	use Twig_Filter_Method;
-	use Twig_Function_Method;
-
-	class `Filename()` extends Twig_Extension
+	class `Filename()` extends \Twig_Extension
 	{
-		public function getFilters()
+		public function getFunctions()
 		{
 			return array(
-				'${2}' => new Twig_Filter_Method($this, '${2}Filter'),
+				'${1:}_${2:}' => new \Twig_Function_Method($this, '$2'),
 			);
 		}
 
-		public function ${2}Filter(${3})
+		public function $2(${3})
 		{
 			${4}
 		}
 
 		public function getName()
 		{
-			return '${1}';
+			return '$1';
 		}
 	}
 snippet sfdic
