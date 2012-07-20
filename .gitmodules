@@ -22,9 +22,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
-[submodule "vim/bundle/piv"]
-	path = vim/bundle/piv
-	url = https://github.com/spf13/PIV.git
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion.git
@@ -106,3 +103,6 @@
 [submodule "vim/bundle/help"]
 	path = vim/bundle/help
 	url = https://github.com/juanpabloaj/help.vim.git
+[submodule "vim/bundle/PIV"]
+	path = vim/bundle/PIV
+	url = https://github.com/spf13/PIV.git
