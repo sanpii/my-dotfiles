@@ -3,58 +3,58 @@ group bépo -description "bépo layout" -nopersist
 " [HJKL] -> {CTSR}
 " ————————————————
 " {cr} = « gauche / droite »
-noremap c h
-noremap r l
+map -builtin c h
+map -builtin r l
 " {ts} = « haut / bas »
-noremap t j
-noremap s k
+map -builtin t j
+map -builtin s k
 " {CR} = « haut / bas de l'écran »
-noremap C H
-noremap R L
+map -builtin C H
+map -builtin R L
 
 "T et S pour descendre/monter d'une demi page
-noremap T <C-d>
-noremap S <C-u>
+map -builtin T <C-d>
+map -builtin S <C-u>
 
 
 " {HJKL} <- [CTSR]
 " ————————————————
 " j ouverture dans nouvel onglet
-noremap j t
-noremap J T
+map -builtin j t
+map -builtin J T
 " utilité ?
-noremap l c
-noremap L C
+map -builtin l c
+map -builtin L C
 " h = reload
-noremap h r
-noremap H R
+map -builtin h r
+map -builtin H R
 " C-k = gh (go home)
-noremap k s
-noremap K S
+map -builtin k s
+map -builtin K S
 
 " Désambiguation de {g}
 " —————————————————————
 " ligne précédante/suivante (à l'intérieur d'une phrase)
-noremap gs gk
-noremap gt gj
+map -builtin gs gk
+map -builtin gt gj
 " onglet précédant/suivant
-noremap gb gT
-noremap gé gt
+map -builtin gb gT
+map -builtin gé gt
 " le mode visuel passe en I et i/e servent à passer à l'onglet suivant/précédent
-noremap I i
-noremap i gT
-noremap e gt
+map -builtin I i
+map -builtin i gT
+map -builtin e gt
 " précédent/suivant dans l'historique
-noremap <C-i> -ex back
-noremap <C-e> -ex forward
+map -builtin <C-i> -ex back
+map -builtin <C-e> -ex forward
 
 " premier/dernier onglet
-noremap gi g^
-noremap ge g0
+map -builtin gi g^
+map -builtin ge g0
 
 " suivre liens précédent/suivant
-noremap « [[
-noremap » ]]
+map -builtin « [[
+map -builtin » ]]
 
 " utiliser les touches centrales
 set hintkeys=auiectsrnmbépoèvdljz
