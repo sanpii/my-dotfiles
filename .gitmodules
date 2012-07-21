@@ -106,3 +106,9 @@
 [submodule "vim/bundle/PIV"]
 	path = vim/bundle/PIV
 	url = https://github.com/spf13/PIV.git
+[submodule "vim/bundle/webapi"]
+	path = vim/bundle/webapi
+	url = https://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/seeks"]
+	path = vim/bundle/seeks
+	url = https://github.com/sanpii/seeks.vim.git
