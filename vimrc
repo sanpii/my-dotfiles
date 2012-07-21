@@ -415,6 +415,10 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['php'] = 'php,sf2'
 
+" Seeks
+let g:seeks_node = 'http://seeks.homecomputing.fr'
+let g:seeks_max_results = 10
+
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
