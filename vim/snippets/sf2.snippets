@@ -1,7 +1,7 @@
 snippet sfbundle
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -11,7 +11,7 @@ snippet sfbundle
 snippet sfclass
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	class `Filename()`
 	{
@@ -20,7 +20,7 @@ snippet sfclass
 snippet sfctrl
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -42,7 +42,7 @@ snippet sfaction
 snippet sfinterface
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	interface `Filename()`
 	{
@@ -51,7 +51,7 @@ snippet sfinterface
 snippet sftestcase
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	class `Filename()` extends \PHPUnit_Framework_TestCase
 	{
@@ -60,7 +60,7 @@ snippet sftestcase
 snippet sfentity
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Doctrine\ORM\Mapping as ORM;
 	// use Symfony\Component\Validator\Constraints as Assert;
@@ -84,7 +84,7 @@ snippet sfentity
 snippet sftype
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilder;
@@ -112,7 +112,7 @@ snippet sftype
 snippet sfcommand
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 	use Symfony\Component\Console\Input\InputInterface;
@@ -149,7 +149,7 @@ snippet sfcommand
 snippet sfdf
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Doctrine\Common\Persistence\ObjectManager;
 	use Doctrine\Common\DataFixtures\FixtureInterface;
@@ -164,7 +164,7 @@ snippet sfdf
 snippet sfdfo
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Doctrine\Common\Persistence\ObjectManager;
 	use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -184,7 +184,7 @@ snippet sfdfo
 snippet sftwig
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	class `Filename()` extends \Twig_Extension
 	{
@@ -208,7 +208,7 @@ snippet sftwig
 snippet sfdic
 	<?php
 
-	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '\(\<\U*\>\\\?\)*', '', '')`;
+	namespace `substitute(substitute(expand('%:h'), '/', '\\\\', 'g'), '(\<\U*\>\\\?\)*', '', '')`;
 
 	use Symfony\Component\DependencyInjection\ContainerBuilder;
 	use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
