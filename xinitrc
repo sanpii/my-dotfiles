@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$HOME/.sh_aliases"
+
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
@@ -21,7 +23,7 @@ if [ -x /usr/bin/x-www-browser ]; then
 fi;
 
 if [ -x /usr/bin/x-terminal-emulator ]; then
-    /usr/bin/x-terminal-emulator &
+    xirc &
 fi;
 
 if [ -x /usr/bin/xautolock ]; then
