@@ -64,9 +64,6 @@
 [submodule "vim/bundle/tasklist"]
 	path = vim/bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim
-[submodule "gitignore"]
-	path = gitignore
-	url = https://github.com/github/gitignore.git
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = https://github.com/gregsexton/gitv.git
