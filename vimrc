@@ -417,7 +417,7 @@ let g:snipMate.scope_aliases['php'] = 'php,sf2'
 
 " Seeks
 let g:seeks_node = 'http://seeks.homecomputing.fr'
-let g:seeks_max_results = 10
+let g:seeks_max_results = -1
 
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
