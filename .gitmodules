@@ -115,3 +115,6 @@
 [submodule "irssi/scripts/seeks"]
 	path = irssi/scripts/seeks
 	url = https://github.com/sanpii/seeks.irssi.git
+[submodule "vim/bundle/tagbar-phpctags"]
+	path = vim/bundle/tagbar-phpctags
+	url = https://github.com/techlivezheng/tagbar-phpctags.git
