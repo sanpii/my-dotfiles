@@ -112,3 +112,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = https://github.com/sjl/splice.vim.git
+[submodule "irssi/scripts/seeks"]
+	path = irssi/scripts/seeks
+	url = https://github.com/sanpii/seeks.irssi.git
