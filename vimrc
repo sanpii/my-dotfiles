@@ -272,6 +272,9 @@ noremap L g_
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Emacs transpose-words
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+
 if !empty(system("setxkbmap -print|grep bepo"))
     source ~/.vim/bepo.vim
 endif
