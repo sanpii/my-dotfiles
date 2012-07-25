@@ -228,9 +228,16 @@ unlet undo_dir
 
 let mapleader = ","
 
+function! Help(query)
+    let query = expand(a:query)
+    if query != ""
+        exec ":help " . query
+    endif
+endfunction
+
 " Help
-inoremap <F1> <Esc> :exec("help ".expand("<cword>"))<CR>
-nnoremap <F1> :exec("help ".expand("<cword>"))<CR>
+inoremap <F1> <Esc> :call Help("<cword>")<cr>
+nnoremap <F1> :call Help("<cword>")<cr>
 
 " Rebuild tag index
 nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>
@@ -253,7 +260,6 @@ autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
 autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
 autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
 autocmd FileType php map <F9> :!php "%"<cr>
-"autocmd FileType php map <C-F9> :call Browser(expand("%:p:s?d:\\\\workspace?http://localhost?:gs?\\?/?"))<cr>
 autocmd FileType html map <F9> :call Browser("")<cr>
 
 noremap <F10> :call ToggleSpell()<cr>
