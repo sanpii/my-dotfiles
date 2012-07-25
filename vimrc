@@ -310,19 +310,6 @@ let g:tagbar_type_php = {
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
-" vala
-autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead,BufNewFile *.vala setfiletype vala
-autocmd BufRead,BufNewFile *.vapi setfiletype vala
-
-"let vala_ignore_valadoc=1 " Disable valadoc syntax highlight
-let vala_comment_strings=1 " Enable comment strings
-let vala_space_errors=1 " Highlight space errors
-"let vala_no_trail_space_error=1 " Disable trailing space errors
-"let vala_no_tab_space_error=1 " Disable space-tab-space errors
-"let vala_minlines = 120 " Minimum lines used for comment syncing (default 50)
-
 " mail
 autocmd FileType mail :source ~/.vim/mail.vim
 autocmd FileType mkd :source ~/.vim/mail.vim
