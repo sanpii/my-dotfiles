@@ -71,3 +71,12 @@ noremap È 0
 
 noremap C ^
 noremap R g_
+
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-t>'],
+    \ 'PrtSelectMove("k")':   ['<c-s>'],
+    \ 'PrtHistory(-1)':       ['<c-n>'],
+    \ 'PrtHistory(1)':        ['<c-p>'],
+    \ 'AcceptSelection("t")': ['<Enter>'],
+    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>'],
+    \ }
