@@ -236,11 +236,11 @@ function! Help(query)
 endfunction
 
 " Help
-inoremap <F1> <Esc> :call Help("<cword>")<cr>
-nnoremap <F1> :call Help("<cword>")<cr>
+inoremap <F1> <Esc> :call Help("<cword>")<CR>
+nnoremap <F1> :call Help("<cword>")<CR>
 
 " Rebuild tag index
-nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>
+nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<CR>
 
 " Exécuter le fichier actuel dans le navigateur
 function! Browser(uri)
@@ -254,17 +254,17 @@ function! Browser(uri)
 endfunction
 
 " Exécuter le fichier
-autocmd FileType python map <F9> :!python "%"<cr>
-autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<cr>
-autocmd FileType vala map <F9> :!valac "%" && ./%:r<cr>
-autocmd FileType genie map <F9> :!valac "%" && ./%:r<cr>
-autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<cr>
-autocmd FileType php map <F9> :!php "%"<cr>
-autocmd FileType html map <F9> :call Browser("")<cr>
+autocmd FileType python map <F9> :!python "%"<CR>
+autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
+autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
+autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
+autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
+autocmd FileType php map <F9> :!php "%"<CR>
+autocmd FileType html map <F9> :call Browser("")<CR>
 
-noremap <F10> :call ToggleSpell()<cr>
-inoremap <F10> <Esc> :call ToggleSpell()<cr>
-vnoremap <F10> <Esc> :call ToggleSpell()<cr>
+noremap <F10> :call ToggleSpell()<CR>
+inoremap <F10> <Esc> :call ToggleSpell()<CR>
+vnoremap <F10> <Esc> :call ToggleSpell()<CR>
 
 " simple matching pairs easily, with Tab
 nnoremap <Tab> %
@@ -311,7 +311,7 @@ let g:tagbar_type_php = {
   \ }
 
 " nerdtree
-nnoremap <silent> <F3> :NERDTreeToggle<cr>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " vala
@@ -384,22 +384,22 @@ let g:ctrlp_default_input = 1
 " xdebug
 let g:debuggerMapDefaultKeys = 0
 
-map <leader><F1> :python debugger_resize()<cr>
-map <leader><F2> :python debugger_command('step_into')<cr>
-map <leader><F3> :python debugger_command('step_over')<cr>
-map <leader><F4> :python debugger_command('step_out')<cr>
+map <leader><F1> :python debugger_resize()<CR>
+map <leader><F2> :python debugger_command('step_into')<CR>
+map <leader><F3> :python debugger_command('step_over')<CR>
+map <leader><F4> :python debugger_command('step_out')<CR>
 
-map <leader><F5> :python debugger_run()<cr>
-map <leader><F6> :python debugger_quit()<cr>
+map <leader><F5> :python debugger_run()<CR>
+map <leader><F6> :python debugger_quit()<CR>
 
-map <leader><F7> :python debugger_command('step_into')<cr>
-map <leader><F8> :python debugger_command('step_over')<cr>
-map <leader><F9> :python debugger_command('step_out')<cr>
+map <leader><F7> :python debugger_command('step_into')<CR>
+map <leader><F8> :python debugger_command('step_over')<CR>
+map <leader><F9> :python debugger_command('step_out')<CR>
 
-map <leader><F11> :python debugger_context()<cr>
-map <leader><F12> :python debugger_property()<cr>
-map <leader><F11> :python debugger_watch_input("context_get")<cr>A<cr>
-map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+map <leader><F11> :python debugger_context()<CR>
+map <leader><F12> :python debugger_property()<CR>
+map <leader><F11> :python debugger_watch_input("context_get")<CR>A<CR>
+map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<CR>A<CR>
 
 " php-cs-fixer
 let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
