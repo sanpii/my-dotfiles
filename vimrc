@@ -264,10 +264,6 @@ vnoremap <F10> <Esc> :call ToggleSpell()<cr>
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" Permet d'aller au debut et a la fin d'une ligne plus facilement
-noremap H ^
-noremap L g_
-
 " Permet de placer au milieu de l'écran l'occurence de la recherche
 nnoremap n nzzzv
 nnoremap N Nzzzv
