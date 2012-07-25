@@ -23,9 +23,6 @@ filetype on
 " Afficher une liste lors de complétion de commandes/fichiers
 set wildmenu
 
-" Mesure de sécurité
-set nomodeline
-
 " Désactiver la souris (molette, sélection, etc.)
 set mouse=""
 
@@ -34,9 +31,6 @@ set laststatus=2
 
 " Afficher la position du curseur
 set ruler
-
-" Activer la numérotation des lignes
-"set number
 
 " Afficher partiellement la commande dans la ligne de statut
 set showcmd
