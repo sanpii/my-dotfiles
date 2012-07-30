@@ -266,36 +266,61 @@
     " Chargement des reffons en fonction du type
     filetype plugin indent on
 
-    " Powerline {{{
-        let g:Powerline_symbols = 'unicode'
+    " cfi {{{
+        let g:cfi_php_show_params = 1
     " }}}
-    " tagbar {{{
-        nmap <F8> :TagbarToggle<CR>
-        let g:tagbar_autoclose=1
-        let g:tagbar_autofocus=1
-
-        let g:tagbar_type_php = {
-            \ 'ctagstype' : 'php',
-            \ 'kinds' : [
-                \ 'i:interfaces',
-                \ 'c:classes',
-                \ 'd:constant definitions',
-                \ 'f:functions',
-                \ 'j:javascript functions:1'
-            \ ]
-          \ }
+    " ctrlp {{{
+        imap <C-S-P> <Esc> :CtrlP %:h<CR>
+        map <C-S-P> :CtrlP %:h<CR>
+        let g:ctrlp_clear_cache_on_exit = 0
+        let g:ctrlp_follow_symlinks = 0
+        let g:ctrlp_default_input = 1
     " }}}
-    " nerdtree {{{
-        nnoremap <silent> <F3> :NERDTreeToggle<CR>
-        let NERDTreeQuitOnOpen=1
+    " gitv {{{
+        let g:Gitv_OpenHorizontal = 1
+        let g:Gitv_WrapLines = 0
+    " }}}
+    " LanguageTool {{{
+        let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
     " }}}
     " mail {{{
         autocmd FileType mail :source ~/.vim/mail.vim
         autocmd FileType mkd :source ~/.vim/mail.vim
     " }}}
+    " nerdtree {{{
+        nnoremap <silent> <F3> :NERDTreeToggle<CR>
+        let NERDTreeQuitOnOpen=1
+    " }}}
+    " notes {{{
+        let g:notes_directory = '~/Documents/notes'
+        let g:notes_title_sync = 'rename_file'
+    " }}}
+    " organizer {{{
+        source ~/.vim/bundle/organizer/_vimrc
+    " }}}
+    " piv {{{
+        let g:DisableAutoPHPFolding = 1
+        let php_folding = 0
+    " }}}
+    " php-cs-fixer {{{
+        let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
+        let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
+    " }}}
     " php-namespace {{{
         imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
         map <buffer> <leader>u :call PhpInsertUse()<CR>
+    " }}}
+    " Powerline {{{
+        let g:Powerline_symbols = 'unicode'
+    " }}}
+    " Seeks {{{
+        let g:seeks_node = 'http://seeks.homecomputing.fr'
+        let g:seeks_max_results = -1
+    " }}}
+    " Snipmate {{{
+        let g:snipMate = {}
+        let g:snipMate.scope_aliases = {}
+        let g:snipMate.scope_aliases['php'] = 'php,sf2'
     " }}}
     " Symfony2 {{{
         " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
@@ -324,23 +349,21 @@
 
         set wildignore=data/**,app/cache/**,web/bundles/**
     " }}}
-    " cfi {{{
-        let g:cfi_php_show_params = 1
-    " }}}
-    " piv {{{
-        let g:DisableAutoPHPFolding = 1
-        let php_folding = 0
-    " }}}
-    " gitv {{{
-        let g:Gitv_OpenHorizontal = 1
-        let g:Gitv_WrapLines = 0
-    " }}}
-    " ctrlp {{{
-        imap <C-S-P> <Esc> :CtrlP %:h<CR>
-        map <C-S-P> :CtrlP %:h<CR>
-        let g:ctrlp_clear_cache_on_exit = 0
-        let g:ctrlp_follow_symlinks = 0
-        let g:ctrlp_default_input = 1
+    " tagbar {{{
+        nmap <F8> :TagbarToggle<CR>
+        let g:tagbar_autoclose=1
+        let g:tagbar_autofocus=1
+
+        let g:tagbar_type_php = {
+            \ 'ctagstype' : 'php',
+            \ 'kinds' : [
+                \ 'i:interfaces',
+                \ 'c:classes',
+                \ 'd:constant definitions',
+                \ 'f:functions',
+                \ 'j:javascript functions:1'
+            \ ]
+          \ }
     " }}}
     " xdebug {{{
         let g:debuggerMapDefaultKeys = 0
@@ -361,29 +384,6 @@
         map <leader><F12> :python debugger_property()<CR>
         map <leader><F11> :python debugger_watch_input("context_get")<CR>A<CR>
         map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<CR>A<CR>
-    " }}}
-    " php-cs-fixer {{{
-        let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
-        let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
-    " }}}
-    " notes {{{
-        let g:notes_directory = '~/Documents/notes'
-        let g:notes_title_sync = 'rename_file'
-    " }}}
-    " organizer {{{
-        source ~/.vim/bundle/organizer/_vimrc
-    " }}}
-    " LanguageTool {{{
-        let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
-    " }}}
-    " Snipmate {{{
-        let g:snipMate = {}
-        let g:snipMate.scope_aliases = {}
-        let g:snipMate.scope_aliases['php'] = 'php,sf2'
-    " }}}
-    " Seeks {{{
-        let g:seeks_node = 'http://seeks.homecomputing.fr'
-        let g:seeks_max_results = -1
     " }}}
 " }}}
 
