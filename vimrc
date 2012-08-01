@@ -236,8 +236,7 @@
     vnoremap <F10> <Esc> :set spell!<CR>
 
     " simple matching pairs easily, with Tab
-    nnoremap <Tab> %
-    vnoremap <Tab> %
+    map <Tab> %
 
     " Permet de placer au milieu de l'écran l'occurence de la recherche
     nnoremap n nzzzv
