@@ -151,15 +151,6 @@
     augroup filetypedetect
     autocmd FileType tex setlocal spell spelllang=fr
     augroup END
-
-    " F10 active/désactive la correction orthographique
-    function! ToggleSpell()
-      if &spell
-         set nospell
-      else
-         set spell
-      end
-    endfunction
 " }}}
 
 " Recherches {{{
@@ -240,9 +231,9 @@
     autocmd FileType php map <F9> :!php "%"<CR>
     autocmd FileType html map <F9> :call Browser("")<CR>
 
-    noremap <F10> :call ToggleSpell()<CR>
-    inoremap <F10> <Esc> :call ToggleSpell()<CR>
-    vnoremap <F10> <Esc> :call ToggleSpell()<CR>
+    noremap <F10> :set spell!<CR>
+    inoremap <F10> <Esc> :set spell!<CR>
+    vnoremap <F10> <Esc> :set spell!<CR>
 
     " simple matching pairs easily, with Tab
     nnoremap <Tab> %
