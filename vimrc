@@ -248,6 +248,13 @@
     if !empty(system("setxkbmap -print|grep bepo"))
         source ~/.vim/bepo.vim
     endif
+
+    " Disable arrows. hjkl are a lot faster.
+    nnoremap <Up> <nop>
+    nnoremap <Down> <nop>
+    nnoremap <Left> <nop>
+    nnoremap <Right> <nop>
+
 " }}}
 
 " Plugins {{{
