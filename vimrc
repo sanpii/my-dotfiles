@@ -384,4 +384,6 @@
     " }}}
 " }}}
 
-source ~/.vim/obs.vim
+if filereadable("~/.vim/obs.vim")
+    source ~/.vim/obs.vim
+endif
