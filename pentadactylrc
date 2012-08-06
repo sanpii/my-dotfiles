@@ -3,7 +3,8 @@ source ~/.pentadactyl/bepo.penta
 set defsearch=seeks-search
 set newtab=all
 set titlestring="RFC 2616 bot"
-set mapleader=","
 set hlfind
 set findcase=smart
 set! ui.key.generalAccessKey=0
+
+map , <Leader>
