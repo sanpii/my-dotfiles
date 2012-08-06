@@ -8,8 +8,8 @@ noremap É W
 noremap aé aw
 noremap aÉ aW
 " Pour faciliter les manipulations de fenêtres, on utilise {W} comme un Ctrl+W :
-noremap w <C-w>
-noremap W <C-w><C-w>
+map w <C-w>
+map W <C-w><C-w>
 
 " [HJKL] -> {CTSR}
 " ————————————————
@@ -46,6 +46,26 @@ noremap K S
 " Corollaire : correction orthographique
 noremap ]k ]s
 noremap [k [s
+
+" Window mapping
+" ————————————————
+noremap <C-W>c <C-W>h
+noremap <C-W>r <C-W>l
+noremap <C-W>t <C-W>j
+noremap <C-W>s <C-W>k
+noremap <C-W>C <C-W>H
+noremap <C-W>R <C-W>L
+noremap <C-W>T <C-W>J
+noremap <C-W>S <C-W>K
+
+noremap <C-W>j <C-W>t
+noremap <C-W>J <C-W>T
+noremap <C-W>l <C-W>c
+noremap <C-W>L <C-W>C
+noremap <C-W>h <C-W>r
+noremap <C-W>H <C-W>R
+noremap <C-W>k <C-W>s
+noremap <C-W>K <C-W>S
 
 " Désambiguation de {g}
 " —————————————————————
