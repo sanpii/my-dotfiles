@@ -230,6 +230,7 @@
     autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
     autocmd FileType php map <F9> :!php "%"<CR>
     autocmd FileType html map <F9> :call Browser("")<CR>
+    autocmd FileType sh map <F9> :sh "%:p"<CR>
 
     noremap <F10> :set spell!<CR>
     inoremap <F10> <Esc> :set spell!<CR>
