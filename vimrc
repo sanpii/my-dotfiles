@@ -380,8 +380,6 @@
 
         map <leader><F11> :python debugger_context()<CR>
         map <leader><F12> :python debugger_property()<CR>
-        map <leader><F11> :python debugger_watch_input("context_get")<CR>A<CR>
-        map <leader><F12> :python debugger_watch_input("property_get", '<cword>')<CR>A<CR>
     " }}}
 " }}}
 
