@@ -63,7 +63,6 @@ if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
 
-export PATH=$PATH:$HOME/.applications/bin:$HOME/bin
 # {{{ History
 export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
@@ -87,4 +86,3 @@ _bash_history_sync() {
 
 PROMPT_COMMAND=_bash_history_sync
 # }}}
-
