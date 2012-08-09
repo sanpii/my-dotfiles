@@ -383,6 +383,7 @@
     " }}}
 " }}}
 
-if filereadable("~/.vim/obs.vim")
-    source ~/.vim/obs.vim
+let obs_vim=vimfiles . "/obs.vim"
+if filereadable(obs_vim)
+    exec "source " . obs_vim
 endif
