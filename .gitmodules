@@ -76,12 +76,6 @@
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
 	url = https://github.com/stephpy/vim-php-cs-fixer.git
-[submodule "vim/bundle/notes"]
-	path = vim/bundle/notes
-	url = https://github.com/xolox/vim-notes.git
-[submodule "vim/bundle/organizer"]
-	path = vim/bundle/organizer
-	url = https://github.com/hsitz/VimOrganizer.git
 [submodule "vim/bundle/narrow_region"]
 	path = vim/bundle/narrow_region
 	url = https://github.com/vim-scripts/narrow_region.git
