@@ -30,4 +30,8 @@ if [ -x /usr/bin/xautolock ]; then
     /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.i3/lockscreen.png' &
 fi;
 
+if [ -x /usr/bin/zim ]; then
+    /usr/bin/zim --plugin trayicon
+fi;
+
 exec i3 --force-xinerama
