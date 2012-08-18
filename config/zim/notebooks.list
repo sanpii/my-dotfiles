@@ -1,0 +1,9 @@
+[NotebookList]
+Default=~/Documents/notes
+~/Documents/notes
+
+[Notebook]
+uri=~/Documents/notes
+name=notes
+interwiki=
+icon=None
