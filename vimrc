@@ -289,13 +289,6 @@
         nnoremap <silent> <F3> :NERDTreeToggle<CR>
         let NERDTreeQuitOnOpen=1
     " }}}
-    " notes {{{
-        let g:notes_directory = '~/Documents/notes'
-        let g:notes_title_sync = 'rename_file'
-    " }}}
-    " organizer {{{
-        source ~/.vim/bundle/organizer/_vimrc
-    " }}}
     " piv {{{
         let g:DisableAutoPHPFolding = 1
         let php_folding = 0
