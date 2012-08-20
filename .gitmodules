@@ -115,3 +115,6 @@
 [submodule "vim/bundle/man"]
 	path = vim/bundle/man
 	url = https://github.com/pydave/vim-man.git
+[submodule "vim/bundle/eunuch"]
+	path = vim/bundle/eunuch
+	url = https://github.com/tpope/vim-eunuch.git
