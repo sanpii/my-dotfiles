@@ -121,3 +121,6 @@
 [submodule "vim/bundle/suckless"]
 	path = vim/bundle/suckless
 	url = https://github.com/sanpii/suckless.vim.git
+[submodule "vim/bundle/zim-syntax"]
+	path = vim/bundle/zim-syntax
+	url = https://github.com/vim-scripts/zim-syntax.git
