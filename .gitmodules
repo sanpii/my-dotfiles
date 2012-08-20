@@ -118,3 +118,6 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/bundle/suckless"]
+	path = vim/bundle/suckless
+	url = https://github.com/sanpii/suckless.vim.git
