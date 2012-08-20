@@ -374,6 +374,82 @@
         map <leader><F11> :python debugger_context()<CR>
         map <leader><F12> :python debugger_property()<CR>
     " }}}
+    " suckless {{{
+        let g:SucklessDefaultMapping=0
+
+        " keyboard mappings, Tab management {{{
+            " <Esc>[1..0]>: select Tab [1..10] {{{
+                noremap <silent>  <Esc>1 :tabn  1<CR>
+                noremap <silent>  <Esc>2 :tabn  2<CR>
+                noremap <silent>  <Esc>3 :tabn  3<CR>
+                noremap <silent>  <Esc>4 :tabn  4<CR>
+                noremap <silent>  <Esc>5 :tabn  5<CR>
+                noremap <silent>  <Esc>6 :tabn  6<CR>
+                noremap <silent>  <Esc>7 :tabn  7<CR>
+                noremap <silent>  <Esc>8 :tabn  8<CR>
+                noremap <silent>  <Esc>9 :tabn  9<CR>
+                noremap <silent>  <Esc>0 :tabn 10<CR>
+            "}}}
+            " <Leader>t[1..0]: move current window to Tab [1..10] {{{
+                noremap <silent> <Leader>t1 :call MoveToTab( 1,0)<CR>
+                noremap <silent> <Leader>t2 :call MoveToTab( 2,0)<CR>
+                noremap <silent> <Leader>t3 :call MoveToTab( 3,0)<CR>
+                noremap <silent> <Leader>t4 :call MoveToTab( 4,0)<CR>
+                noremap <silent> <Leader>t5 :call MoveToTab( 5,0)<CR>
+                noremap <silent> <Leader>t6 :call MoveToTab( 6,0)<CR>
+                noremap <silent> <Leader>t7 :call MoveToTab( 7,0)<CR>
+                noremap <silent> <Leader>t8 :call MoveToTab( 8,0)<CR>
+                noremap <silent> <Leader>t9 :call MoveToTab( 9,0)<CR>
+                noremap <silent> <Leader>t0 :call MoveToTab(10,0)<CR>
+            "}}}
+            " <Leader>T[1..0]: copy current window to Tab [1..10] {{{
+                noremap <silent> <Leader>T1 :call MoveToTab( 1,1)<CR>
+                noremap <silent> <Leader>T2 :call MoveToTab( 2,1)<CR>
+                noremap <silent> <Leader>T3 :call MoveToTab( 3,1)<CR>
+                noremap <silent> <Leader>T4 :call MoveToTab( 4,1)<CR>
+                noremap <silent> <Leader>T5 :call MoveToTab( 5,1)<CR>
+                noremap <silent> <Leader>T6 :call MoveToTab( 6,1)<CR>
+                noremap <silent> <Leader>T7 :call MoveToTab( 7,1)<CR>
+                noremap <silent> <Leader>T8 :call MoveToTab( 8,1)<CR>
+                noremap <silent> <Leader>T9 :call MoveToTab( 9,1)<CR>
+                noremap <silent> <Leader>T0 :call MoveToTab(10,1)<CR>
+            "}}}
+        "}}}
+        " keyboard mappings, Window management {{{
+            " Alt+[kdf]: Window mode selection {{{
+                noremap <silent> <Esc>k :call SetTilingMode("S")<CR>
+                noremap <silent> <Esc>d :call SetTilingMode("D")<CR>
+                noremap <silent> <Esc>f :call SetTilingMode("F")<CR>
+            "}}}
+            " Altr[ctsr]: select window {{{
+                noremap <silent> <Esc>c :call WindowCmd("h")<CR>
+                noremap <silent> <Esc>t :call WindowCmd("j")<CR>
+                noremap <silent> <Esc>s :call WindowCmd("k")<CR>
+                noremap <silent> <Esc>r :call WindowCmd("l")<CR>
+            "}}}
+            " Alt+[CTSR]: move current window {{{
+                noremap <silent> <Esc>C :call WindowMove("h")<CR>
+                noremap <silent> <Esc>T :call WindowMove("j")<CR>
+                noremap <silent> <Esc>S :call WindowMove("k")<CR>
+                noremap <silent> <Esc>R :call WindowMove("l")<CR>
+            "}}}
+            " Ctrl+Alt+[ctsr]: resize current window {{{
+                noremap <silent> <Esc><C-c> :call WindowResize("h")<CR>
+                noremap <silent> <Esc><C-t> :call WindowResize("j")<CR>
+                noremap <silent> <Esc><C-s> :call WindowResize("k")<CR>
+                noremap <silent> <Esc><C-r> :call WindowResize("l")<CR>
+            "}}}
+        "}}}
+
+        " other mappings {{{
+            " Alt+[oO]: new horizontal/vertical window
+            noremap <silent> <Esc>o :call WindowCmd("n")<CR>
+            noremap <silent> <S-A-o> :call WindowCmd("n")<CR>:call WindowMove("l")<CR>
+            " Alt+[xX]: collapse/close current window
+            noremap <silent> <Esc>x :call WindowCollapse()<CR>
+            noremap <silent> <Esc><S-x> :call WindowCmd("c")<CR>
+        "}}}
+    "}}}
 " }}}
 
 let obs_vim=vimfiles . "/obs.vim"
