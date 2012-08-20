@@ -55,8 +55,8 @@ fi
 if [ -f /etc/bash_completion.d/git ]; then
     . /etc/bash_completion.d/git
 fi
-if [ -f /usr/share/stgit/completion/stgit-completion.bash ]; then
-    . /usr/share/stgit/completion/stgit-completion.bash
+if [ -f /etc/bash_completion.d/topgit ]; then
+    . /etc/bash_completion.d/topgit
 fi
 
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
