@@ -31,7 +31,7 @@ if [ -x /usr/bin/xautolock ]; then
 fi;
 
 if [ -x /usr/bin/zim ]; then
-    /usr/bin/zim --plugin trayicon
+    /usr/bin/zim --plugin trayicon &
 fi;
 
 exec i3 --force-xinerama
