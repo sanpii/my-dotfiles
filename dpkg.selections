@@ -6,7 +6,6 @@ conky-cli
 corkscrew
 davmail
 dzen2
-epdfview
 exuberant-ctags
 firmware-linux-nonfree
 gimp
@@ -46,4 +45,5 @@ vlc
 xarchiver
 xinit
 xserver-xorg
+zathura
 zim
