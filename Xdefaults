@@ -1,5 +1,7 @@
 ! urxvt {{{
 
+URxvt*urgentOnBell: True
+
 ! Font
 URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=13:antialias=true
 
@@ -88,4 +90,3 @@ xterm*color21: #888830308888
 xterm*color22: #303088888888
 xterm*color23: #d8d8d8d8d8d8
 ! }}}
-
