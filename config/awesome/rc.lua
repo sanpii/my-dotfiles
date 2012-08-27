@@ -3,6 +3,7 @@ require("awful.autofocus")
 require("awful.rules")
 require("naughty")
 require("vicious")
+require("shifty")
 
 modkey = "Mod4"
 

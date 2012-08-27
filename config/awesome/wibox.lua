@@ -6,7 +6,7 @@ wibox = {}
 layoutbox = {}
 taglist = {}
 
-mytasklist = {}
+tasklist = {}
 for s = 1, screen.count() do
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
@@ -15,7 +15,7 @@ for s = 1, screen.count() do
     taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all)
 
     -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(function(c)
+    tasklist[s] = awful.widget.tasklist(function(c)
         return awful.widget.tasklist.label.currenttags(c, s)
     end)
 
@@ -30,7 +30,10 @@ for s = 1, screen.count() do
         layoutbox[s],
         s == 1 and systray or nil,
         clock,
-        mytasklist[s],
+        tasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end
+
+shifty.taglist = taglist
+shifty.init()
