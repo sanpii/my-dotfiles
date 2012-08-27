@@ -84,7 +84,15 @@ globalkeys = awful.util.table.join(
     end),
     awful.key({modkey, "Control"}, "r", function()
         awful.tag.incncol(-1)
-    end)
+    end),
+    awful.key({modkey}, "a", function()
+        shifty.add({rel_index = 1})
+    end),
+    awful.key({modkey, "Control"}, "a", function()
+        shifty.add({rel_index = 1, nopopup = true})
+    end),
+    awful.key({modkey, "Shift"}, "h", shifty.rename),
+    awful.key({modkey}, "w", shifty.del)
 )
 
 clientkeys = awful.util.table.join(
@@ -118,42 +126,6 @@ clientkeys = awful.util.table.join(
     end)
 )
 
--- Compute the maximum number of digit we need, limited to 9
-keynumber = 0
-for s = 1, screen.count() do
-   keynumber = math.min(9, math.max(#tags[s], keynumber));
-end
-
--- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, keynumber do
-    globalkeys = awful.util.table.join(globalkeys,
-        awful.key({modkey}, "#" .. i + 9, function()
-            local screen = mouse.screen
-            if tags[screen][i] then
-                awful.tag.viewonly(tags[screen][i])
-            end
-        end),
-        awful.key({modkey, "Control"}, "#" .. i + 9, function()
-            local screen = mouse.screen
-            if tags[screen][i] then
-                awful.tag.viewtoggle(tags[screen][i])
-            end
-        end),
-        awful.key({modkey, "Shift" }, "#" .. i + 9, function()
-            if client.focus and tags[client.focus.screen][i] then
-                awful.client.movetotag(tags[client.focus.screen][i])
-            end
-        end),
-        awful.key({modkey, "Control", "Shift"}, "#" .. i + 9, function()
-            if client.focus and tags[client.focus.screen][i] then
-                awful.client.toggletag(tags[client.focus.screen][i])
-            end
-        end)
-    )
-end
-
 clientbuttons = awful.util.table.join(
     awful.button({}, 1, function(c)
         client.focus = c;
@@ -163,4 +135,30 @@ clientbuttons = awful.util.table.join(
     awful.button({modkey}, 3, awful.mouse.client.resize)
 )
 
+for i = 1, (shifty.config.maxtags or 9) do
+    globalkeys = awful.util.table.join(globalkeys,
+        awful.key({modkey}, "#" .. i + 9, function()
+            local t = awful.tag.viewonly(shifty.getpos(i))
+        end),
+        awful.key({modkey, "Control"}, "#" .. i + 9, function()
+            local t = shifty.getpos(i)
+            t.selected = not t.selected
+        end),
+        awful.key({modkey, "Control", "Shift"}, "#" .. i + 9, function()
+            if client.focus then
+                awful.client.toggletag(shifty.getpos(i))
+            end
+        end),
+        awful.key({modkey, "Shift"}, "#" .. i + 9, function()
+            if client.focus then
+                t = shifty.getpos(i)
+                awful.client.movetotag(t)
+                awful.tag.viewonly(t)
+            end
+        end)
+    )
+end
+
 root.keys(globalkeys)
+shifty.config.globalkeys = globalkeys
+shifty.config.clientkeys = clientkeys
