@@ -11,7 +11,7 @@ local home = os.getenv("HOME")
 local config = home .. "/.config/awesome/"
 
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init(config .. "themes/cool-blue.lua")
 
 dofile(config .. 'layouts.lua')
 dofile(config .. 'tags.lua')

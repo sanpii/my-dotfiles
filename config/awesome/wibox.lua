@@ -1,36 +1,30 @@
 clock = awful.widget.textclock({}, "%d/%m/%y %H:%M:%S", 1)
 systray = widget({type = "systray"})
 
--- Create a wibox for each screen and add it
+separator = widget({ type = "textbox" })
+separator.text = ' <span color="black">|</span> '
+
 wibox = {}
 layoutbox = {}
 taglist = {}
-
 tasklist = {}
-for s = 1, screen.count() do
-    -- Create an imagebox widget which will contains an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    layoutbox[s] = awful.widget.layoutbox(s)
-    -- Create a taglist widget
-    taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all)
 
-    -- Create a tasklist widget
+for s = 1, screen.count() do
+    layoutbox[s] = awful.widget.layoutbox(s)
+    taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all)
     tasklist[s] = awful.widget.tasklist(function(c)
         return awful.widget.tasklist.label.currenttags(c, s)
     end)
 
-    -- Create the wibox
     wibox[s] = awful.wibox({position = "top", screen = s})
-    -- Add widgets to the wibox - order matters
     wibox[s].widgets = {
         {
-            taglist[s],
+            taglist[s], separator, layoutbox[s], separator,
             layout = awful.widget.layout.horizontal.leftright
         },
-        layoutbox[s],
         s == 1 and systray or nil,
-        clock,
-        tasklist[s],
+        separator, clock,
+        separator, tasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

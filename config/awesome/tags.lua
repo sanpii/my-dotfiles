@@ -1,22 +1,43 @@
 shifty.config.tags = {
     ["web"] = {
-        init = true,
         position = 1,
-        spawn = "x-www-browser"
+        init = true,
+        nopopup = true,
+        spawn = "x-www-browser",
+        spawn = "x-terminal-emulator"
     },
     ["mail"] = {
-        init = true,
         position = 2,
+        init = true,
+        nopopup = true,
         spawn = "icedove",
-        layout = awful.layout.suit.magnifier
+        layout = "magnifier"
     },
     ["irc"] = {
-        init = true,
         position = 3,
-        spawn = "x-terminal-emulator -e bash -i -c irc"
+        init = true,
+        nopopup = true,
+        spawn = "x-terminal-emulator -title irc -e bash -i -c irc"
     }
 }
 
+shifty.config.apps = {
+    {
+        {
+            match  = {"irc"},
+            tag    = "irc"
+        },
+        {
+            match  = {"iceweasel"},
+            tag    = "web"
+        },
+        {
+            match  = {"icedove"},
+            tag    = "mail"
+        },
+    },
+}
+
 shifty.config.defaults = {
-    layout = awful.layout.suit.max
+    layout = "max"
 }
