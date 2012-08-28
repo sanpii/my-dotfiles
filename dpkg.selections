@@ -1,6 +1,4 @@
 alsa-utils
-awesome
-awesome-extras
 cifs-utils
 conky-cli
 corkscrew
@@ -16,6 +14,7 @@ gksu
 gnome-icon-theme
 gpicview
 gtk2-engines
+i3
 icedove
 icedove-l10-fr
 iceweasel
