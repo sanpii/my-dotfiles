@@ -458,6 +458,13 @@
         let g:easytags_dynamic_files = 2
         let g:easytags_include_members = 1
     " }}}
+    " syntastic {{{
+        let g:syntastic_auto_loc_list = 2
+        let g:syntastic_auto_jump = 1
+        let g:syntastic_phpcs_disable = 1
+        let g:syntastic_error_symbol = '✗'
+        let g:syntastic_warning_symbol = '⚠'
+    " }}}
 " }}}
 
 let obs_vim=vimfiles . "/obs.vim"
