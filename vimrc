@@ -350,24 +350,6 @@
             \ ]
           \ }
     " }}}
-    " xdebug {{{
-        let g:debuggerMapDefaultKeys = 0
-
-        map <leader><F1> :python debugger_resize()<CR>
-        map <leader><F2> :python debugger_command('step_into')<CR>
-        map <leader><F3> :python debugger_command('step_over')<CR>
-        map <leader><F4> :python debugger_command('step_out')<CR>
-
-        map <leader><F5> :python debugger_run()<CR>
-        map <leader><F6> :python debugger_quit()<CR>
-
-        map <leader><F7> :python debugger_command('step_into')<CR>
-        map <leader><F8> :python debugger_command('step_over')<CR>
-        map <leader><F9> :python debugger_command('step_out')<CR>
-
-        map <leader><F11> :python debugger_context()<CR>
-        map <leader><F12> :python debugger_property()<CR>
-    " }}}
     " dwm {{{
         let g:dwm_map_keys = 0
 
@@ -464,6 +446,19 @@
         let g:syntastic_phpcs_disable = 1
         let g:syntastic_error_symbol = '✗'
         let g:syntastic_warning_symbol = '⚠'
+    " }}}
+    " vdebug {{{
+        let g:vdebug_keymap = {
+        \    "run" : "<leader><F5>",
+        \    "run_to_cursor" : "<leader><F1>",
+        \    "step_over" : "<leader><F2>",
+        \    "step_into" : "<leader><F3>",
+        \    "step_out" : "<leader><F4>",
+        \    "close" : "<leader><F6>",
+        \    "detach" : "<leader><F7>",
+        \    "set_breakpoint" : "<leader><F10>",
+        \    "get_context" : "<leader><F11>",
+        \}
     " }}}
 " }}}
 
