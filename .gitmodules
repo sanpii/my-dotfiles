@@ -127,3 +127,6 @@
 [submodule "vim/bundle/neocomplcache-snippets-complete"]
 	path = vim/bundle/neocomplcache-snippets-complete
 	url = https://github.com/Shougo/neocomplcache-snippets-complete.git
+[submodule "vim/bundle/easytags"]
+	path = vim/bundle/easytags
+	url = https://github.com/xolox/vim-easytags.git
