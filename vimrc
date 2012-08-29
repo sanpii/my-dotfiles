@@ -278,7 +278,10 @@
     " }}}
     " nerdtree {{{
         nnoremap <silent> <F3> :NERDTreeToggle<CR>
-        let NERDTreeQuitOnOpen=1
+        let NERDTreeQuitOnOpen = 1
+        let NERDTreeMapOpenInTab = "<leader>t"
+        let NERDTreeMapOpenInTabSilent = "<leader>T"
+        let NERDTreeMapOpenVSplit = "<leader>s"
     " }}}
     " piv {{{
         let g:DisableAutoPHPFolding = 1
