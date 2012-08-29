@@ -19,9 +19,6 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion.git
