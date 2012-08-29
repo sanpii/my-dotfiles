@@ -43,8 +43,8 @@
     let view_dir=vimfiles . "/view"
     if isdirectory(view_dir)
         exec "set viewdir=" . view_dir
-        autocmd BufWinLeave *? mkview
-        autocmd BufWinEnter *? silent loadview
+        autocmd BufWinLeave *? silent! mkview
+        autocmd BufWinEnter *? silent! loadview
     endif
     unlet view_dir
 
