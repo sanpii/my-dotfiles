@@ -34,9 +34,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/symfony"]
-	path = vim/bundle/symfony
-	url = https://github.com/docteurklein/vim-symfony.git
 [submodule "vim/bundle/auto_mkdir"]
 	path = vim/bundle/auto_mkdir
 	url = https://github.com/DataWraith/auto_mkdir.git
