@@ -67,9 +67,6 @@
 [submodule "vim/bundle/lastpos"]
 	path = vim/bundle/lastpos
 	url = https://github.com/vim-scripts/lastpos.vim.git
-[submodule "vim/bundle/xdebug"]
-	path = vim/bundle/xdebug
-	url = https://github.com/vim-scripts/XDebug-DBGp-client-for-PHP.git
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
 	url = https://github.com/stephpy/vim-php-cs-fixer.git
@@ -133,3 +130,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
