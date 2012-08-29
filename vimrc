@@ -263,11 +263,10 @@
         let g:cfi_php_show_params = 1
     " }}}
     " ctrlp {{{
-        imap <C-S-P> <Esc> :CtrlP %:h<CR>
-        map <C-S-P> :CtrlP %:h<CR>
+        noremap <C-i> :CtrlPTag<CR>
         let g:ctrlp_clear_cache_on_exit = 0
-        let g:ctrlp_follow_symlinks = 0
         let g:ctrlp_default_input = 1
+        let g:ctrlp_extensions = ['tag', 'buffertag']
     " }}}
     " gitv {{{
         let g:Gitv_OpenHorizontal = 1
