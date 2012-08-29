@@ -208,9 +208,6 @@
     inoremap <F1> <Esc> :call Help("<cword>")<CR>
     nnoremap <F1> :call Help("<cword>")<CR>
 
-    " Rebuild tag index
-    nnoremap <silent> <F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude=".git_externals/*" --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<CR>
-
     " Exécuter le fichier actuel dans le navigateur
     function! Browser(uri)
         let uri=a:uri
@@ -259,8 +256,6 @@
 " }}}
 
 " Plugins {{{
-    set tags=/home/mco/tags,./tags,../tags,../../tags
-
     " Chargement des reffons en fonction du type
     filetype plugin indent on
 
@@ -458,6 +453,11 @@
         let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+    " }}}
+    " easytags {{{
+        set tags=./tags
+        let g:easytags_dynamic_files = 2
+        let g:easytags_include_members = 1
     " }}}
 " }}}
 
