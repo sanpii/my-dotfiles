@@ -19,7 +19,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias irc='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
-alias xirc='x-terminal-emulator -e bash -i -c irc'
+alias xirc='x-terminal-emulator -title irc -e bash -i -c irc'
 alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
 
