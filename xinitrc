@@ -14,8 +14,8 @@ if [ -x /usr/bin/davmail ]; then
     /usr/bin/davmail &
 fi;
 
-if [ -x /usr/bin/icedove ]; then
-    /usr/bin/icedove &
+if [ -x /usr/bin/thunderbird ]; then
+    /usr/bin/thunderbird &
 fi;
 
 if [ -x /usr/bin/x-www-browser ]; then
