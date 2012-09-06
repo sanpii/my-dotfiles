@@ -244,12 +244,17 @@
         source ~/.vim/bepo.vim
     endif
 
+    inoremap () ()<left>
+    inoremap {} {}<left>
+    inoremap [] []<left>
+    inoremap '' ''<left>
+    inoremap "" ""<left>
+
     " Disable arrows. hjkl are a lot faster.
     nnoremap <Up> <nop>
     nnoremap <Down> <nop>
     nnoremap <Left> <nop>
     nnoremap <Right> <nop>
-
 " }}}
 
 " Plugins {{{
