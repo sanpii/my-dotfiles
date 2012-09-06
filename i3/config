@@ -152,3 +152,6 @@ bindsym $mod+o mode "resize"
 bar {
     status_command conky -c ~/.conky/i3bar.rc
 }
+
+client.focused #42a8dc #1b455a #cccccc
+client.urgent #f73668 #60031b #aaaaaa
