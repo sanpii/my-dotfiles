@@ -52,12 +52,6 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-if [ -f /etc/bash_completion.d/git ]; then
-    . /etc/bash_completion.d/git
-fi
-if [ -f /etc/bash_completion.d/topgit ]; then
-    . /etc/bash_completion.d/topgit
-fi
 
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
