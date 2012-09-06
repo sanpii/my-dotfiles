@@ -14,7 +14,9 @@ if [ -x /usr/bin/davmail ]; then
     /usr/bin/davmail &
 fi;
 
-if [ -x /usr/bin/thunderbird ]; then
+if [ -x /usr/bin/icedove ]; then
+    /usr/bin/icedove &
+elif [ -x /usr/bin/thunderbird ]; then
     /usr/bin/thunderbird &
 fi;
 
