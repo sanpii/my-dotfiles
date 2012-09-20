@@ -2,16 +2,14 @@
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    eval "`dircolors -b`"
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-
-    alias lintian='lintian --color=auto'
 fi
 
 # some more ls aliases
@@ -22,6 +20,7 @@ alias irc='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
 alias xirc='x-terminal-emulator -title irc -e bash -i -c irc'
 alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
+alias ack=ack-grep
 
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
