@@ -240,6 +240,16 @@
     nnoremap n nzzzv
     nnoremap N Nzzzv
 
+    function! EndOfLine()
+        normal $
+        if getline(".")[col(".")-1] == ';'
+            normal h
+        endif
+        normal a
+    endfunction
+
+    nnoremap A :call EndOfLine()<CR>a
+
     if !empty(system("setxkbmap -print|grep bepo"))
         source ~/.vim/bepo.vim
     endif
