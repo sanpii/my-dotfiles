@@ -124,3 +124,6 @@
 [submodule "vim/bundle/sideway"]
 	path = vim/bundle/sideway
 	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule "vim/bundle/DrawIt"]
+	path = vim/bundle/DrawIt
+	url = https://github.com/vim-scripts/DrawIt.git
