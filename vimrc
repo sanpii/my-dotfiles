@@ -365,18 +365,6 @@
             \ ]
           \ }
     " }}}
-    " dwm {{{
-        let g:dwm_map_keys = 0
-
-        map <C-N> :call DWM_New()<CR>
-        map <C-C> :call DWM_Close()<CR>
-        map <C-Space> :call DWM_Focus()<CR>
-        map <C-@> :call DWM_Focus()<CR>
-        " In preparation of mode system
-        map <C-M> :call DWM_Full()<CR>
-        map <C-t> <C-W>w
-        map <C-s> <C-W>W
-    "}}}
     " neocomplcache {{{
         " Disable AutoComplPop.
         let g:acp_enableAtStartup = 0

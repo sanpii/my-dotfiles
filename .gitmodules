@@ -103,9 +103,6 @@
 [submodule "vim/bundle/html_annoyance"]
 	path = vim/bundle/html_annoyance
 	url = https://github.com/tudorprodan/html_annoyance.vim.git
-[submodule "vim/bundle/dwm"]
-	path = vim/bundle/dwm
-	url = https://github.com/spolu/dwm.vim.git
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
