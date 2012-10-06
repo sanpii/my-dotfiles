@@ -27,8 +27,6 @@ set crypt_replyencrypt=yes
 
 set fast_reply
 
-set query_command = "lbdbq '%s'"
-
 folder-hook . "exec collapse-all"
 # }}}
 # Header {{{
