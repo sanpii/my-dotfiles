@@ -124,3 +124,6 @@
 [submodule "vim/bundle/DrawIt"]
 	path = vim/bundle/DrawIt
 	url = https://github.com/vim-scripts/DrawIt.git
+[submodule "vim/bundle/markmultiple"]
+	path = vim/bundle/markmultiple
+	url = https://github.com/adinapoli/vim-markmultiple.git
