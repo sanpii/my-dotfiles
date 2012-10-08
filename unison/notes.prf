@@ -1,0 +1,3 @@
+root=/home/sanpi/Documents/notes
+root=ssh://cuddles//home/sanpi/notes
+times = true
