@@ -11,6 +11,8 @@ ssh/*.pub
 ssh/*.ppk
 ssh/authorized_keys
 ssh/known_hosts
+unison/*
+!unison/*.prf
 vim/.netrwhist
 vim/backup/*
 vim/undo/*
