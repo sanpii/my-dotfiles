@@ -133,3 +133,6 @@
 [submodule "vim/bundle/todo.txt"]
 	path = vim/bundle/todo.txt
 	url = https://github.com/davidoc/todo.txt-vim.git
+[submodule "todo/plugins"]
+	path = todo/plugins
+	url = https://github.com/sanpii/todo.txt-plugins.git
