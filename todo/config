@@ -1,3 +1,5 @@
+export TODOTXT_FINAL_FILTER="cat"
+
 # Your todo.txt directory
 export TODO_DIR="$HOME/.tasks"
 
