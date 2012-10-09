@@ -21,6 +21,7 @@ alias xirc='x-terminal-emulator -title irc -e bash -i -c irc'
 alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
 alias ack=ack-grep
+alias t='~/.todo/todo.txt-python/todo.py'
 
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
@@ -32,5 +33,6 @@ export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 export MAIL=~/Maildir
+export TODO_SH="$HOME/.todo/todo.txt-python/todo.py"
 
 export PATH=$PATH:$HOME/.applications/bin:$HOME/bin

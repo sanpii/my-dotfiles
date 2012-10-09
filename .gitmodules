@@ -127,3 +127,6 @@
 [submodule "vim/bundle/markmultiple"]
 	path = vim/bundle/markmultiple
 	url = https://github.com/adinapoli/vim-markmultiple.git
+[submodule "todo/todo.txt-python"]
+	path = todo/todo.txt-python
+	url = https://github.com/sigmavirus24/Todo.txt-python.git
