@@ -130,3 +130,6 @@
 [submodule "todo/todo.txt-python"]
 	path = todo/todo.txt-python
 	url = https://github.com/sigmavirus24/Todo.txt-python.git
+[submodule "vim/bundle/todo.txt"]
+	path = vim/bundle/todo.txt
+	url = https://github.com/davidoc/todo.txt-vim.git
