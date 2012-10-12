@@ -1,138 +1,138 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/php-namespace"]
 	path = vim/bundle/php-namespace
-	url = https://github.com/arnaud-lb/vim-php-namespace.git
+	url = git://github.com/arnaud-lb/vim-php-namespace.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
+	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/desert256"]
 	path = vim/bundle/desert256
-	url = https://github.com/rainux/vim-desert-warm-256.git
+	url = git://github.com/rainux/vim-desert-warm-256.git
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
-	url = https://github.com/vim-scripts/matchit.zip.git
+	url = git://github.com/vim-scripts/matchit.zip.git
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
-	url = https://github.com/bkad/CamelCaseMotion.git
+	url = git://github.com/bkad/CamelCaseMotion.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
+	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+	url = git://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/auto_mkdir"]
 	path = vim/bundle/auto_mkdir
-	url = https://github.com/DataWraith/auto_mkdir.git
+	url = git://github.com/DataWraith/auto_mkdir.git
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+	url = git://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
-	url = https://github.com/tomtom/tlib_vim.git
+	url = git://github.com/tomtom/tlib_vim.git
 [submodule "vim/bundle/addon-mw-utils"]
 	path = vim/bundle/addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
-	url = https://github.com/sanpii/snipmate-snippets.git
+	url = git://github.com/sanpii/snipmate-snippets.git
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
-	url = https://github.com/veloce/vim-behat.git
+	url = git://github.com/veloce/vim-behat.git
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
-	url = https://github.com/tpope/vim-git.git
+	url = git://github.com/tpope/vim-git.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/tasklist"]
 	path = vim/bundle/tasklist
-	url = https://github.com/vim-scripts/TaskList.vim
+	url = git://github.com/vim-scripts/TaskList.vim
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
-	url = https://github.com/gregsexton/gitv.git
+	url = git://github.com/gregsexton/gitv.git
 [submodule "vim/bundle/lastpos"]
 	path = vim/bundle/lastpos
-	url = https://github.com/vim-scripts/lastpos.vim.git
+	url = git://github.com/vim-scripts/lastpos.vim.git
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
-	url = https://github.com/stephpy/vim-php-cs-fixer.git
+	url = git://github.com/stephpy/vim-php-cs-fixer.git
 [submodule "pentadactyl/plugins/firebug"]
 	path = pentadactyl/plugins/firebug
-	url = https://github.com/maksimr/firebug-pentadactyl.git
+	url = git://github.com/maksimr/firebug-pentadactyl.git
 [submodule "vim/bundle/LanguageTool"]
 	path = vim/bundle/LanguageTool
-	url = https://github.com/vim-scripts/LanguageTool.git
+	url = git://github.com/vim-scripts/LanguageTool.git
 [submodule "vim/bundle/help"]
 	path = vim/bundle/help
-	url = https://github.com/juanpabloaj/help.vim.git
+	url = git://github.com/juanpabloaj/help.vim.git
 [submodule "vim/bundle/PIV"]
 	path = vim/bundle/PIV
-	url = https://github.com/spf13/PIV.git
+	url = git://github.com/spf13/PIV.git
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
-	url = https://github.com/mattn/webapi-vim.git
+	url = git://github.com/mattn/webapi-vim.git
 [submodule "vim/bundle/seeks"]
 	path = vim/bundle/seeks
-	url = https://github.com/sanpii/seeks.vim.git
+	url = git://github.com/sanpii/seeks.vim.git
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
-	url = https://github.com/sjl/splice.vim.git
+	url = git://github.com/sjl/splice.vim.git
 [submodule "irssi/scripts/seeks"]
 	path = irssi/scripts/seeks
-	url = https://github.com/sanpii/seeks.irssi.git
+	url = git://github.com/sanpii/seeks.irssi.git
 [submodule "vim/bundle/man"]
 	path = vim/bundle/man
-	url = https://github.com/pydave/vim-man.git
+	url = git://github.com/pydave/vim-man.git
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
-	url = https://github.com/tpope/vim-eunuch.git
+	url = git://github.com/tpope/vim-eunuch.git
 [submodule "vim/bundle/zim-syntax"]
 	path = vim/bundle/zim-syntax
-	url = https://github.com/vim-scripts/zim-syntax.git
+	url = git://github.com/vim-scripts/zim-syntax.git
 [submodule "vim/bundle/html_annoyance"]
 	path = vim/bundle/html_annoyance
-	url = https://github.com/tudorprodan/html_annoyance.vim.git
+	url = git://github.com/tudorprodan/html_annoyance.vim.git
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
+	url = git://github.com/Shougo/neocomplcache.git
 [submodule "vim/bundle/neocomplcache-snippets-complete"]
 	path = vim/bundle/neocomplcache-snippets-complete
-	url = https://github.com/Shougo/neocomplcache-snippets-complete.git
+	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
-	url = https://github.com/xolox/vim-easytags.git
+	url = git://github.com/xolox/vim-easytags.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
-	url = https://github.com/joonty/vdebug.git
+	url = git://github.com/joonty/vdebug.git
 [submodule "vim/bundle/sideway"]
 	path = vim/bundle/sideway
-	url = https://github.com/AndrewRadev/sideways.vim.git
+	url = git://github.com/AndrewRadev/sideways.vim.git
 [submodule "vim/bundle/DrawIt"]
 	path = vim/bundle/DrawIt
-	url = https://github.com/vim-scripts/DrawIt.git
+	url = git://github.com/vim-scripts/DrawIt.git
 [submodule "vim/bundle/markmultiple"]
 	path = vim/bundle/markmultiple
-	url = https://github.com/adinapoli/vim-markmultiple.git
+	url = git://github.com/adinapoli/vim-markmultiple.git
 [submodule "todo/todo.txt-python"]
 	path = todo/todo.txt-python
-	url = https://github.com/sigmavirus24/Todo.txt-python.git
+	url = git://github.com/sigmavirus24/Todo.txt-python.git
 [submodule "vim/bundle/todo.txt"]
 	path = vim/bundle/todo.txt
-	url = https://github.com/davidoc/todo.txt-vim.git
+	url = git://github.com/davidoc/todo.txt-vim.git
 [submodule "todo/plugins"]
 	path = todo/plugins
-	url = https://github.com/sanpii/todo.txt-plugins.git
+	url = git://github.com/sanpii/todo.txt-plugins.git
