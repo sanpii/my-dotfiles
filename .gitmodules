@@ -136,3 +136,6 @@
 [submodule "todo/plugins"]
 	path = todo/plugins
 	url = git://github.com/sanpii/todo.txt-plugins.git
+[submodule "todo/addons"]
+	path = todo/addons
+	url = git://github.com/sanpii/todo.txt-cli-addons.git
