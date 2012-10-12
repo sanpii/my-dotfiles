@@ -139,3 +139,6 @@
 [submodule "todo/addons"]
 	path = todo/addons
 	url = git://github.com/sanpii/todo.txt-cli-addons.git
+[submodule "todo/standup"]
+	path = todo/standup
+	url = git://github.com/civrot/todo_txt_actions.git
