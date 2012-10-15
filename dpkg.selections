@@ -42,11 +42,9 @@ subversion
 sudo
 synaptic
 tree
-unison-all
 vim-gtk
 vlc
 xarchiver
 xinit
 xserver-xorg
 zathura
-zim
