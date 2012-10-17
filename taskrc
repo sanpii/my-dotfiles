@@ -14,6 +14,7 @@
 data.location=/home/sanpi/.task
 
 include /usr/share/task/solarized-dark-256.theme
+color.alternate=on gray3
 
 push.default.uri=cuddles:.task/
 pull.default.uri=cuddles:.task/
