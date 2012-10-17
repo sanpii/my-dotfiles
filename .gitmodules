@@ -97,9 +97,6 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "vim/bundle/zim-syntax"]
-	path = vim/bundle/zim-syntax
-	url = git://github.com/vim-scripts/zim-syntax.git
 [submodule "vim/bundle/html_annoyance"]
 	path = vim/bundle/html_annoyance
 	url = git://github.com/tudorprodan/html_annoyance.vim.git
