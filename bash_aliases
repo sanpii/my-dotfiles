@@ -21,6 +21,7 @@ alias xirc='x-terminal-emulator -title irc -e bash -i -c irc'
 alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
 alias ack=ack-grep
+alias t=task
 
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
