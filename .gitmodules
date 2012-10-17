@@ -127,9 +127,6 @@
 [submodule "vim/bundle/markmultiple"]
 	path = vim/bundle/markmultiple
 	url = git://github.com/adinapoli/vim-markmultiple.git
-[submodule "vim/bundle/todo.txt"]
-	path = vim/bundle/todo.txt
-	url = git://github.com/davidoc/todo.txt-vim.git
 [submodule "todo/standup"]
 	path = todo/standup
 	url = git://github.com/civrot/todo_txt_actions.git
