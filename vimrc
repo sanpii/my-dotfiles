@@ -250,6 +250,9 @@
 
     nnoremap A :call EndOfLine()<CR>a
 
+    " Re-selectionner le texte précédemment collé
+    nnoremap <leader>v V`]
+
     if !empty(system("setxkbmap -print|grep bepo"))
         source ~/.vim/bepo.vim
     endif
