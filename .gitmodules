@@ -127,18 +127,9 @@
 [submodule "vim/bundle/markmultiple"]
 	path = vim/bundle/markmultiple
 	url = git://github.com/adinapoli/vim-markmultiple.git
-[submodule "todo/todo.txt-python"]
-	path = todo/todo.txt-python
-	url = git://github.com/sigmavirus24/Todo.txt-python.git
 [submodule "vim/bundle/todo.txt"]
 	path = vim/bundle/todo.txt
 	url = git://github.com/davidoc/todo.txt-vim.git
-[submodule "todo/plugins"]
-	path = todo/plugins
-	url = git://github.com/sanpii/todo.txt-plugins.git
-[submodule "todo/addons"]
-	path = todo/addons
-	url = git://github.com/sanpii/todo.txt-cli-addons.git
 [submodule "todo/standup"]
 	path = todo/standup
 	url = git://github.com/civrot/todo_txt_actions.git
