@@ -41,7 +41,7 @@ URxvt*iso14755_52: false
 
 ! Extensions
 URxvt*perl-lib: .urxvt/perl
-URxvt*perl-ext-common:selection,url-select,keyboard-select,clipboard,tabbedex
+URxvt*perl-ext-common:selection,url-select,keyboard-select,clipboard
 
 ! Clikable URL
 URxvt*keysym.M-u: perl:url-select:select_next
@@ -55,10 +55,6 @@ URxvt*keysym.M-Escape: perl:keyboard-select:activate
 URxvt*keysym.M-c: perl:clipboard:copy
 URxvt*keysym.M-v: perl:clipboard:paste
 URxvt*keysym.M-C-v: perl:clipboard:paste_escaped
-
-! Tabbedex
-URxvt*autohide: true
-URxvt*title: false
 
 ! }}}
 
