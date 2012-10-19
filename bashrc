@@ -9,7 +9,7 @@ case $- in
 esac
 
 if which tmux 2>&1 >/dev/null; then
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+    test -z "$TMUX" && tmux new-session
 fi
 
 # disable XON/XOFF flow control (^s/^q)
