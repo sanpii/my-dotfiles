@@ -18,6 +18,7 @@ color.alternate=on gray3
 
 push.default.uri=cuddles:.task/
 pull.default.uri=cuddles:.task/
+merge.default.uri=cuddles:.task/
 dateformat=d/m/Y
 dateformat.annotation=d/m/Y
 dateformat.report=d/m/Y
