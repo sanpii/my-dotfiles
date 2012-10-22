@@ -31,7 +31,6 @@ libreoffice-writer
 make
 ntp
 ntpdate
-nvidia-glx
 pcmanfm
 prcegrep
 php5
