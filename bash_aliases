@@ -16,13 +16,15 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias irc='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
-alias xirc='x-terminal-emulator -title irc -e bash -i -c irc'
 alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
 alias ack=ack-grep
 alias t=task
 alias wt='task rc:~/.taskrc.obs'
+
+IRC='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
+alias irc=$IRC
+alias xirc="x-terminal-emulator -title irc -e bash -c '$IRC'"
 
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
