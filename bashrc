@@ -8,8 +8,10 @@ case $- in
       *) return;;
 esac
 
-if which tmux 2>&1 >/dev/null; then
-    test -z "$TMUX" && tmux new-session
+if [ -n "$DISPLAY" ]; then
+    if which tmux 2>&1 >/dev/null; then
+        test -z "$TMUX" && tmux new-session
+    fi
 fi
 
 # disable XON/XOFF flow control (^s/^q)
