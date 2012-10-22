@@ -10,7 +10,7 @@ esac
 
 if [ -n "$DISPLAY" ]; then
     if which tmux 2>&1 >/dev/null; then
-        test -z "$TMUX" && tmux new-session
+        test -z "$TMUX" && tmux new-session && exit
     fi
 fi
 
