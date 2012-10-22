@@ -15,3 +15,4 @@ include /home/sanpi/.taskrc
 data.location=/home/sanpi/.task.obs
 push.default.uri=cuddles:.task.obs/
 pull.default.uri=cuddles:.task.obs/
+merge.default.uri=cuddles:.task.obs/
