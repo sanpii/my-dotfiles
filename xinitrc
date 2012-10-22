@@ -26,6 +26,7 @@ fi;
 
 if [ -x /usr/bin/x-terminal-emulator ]; then
     xirc &
+    /usr/bin/x-terminal-emulator -name term-scratchpad &
 fi;
 
 if [ -x /usr/bin/xautolock ]; then

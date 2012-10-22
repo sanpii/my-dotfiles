@@ -121,7 +121,13 @@ bindsym $mod+Shift+u reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+i restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+dollar move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+dollar scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -154,3 +160,5 @@ bindsym $mod+o mode "resize"
 bar {
     status_command conky -c ~/.conky/i3bar.rc
 }
+
+for_window [instance="^term-scratchpad$"] move to scratchpad
