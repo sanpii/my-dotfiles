@@ -2,5 +2,6 @@ map c scroll left
 map t scroll down
 map s scroll up
 map r scroll right
+map <C-r> rotate
 map <C-d> navigate prev
 map <C-u> navigate next
