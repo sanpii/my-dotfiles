@@ -130,3 +130,6 @@
 [submodule "vim/bundle/taskwarrior"]
 	path = vim/bundle/taskwarrior
 	url = git://github.com/qbit/taskwarrior-vim.git
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = git://github.com/groenewege/vim-less.git
