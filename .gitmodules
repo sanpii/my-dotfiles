@@ -133,3 +133,6 @@
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vala"]
+	path = vim/bundle/vala
+	url = git://github.com/rainux/vim-vala.git
