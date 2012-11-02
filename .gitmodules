@@ -76,9 +76,6 @@
 [submodule "vim/bundle/help"]
 	path = vim/bundle/help
 	url = git://github.com/juanpabloaj/help.vim.git
-[submodule "vim/bundle/PIV"]
-	path = vim/bundle/PIV
-	url = git://github.com/spf13/PIV.git
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
@@ -148,3 +145,15 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/PHP-Stuff"]
+	path = vim/bundle/PHP-Stuff
+	url = git://github.com/paulyg/Vim-PHP-Stuff.git
+[submodule "vim/bundle/phpcomplete"]
+	path = vim/bundle/phpcomplete
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/twig"]
+	path = vim/bundle/twig
+	url = git://github.com/beyondwords/vim-twig.git
+[submodule "vim/bundle/phpdoc"]
+	path = vim/bundle/phpdoc
+	url = git://github.com/johnhamelink/PhpDoc.git
