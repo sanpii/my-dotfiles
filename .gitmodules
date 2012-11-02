@@ -142,3 +142,6 @@
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/drupal"]
+	path = vim/bundle/drupal
+	url = git://github.com/grota/drupal.vim.git
