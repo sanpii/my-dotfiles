@@ -257,12 +257,6 @@
         source ~/.vim/bepo.vim
     endif
 
-    inoremap () ()<left>
-    inoremap {} {}<left>
-    inoremap [] []<left>
-    inoremap '' ''<left>
-    inoremap "" ""<left>
-
     " Disable arrows. hjkl are a lot faster.
     nnoremap <Up> <nop>
     nnoremap <Down> <nop>
@@ -465,6 +459,11 @@
         \    "set_breakpoint" : "<leader><F10>",
         \    "get_context" : "<leader><F11>",
         \}
+    " }}}
+    " delimitMate {{{
+        let g:delimitMate_expand_cr = 1
+        let g:delimitMate_expand_space = 1
+        let g:delimitMate_balance_matchpairs = 1
     " }}}
 " }}}
 
