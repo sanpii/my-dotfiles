@@ -265,7 +265,6 @@
 " }}}
 
 " Plugins {{{
-    " Chargement des reffons en fonction du type
     filetype plugin indent on
 
     " cfi {{{
@@ -277,6 +276,16 @@
         let g:ctrlp_default_input = 1
         let g:ctrlp_extensions = ['tag', 'buffertag']
     " }}}
+    " delimitMate {{{
+        let g:delimitMate_expand_cr = 1
+        let g:delimitMate_expand_space = 1
+        let g:delimitMate_balance_matchpairs = 1
+    " }}}
+    " easytags {{{
+        set tags=./tags
+        let g:easytags_dynamic_files = 2
+        let g:easytags_include_members = 1
+    " }}}
     " gitv {{{
         let g:Gitv_OpenHorizontal = 1
         let g:Gitv_WrapLines = 0
@@ -287,80 +296,6 @@
     " mail {{{
         autocmd FileType mail :source ~/.vim/mail.vim
         autocmd FileType mkd :source ~/.vim/mail.vim
-    " }}}
-    " nerdtree {{{
-        nnoremap <silent> <F3> :NERDTreeToggle<CR>
-        let NERDTreeQuitOnOpen = 1
-        let NERDTreeMapOpenInTab = "<leader>t"
-        let NERDTreeMapOpenInTabSilent = "<leader>T"
-        let NERDTreeMapOpenVSplit = "<leader>s"
-    " }}}
-    " piv {{{
-        let g:DisableAutoPHPFolding = 1
-        let php_folding = 0
-    " }}}
-    " php-cs-fixer {{{
-        let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
-        let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
-    " }}}
-    " php-namespace {{{
-        imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
-        map <buffer> <leader>u :call PhpInsertUse()<CR>
-    " }}}
-    " Powerline {{{
-        let g:Powerline_symbols = 'unicode'
-    " }}}
-    " Seeks {{{
-        let g:seeks_node = 'http://seeks.homecomputing.fr'
-        let g:seeks_max_results = -1
-    " }}}
-    " Snipmate {{{
-        let g:snipMate = {}
-        let g:snipMate.scope_aliases = {}
-        let g:snipMate.scope_aliases['php'] = 'php,sf2'
-    " }}}
-    " Symfony2 {{{
-        " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
-
-        " first set path
-        set path+=**
-
-        " jump to a twig view in symfony
-        function! s:SfJumpToView()
-            mark C
-            normal! ]M
-            let end = line(".")
-            normal! [m
-            try
-                call search('\v[^.:]+\.html\.twig', '', end)
-                normal! gf
-            catch
-                normal! g`C
-                echohl WarningMsg | echomsg "Template file not found" | echohl None
-            endtry
-        endfunction
-        com! SfJumpToView call s:SfJumpToView()
-
-        " create a mapping only in a Controller file
-        autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
-
-        set wildignore=data/**,app/cache/**,web/bundles/**
-    " }}}
-    " tagbar {{{
-        nmap <F8> :TagbarToggle<CR>
-        let g:tagbar_autoclose=1
-        let g:tagbar_autofocus=1
-
-        let g:tagbar_type_php = {
-            \ 'ctagstype' : 'php',
-            \ 'kinds' : [
-                \ 'i:interfaces',
-                \ 'c:classes',
-                \ 'd:constant definitions',
-                \ 'f:functions',
-                \ 'j:javascript functions:1'
-            \ ]
-          \ }
     " }}}
     " neocomplcache {{{
         " Disable AutoComplPop.
@@ -435,10 +370,63 @@
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
     " }}}
-    " easytags {{{
-        set tags=./tags
-        let g:easytags_dynamic_files = 2
-        let g:easytags_include_members = 1
+    " nerdtree {{{
+        nnoremap <silent> <F3> :NERDTreeToggle<CR>
+        let NERDTreeQuitOnOpen = 1
+        let NERDTreeMapOpenInTab = "<leader>t"
+        let NERDTreeMapOpenInTabSilent = "<leader>T"
+        let NERDTreeMapOpenVSplit = "<leader>s"
+    " }}}
+    " piv {{{
+        let g:DisableAutoPHPFolding = 1
+        let php_folding = 0
+    " }}}
+    " php-cs-fixer {{{
+        let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
+        let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
+    " }}}
+    " php-namespace {{{
+        imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
+        map <buffer> <leader>u :call PhpInsertUse()<CR>
+    " }}}
+    " Powerline {{{
+        let g:Powerline_symbols = 'unicode'
+    " }}}
+    " Seeks {{{
+        let g:seeks_node = 'http://seeks.homecomputing.fr'
+        let g:seeks_max_results = -1
+    " }}}
+    " Snipmate {{{
+        let g:snipMate = {}
+        let g:snipMate.scope_aliases = {}
+        let g:snipMate.scope_aliases['php'] = 'php,sf2'
+    " }}}
+    " Symfony2 {{{
+        " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
+
+        " first set path
+        set path+=**
+
+        " jump to a twig view in symfony
+        function! s:SfJumpToView()
+            mark C
+            normal! ]M
+            let end = line(".")
+            normal! [m
+            try
+                call search('\v[^.:]+\.html\.twig', '', end)
+                normal! gf
+            catch
+                normal! g`C
+                echohl WarningMsg | echomsg "Template file not found" | echohl None
+            endtry
+        endfunction
+        com! SfJumpToView call s:SfJumpToView()
+
+        " create a mapping only in a Controller file
+        autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
+
+        set wildignore=data/**,app/cache/**,web/bundles/**
     " }}}
     " syntastic {{{
         let g:syntastic_auto_loc_list = 2
@@ -446,6 +434,22 @@
         let g:syntastic_phpcs_disable = 1
         let g:syntastic_error_symbol = '✗'
         let g:syntastic_warning_symbol = '⚠'
+    " }}}
+    " tagbar {{{
+        nmap <F8> :TagbarToggle<CR>
+        let g:tagbar_autoclose=1
+        let g:tagbar_autofocus=1
+
+        let g:tagbar_type_php = {
+            \ 'ctagstype' : 'php',
+            \ 'kinds' : [
+                \ 'i:interfaces',
+                \ 'c:classes',
+                \ 'd:constant definitions',
+                \ 'f:functions',
+                \ 'j:javascript functions:1'
+            \ ]
+          \ }
     " }}}
     " vdebug {{{
         let g:vdebug_keymap = {
@@ -459,11 +463,6 @@
         \    "set_breakpoint" : "<leader><F10>",
         \    "get_context" : "<leader><F11>",
         \}
-    " }}}
-    " delimitMate {{{
-        let g:delimitMate_expand_cr = 1
-        let g:delimitMate_expand_space = 1
-        let g:delimitMate_balance_matchpairs = 1
     " }}}
 " }}}
 
