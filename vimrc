@@ -252,6 +252,8 @@
     nnoremap n nzzzv
     nnoremap N Nzzzv
 
+    nnoremap // :nohlsearch<CR>
+
     function! EndOfLine()
         normal $
         if getline(".")[col(".")-1] == ';'
