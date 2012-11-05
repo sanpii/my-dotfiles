@@ -1,6 +1,13 @@
 " Général {{{
     call pathogen#infect()
 
+    augroup buffer
+        autocmd!
+    augroup END
+    augroup filetype
+        autocmd!
+    augroup END
+
     let vimfiles=$HOME . "/.vim"
 
     " Désactive la compatibilité avec VI
@@ -43,8 +50,10 @@
     let view_dir=vimfiles . "/view"
     if isdirectory(view_dir)
         exec "set viewdir=" . view_dir
-        autocmd BufWinLeave *? silent! mkview
-        autocmd BufWinEnter *? silent! loadview
+        augroup buffer
+            autocmd BufWinLeave *? silent! mkview
+            autocmd BufWinEnter *? silent! loadview
+        augroup END
     endif
     unlet view_dir
 
@@ -58,10 +67,14 @@
     set nowrap
 
     " Suppression automatique des espaces superflus
-    autocmd BufWritePre * :%s/\s\+$//e
+    augroup buffer
+        autocmd BufWritePre * :%s/\s\+$//e
+    augroup END
 
     " .vimrc auto-reload
-    autocmd bufwritepost .vimrc source %
+    augroup buffer
+        autocmd bufwritepost .vimrc source %
+    augroup END
 
     " Permettre l'utilisation de la touche backspace dans tous les cas
     set backspace=2
@@ -135,7 +148,9 @@
     set expandtab
 
     " Pas d'espace pour les Makefile
-    autocmd FileType make setlocal noexpandtab
+    augroup filetype
+        autocmd FileType make setlocal noexpandtab
+    augroup END
 " }}}
 
 " Correction orthographique {{{
@@ -143,8 +158,8 @@
     set nospell spelllang=fr
 
     " automatique pour les fichiers tex
-    augroup filetypedetect
-    autocmd FileType tex setlocal spell spelllang=fr
+    augroup filetype
+        autocmd FileType tex setlocal spell spelllang=fr
     augroup END
 " }}}
 
@@ -215,14 +230,16 @@
     endfunction
 
     " Exécuter le fichier
-    autocmd FileType python map <F9> :!python "%"<CR>
-    autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
-    autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
-    autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
-    autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
-    autocmd FileType php map <F9> :!php "%"<CR>
-    autocmd FileType html map <F9> :call Browser("")<CR>
-    autocmd FileType sh map <F9> :sh "%:p"<CR>
+    augroup filetype
+        autocmd FileType python map <F9> :!python "%"<CR>
+        autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
+        autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
+        autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
+        autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
+        autocmd FileType php map <F9> :!php "%"<CR>
+        autocmd FileType html map <F9> :call Browser("")<CR>
+        autocmd FileType sh map <F9> :sh "%:p"<CR>
+    augroup END
 
     noremap <F10> :set spell!<CR>
     inoremap <F10> <Esc> :set spell!<CR>
@@ -292,8 +309,10 @@
         let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
     " }}}
     " mail {{{
-        autocmd FileType mail :source ~/.vim/mail.vim
-        autocmd FileType mkd :source ~/.vim/mail.vim
+        augroup filetype
+            autocmd FileType mail :source ~/.vim/mail.vim
+            autocmd FileType mkd :source ~/.vim/mail.vim
+        augroup END
     " }}}
     " neocomplcache {{{
         " Disable AutoComplPop.
@@ -352,13 +371,15 @@
         "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
         " Enable omni completion.
-        autocmd FileType c setlocal omnifunc=ccomplete#Complete
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        augroup filetype
+            autocmd FileType c setlocal omnifunc=ccomplete#Complete
+            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+            autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        augroup END
 
         " Enable heavy omni completion.
         if !exists('g:neocomplcache_omni_patterns')
@@ -423,7 +444,9 @@
         com! SfJumpToView call s:SfJumpToView()
 
         " create a mapping only in a Controller file
-        autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
+        augroup buffer
+            autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
+        augroup END
 
         set wildignore=data/**,app/cache/**,web/bundles/**
     " }}}
