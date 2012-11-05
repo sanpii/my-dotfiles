@@ -60,6 +60,9 @@
     " Suppression automatique des espaces superflus
     autocmd BufWritePre * :%s/\s\+$//e
 
+    " .vimrc auto-reload
+    autocmd bufwritepost .vimrc source %
+
     " Permettre l'utilisation de la touche backspace dans tous les cas
     set backspace=2
 
@@ -252,6 +255,8 @@
 
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
+
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
     " Disable arrows. hjkl are a lot faster.
     nnoremap <Up> <nop>
