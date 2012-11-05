@@ -258,6 +258,9 @@
 
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
+    inoremap ts <esc>
+    inoremap <esc> <nop>
+
     " Disable arrows. hjkl are a lot faster.
     nnoremap <Up> <nop>
     nnoremap <Down> <nop>
