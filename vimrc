@@ -71,14 +71,6 @@
         set colorcolumn=81
     endif
 
-    " Omni-completion
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType c set omnifunc=ccomplete#Complete
-
     set completeopt=longest,menuone
 " }}}
 
@@ -360,10 +352,12 @@
         "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
         " Enable omni completion.
+        autocmd FileType c setlocal omnifunc=ccomplete#Complete
         autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
         " Enable heavy omni completion.
@@ -371,7 +365,6 @@
           let g:neocomplcache_omni_patterns = {}
         endif
         let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-        "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
         let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
