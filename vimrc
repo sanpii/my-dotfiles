@@ -253,6 +253,7 @@
     nnoremap N Nzzzv
 
     nnoremap // :nohlsearch<CR>
+    nnoremap / /\v
 
     function! EndOfLine()
         normal! $
