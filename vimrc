@@ -255,11 +255,11 @@
     nnoremap // :nohlsearch<CR>
 
     function! EndOfLine()
-        normal $
+        normal! $
         if getline(".")[col(".")-1] == ';'
-            normal h
+            normal! h
         endif
-        normal a
+        normal! a
     endfunction
 
     nnoremap A :call EndOfLine()<CR>a
