@@ -157,3 +157,6 @@
 [submodule "vim/bundle/phpdoc"]
 	path = vim/bundle/phpdoc
 	url = git://github.com/johnhamelink/PhpDoc.git
+[submodule "vim/bundle/multiedit"]
+	path = vim/bundle/multiedit
+	url = git://github.com/felixr/vim-multiedit.git

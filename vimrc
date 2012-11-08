@@ -319,6 +319,9 @@
             autocmd FileType mkd :source ~/.vim/mail.vim
         augroup END
     " }}}
+    " {{{ multiedit
+        let g:multiedit_nomappings = 1
+    " }}}
     " neocomplcache {{{
         " Disable AutoComplPop.
         let g:acp_enableAtStartup = 0
