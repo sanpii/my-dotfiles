@@ -272,6 +272,26 @@
 
     nnoremap <leader>p :set paste!<CR>
 
+    function! s:GrepOperator(type)
+        let saved_unnamed_register = @@
+
+        if a:type ==# 'v'
+            normal! `<v`>y
+        elseif a:type ==# 'char'
+            normal! `[v`]y
+        else
+            return
+        endif
+
+        execute ":Ack! " . shellescape(@@)
+        copen
+
+        let @@ = saved_unnamed_register
+    endfunction
+
+    nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+    vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
+
     inoremap ts <esc>
     inoremap <esc> <nop>
 
