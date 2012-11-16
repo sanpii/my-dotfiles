@@ -207,43 +207,86 @@
 " Mappage {{{
     let mapleader = ","
 
-    function! Help(query)
-        let query = expand(a:query)
-        if query != ""
-            exec ":help " . query
-        endif
-    endfunction
+    " {{{ Help
+        function! Help(query)
+            let query = expand(a:query)
+            if query != ""
+                exec ":help " . query
+            endif
+        endfunction
 
-    " Help
-    inoremap <F1> <Esc> :call Help("<cword>")<CR>
-    nnoremap <F1> :call Help("<cword>")<CR>
+        inoremap <F1> <Esc> :call Help("<cword>")<CR>
+        nnoremap <F1> :call Help("<cword>")<CR>
+    " }}}
+    " {{{ Compilation
+        function! Browser(uri)
+            let uri=a:uri
 
-    " Exécuter le fichier actuel dans le navigateur
-    function! Browser(uri)
-        let uri=a:uri
+            if uri == ""
+                let uri=expand("%:p")
+            endif
+            exec ":silent !x-www-browser ".uri
+            redraw!
+        endfunction
 
-        if uri == ""
-            let uri=expand("%:p")
-        endif
-        exec ":silent !x-www-browser ".uri
-        redraw!
-    endfunction
+        augroup filetype
+            autocmd FileType python map <F9> :!python "%"<CR>
+            autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
+            autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
+            autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
+            autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
+            autocmd FileType php map <F9> :!php "%"<CR>
+            autocmd FileType html map <F9> :call Browser("")<CR>
+            autocmd FileType sh map <F9> :sh "%:p"<CR>
+        augroup END
+    " }}}
+    " {{{ EndOfLine
+        function! s:EndOfLine()
+            normal! $
+            if getline(".")[col(".")-1] == ';'
+                normal! h
+            endif
+            normal! a
+        endfunction
 
-    " Exécuter le fichier
-    augroup filetype
-        autocmd FileType python map <F9> :!python "%"<CR>
-        autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
-        autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
-        autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
-        autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
-        autocmd FileType php map <F9> :!php "%"<CR>
-        autocmd FileType html map <F9> :call Browser("")<CR>
-        autocmd FileType sh map <F9> :sh "%:p"<CR>
-    augroup END
+        nnoremap A :call <SID>EndOfLine()<CR>a
+    " }}}
+    " {{{ GrepOperator
+        function! s:GrepOperator(type)
+            let saved_unnamed_register = @@
 
-    noremap <F10> :set spell!<CR>
-    inoremap <F10> <Esc> :set spell!<CR>
-    vnoremap <F10> <Esc> :set spell!<CR>
+            if a:type ==# 'v'
+                normal! `<v`>y
+            elseif a:type ==# 'char'
+                normal! `[v`]y
+            else
+                return
+            endif
+
+            execute ":grep! " . shellescape(@@)
+            copen
+
+            let @@ = saved_unnamed_register
+        endfunction
+
+        nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+        vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
+    " }}}
+    " {{{ RestoreSession
+        function! s:RestoreSession()
+            if argc() == 0 && filereadable(expand('~/.vimsession'))
+                execute 'source ~/.vimsession'
+            end
+        endfunction
+
+        autocmd VimEnter * call <SID>RestoreSession()
+        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
+    " }}}
+    " {{{ Spell
+        noremap <F10> :set spell!<CR>
+        inoremap <F10> <Esc> :set spell!<CR>
+        vnoremap <F10> <Esc> :set spell!<CR>
+    " }}}
 
     " simple matching pairs easily, with Tab
     map <Tab> %
@@ -255,16 +298,6 @@
     nnoremap // :nohlsearch<CR>
     nnoremap / /\v
 
-    function! EndOfLine()
-        normal! $
-        if getline(".")[col(".")-1] == ';'
-            normal! h
-        endif
-        normal! a
-    endfunction
-
-    nnoremap A :call EndOfLine()<CR>a
-
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
 
@@ -272,37 +305,6 @@
 
     nnoremap <leader>p :setl paste!<CR>
     nnoremap <leader>w :setl wrap!<CR>
-
-    function! s:GrepOperator(type)
-        let saved_unnamed_register = @@
-
-        if a:type ==# 'v'
-            normal! `<v`>y
-        elseif a:type ==# 'char'
-            normal! `[v`]y
-        else
-            return
-        endif
-
-        execute ":grep! " . shellescape(@@)
-        copen
-
-        let @@ = saved_unnamed_register
-    endfunction
-
-    nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
-    vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
-
-    " {{{ RestoreSession
-        function! s:RestoreSession()
-            if argc() == 0 && filereadable(expand('~/.vimsession'))
-                execute 'source ~/.vimsession'
-            end
-        endfunction
-
-        autocmd VimEnter * call <SID>RestoreSession()
-        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
-    " }}}
 
     inoremap ts <esc>
     inoremap <esc> <nop>
