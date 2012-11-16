@@ -13,9 +13,6 @@
 [submodule "vim/bundle/desert256"]
 	path = vim/bundle/desert256
 	url = git://github.com/rainux/vim-desert-warm-256.git
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = git://github.com/vim-scripts/matchit.zip.git
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
@@ -160,3 +157,6 @@
 [submodule "vim/bundle/multiedit"]
 	path = vim/bundle/multiedit
 	url = git://github.com/felixr/vim-multiedit.git
+[submodule "vim/bundle/matchtag"]
+	path = vim/bundle/matchtag
+	url = git://github.com/gregsexton/MatchTag.git
