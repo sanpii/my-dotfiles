@@ -293,6 +293,17 @@
     nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
     vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
 
+    " {{{ RestoreSession
+        function! s:RestoreSession()
+            if argc() == 0 && filereadable(expand('~/.vimsession'))
+                execute 'source ~/.vimsession'
+            end
+        endfunction
+
+        autocmd VimEnter * call <SID>RestoreSession()
+        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
+    " }}}
+
     inoremap ts <esc>
     inoremap <esc> <nop>
 
