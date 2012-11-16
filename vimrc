@@ -270,7 +270,8 @@
 
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
-    nnoremap <leader>p :set paste!<CR>
+    nnoremap <leader>p :setl paste!<CR>
+    nnoremap <leader>w :setl wrap!<CR>
 
     function! s:GrepOperator(type)
         let saved_unnamed_register = @@
@@ -283,7 +284,7 @@
             return
         endif
 
-        execute ":Ack! " . shellescape(@@)
+        execute ":grep! " . shellescape(@@)
         copen
 
         let @@ = saved_unnamed_register
