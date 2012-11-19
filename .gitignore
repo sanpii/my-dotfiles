@@ -1,5 +1,5 @@
 *.pyc
-gitconfig.obs
+gitconfig.local
 pentadactyl/info
 irssi/away.log
 irssi/config
@@ -15,4 +15,4 @@ vim/.netrwhist
 vim/backup/*
 vim/undo/*
 vim/view/*
-vim/obs.vim
+vim/local.vim

@@ -20,7 +20,7 @@ alias sf="php app/console"
 alias mic='java -jar ~/.minecraft/minecraft.jar'
 alias ack=ack-grep
 alias t=task
-alias wt='task rc:~/.taskrc.obs'
+alias wt='task rc:~/.taskrc.work'
 
 IRC='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
 alias irc=$IRC

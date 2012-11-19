@@ -46,7 +46,7 @@
 	show = perl ~/.git-contrib/diff-highlight | less
 	diff = perl ~/.git-contrib/diff-highlight | less
 [include]
-	path = .gitconfig.obs
+	path = .gitconfig.local
 [rerere]
 	enabled = 1
 [merge]
