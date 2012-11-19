@@ -1,6 +1,4 @@
 " Général {{{
-    call pathogen#infect()
-
     augroup buffer
         autocmd!
     augroup END
@@ -9,6 +7,9 @@
     augroup END
 
     let vimfiles=$HOME . "/.vim"
+
+    exec "source " . vimfiles . "/bundle/pathogen/autoload/pathogen.vim"
+    call pathogen#infect()
 
     " Désactive la compatibilité avec VI
     set nocompatible
