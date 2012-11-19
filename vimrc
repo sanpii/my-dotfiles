@@ -531,7 +531,7 @@
     " }}}
 " }}}
 
-let obs_vim=vimfiles . "/obs.vim"
-if filereadable(obs_vim)
-    exec "source " . obs_vim
+let local_vim=vimfiles . "/local.vim"
+if filereadable(local_vim)
+    exec "source " . local_vim
 endif
