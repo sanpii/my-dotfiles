@@ -154,3 +154,6 @@
 [submodule "vim/bundle/matchtag"]
 	path = vim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
+[submodule "vim/bundle/SingleCompile"]
+	path = vim/bundle/SingleCompile
+	url = git://github.com/xuhdev/SingleCompile.git
