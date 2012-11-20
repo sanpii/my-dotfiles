@@ -331,11 +331,6 @@
         let g:ctrlp_default_input = 1
         let g:ctrlp_extensions = ['tag', 'buffertag']
     " }}}
-    " delimitMate {{{
-        let g:delimitMate_expand_cr = 1
-        let g:delimitMate_expand_space = 1
-        let g:delimitMate_balance_matchpairs = 1
-    " }}}
     " easytags {{{
         set tags=./tags
         let g:easytags_dynamic_files = 2
