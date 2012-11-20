@@ -219,28 +219,6 @@
         inoremap <F1> <Esc> :call Help("<cword>")<CR>
         nnoremap <F1> :call Help("<cword>")<CR>
     " }}}
-    " {{{ Compilation
-        function! Browser(uri)
-            let uri=a:uri
-
-            if uri == ""
-                let uri=expand("%:p")
-            endif
-            exec ":silent !x-www-browser ".uri
-            redraw!
-        endfunction
-
-        augroup filetype
-            autocmd FileType python map <F9> :!python "%"<CR>
-            autocmd FileType c map <F9> :!gcc -o "%:r" % && ./%:r<CR>
-            autocmd FileType vala map <F9> :!valac "%" && ./%:r<CR>
-            autocmd FileType genie map <F9> :!valac "%" && ./%:r<CR>
-            autocmd FileType tex map <F9> :!pdflatex "%" && see "%:r.pdf"<CR>
-            autocmd FileType php map <F9> :!php "%"<CR>
-            autocmd FileType html map <F9> :call Browser("")<CR>
-            autocmd FileType sh map <F9> :sh "%:p"<CR>
-        augroup END
-    " }}}
     " {{{ EndOfLine
         function! s:EndOfLine()
             normal! $
@@ -453,6 +431,9 @@
     " Seeks {{{
         let g:seeks_node = 'http://seeks.homecomputing.fr'
         let g:seeks_max_results = -1
+    " }}}
+    " {{{ SingleCompile
+        nmap <F9> :SCCompileRun<cr>
     " }}}
     " Snipmate {{{
         let g:snipMate = {}
