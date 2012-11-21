@@ -87,7 +87,6 @@
 
     set completeopt=longest,menuone
 " }}}
-
 " Apparence {{{
     " Coloration syntaxique
     syntax on
@@ -116,7 +115,6 @@
     " Idem sur les côtés
     set sidescrolloff=3
 " }}}
-
 " Indentation {{{
     " Indentation en fonction du type de fichier
     filetype indent on
@@ -153,7 +151,6 @@
         autocmd FileType make setlocal noexpandtab
     augroup END
 " }}}
-
 " Correction orthographique {{{
     " version Nemolivier
     set nospell spelllang=fr
@@ -163,7 +160,6 @@
         autocmd FileType tex setlocal spell spelllang=fr
     augroup END
 " }}}
-
 " Recherches {{{
     " Utiliser la recherche incrémentielle
     set incsearch
@@ -180,7 +176,6 @@
     " (indépendant du précédent mais de priorité plus faible)
     set ignorecase
 " }}}
-
 " Sauvegardes {{{
     let backup_dir=vimfiles . "/backup"
     if isdirectory(backup_dir)
@@ -204,7 +199,6 @@
         unlet undo_dir
     endif
 " }}}
-
 " Mappage {{{
     let mapleader = ","
 
@@ -296,7 +290,6 @@
 
     source ~/.vim/bepo.vim
 " }}}
-
 " Plugins {{{
     filetype plugin indent on
 
@@ -309,7 +302,7 @@
         let g:ctrlp_default_input = 1
         let g:ctrlp_extensions = ['tag', 'buffertag']
     " }}}
-    " {{{ dwm
+    " dwm {{{
         let g:dwm_map_keys = 0
         let g:dwm_master_pane_width = 85
 
@@ -344,7 +337,7 @@
             autocmd FileType mkd :source ~/.vim/mail.vim
         augroup END
     " }}}
-    " {{{ multiedit
+    " multiedit {{{
         let g:multiedit_nomappings = 1
     " }}}
     " neocomplcache {{{
