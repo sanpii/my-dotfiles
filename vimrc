@@ -309,6 +309,23 @@
         let g:ctrlp_default_input = 1
         let g:ctrlp_extensions = ['tag', 'buffertag']
     " }}}
+    " {{{ dwm
+        let g:dwm_map_keys = 0
+        let g:dwm_master_pane_width = 85
+
+        nnoremap <C-T> <C-W>w
+        nnoremap <C-S> <C-W>W
+
+        nmap <C-S-T> <Plug>DWMRotateCounterclockwise
+        nmap <C-S-S> <Plug>DWMRotateClockwise
+
+        nmap <C-N> <Plug>DWMNew
+        nmap <C-X> <Plug>DWMClose
+        nmap <C-Space> <Plug>DWMFocus
+
+        nmap <C-R> <Plug>DWMGrowMaster
+        nmap <C-C> <Plug>DWMShrinkMaster
+    " }}}
     " easytags {{{
         set tags=./tags
         let g:easytags_dynamic_files = 2

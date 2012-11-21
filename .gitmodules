@@ -157,3 +157,6 @@
 [submodule "vim/bundle/SingleCompile"]
 	path = vim/bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
+[submodule "vim/bundle/dwm"]
+	path = vim/bundle/dwm
+	url = git://github.com/spolu/dwm.vim.git
