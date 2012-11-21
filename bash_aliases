@@ -13,13 +13,14 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias c='concalc'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias sf="php app/console"
+alias sf='php app/console'
 alias mic='java -jar ~/.minecraft/minecraft.jar'
-alias ack=ack-grep
-alias t=task
+alias ack='ack-grep'
+alias t='task'
 alias wt='task rc:~/.taskrc.work'
 
 IRC='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
