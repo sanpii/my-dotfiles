@@ -1,5 +1,5 @@
 *.pyc
-gitconfig.local
+*.local
 pentadactyl/info
 irssi/away.log
 irssi/config
