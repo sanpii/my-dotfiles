@@ -12,6 +12,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Enable simple aliases to be sudo'ed. ("sudone"?)
+# http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
+# last character of the alias value is a space or tab character, then the next
+# command word following the alias is also checked for alias expansion."
+alias sudo='sudo ';
+
 # some more ls aliases
 alias c='concalc'
 alias ll='ls -l'
