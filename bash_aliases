@@ -44,3 +44,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 export MAIL=~/Maildir
 
 export PATH=$PATH:$HOME/.applications/bin:$HOME/bin
+
+export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --quiet --dumb'
