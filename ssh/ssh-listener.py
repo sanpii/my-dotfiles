@@ -9,6 +9,7 @@ import os.path
 
 NOTIFIER  = '/usr/bin/notify-send'
 VIEWER  = '/usr/bin/see'
+OPENER = '/usr/bin/xdg-open'
 HOST = 'localhost'
 PORT = 8088
 
@@ -66,7 +67,11 @@ def createDaemon():
 def parse(data):
     data = data.split('\n', 1)
     (action, args) = data.pop(0).split(' ', 1)
-    return (action, args, data[0])
+    try:
+        data = data.index(0)
+    except ValueError:
+        data = None
+    return (action, args, data)
 
 def notify(summary, message):
     return [NOTIFIER, summary, message]
@@ -76,6 +81,9 @@ def send(filename, content):
     f.write(content)
     f.close()
     return [VIEWER , filename]
+
+def open(url, content):
+    return [OPENER , url]
 
 if __name__ == '__main__':
     fg = False
@@ -148,4 +156,3 @@ Only one argument is expected. More will give you that help message.
         p = subprocess.Popen(function(args, data))
 
     sys.exit(retCode)
-
