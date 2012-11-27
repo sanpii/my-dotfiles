@@ -67,22 +67,22 @@ def createDaemon():
 def parse(data):
     data = data.split('\n', 1)
     (action, args) = data.pop(0).split(' ', 1)
-    try:
-        data = data.index(0)
-    except ValueError:
-        data = None
+    if len(data) > 0:
+        data = data[0]
+    else:
+        data = ''
     return (action, args, data)
 
-def notify(summary, message):
+def action_notify(summary, message):
     return [NOTIFIER, summary, message]
 
-def send(filename, content):
+def action_send(filename, content):
     f = open(filename, 'wb')
     f.write(content)
     f.close()
     return [VIEWER , filename]
 
-def open(url, content):
+def action_open(url, content):
     return [OPENER , url]
 
 if __name__ == '__main__':
@@ -152,7 +152,7 @@ Only one argument is expected. More will give you that help message.
         conn.close()
 
         (action, args, data) = parse(data)
-        function = locals()[action.lower()]
+        function = locals()['action_'+action.lower()]
         p = subprocess.Popen(function(args, data))
 
     sys.exit(retCode)
