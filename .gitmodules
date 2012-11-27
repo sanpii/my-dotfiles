@@ -166,3 +166,6 @@
 [submodule "fonts/ttf-dejavu-powerline"]
 	path = fonts/ttf-dejavu-powerline
 	url = git://gist.github.com/1630581.git
+[submodule "vim/bundle/drupal-snippets"]
+	path = vim/bundle/drupal-snippets
+	url = git://github.com/technosophos/drupal-snippets.git
