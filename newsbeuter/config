@@ -1,0 +1,41 @@
+auto-reload yes
+browser "/usr/local/bin/open-url.py %u"
+datetime-format "%d %b"
+# download-full-page yes
+notify-program "/usr/local/bin/notify-send"
+notify-screen yes
+show-read-feeds no
+show-read-articles no
+text-width 80
+
+# Bépo {{{
+unbind-key e
+bind-key e next-unread
+bind-key i prev-unread
+unbind-key t
+bind-key t next
+unbind-key s
+bind-key s prev
+unbind-key ^T
+bind-key ^T next-unread-feed
+unbind-key ^S
+bind-key ^S prev-unread-feed
+unbind-key T
+bind-key T next-feed
+unbind-key S
+bind-key S prev-feed
+unbind-key o
+bind-key o open-in-browser-and-mark-read
+unbind-key O
+bind-key O open-in-browser
+bind-key è set-tag
+bind-key ^È clear-tag
+unbind-key b
+bind-key b bookmark
+unbind-key d
+bind-key d delete-article
+unbind-key u
+bind-key u purge-deleted
+bind-key t down
+bind-key s up
+# }}}
