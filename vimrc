@@ -199,97 +199,6 @@
         unlet undo_dir
     endif
 " }}}
-" Mappage {{{
-    let mapleader = ","
-
-    " {{{ Help
-        function! Help(query)
-            let query = expand(a:query)
-            if query != ""
-                exec ":help " . query
-            endif
-        endfunction
-
-        inoremap <F1> <Esc> :call Help("<cword>")<CR>
-        nnoremap <F1> :call Help("<cword>")<CR>
-    " }}}
-    " {{{ EndOfLine
-        function! s:EndOfLine()
-            normal! $
-            if getline(".")[col(".")-1] == ';'
-                normal! h
-            endif
-            normal! a
-        endfunction
-
-        nnoremap A :call <SID>EndOfLine()<CR>a
-    " }}}
-    " {{{ GrepOperator
-        function! s:GrepOperator(type)
-            let saved_unnamed_register = @@
-
-            if a:type ==# 'v'
-                normal! `<v`>y
-            elseif a:type ==# 'char'
-                normal! `[v`]y
-            else
-                return
-            endif
-
-            execute ":grep! " . shellescape(@@)
-            copen
-
-            let @@ = saved_unnamed_register
-        endfunction
-
-        nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
-        vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
-    " }}}
-    " {{{ RestoreSession
-        function! s:RestoreSession()
-            if argc() == 0 && filereadable(expand('~/.vimsession'))
-                execute 'source ~/.vimsession'
-            end
-        endfunction
-
-        autocmd VimEnter * call <SID>RestoreSession()
-        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
-    " }}}
-    " {{{ Spell
-        noremap <F10> :set spell!<CR>
-        inoremap <F10> <Esc> :set spell!<CR>
-        vnoremap <F10> <Esc> :set spell!<CR>
-    " }}}
-
-    " simple matching pairs easily, with Tab
-    map <Tab> %
-
-    " Permet de placer au milieu de l'écran l'occurence de la recherche
-    nnoremap n nzzzv
-    nnoremap N Nzzzv
-
-    nnoremap // :nohlsearch<CR>
-    nnoremap / /\v
-
-    " Re-selectionner le texte précédemment collé
-    nnoremap <leader>v V`]
-
-    nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-
-    nnoremap <leader>p :setl paste!<CR>
-    nnoremap <leader>w :setl wrap!<CR>
-
-    inoremap ts <esc>
-    inoremap <esc> <nop>
-
-    " Disable arrows. hjkl are a lot faster.
-    nnoremap <Up> <nop>
-    nnoremap <Down> <nop>
-    nnoremap <Left> <nop>
-    nnoremap <Right> <nop>
-
-    source ~/.vim/bepo.vim
-" }}}
 " Plugins {{{
     filetype plugin indent on
 
@@ -515,6 +424,97 @@
         \    "get_context" : "<leader><F11>",
         \}
     " }}}
+" }}}
+" Mappage {{{
+    let mapleader = ","
+
+    " {{{ Help
+        function! Help(query)
+            let query = expand(a:query)
+            if query != ""
+                exec ":help " . query
+            endif
+        endfunction
+
+        inoremap <F1> <Esc> :call Help("<cword>")<CR>
+        nnoremap <F1> :call Help("<cword>")<CR>
+    " }}}
+    " {{{ EndOfLine
+        function! s:EndOfLine()
+            normal! $
+            if getline(".")[col(".")-1] == ';'
+                normal! h
+            endif
+            normal! a
+        endfunction
+
+        nnoremap A :call <SID>EndOfLine()<CR>a
+    " }}}
+    " {{{ GrepOperator
+        function! s:GrepOperator(type)
+            let saved_unnamed_register = @@
+
+            if a:type ==# 'v'
+                normal! `<v`>y
+            elseif a:type ==# 'char'
+                normal! `[v`]y
+            else
+                return
+            endif
+
+            execute ":grep! " . shellescape(@@)
+            copen
+
+            let @@ = saved_unnamed_register
+        endfunction
+
+        nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+        vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
+    " }}}
+    " {{{ RestoreSession
+        function! s:RestoreSession()
+            if argc() == 0 && filereadable(expand('~/.vimsession'))
+                execute 'source ~/.vimsession'
+            end
+        endfunction
+
+        autocmd VimEnter * call <SID>RestoreSession()
+        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
+    " }}}
+    " {{{ Spell
+        noremap <F10> :set spell!<CR>
+        inoremap <F10> <Esc> :set spell!<CR>
+        vnoremap <F10> <Esc> :set spell!<CR>
+    " }}}
+
+    " simple matching pairs easily, with Tab
+    nnoremap <Tab> %
+
+    " Permet de placer au milieu de l'écran l'occurence de la recherche
+    nnoremap n nzzzv
+    nnoremap N Nzzzv
+
+    nnoremap // :nohlsearch<CR>
+    nnoremap / /\v
+
+    " Re-selectionner le texte précédemment collé
+    nnoremap <leader>v V`]
+
+    nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+
+    nnoremap <leader>p :setl paste!<CR>
+    nnoremap <leader>w :setl wrap!<CR>
+
+    inoremap ts <esc>
+    inoremap <esc> <nop>
+
+    " Disable arrows. hjkl are a lot faster.
+    nnoremap <Up> <nop>
+    nnoremap <Down> <nop>
+    nnoremap <Left> <nop>
+    nnoremap <Right> <nop>
+
+    source ~/.vim/bepo.vim
 " }}}
 
 let local_vim=vimfiles . "/local.vim"
