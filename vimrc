@@ -436,7 +436,7 @@
         map <buffer> <leader>u :call PhpInsertUse()<CR>
     " }}}
     " Powerline {{{
-        let g:Powerline_symbols = 'unicode'
+        let g:Powerline_symbols = 'fancy'
     " }}}
     " Seeks {{{
         let g:seeks_node = 'http://seeks.homecomputing.fr'
