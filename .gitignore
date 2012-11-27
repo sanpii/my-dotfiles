@@ -5,6 +5,7 @@ irssi/away.log
 irssi/config
 irssi/config.autosave
 irssi/friends
+newsbeuter/*
 ssh/config
 ssh/id_rsa
 ssh/*.pub
