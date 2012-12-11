@@ -19,7 +19,7 @@ fi
 alias sudo='sudo ';
 
 # some more ls aliases
-alias c='concalc'
+alias c='bc -l'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
