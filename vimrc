@@ -487,6 +487,8 @@
         vnoremap <F10> <Esc> :set spell!<CR>
     " }}}
 
+    xnoremap <leader>c :!bc -l<cr>
+
     " simple matching pairs easily, with Tab
     nnoremap <Tab> %
 
