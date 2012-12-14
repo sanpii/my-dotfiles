@@ -489,6 +489,10 @@
 
     xnoremap <leader>c :!bc -l<cr>
 
+    " VimTip 436
+    inoremap <c-u> <c-g>u<c-u>
+    inoremap <c-w> <c-g>u<c-w>
+
     " simple matching pairs easily, with Tab
     nnoremap <Tab> %
 
