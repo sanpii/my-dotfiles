@@ -169,3 +169,6 @@
 [submodule "vim/bundle/drupal-snippets"]
 	path = vim/bundle/drupal-snippets
 	url = git://github.com/technosophos/drupal-snippets.git
+[submodule "vim/bundle/incbool"]
+	path = vim/bundle/incbool
+	url = git://github.com/can3p/incbool.vim.git
