@@ -97,9 +97,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
-[submodule "vim/bundle/easytags"]
-	path = vim/bundle/easytags
-	url = git://github.com/xolox/vim-easytags.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -172,3 +169,6 @@
 [submodule "vim/bundle/clam"]
 	path = vim/bundle/clam
 	url = git://github.com/sjl/clam.vim.git
+[submodule "vim/bundle/tags"]
+	path = vim/bundle/tags
+	url = git://github.com/szw/vim-tags.git
