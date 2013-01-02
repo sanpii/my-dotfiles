@@ -232,11 +232,6 @@
         nmap <C-R> <Plug>DWMGrowMaster
         nmap <C-C> <Plug>DWMShrinkMaster
     " }}}
-    " easytags {{{
-        set tags=./tags
-        let g:easytags_dynamic_files = 2
-        let g:easytags_include_members = 1
-    " }}}
     " gitv {{{
         let g:Gitv_OpenHorizontal = 1
         let g:Gitv_WrapLines = 0
