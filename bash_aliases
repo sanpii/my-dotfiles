@@ -35,6 +35,11 @@ alias xirc="x-terminal-emulator -title irc -e bash -c '$IRC'"
 TORRENT='ssh -t cuddles "tmux -2 attach-session -t rtorrent"'
 alias torrent=$TORRENT
 
+add_torrent() {
+    ssh -qt cuddles "cd /media/data/torrent/watch && wget -q $1"
+    echo 'added'
+}
+
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
