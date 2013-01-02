@@ -169,3 +169,6 @@
 [submodule "vim/bundle/incbool"]
 	path = vim/bundle/incbool
 	url = git://github.com/can3p/incbool.vim.git
+[submodule "vim/bundle/clam"]
+	path = vim/bundle/clam
+	url = git://github.com/sjl/clam.vim.git

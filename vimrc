@@ -205,6 +205,10 @@
     " cfi {{{
         let g:cfi_php_show_params = 1
     " }}}
+    " clam {{{
+        nnoremap ! :Clam<space>
+        vnoremap ! :ClamVisual<space>
+    " }}}
     " ctrlp {{{
         noremap <C-i> :CtrlPTag<CR>
         let g:ctrlp_clear_cache_on_exit = 0
