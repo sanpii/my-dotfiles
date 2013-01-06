@@ -35,8 +35,12 @@ alias xirc="x-terminal-emulator -title irc -e bash -c '$IRC'"
 TORRENT='ssh -t cuddles "tmux -2 attach-session -t rtorrent"'
 alias torrent=$TORRENT
 
-add_torrent() {
-    ssh -qt cuddles "cd /media/data/torrent/watch && wget -q $1"
+torrent_add() {
+    if [[ -f $1 ]]; then
+        scp -q "$1" cuddles:/media/data/torrent/watch
+    else
+        ssh -qt cuddles "cd /media/data/torrent/watch && wget -q $1"
+    fi
     echo 'added'
 }
 
