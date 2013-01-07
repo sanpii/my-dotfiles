@@ -7,9 +7,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/desert256"]
 	path = vim/bundle/desert256
 	url = git://github.com/rainux/vim-desert-warm-256.git
@@ -172,3 +169,6 @@
 [submodule "vim/bundle/tags"]
 	path = vim/bundle/tags
 	url = git://github.com/szw/vim-tags.git
+[submodule "vim/bundle/smartgf"]
+	path = vim/bundle/smartgf
+	url = git://github.com/gorkunov/smartgf.vim.git
