@@ -449,27 +449,6 @@
 
         nnoremap A :call <SID>EndOfLine()<CR>a
     " }}}
-    " {{{ GrepOperator
-        function! s:GrepOperator(type)
-            let saved_unnamed_register = @@
-
-            if a:type ==# 'v'
-                normal! `<v`>y
-            elseif a:type ==# 'char'
-                normal! `[v`]y
-            else
-                return
-            endif
-
-            execute ":grep! " . shellescape(@@)
-            copen
-
-            let @@ = saved_unnamed_register
-        endfunction
-
-        nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
-        vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
-    " }}}
     " {{{ RestoreSession
         function! s:RestoreSession()
             if argc() == 0 && filereadable(expand('~/.vimsession'))
