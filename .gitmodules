@@ -28,18 +28,12 @@
 [submodule "vim/bundle/auto_mkdir"]
 	path = vim/bundle/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = git://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = git://github.com/tomtom/tlib_vim.git
 [submodule "vim/bundle/addon-mw-utils"]
 	path = vim/bundle/addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = git://github.com/sanpii/snipmate-snippets.git
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
 	url = git://github.com/veloce/vim-behat.git
@@ -157,9 +151,6 @@
 [submodule "fonts/ttf-dejavu-powerline"]
 	path = fonts/ttf-dejavu-powerline
 	url = git://gist.github.com/1630581.git
-[submodule "vim/bundle/drupal-snippets"]
-	path = vim/bundle/drupal-snippets
-	url = git://github.com/technosophos/drupal-snippets.git
 [submodule "vim/bundle/incbool"]
 	path = vim/bundle/incbool
 	url = git://github.com/can3p/incbool.vim.git
@@ -172,3 +163,6 @@
 [submodule "vim/bundle/smartgf"]
 	path = vim/bundle/smartgf
 	url = git://github.com/gorkunov/smartgf.vim.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git

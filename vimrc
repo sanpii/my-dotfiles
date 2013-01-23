@@ -353,11 +353,6 @@
     " {{{ SingleCompile
         nmap <F9> :SCCompileRun<cr>
     " }}}
-    " Snipmate {{{
-        let g:snipMate = {}
-        let g:snipMate.scope_aliases = {}
-        let g:snipMate.scope_aliases['php'] = 'php,sf2'
-    " }}}
     " Symfony2 {{{
         " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
 
