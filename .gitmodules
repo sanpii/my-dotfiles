@@ -55,9 +55,6 @@
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
 	url = git://github.com/stephpy/vim-php-cs-fixer.git
-[submodule "pentadactyl/plugins/firebug"]
-	path = pentadactyl/plugins/firebug
-	url = git://github.com/maksimr/firebug-pentadactyl.git
 [submodule "vim/bundle/LanguageTool"]
 	path = vim/bundle/LanguageTool
 	url = git://github.com/vim-scripts/LanguageTool.git

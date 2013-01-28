@@ -1,6 +1,6 @@
 *.pyc
 *.local
-pentadactyl/info
+vimperator/info
 irssi/away.log
 irssi/config
 irssi/config.autosave
