@@ -68,8 +68,16 @@
     set nowrap
 
     " Suppression automatique des espaces superflus
+    function! StripTrailingWhitespace()
+        " Don't strip on these filetypes
+        if &ft =~ 'diff'
+            return
+        endif
+        %s/\s\+$//e
+    endfunction
+
     augroup buffer
-        autocmd BufWritePre * :%s/\s\+$//e
+        autocmd BufWritePre * call StripTrailingWhitespace()
     augroup END
 
     " .vimrc auto-reload
