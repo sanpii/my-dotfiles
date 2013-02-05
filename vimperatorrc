@@ -1,3 +1,5 @@
+let mapleader = ","
+
 set newtab=all
 set complete=sl
 set smartcase
