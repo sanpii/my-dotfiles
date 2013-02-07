@@ -31,7 +31,7 @@
 	co = checkout
 	dc = diff --cached
 	fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lo = log --stat
 	st = status
 	new = !sh -c 'git log "$@" @{1}..@{0}'
