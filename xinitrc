@@ -5,9 +5,9 @@
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-if [ -x ~/.applications/bin/statnot ]; then
+if [ -x ~/.local/bin/statnot ]; then
     killall notification-daemon &> /dev/null
-    ~/.applications/bin/statnot ~/.statnot/config.py &
+    ~/.local/bin/statnot ~/.statnot/config.py &
 fi;
 
 if [ -x /usr/bin/davmail ]; then
