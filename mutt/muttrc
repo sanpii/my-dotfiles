@@ -33,9 +33,11 @@ folder-hook . "exec collapse-all"
 unignore X-Label
 unignore X-Troll
 unignore X-URL
+unignore X-PGP
 
 hdr_order Date From To CC BCC User-Agent Subject X-Label X-Troll
 my_hdr X-URL: http://sanpi.homecomputing.fr
+my_hdr X-PGP: 2924 39D9 167D F1DE 9EA3  957B 06D7 1A24 7853 2E92
 # }}}
 # Maildir {{{
 set mbox_type=Maildir
