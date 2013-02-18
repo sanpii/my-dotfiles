@@ -6,7 +6,7 @@ set editor="vim"
 set sort=threads
 
 set from="sanpi@homecomputing.fr"
-alternates nicolas.joseph@valaide.org nicolas.joseph@homecomputing.fr gege2061@homecomputing.fr
+alternates nicolas.joseph@homecomputing.fr
 set reverse_name
 set use_from=yes
 set envelope_from="yes"
