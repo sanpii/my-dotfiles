@@ -160,12 +160,11 @@
     augroup END
 " }}}
 " Correction orthographique {{{
-    " version Nemolivier
     set nospell spelllang=fr
 
-    " automatique pour les fichiers tex
     augroup filetype
         autocmd FileType tex setlocal spell spelllang=fr
+        autocmd FileType markdown setlocal spell spelllang=fr
     augroup END
 " }}}
 " Recherches {{{
