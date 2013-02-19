@@ -6,7 +6,8 @@
 ""   Automatic line wrap
 "" ----------------------------------------------------------------------------
 
-set textwidth=80	" max line length
+source ~/.vim/text.vim
+
 set formatoptions=tcql
 set comments+=n:\|	" '|' is a quote char.
 set comments+=n:%	" '%' as well.

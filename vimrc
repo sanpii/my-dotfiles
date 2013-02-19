@@ -159,14 +159,6 @@
         autocmd FileType make setlocal noexpandtab
     augroup END
 " }}}
-" Correction orthographique {{{
-    set nospell spelllang=fr
-
-    augroup filetype
-        autocmd FileType tex setlocal spell spelllang=fr
-        autocmd FileType markdown setlocal spell spelllang=fr
-    augroup END
-" }}}
 " Recherches {{{
     " Utiliser la recherche incrémentielle
     set incsearch
@@ -254,10 +246,12 @@
     " LanguageTool {{{
         let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
     " }}}
-    " mail {{{
+    " Text file {{{
         augroup filetype
+            autocmd FileType text :source ~/.vim/text.vim
+            autocmd FileType tex :source ~/.vim/text.vim
+            autocmd FileType markdown :source ~/.vim/text.vim
             autocmd FileType mail :source ~/.vim/mail.vim
-            autocmd FileType mkd :source ~/.vim/mail.vim
         augroup END
     " }}}
     " multiedit {{{
