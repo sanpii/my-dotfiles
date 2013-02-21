@@ -158,6 +158,9 @@
     augroup filetype
         autocmd FileType make setlocal noexpandtab
     augroup END
+
+    " Fixing indenting of HTML files
+    autocmd FileType html setlocal indentkeys-=*<Return>
 " }}}
 " Recherches {{{
     " Utiliser la recherche incrémentielle
