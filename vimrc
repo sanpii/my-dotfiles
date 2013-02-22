@@ -192,6 +192,8 @@
 
         nmap <C-R> <Plug>DWMGrowMaster
         nmap <C-C> <Plug>DWMShrinkMaster
+
+        nmap <C-H> :redo<cr>
     " }}}
     " gitv {{{
         let g:Gitv_OpenHorizontal = 1
