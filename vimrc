@@ -106,6 +106,7 @@
 
     " Afficher les caractères spéciaux
     set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
+    set showbreak=↪
     highlight NonText cterm=bold ctermfg=darkgrey
     highlight SpecialKey cterm=bold ctermfg=darkgrey
 
