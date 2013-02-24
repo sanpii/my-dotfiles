@@ -26,43 +26,25 @@
     " Détection du type de fichier
     filetype on
 
-    " Afficher une liste lors de complétion de commandes/fichiers
-    set wildmenu
-
     " Désactiver la souris (molette, sélection, etc.)
     set mouse=""
 
-    " Afficher des infos dans la barre de statut
-    set laststatus=2
-
-    " Afficher la position du curseur
-    set ruler
-
-    " Afficher partiellement la commande dans la ligne de statut
-    set showcmd
-
-    " Afficher la correspondance des parenthèses
+    " N’affiche pas la correspondance des parenthèses
     set noshowmatch
 
     " Replie de code à l'aide de marqueurs
     set foldmethod=marker
 
     " Sauvegarde des marqueurs
-    let view_dir=vimfiles . "/view"
-    if isdirectory(view_dir)
-        exec "set viewdir=" . view_dir
+    if exists('+viewfile')
         augroup buffer
             autocmd BufWinLeave *? silent! mkview
             autocmd BufWinEnter *? silent! loadview
         augroup END
     endif
-    unlet view_dir
 
     " Cacher les tampons quand ils sont abandonnés
     set hidden
-
-    " Nombre de commandes maximale dans l'historique
-    set history=100
 
     " Ne pas couper les lignes trop longues
     set nowrap
@@ -84,9 +66,6 @@
     augroup buffer
         autocmd bufwritepost .vimrc source %
     augroup END
-
-    " Permettre l'utilisation de la touche backspace dans tous les cas
-    set backspace=2
 
     " Affiche la limite de 80 caractères
     if v:version >= 703
@@ -120,9 +99,6 @@
 
     " Nombre de ligne minimal en dessous ou au dessus du curseur
     set scrolloff=3
-
-    " Idem sur les côtés
-    set sidescrolloff=3
 " }}}
 " Indentation {{{
     " Indentation en fonction du type de fichier
@@ -130,9 +106,6 @@
 
     " Indispensable pour ne pas tout casser avec ce qui va suivre
     set preserveindent
-
-    " Activer l'indentation automatique
-    set autoindent
 
     " Indentation plus intelligente
     set smartindent
@@ -164,9 +137,6 @@
     autocmd FileType html setlocal indentkeys-=*<Return>
 " }}}
 " Recherches {{{
-    " Utiliser la recherche incrémentielle
-    set incsearch
-
     " Surligner les résultats de recherche
     set hlsearch
 
@@ -180,27 +150,7 @@
     set ignorecase
 " }}}
 " Sauvegardes {{{
-    let backup_dir=vimfiles . "/backup"
-    if isdirectory(backup_dir)
-        " répertoire de sauvegarde automatique
-        exec "set backupdir=" . backup_dir
-
-        " activation de la sauvegarde
-        set backup
-    endif
-    unlet backup_dir
-
-    if v:version >= 703
-        let undo_dir=vimfiles . "/undo"
-        if isdirectory(undo_dir)
-            " répertoire de sauvegarde automatique
-            exec "set undodir=" . undo_dir
-
-            " activation de la sauvegarde
-            set undofile
-        endif
-        unlet undo_dir
-    endif
+    set backup
 " }}}
 " Plugins {{{
     filetype plugin indent on
@@ -486,7 +436,6 @@
     nnoremap n nzzzv
     nnoremap N Nzzzv
 
-    nnoremap // :nohlsearch<CR>
     nnoremap / /\v
 
     " Re-selectionner le texte précédemment collé
