@@ -18,6 +18,10 @@ if [ -x /usr/bin/parcellite ]; then
     /usr/bin/parcellite &
 fi;
 
+if [ -x /usr/bin/seafile-applet ]; then
+    /usr/bin/seafile-applet &
+fi;
+
 if [ -x /usr/bin/icedove ]; then
     /usr/bin/icedove &
 elif [ -x /usr/bin/thunderbird ]; then
