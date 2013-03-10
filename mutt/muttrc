@@ -28,6 +28,8 @@ set crypt_replyencrypt=yes
 set fast_reply
 
 folder-hook . "exec collapse-all"
+
+set query_command="pc_query -m '%s'"
 # }}}
 # Header {{{
 unignore X-Label
@@ -120,7 +122,7 @@ bind index,pager \Cr sidebar-open
 # }}}
 # Trash {{{
 folder-hook . 'macro index,pager d "<save-message>=Trash<enter><enter>"  "Mark message as trash"'
-folder-hook 'Junk|Trash|RSS' 'bind index,pager d delete-message'
+folder-hook 'Junk|Trash' 'bind index,pager d delete-message'
 #}}}
 # Spam {{{
 macro index,pager \ed "<enter-command>unset wait_key\n<pipe-entry>sa-learn --spam\n<enter-command>set wait_key\n<save-message>=Junk\n" "Tags a given message as SPAM"
@@ -130,4 +132,3 @@ macro index \et "<pipe-entry>spamassassin -t\n<enter-command>set wait_key\n" "Te
 # Mime types {{{
 auto_view text/html
 # }}}
-
