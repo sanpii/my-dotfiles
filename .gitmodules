@@ -31,9 +31,6 @@
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = git://github.com/tomtom/tlib_vim.git
-[submodule "vim/bundle/addon-mw-utils"]
-	path = vim/bundle/addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
 	url = git://github.com/veloce/vim-behat.git
