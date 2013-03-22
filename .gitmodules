@@ -157,9 +157,6 @@
 [submodule "vim/bundle/tags"]
 	path = vim/bundle/tags
 	url = git://github.com/szw/vim-tags.git
-[submodule "vim/bundle/smartgf"]
-	path = vim/bundle/smartgf
-	url = git://github.com/gorkunov/smartgf.vim.git
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
