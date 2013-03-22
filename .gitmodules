@@ -136,9 +136,6 @@
 [submodule "vim/bundle/dwm"]
 	path = vim/bundle/dwm
 	url = git://github.com/spolu/dwm.vim.git
-[submodule "vim/bundle/ez"]
-	path = vim/bundle/ez
-	url = git://github.com/nervetattoo/eZVim.git
 [submodule "fonts/ttf-dejavu-powerline"]
 	path = fonts/ttf-dejavu-powerline
 	url = git://gist.github.com/1630581.git
