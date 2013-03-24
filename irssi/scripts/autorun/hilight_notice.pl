@@ -1,1 +1,0 @@
-../hilight_notice.pl

@@ -64,9 +64,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
-[submodule "irssi/scripts/seeks"]
-	path = irssi/scripts/seeks
-	url = git://github.com/sanpii/seeks.irssi.git
 [submodule "vim/bundle/man"]
 	path = vim/bundle/man
 	url = git://github.com/pydave/vim-man.git
