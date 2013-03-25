@@ -10,7 +10,7 @@ workspace_layout stacking
 bindsym $mod+e exec pcmanfm
 bindsym $mod+p exec kupfer
 bindsym $mod+l exec xautolock -locknow
-bindsym $mod+n exec zim
+bindsym $mod+Tab exec ~/.config/i3/wp-swap.py
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 client.focused #42a8dc #1b455a #cccccc
