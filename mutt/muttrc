@@ -1,6 +1,6 @@
 # General {{{
 
-source ~/.mutt/colors.`tty -s && tput colors || echo 8`
+source ~/.mutt/colors
 
 set editor="vim"
 set sort=threads
