@@ -443,6 +443,12 @@
         inoremap <F10> <Esc> :set spell!<CR>
         vnoremap <F10> <Esc> :set spell!<CR>
     " }}}
+    " Command line {{{
+        cnoremap <c-a> <home>
+        cnoremap <c-e> <end>
+        cnoremap <c-s> <up>
+        cnoremap <c-t> <down>
+    " }}}
 
     xnoremap <leader>c :!bc -l<cr>
 
