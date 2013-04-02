@@ -28,9 +28,7 @@ alias ack='ack-grep'
 alias t='task'
 alias wt='task rc:~/.taskrc.work'
 
-IRC='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
-alias irc=$IRC
-alias xirc="x-terminal-emulator -title irc -e bash -c '$IRC'"
+alias irc='ssh -t irc.homecomputing.fr "tmux -2 attach-session -t irc"'
 
 TORRENT='ssh -t cuddles "tmux -2 attach-session -t rtorrent"'
 alias torrent=$TORRENT
