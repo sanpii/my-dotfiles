@@ -1,4 +1,5 @@
 alsa-utils
+apt-file
 bash-completion
 cifs-utils
 dunst
