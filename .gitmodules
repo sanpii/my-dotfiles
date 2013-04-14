@@ -121,9 +121,6 @@
 [submodule "vim/bundle/phpdoc"]
 	path = vim/bundle/phpdoc
 	url = git://github.com/johnhamelink/PhpDoc.git
-[submodule "vim/bundle/multiedit"]
-	path = vim/bundle/multiedit
-	url = git://github.com/felixr/vim-multiedit.git
 [submodule "vim/bundle/matchtag"]
 	path = vim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
@@ -163,3 +160,6 @@
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
+[submodule "vim/bundle/multiple-cursors"]
+	path = vim/bundle/multiple-cursors
+	url = git://github.com/terryma/vim-multiple-cursors.git
