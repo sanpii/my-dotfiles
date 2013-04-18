@@ -208,7 +208,6 @@
             autocmd FileType tex :source ~/.vim/text.vim
             autocmd FileType markdown :source ~/.vim/text.vim
             autocmd FileType mail :source ~/.vim/mail.vim
-            autocmd FileType help set nospell
         augroup END
     " }}}
     " neocomplcache {{{
