@@ -435,11 +435,6 @@
         autocmd VimEnter * call <SID>RestoreSession()
         nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
     " }}}
-    " {{{ Spell
-        noremap <F10> :set spell!<CR>
-        inoremap <F10> <Esc> :set spell!<CR>
-        vnoremap <F10> <Esc> :set spell!<CR>
-    " }}}
     " Command line {{{
         cnoremap <c-a> <home>
         cnoremap <c-e> <end>
@@ -469,6 +464,7 @@
 
     nnoremap <leader>p :setl paste!<CR>
     nnoremap <leader>w :setl wrap!<CR>
+    nnoremap <leader>sp :setl spell!<CR>
 
     inoremap ts <esc>
     inoremap <esc> <nop>
