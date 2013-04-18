@@ -463,7 +463,7 @@
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
     nnoremap <leader>p :setl paste!<CR>
-    nnoremap <leader>w :setl wrap!<CR>
+    nnoremap <leader>wp :setl wrap!<CR>
     nnoremap <leader>sp :setl spell!<CR>
 
     inoremap ts <esc>
