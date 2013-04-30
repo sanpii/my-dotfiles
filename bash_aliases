@@ -25,8 +25,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias sf='php app/console'
 alias ack='ack-grep'
-alias t='task'
-alias wt='task rc:~/.taskrc.work'
+alias t='~/.todo/cli/todo.sh'
+alias wt='~/.todo/cli/todo.sh -d ~/.todo-work.cfg'
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
