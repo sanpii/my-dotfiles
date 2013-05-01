@@ -56,3 +56,5 @@ export MAIL=~/Maildir
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --quiet --dumb'
+
+export EDITOR=vim
