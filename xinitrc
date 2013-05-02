@@ -5,40 +5,45 @@
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-if [ -x /usr/bin/dunst ]; then
+functiont exist()
+{
+    type -P $1 > /dev/null
+}
+
+if exist dunst; then
     killall notification-daemon &> /dev/null
-    /usr/bin/dunst &
+    dunst &
 fi;
 
-if [ -x /usr/bin/davmail ]; then
-    /usr/bin/davmail &
+if exist davmail; then
+    davmail &
 fi;
 
-if [ -x /usr/bin/parcellite ]; then
-    /usr/bin/parcellite &
+if exist parcellite; then
+    parcellite &
 fi;
 
-if [ -x /usr/bin/git-annex ]; then
-    /usr/bin/git-annex assistant --austart &
+if exist git-annex; then
+    git-annex assistant --austart &
 fi;
 
-if [ -x /usr/bin/icedove ]; then
-    /usr/bin/icedove &
-elif [ -x /usr/bin/thunderbird ]; then
-    /usr/bin/thunderbird &
+if exist icedove; then
+    icedove &
+elif exist thunderbird; then
+    thunderbird &
 fi;
 
-if [ -x /usr/bin/x-www-browser ]; then
-    /usr/bin/x-www-browser &
+if exist x-www-browser; then
+    x-www-browser &
 fi;
 
-if [ -x /usr/bin/x-terminal-emulator ]; then
+if exist x-terminal-emulator; then
     xirc &
-    /usr/bin/x-terminal-emulator -name term-scratchpad &
+    x-terminal-emulator -name term-scratchpad &
 fi;
 
-if [ -x /usr/bin/xautolock ]; then
-    /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.config/i3/lockscreen.png' &
+if exist xautolock; then
+    xautolock -locker 'i3lock -t -i ~/.config/i3/lockscreen.png' &
 fi;
 
 exec i3 --force-xinerama
