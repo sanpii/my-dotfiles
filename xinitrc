@@ -27,6 +27,10 @@ if exist git-annex; then
     git-annex assistant --austart &
 fi;
 
+if exist hamster-time-tracker; then
+    hamster-time-tracker &
+fi;
+
 if exist icedove; then
     icedove &
 elif exist thunderbird; then
