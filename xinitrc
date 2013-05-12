@@ -19,7 +19,7 @@ if [ -x /usr/bin/parcellite ]; then
 fi;
 
 if [ -x /usr/bin/git-annex ]; then
-    /usr/bin/git-annex assistant --austart &
+    /usr/bin/git-annex assistant --autostart &
 fi;
 
 if [ -x /usr/bin/hamster-time-tracker]; then
