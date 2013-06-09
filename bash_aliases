@@ -27,6 +27,7 @@ alias sf='php app/console'
 alias ack='ack-grep'
 alias t='~/.todo/cli/todo.sh'
 alias wt='~/.todo/cli/todo.sh -d ~/.todo-work.cfg'
+alias ht='~/.todo/cli/todo.sh -d ~/.todo-home.cfg'
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
