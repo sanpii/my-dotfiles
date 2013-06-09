@@ -18,8 +18,8 @@ if [ -x /usr/bin/parcellite ]; then
     /usr/bin/parcellite &
 fi;
 
-if [ -x /usr/bin/git-annex ]; then
-    /usr/bin/git-annex assistant --autostart &
+if [ -x /usr/bin/seafile-applet ]; then
+    /usr/bin/seafile-applet &
 fi;
 
 if [ -x /usr/bin/hamster-time-tracker]; then
