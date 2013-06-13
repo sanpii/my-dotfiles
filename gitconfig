@@ -46,9 +46,9 @@
 	fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
 	create = "!f(){ git init \"$@\"; if [ -n $@ ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
 [pager]
-	log = perl ~/.git-contrib/diff-highlight | less
-	show = perl ~/.git-contrib/diff-highlight | less
-	diff = perl ~/.git-contrib/diff-highlight | less
+	log = perl  /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [include]
 	path = .gitconfig.local
 [rerere]
