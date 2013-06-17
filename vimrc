@@ -36,7 +36,7 @@
     set foldmethod=marker
 
     " Sauvegarde des marqueurs
-    if exists('+viewfile')
+    if exists('+viewdir')
         augroup buffer
             autocmd BufWinLeave *? silent! mkview
             autocmd BufWinEnter *? silent! loadview
