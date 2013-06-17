@@ -163,10 +163,9 @@
         vnoremap ! :ClamVisual<space>
     " }}}
     " ctrlp {{{
-        noremap <C-i> :CtrlPTag<CR>
         let g:ctrlp_clear_cache_on_exit = 0
         let g:ctrlp_default_input = 1
-        let g:ctrlp_extensions = ['tag', 'buffertag']
+        let g:ctrlp_extensions = ['funky', 'tag']
         let g:ctrlp_prompt_mappings = {
             \ 'PrtSelectMove("j")':   ['<c-t>'],
             \ 'PrtSelectMove("k")':   ['<c-s>'],
@@ -175,6 +174,9 @@
             \ 'AcceptSelection("t")': ['<Enter>'],
             \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>'],
             \ }
+    " }}}
+    " ctrlp-funky {{{
+        noremap <C-F> :CtrlPFunky<cr>
     " }}}
     " dwm {{{
         let g:dwm_map_keys = 0
@@ -350,22 +352,6 @@
         let g:syntastic_php_checkers=['php']
         let g:syntastic_error_symbol = '✗'
         let g:syntastic_warning_symbol = '⚠'
-    " }}}
-    " tagbar {{{
-        nmap <F8> :TagbarToggle<CR>
-        let g:tagbar_autoclose=1
-        let g:tagbar_autofocus=1
-
-        let g:tagbar_type_php = {
-            \ 'ctagstype' : 'php',
-            \ 'kinds' : [
-                \ 'i:interfaces',
-                \ 'c:classes',
-                \ 'd:constant definitions',
-                \ 'f:functions',
-                \ 'j:javascript functions:1'
-            \ ]
-          \ }
     " }}}
     " vdebug {{{
         let g:vdebug_keymap = {
