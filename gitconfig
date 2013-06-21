@@ -56,6 +56,7 @@
 	enabled = 1
 [merge]
 	tool = splice
+	ff = no
 [mergetool "splice"]
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
 	trustExitCode = true
