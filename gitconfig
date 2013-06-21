@@ -27,6 +27,7 @@
 	d = diff
 	h = help
 	s = status -sb
+    t = tag
 	ad = add
 	co = checkout
 	dc = diff --cached
