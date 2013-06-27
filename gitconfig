@@ -20,7 +20,7 @@
 [core]
 	editor = vim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 [alias]
 	a = add
 	b = branch
@@ -37,7 +37,7 @@
 	st = status
 	new = !sh -c 'git log "$@" @{1}..@{0}'
 	vim = !vim $(git ls-files -m -z | xargs -0 echo)
-	info = !~/.git-contrib/git-info
+	info = !~/.config/git/contrib/git-info
 	amend = commit --amend -C HEAD
 	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
