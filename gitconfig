@@ -1,3 +1,5 @@
+[init]
+	templatedir = ~/.config/git/templates
 [user]
 	name = Sanpi
 	email = sanpi@homecomputing.fr
