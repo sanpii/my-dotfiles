@@ -22,6 +22,10 @@ if [ -x /usr/bin/seafile-applet ]; then
     /usr/bin/seafile-applet &
 fi;
 
+if [ -x /usr/bin/blueman-applet ]; then
+    /usr/bin/blueman-applet &
+fi;
+
 if [ -x /usr/bin/hamster-time-tracker]; then
     /usr/bin/hamster-time-tracker &
 fi;
