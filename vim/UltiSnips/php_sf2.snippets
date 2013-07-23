@@ -1,3 +1,7 @@
+snippet namespace "namespace"
+namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
+endsnippet
+
 snippet sfbundle "sfbundle"
 <?php
 
