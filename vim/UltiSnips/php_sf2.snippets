@@ -9,7 +9,7 @@ namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C
 
 use \Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class `!p snip.rv = snip.basename.capitalize()` extends Bundle
+class `!p snip.rv = snip.basename` extends Bundle
 {
 }
 endsnippet
@@ -19,7 +19,7 @@ snippet sfclass "sfclass"
 
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
-class `!p snip.rv = snip.basename.capitalize()`
+class `!p snip.rv = snip.basename`
 {
 	${1}
 }
@@ -35,7 +35,7 @@ use \Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use \Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use \Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-class `!p snip.rv = snip.basename.capitalize()` extends Controller
+class `!p snip.rv = snip.basename` extends Controller
 {
 	${1}
 }
@@ -56,7 +56,7 @@ snippet sfinterface "sfinterface"
 
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
-interface `!p snip.rv = snip.basename.capitalize()`
+interface `!p snip.rv = snip.basename`
 {
 	${1}
 }
@@ -67,7 +67,7 @@ snippet sftestcase "sftestcase"
 
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
-class `!p snip.rv = snip.basename.capitalize()` extends \PHPUnit_Framework_TestCase
+class `!p snip.rv = snip.basename` extends \PHPUnit_Framework_TestCase
 {
 	${1}
 }
@@ -84,9 +84,9 @@ use \Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  *
- * @ORM\Table(name="`tolower(!p snip.rv = snip.basename.capitalize())`")
+ * @ORM\Table(name="`tolower(!p snip.rv = snip.basename)`")
  */
-class `!p snip.rv = snip.basename.capitalize()`
+class `!p snip.rv = snip.basename`
 {
 	/**
 	 * @ORM\Id
@@ -107,7 +107,7 @@ namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C
 use \Symfony\Component\Form\AbstractType;
 use \Symfony\Component\Form\FormBuilder;
 
-class `!p snip.rv = snip.basename.capitalize()` extends AbstractType
+class `!p snip.rv = snip.basename` extends AbstractType
 {
 	/**
 	 * {@inheritDoc}
@@ -140,7 +140,7 @@ use \Symfony\Component\Console\Input\InputArgument;
 use \Symfony\Component\Console\Input\InputOption;
 use \Symfony\Component\Console\Output\OutputInterface;
 
-class `!p snip.rv = snip.basename.capitalize()` extends ContainerAwareCommand
+class `!p snip.rv = snip.basename` extends ContainerAwareCommand
 {
 	/**
 	 * {@inheritDoc}
@@ -176,7 +176,7 @@ namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C
 use \Doctrine\Common\Persistence\ObjectManager;
 use \Doctrine\Common\DataFixtures\FixtureInterface;
 
-class `!p snip.rv = snip.basename.capitalize()` implements FixtureInterface
+class `!p snip.rv = snip.basename` implements FixtureInterface
 {
 	public function load(ObjectManager $em)
 	{
@@ -194,7 +194,7 @@ use \Doctrine\Common\Persistence\ObjectManager;
 use \Doctrine\Common\DataFixtures\AbstractFixture;
 use \Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class `!p snip.rv = snip.basename.capitalize()` extends AbstractFixture implements OrderedFixtureInterface
+class `!p snip.rv = snip.basename` extends AbstractFixture implements OrderedFixtureInterface
 {
 	public function load(ObjectManager $em)
 	{
@@ -212,7 +212,7 @@ snippet sftwig "sftwig"
 
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
-class `!p snip.rv = snip.basename.capitalize()` extends \Twig_Extension
+class `!p snip.rv = snip.basename` extends \Twig_Extension
 {
 	public function getFunctions()
 	{
@@ -243,7 +243,7 @@ use \Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use \Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use \Symfony\Component\Config\FileLocator;
 
-class `!p snip.rv = snip.basename.capitalize()` extends Extension
+class `!p snip.rv = snip.basename` extends Extension
 {
 	public function load(array $configs, ContainerBuilder $container)
 	{
