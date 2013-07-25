@@ -10,9 +10,6 @@
 [submodule "vim/bundle/desert256"]
 	path = vim/bundle/desert256
 	url = git://github.com/rainux/vim-desert-warm-256.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
 	url = git://github.com/bkad/CamelCaseMotion.git
@@ -169,3 +166,6 @@
 [submodule "vim/bundle/ctrlp-funky"]
 	path = vim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = https://github.com/bling/vim-airline.git
