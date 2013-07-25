@@ -4,7 +4,10 @@ dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config tags, $(wildcar
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 install: $(home-dotfiles)
+	git submodule init
+	git submodule update
 	fc-cache ~/.fonts
+	cd vim/bundle/YouCompleteMe && ./install.sh
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]
