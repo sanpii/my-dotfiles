@@ -4,6 +4,7 @@ dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config tags, $(wildcar
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 install: $(home-dotfiles)
+	fc-cache ~/.fonts
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]
