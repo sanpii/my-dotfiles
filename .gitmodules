@@ -121,9 +121,6 @@
 [submodule "vim/bundle/dwm"]
 	path = vim/bundle/dwm
 	url = git://github.com/spolu/dwm.vim.git
-[submodule "fonts/ttf-dejavu-powerline"]
-	path = fonts/ttf-dejavu-powerline
-	url = git://gist.github.com/1630581.git
 [submodule "vim/bundle/incbool"]
 	path = vim/bundle/incbool
 	url = git://github.com/can3p/incbool.vim.git
@@ -169,3 +166,6 @@
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git
