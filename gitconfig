@@ -43,7 +43,7 @@
 	amend = commit --amend -C HEAD
 	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
-	standup = "!git log --since yesterday --author 'git config user.email' --pretty=short"
+	standup = "!git log --since yesterday --author "$(git config user.email)" --pretty=short"
 	svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
 	svn-commit = !sh -c 'git stash save "Pre svn-commit stash" && git svn dcommit && git stash pop'
 	fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
