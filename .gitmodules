@@ -169,3 +169,6 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/crunch"]
+	path = vim/bundle/crunch
+	url = https://github.com/arecarn/crunch.git

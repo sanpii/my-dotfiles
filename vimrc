@@ -181,6 +181,9 @@
     " ctrlp-funky {{{
         noremap <C-F> :CtrlPFunky<cr>
     " }}}
+    " crunch {{{
+        noremap <leader>c :CrunchLine<cr>
+    " }}}
     " dwm {{{
         let g:dwm_map_keys = 0
         let g:dwm_master_pane_width = 85
@@ -365,8 +368,6 @@
         cnoremap <c-s> <up>
         cnoremap <c-t> <down>
     " }}}
-
-    xnoremap <leader>c :!bc -l<cr>
 
     " VimTip 436
     inoremap <c-u> <c-g>u<c-u>
