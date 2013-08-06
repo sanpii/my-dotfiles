@@ -184,25 +184,6 @@
     " crunch {{{
         noremap <leader>c :CrunchLine<cr>
     " }}}
-    " dwm {{{
-        let g:dwm_map_keys = 0
-        let g:dwm_master_pane_width = 85
-
-        nnoremap <C-T> <C-W>w
-        nnoremap <C-S> <C-W>W
-
-        nmap <C-S-T> <Plug>DWMRotateCounterclockwise
-        nmap <C-S-S> <Plug>DWMRotateClockwise
-
-        nmap <C-N> <Plug>DWMNew
-        nmap <C-X> <Plug>DWMClose
-        nmap <C-Space> <Plug>DWMFocus
-
-        nmap <C-R> <Plug>DWMGrowMaster
-        nmap <C-C> <Plug>DWMShrinkMaster
-
-        nmap <C-H> :redo<cr>
-    " }}}
     " gitv {{{
         let g:Gitv_OpenHorizontal = 1
         let g:Gitv_WrapLines = 0

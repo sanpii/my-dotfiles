@@ -115,9 +115,6 @@
 [submodule "vim/bundle/SingleCompile"]
 	path = vim/bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
-[submodule "vim/bundle/dwm"]
-	path = vim/bundle/dwm
-	url = git://github.com/spolu/dwm.vim.git
 [submodule "vim/bundle/incbool"]
 	path = vim/bundle/incbool
 	url = git://github.com/can3p/incbool.vim.git
