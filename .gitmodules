@@ -169,3 +169,6 @@
 [submodule "vim/bundle/crunch"]
 	path = vim/bundle/crunch
 	url = https://github.com/arecarn/crunch.git
+[submodule "vim/bundle/vomodoro"]
+	path = vim/bundle/vomodoro
+	url = https://github.com/gregsexton/Vomodoro.git
