@@ -18,8 +18,8 @@ if [ -x /usr/bin/parcellite ]; then
     /usr/bin/parcellite &
 fi;
 
-if [ -x /usr/bin/seafile-applet ]; then
-    /usr/bin/seafile-applet &
+if [ -x /usr/bin/git-annex ]; then
+    /usr/bin/git-annex assistant --autostart &
 fi;
 
 if [ -x /usr/bin/blueman-applet ]; then
