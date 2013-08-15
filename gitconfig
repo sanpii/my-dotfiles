@@ -31,6 +31,7 @@
 	s = status -sb
     t = tag
 	ad = add
+	ci = commit -v -m
 	co = checkout
 	dc = diff --cached
 	fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
