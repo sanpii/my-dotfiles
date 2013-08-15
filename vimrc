@@ -349,6 +349,23 @@
         cnoremap <c-s> <up>
         cnoremap <c-t> <down>
     " }}}
+    " Autoreload firefox {{{
+        " https://github.com/bard/mozrepl/wiki/
+
+        function! Refresh_firefox()
+            silent !echo  '
+                \ if (content.location.href.match(/^http:\/\/localhost/)) {
+                \     y = content.window.pageYOffset;
+                \     x = content.window.pageXOffset;
+                \     BrowserReload();
+                \     content.window.scrollTo(x, y);
+                \ }
+                \ repl.quit();' |
+                \ nc -w 1 localhost 4242 2>&1 > /dev/null
+        endfunction
+
+        autocmd BufWritePost *.html,*.css,*.js,*.php,*.twig :call Refresh_firefox()
+    " }}}
 
     " VimTip 436
     inoremap <c-u> <c-g>u<c-u>
