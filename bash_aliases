@@ -35,12 +35,19 @@ TORRENT='ssh -t cuddles "tmux attach-session -t rtorrent"'
 alias torrent=$TORRENT
 
 torrent_add() {
-    if [[ -f $1 ]]; then
-        scp -q "$1" cuddles:/media/data/torrent/watch
-    else
-        ssh -qt cuddles "cd /media/data/torrent/watch && wget --no-check-certificate -q $1"
-    fi
-    echo 'added'
+    for torrent in "$@"; do
+        if [[ -f $torrent ]]; then
+            scp -q "$torrent" cuddles:/media/data/torrent/watch
+        else
+            ssh -qt cuddles "cd /media/data/torrent/watch && wget --no-check-certificate -q $torrent"
+        fi
+
+        if [[ $? -eq 0 ]]; then
+            echo "'$torrent' added"
+        else
+            echo "'$torrent' failed"
+        fi
+    done;
 }
 
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
