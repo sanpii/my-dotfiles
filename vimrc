@@ -199,6 +199,13 @@
             autocmd FileType mail :source ~/.vim/mail.vim
         augroup END
     " }}}
+    " move {{{
+        let g:move_map_keys = 0
+        vmap <c-t> <Plug>MoveBlockDown
+        vmap <c-s> <Plug>MoveBlockUp
+        nmap <c-t> <Plug>MoveLineDown
+        nmap <c-s> <Plug>MoveLineUp
+    " }}}
     " nerdtree {{{
         nnoremap <silent> <F3> :NERDTreeToggle<CR>
         let NERDTreeQuitOnOpen = 1
