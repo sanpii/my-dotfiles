@@ -333,16 +333,6 @@
 
         nnoremap A :call <SID>EndOfLine()<CR>a
     " }}}
-    " {{{ RestoreSession
-        function! s:RestoreSession()
-            if argc() == 0 && filereadable(expand('~/.vimsession'))
-                execute 'source ~/.vimsession'
-            end
-        endfunction
-
-        autocmd VimEnter * call <SID>RestoreSession()
-        nnoremap SQ <ESC>:mksession! ~/.vimsession<CR>:wqa<CR>
-    " }}}
     " Command line {{{
         cnoremap <c-a> <home>
         cnoremap <c-e> <end>
