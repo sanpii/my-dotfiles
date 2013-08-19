@@ -135,7 +135,7 @@
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
-	url = https://github.com/sanpii/vim-sensible.git
+	url = git://github.com/sanpii/vim-sensible.git
 [submodule "vim/bundle/expand-region"]
 	path = vim/bundle/expand-region
 	url = git://github.com/terryma/vim-expand-region.git
@@ -159,16 +159,16 @@
 	url = git://github.com/tacahiroy/ctrlp-funky.git
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
-	url = https://github.com/bling/vim-airline.git
+	url = git://github.com/bling/vim-airline.git
 [submodule "fonts"]
 	path = fonts
-	url = https://github.com/Lokaltog/powerline-fonts.git
+	url = git://github.com/Lokaltog/powerline-fonts.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+	url = git://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/crunch"]
 	path = vim/bundle/crunch
-	url = https://github.com/arecarn/crunch.git
+	url = git://github.com/arecarn/crunch.git
 [submodule "vim/bundle/vomodoro"]
 	path = vim/bundle/vomodoro
-	url = https://github.com/gregsexton/Vomodoro.git
+	url = git://github.com/gregsexton/Vomodoro.git
