@@ -79,9 +79,8 @@
     syntax on
 
     " Thème de couleur pour Vim
-    "colorscheme devbox
-    "colorscheme vo_dark
-    colorscheme desert-warm-256
+    "colorscheme desert-warm-256
+    colorscheme desertink
 
     " Afficher les caractères spéciaux
     set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗

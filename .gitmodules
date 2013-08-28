@@ -178,3 +178,6 @@
 [submodule "vim/bundle/fixkey"]
 	path = vim/bundle/fixkey
 	url = git://github.com/drmikehenry/vim-fixkey.git
+[submodule "vim/bundle/desertink"]
+	path = vim/bundle/desertink
+	url = https://github.com/toupeira/vim-desertink.git
