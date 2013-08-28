@@ -3,8 +3,6 @@
 [user]
 	name = Sanpi
 	email = sanpi@homecomputing.fr
-[color]
-	ui = auto
 [color "branch"]
 	current = yellow reverse
 	local = yellow
