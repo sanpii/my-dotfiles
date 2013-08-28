@@ -175,3 +175,6 @@
 [submodule "vim/bundle/move"]
 	path = vim/bundle/move
 	url = https://github.com/matze/vim-move.git
+[submodule "vim/bundle/fixkey"]
+	path = vim/bundle/fixkey
+	url = git://github.com/drmikehenry/vim-fixkey.git
