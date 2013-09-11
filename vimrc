@@ -11,9 +11,6 @@
     exec "source " . vimfiles . "/bundle/pathogen/autoload/pathogen.vim"
     call pathogen#infect()
 
-    " Désactive la compatibilité avec VI
-    set nocompatible
-
     " Encodage en UTF-8
     set encoding=utf-8
 
