@@ -8,11 +8,13 @@ POST_COMMIT=$2
 NOCOLOR='\e[0m'
 REDCOLOR='\e[37;41m'
 
-for f in composer.lock composer.json; do
-    if [[ -f $f ]]; then
-        DIFF=`git diff --shortstat $PREV_COMMIT..$POST_COMMIT $f`
-        if [[ $DIFF != "" ]]; then
-            echo -e "$REDCOLOR$f has changed. You must run composer install$NOCOLOR"
+if [[ $PREV_COMMIT != '0000000000000000000000000000000000000000' ]]; then
+    for f in composer.lock composer.json; do
+        if [[ -f $f ]]; then
+            DIFF=`git diff --shortstat $PREV_COMMIT..$POST_COMMIT $f`
+            if [[ $DIFF != "" ]]; then
+                echo -e "$REDCOLOR$f has changed. You must run composer install$NOCOLOR"
+            fi
         fi
-    fi
-done
+    done
+fi
