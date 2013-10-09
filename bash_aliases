@@ -43,6 +43,7 @@ torrent_add() {
         fi
 
         if [[ $? -eq 0 ]]; then
+            [[ -f $torrent ]] && rm "$torrent"
             echo "'$torrent' added"
         else
             echo "'$torrent' failed"
