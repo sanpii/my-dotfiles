@@ -319,7 +319,7 @@
         function! Help(query)
             let query = expand(a:query)
             if query != ""
-                exec ":help " . query
+                exec ":H " . query
             endif
         endfunction
 
