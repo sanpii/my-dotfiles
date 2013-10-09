@@ -265,7 +265,7 @@
         let g:syntastic_warning_symbol = '⚠'
     " }}}
     " {{{ ultisnips
-        let g:UltiSnipsExpandTrigger = "<c-e>"
+        let g:UltiSnipsExpandTrigger = "<c-j>"
     " }}}
     " vdebug {{{
         let g:vdebug_keymap = {
