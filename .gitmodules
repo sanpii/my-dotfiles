@@ -67,6 +67,9 @@
 [submodule "vim/bundle/html_annoyance"]
 	path = vim/bundle/html_annoyance
 	url = git://github.com/tudorprodan/html_annoyance.vim.git
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -163,9 +166,6 @@
 [submodule "fonts"]
 	path = fonts
 	url = git://github.com/Lokaltog/powerline-fonts.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/crunch"]
 	path = vim/bundle/crunch
 	url = git://github.com/arecarn/crunch.git
