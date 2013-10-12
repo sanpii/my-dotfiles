@@ -181,3 +181,6 @@
 [submodule "vim/bundle/desertink"]
 	path = vim/bundle/desertink
 	url = https://github.com/toupeira/vim-desertink.git
+[submodule "vim/bundle/bling"]
+	path = vim/bundle/bling
+	url = https://github.com/ivyl/vim-bling.git
