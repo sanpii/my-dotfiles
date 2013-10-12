@@ -9,7 +9,6 @@ install: $(home-dotfiles) ctags
 	git submodule init
 	git submodule update
 	fc-cache ~/.fonts
-	cd vim/bundle/YouCompleteMe && ./install.sh
 
 ctags:
 	svn checkout https://svn.code.sf.net/p/ctags/code/trunk $(ROOT)
