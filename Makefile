@@ -5,10 +5,14 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 ROOT := $(shell mktemp -d)
 
-install: $(home-dotfiles) ctags
+install: $(home-dotfiles) fonts modules ctags vimproc
+
+fonts:
+	fc-cache ~/.fonts
+
+modules:
 	git submodule init
 	git submodule update
-	fc-cache ~/.fonts
 
 ctags:
 	svn checkout https://svn.code.sf.net/p/ctags/code/trunk $(ROOT)
@@ -19,8 +23,14 @@ ctags:
 		&& autoheader \
 		&& ./configure --prefix=$(HOME)/.local \
 		&& make \
-		&& make install \
+		&& make install
+	cd $(CURDIR)
 	rm -rf $(ROOT)
+
+vimproc:
+	cd vim/bundle/vimproc \
+		&& make
+	cd $(CURDIR)
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]

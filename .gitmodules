@@ -184,3 +184,6 @@
 [submodule "vim/bundle/bling"]
 	path = vim/bundle/bling
 	url = https://github.com/ivyl/vim-bling.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
