@@ -2,6 +2,7 @@
 .*.sw[a-z]
 *.un~
 Session.vim
+.phpcomplete_extended/
 # etags and ctags
 TAGS
 !TAGS/
