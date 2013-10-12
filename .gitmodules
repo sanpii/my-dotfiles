@@ -103,9 +103,6 @@
 [submodule "vim/bundle/PHP-Stuff"]
 	path = vim/bundle/PHP-Stuff
 	url = git://github.com/paulyg/Vim-PHP-Stuff.git
-[submodule "vim/bundle/phpcomplete"]
-	path = vim/bundle/phpcomplete
-	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "vim/bundle/twig"]
 	path = vim/bundle/twig
 	url = git://github.com/beyondwords/vim-twig.git
@@ -187,3 +184,9 @@
 [submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/bundle/phpcomplete-extended"]
+	path = vim/bundle/phpcomplete-extended
+	url = https://github.com/m2mdas/phpcomplete-extended.git
+[submodule "vim/bundle/phpcomplete-extended-symfony"]
+	path = vim/bundle/phpcomplete-extended-symfony
+	url = https://github.com/m2mdas/phpcomplete-extended-symfony.git
