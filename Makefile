@@ -14,7 +14,8 @@ modules:
 	git submodule init
 	git submodule update
 
-ctags:
+ctags: $(HOME)/.local/bin/ctags
+$(HOME)/.local/bin/ctags:
 	svn checkout https://svn.code.sf.net/p/ctags/code/trunk $(ROOT)
 	cd $(ROOT) \
 		&& wget https://gist.github.com/complex857/5693196/raw/14a770b436b5116eb22ec65492d8c0e8a4271210/0000-PHP-parser-rewrite-full-string-parameters.patch \
@@ -27,7 +28,8 @@ ctags:
 	cd $(CURDIR)
 	rm -rf $(ROOT)
 
-vimproc:
+vimproc: vim/bundle/vimproc/autoload/vimproc_unix.so
+vim/bundle/vimproc/autoload/vimproc_unix.so:
 	cd vim/bundle/vimproc \
 		&& make
 	cd $(CURDIR)
@@ -38,5 +40,7 @@ $(HOME)/.%: %
 	ln -s $(CURDIR)/$* $@
 
 uninstall: $(addsuffix __unlink, $(home-dotfiles))
+	rm -f $(HOME)/.local/bin/ctags vim/bundle/vimproc/autoload/vimproc_unix.so
+
 %__unlink:
 	[ -L $* ] && $(RM) $*
