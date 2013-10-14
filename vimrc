@@ -419,7 +419,7 @@
                 \ nc -w 1 localhost 4242 2>&1 > /dev/null
         endfunction
 
-        autocmd BufWritePost *.html,*.css,*.js,*.php,*.twig :call Refresh_firefox()
+        autocmd BufWritePost *.html,*.css,*.js,*.php,*.inc,*.module,*.twig :call Refresh_firefox()
     " }}}
 
     " VimTip 436
