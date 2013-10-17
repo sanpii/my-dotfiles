@@ -171,22 +171,22 @@
 	url = git://github.com/gregsexton/Vomodoro.git
 [submodule "vim/bundle/move"]
 	path = vim/bundle/move
-	url = https://github.com/matze/vim-move.git
+	url = git://github.com/matze/vim-move.git
 [submodule "vim/bundle/fixkey"]
 	path = vim/bundle/fixkey
 	url = git://github.com/drmikehenry/vim-fixkey.git
 [submodule "vim/bundle/desertink"]
 	path = vim/bundle/desertink
-	url = https://github.com/toupeira/vim-desertink.git
+	url = git://github.com/toupeira/vim-desertink.git
 [submodule "vim/bundle/bling"]
 	path = vim/bundle/bling
-	url = https://github.com/ivyl/vim-bling.git
+	url = git://github.com/ivyl/vim-bling.git
 [submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
-	url = https://github.com/Shougo/vimproc.vim.git
+	url = git://github.com/Shougo/vimproc.vim.git
 [submodule "vim/bundle/phpcomplete-extended"]
 	path = vim/bundle/phpcomplete-extended
-	url = https://github.com/m2mdas/phpcomplete-extended.git
+	url = git://github.com/m2mdas/phpcomplete-extended.git
 [submodule "vim/bundle/phpcomplete-extended-symfony"]
 	path = vim/bundle/phpcomplete-extended-symfony
-	url = https://github.com/m2mdas/phpcomplete-extended-symfony.git
+	url = git://github.com/m2mdas/phpcomplete-extended-symfony.git
