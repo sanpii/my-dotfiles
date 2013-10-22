@@ -23,7 +23,7 @@
 	excludesfile = ~/.config/git/ignore
 [alias]
 	a = add
-	b = branch
+	b = branch -vv
 	d = diff
 	h = help
 	s = status -sb
