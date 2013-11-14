@@ -27,7 +27,7 @@
 	d = diff
 	h = help
 	s = status -sb
-    t = tag
+	t = tag
 	ad = add
 	ci = commit -v -m
 	co = checkout
