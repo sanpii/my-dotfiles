@@ -374,6 +374,7 @@
     endif
 
     let mapleader = ","
+    let maplocalleader = ","
 
     " {{{ Help
         function! Help(query)
