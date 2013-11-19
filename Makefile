@@ -5,7 +5,7 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 ROOT := $(shell mktemp -d)
 
-install: $(home-dotfiles) fonts modules ctags vimproc
+install: $(home-dotfiles) fonts modules ctags
 
 fonts:
 	fc-cache ~/.fonts
@@ -28,19 +28,12 @@ $(HOME)/.local/bin/ctags:
 	cd $(CURDIR)
 	rm -rf $(ROOT)
 
-vimproc: vim/bundle/vimproc/autoload/vimproc_unix.so
-vim/bundle/vimproc/autoload/vimproc_unix.so:
-	cd vim/bundle/vimproc \
-		&& make
-	cd $(CURDIR)
-
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]
 	$(RM) $@
 	ln -s $(CURDIR)/$* $@
 
 uninstall: $(addsuffix __unlink, $(home-dotfiles))
-	rm -f $(HOME)/.local/bin/ctags vim/bundle/vimproc/autoload/vimproc_unix.so
 
 %__unlink:
 	[ -L $* ] && $(RM) $*

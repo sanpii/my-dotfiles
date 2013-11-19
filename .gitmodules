@@ -181,6 +181,3 @@
 [submodule "vim/bundle/desertink"]
 	path = vim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
-[submodule "vim/bundle/vimproc"]
-	path = vim/bundle/vimproc
-	url = git://github.com/Shougo/vimproc.vim.git
