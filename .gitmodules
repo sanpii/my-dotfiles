@@ -46,9 +46,6 @@
 [submodule "vim/bundle/LanguageTool"]
 	path = vim/bundle/LanguageTool
 	url = git://github.com/vim-scripts/LanguageTool.git
-[submodule "vim/bundle/help"]
-	path = vim/bundle/help
-	url = git://github.com/juanpabloaj/help.vim.git
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
