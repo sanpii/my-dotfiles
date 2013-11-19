@@ -11,28 +11,14 @@
     exec "source " . vimfiles . "/bundle/pathogen/autoload/pathogen.vim"
     call pathogen#infect()
 
-    " Encodage en UTF-8
     set encoding=utf-8
-
-    " Accélère le rendu graphique dans les terminaux véloces
     set ttyfast
-
-    " Support du type de format unix uniquement
     set fileformats=unix
-
-    " Détection du type de fichier
     filetype on
-
-    " Désactiver la souris (molette, sélection, etc.)
     set mouse=""
-
-    " N’affiche pas la correspondance des parenthèses
     set noshowmatch
-
-    " Replie de code à l'aide de marqueurs
     set foldmethod=marker
 
-    " Sauvegarde des marqueurs
     if exists('+viewdir')
         augroup buffer
             autocmd BufWinLeave *? silent! mkview
@@ -40,13 +26,9 @@
         augroup END
     endif
 
-    " Cacher les tampons quand ils sont abandonnés
     set hidden
-
-    " Ne pas couper les lignes trop longues
     set nowrap
 
-    " Suppression automatique des espaces superflus
     function! StripTrailingWhitespace()
         " Don't strip on these filetypes
         if &ft =~ 'diff'
@@ -59,12 +41,10 @@
         autocmd BufWritePre * call StripTrailingWhitespace()
     augroup END
 
-    " .vimrc auto-reload
     augroup buffer
         autocmd bufwritepost .vimrc source %
     augroup END
 
-    " Affiche la limite de 80 caractères
     if v:version >= 703
         set colorcolumn=81
     endif
@@ -72,20 +52,15 @@
     set completeopt=longest,menuone
 " }}}
 " Apparence {{{
-    " Coloration syntaxique
     syntax on
 
-    " Thème de couleur pour Vim
-    "colorscheme desert-warm-256
     colorscheme desertink
 
-    " Afficher les caractères spéciaux
     set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
     set showbreak=↪
     highlight NonText cterm=bold ctermfg=darkgrey
     highlight SpecialKey cterm=bold ctermfg=darkgrey
 
-    " Afficher une ligne à la position du curseur
     set cursorline
     highlight CursorLine cterm=bold ctermbg=none gui=bold guibg=grey20
 
@@ -93,56 +68,28 @@
     highlight SpellCap cterm=underline ctermfg=green ctermbg=none
     highlight LanguageToolError cterm=underline ctermfg=green ctermbg=none
 
-    " Nombre de ligne minimal en dessous ou au dessus du curseur
     set scrolloff=3
 " }}}
 " Indentation {{{
-    " Indentation en fonction du type de fichier
     filetype indent on
-
-    " Indispensable pour ne pas tout casser avec ce qui va suivre
     set preserveindent
-
-    " Indentation plus intelligente
     set smartindent
-
-    " Utiliser des tabulations de 4 caractères pour l'indentation
     set noexpandtab
-
-    " Largeur de l'autoindentation
     set shiftwidth=4
-
-    " Arrondit la valeur de l'indentation
     set shiftround
-
-    " Largeur du caractère TAB
     set tabstop=4
-
-    " Largeur de l'indentation de la touche TAB
     set softtabstop=4
-
-    " Remplacer les tabulations par des espaces
     set expandtab
 
-    " Pas d'espace pour les Makefile
     augroup filetype
         autocmd FileType make setlocal noexpandtab
     augroup END
 
-    " Fixing indenting of HTML files
     autocmd FileType html setlocal indentkeys-=*<Return>
 " }}}
 " Recherches {{{
-    " Surligner les résultats de recherche
     set hlsearch
-
-    " Recherches:
-    "   - en minuscules = indépendante de la casse
-    "   - une majuscule = stricte
     set smartcase
-
-    " Rechercher sans tenir compte de la casse
-    " (indépendant du précédent mais de priorité plus faible)
     set ignorecase
 " }}}
 " Sauvegardes {{{
