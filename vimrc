@@ -267,7 +267,6 @@
             autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
             autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
             autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-            autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
         augroup END
 
         " Enable heavy omni completion.
