@@ -286,6 +286,11 @@
         let g:syntastic_php_checkers=['php']
         let g:syntastic_error_symbol = '✗'
         let g:syntastic_warning_symbol = '⚠'
+
+    " }}}
+    " UltiSnips {{{
+        let g:UltiSnipsJumpForwardTrigger = '<c-t>'
+        let g:UltiSnipsJumpBackwardTrigger = '<c-s>'
     " }}}
     " vdebug {{{
         let g:vdebug_keymap = {
