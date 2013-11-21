@@ -32,20 +32,20 @@
 	ci = commit -v -m
 	co = checkout
 	dc = diff --cached
-	fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
+	fc = !$(git config core.editor) $(git ls-files -u | cut -f2 | uniq | xargs echo)
 	lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lo = log --stat
 	st = status
 	new = !sh -c 'git log "$@" @{1}..@{0}'
-	vim = !vim $(git ls-files -m -z | xargs -0 echo)
+	vim = !$(git config core.editor) $(git ls-files -m -z | xargs -0 echo)
 	info = !~/.config/git/contrib/git-info
 	amend = commit --amend -C HEAD
 	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
-	vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
+	vimall = !$(git config core.editor) $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
 	standup = "!git log --since yesterday --author "$(git config user.email)" --pretty=short"
 	svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
 	svn-commit = !sh -c 'git stash save "Pre svn-commit stash" && git svn dcommit && git stash pop'
-	fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
+	fix-conflits = !$(git config core.editor) $(git ls-files -u | cut -f2 | uniq | xargs echo)
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
 [pager]
 	log = perl  /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
