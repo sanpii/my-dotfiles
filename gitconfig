@@ -26,6 +26,7 @@
 	b = branch -vv
 	d = diff
 	h = help
+	i = issue
 	s = status -sb
 	t = tag
 	ad = add
