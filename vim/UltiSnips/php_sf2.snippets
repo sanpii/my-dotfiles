@@ -104,23 +104,17 @@ snippet sftype "sftype"
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
 use \Symfony\Component\Form\AbstractType;
-use \Symfony\Component\Form\FormBuilder;
+use \Symfony\Component\Form\FormBuilderInterface;
 
 class `!p snip.rv = snip.basename` extends AbstractType
 {
-	/**
-	 * {@inheritDoc}
-	 */
-	public function buildForm(FormBuilder $builder, array $options)
+	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder
 			->add('${2}')
 		;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public function getName()
 	{
 		return '${1}';
