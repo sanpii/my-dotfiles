@@ -178,3 +178,6 @@
 [submodule "vim/bundle/desertink"]
 	path = vim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
+[submodule "vim/bundle/over"]
+	path = vim/bundle/over
+	url = git://github.com/osyo-manga/vim-over.git
