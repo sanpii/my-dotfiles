@@ -7,6 +7,8 @@
 #
 # Based on discussion at http://kerneltrap.org/mailarchive/git/2007/11/12/406496
 
+. git-sh-setup
+
 pushd . >/dev/null
 
 # Find base of git directory
@@ -14,27 +16,22 @@ while [ ! -d .git ] && [ ! `pwd` = "/" ]; do cd ..; done
 
 # Show various information about this git directory
 if [ -d .git ]; then
-  echo "== Remote URL:"
-  git remote -v
-  echo
+  echo "== Remote URL:
+$(git remote -v)
 
-  echo "== Remote Branches:"
-  git branch -r
-  echo
+== Remote Branches:
+$(git branch -r --color)
 
-  echo "== Local Branches:"
-  git branch -vv
-  echo
+== Local Branches:
+$(git branch -vv --color)
 
-  echo "== Configuration (.git/config)"
-  cat .git/config
-  echo
+== Configuration (.git/config)
+$(cat .git/config)
 
-  echo "== Most Recent Commit"
-  git --no-pager log --max-count=1
-  echo
+== Most Recent Commit
+$(git --no-pager log --max-count=1 --color)
 
-  echo "Type 'git log' for more commits, or 'git show' for full commit details."
+Type 'git log' for more commits, or 'git show' for full commit details." | git_pager
 else
   echo "Not a git repository."
 fi
