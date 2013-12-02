@@ -23,7 +23,7 @@ if [ -d .git ]; then
   echo
 
   echo "== Local Branches:"
-  git branch
+  git branch -vv
   echo
 
   echo "== Configuration (.git/config)"
