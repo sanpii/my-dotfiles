@@ -25,11 +25,11 @@ $(git branch -r --color)
 == Local Branches:
 $(git branch -vv --color)
 
-== Configuration (.git/config)
-$(cat .git/config)
-
 == Most Recent Commit
 $(git --no-pager log --max-count=1 --color)
+
+== Configuration (.git/config)
+$(cat .git/config)
 
 Type 'git log' for more commits, or 'git show' for full commit details." | git_pager
 else
