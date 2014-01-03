@@ -181,3 +181,6 @@
 [submodule "vim/bundle/over"]
 	path = vim/bundle/over
 	url = git://github.com/osyo-manga/vim-over.git
+[submodule "vim/bundle/arduino-syntax"]
+	path = vim/bundle/arduino-syntax
+	url = https://github.com/sudar/vim-arduino-syntax.git
