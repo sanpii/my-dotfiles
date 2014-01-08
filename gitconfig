@@ -27,6 +27,7 @@
 	d = diff
 	h = help
 	i = issue
+	r = remote -v
 	s = status -sb
 	t = tag
 	ad = add
