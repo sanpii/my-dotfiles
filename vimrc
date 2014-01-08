@@ -406,6 +406,9 @@
     nnoremap <Right> <nop>
 
     source ~/.vim/bepo.vim
+
+    nnoremap t gj
+    nnoremap s gk
 " }}}
 
 let local_vim=vimfiles . "/local.vim"
