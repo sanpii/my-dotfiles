@@ -3,7 +3,7 @@
 URxvt*urgentOnBell: True
 
 ! Font
-URxvt*font: xft:Liberation Mono for Powerline:style=Regular:pixelsize=13
+URxvt*font: xft:Droid Sans Mono for Powerline:style=Regular:pixelsize=15
 
 ! Sidebar
 URxvt*saveLines: 10000
