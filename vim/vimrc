@@ -378,9 +378,6 @@
     inoremap <c-u> <c-g>u<c-u>
     inoremap <c-w> <c-g>u<c-w>
 
-    " simple matching pairs easily, with Tab
-    nnoremap <Tab> %
-
     " Permet de placer au milieu de l'écran l'occurence de la recherche
     nnoremap n nzzzv
     nnoremap N Nzzzv
