@@ -31,26 +31,6 @@ alias ht='~/.todo/cli/todo.sh -d ~/.todo-home.cfg'
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
-TORRENT='ssh -t cuddles "tmux attach-session -t rtorrent"'
-alias torrent=$TORRENT
-
-torrent_add() {
-    for torrent in "$@"; do
-        if [[ -f $torrent ]]; then
-            scp -q "$torrent" cuddles:/media/data/torrent/watch
-        else
-            ssh -qt cuddles "cd /media/data/torrent/watch && wget --no-check-certificate -q $torrent"
-        fi
-
-        if [[ $? -eq 0 ]]; then
-            [[ -f $torrent ]] && rm "$torrent"
-            echo "'$torrent' added"
-        else
-            echo "'$torrent' failed"
-        fi
-    done;
-}
-
 export MANPAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
