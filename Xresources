@@ -7,7 +7,7 @@ URxvt*fading: 30
 URxvt*font: xft:Droid Sans Mono for Powerline:style=Regular:pixelsize=15
 
 ! Sidebar
-URxvt*saveLines: 10000
+URxvt*saveLines: 0
 URxvt*scrollBar: false
 
 URxvt*foreground: #eeeeeeeeecec
