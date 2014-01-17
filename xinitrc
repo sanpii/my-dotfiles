@@ -1,6 +1,7 @@
 #!/bin/sh
 
 . "$HOME/.bash_aliases"
+xrdb ~/.Xresources
 
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
