@@ -382,8 +382,6 @@
     nnoremap n nzzzv
     nnoremap N Nzzzv
 
-    nnoremap / /\v
-
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
 
