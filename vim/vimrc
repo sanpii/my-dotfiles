@@ -402,6 +402,10 @@
 
     nnoremap t gj
     nnoremap s gk
+    nnoremap B ^
+    nnoremap E $
+    nnoremap $ <nop>
+    nnoremap ^ <nop>
 " }}}
 
 let local_vim=vimfiles . "/local.vim"
