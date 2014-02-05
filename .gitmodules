@@ -187,3 +187,6 @@
 [submodule "vim/bundle/indexed-search"]
 	path = vim/bundle/indexed-search
 	url = https://github.com/henrik/vim-indexed-search
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
