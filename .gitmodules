@@ -7,9 +7,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/desert256"]
-	path = vim/bundle/desert256
-	url = git://github.com/rainux/vim-desert-warm-256.git
 [submodule "vim/bundle/CamelCaseMotion"]
 	path = vim/bundle/CamelCaseMotion
 	url = git://github.com/bkad/CamelCaseMotion.git
@@ -40,9 +37,6 @@
 [submodule "vim/bundle/lastpos"]
 	path = vim/bundle/lastpos
 	url = git://github.com/vim-scripts/lastpos.vim.git
-[submodule "vim/bundle/php-cs-fixer"]
-	path = vim/bundle/php-cs-fixer
-	url = git://github.com/stephpy/vim-php-cs-fixer.git
 [submodule "vim/bundle/LanguageTool"]
 	path = vim/bundle/LanguageTool
 	url = git://github.com/vim-scripts/LanguageTool.git
@@ -76,9 +70,6 @@
 [submodule "vim/bundle/sideway"]
 	path = vim/bundle/sideway
 	url = git://github.com/AndrewRadev/sideways.vim.git
-[submodule "vim/bundle/DrawIt"]
-	path = vim/bundle/DrawIt
-	url = git://github.com/vim-scripts/DrawIt.git
 [submodule "todo/standup"]
 	path = todo/standup
 	url = git://github.com/civrot/todo_txt_actions.git
@@ -127,18 +118,12 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
-[submodule "vim/bundle/movar"]
-	path = vim/bundle/movar
-	url = git://github.com/robmiller/vim-movar.git
 [submodule "vim/bundle/autoSession"]
 	path = vim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
 	url = git://github.com/sanpii/vim-sensible.git
-[submodule "vim/bundle/expand-region"]
-	path = vim/bundle/expand-region
-	url = git://github.com/terryma/vim-expand-region.git
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
@@ -166,9 +151,6 @@
 [submodule "vim/bundle/crunch"]
 	path = vim/bundle/crunch
 	url = git://github.com/arecarn/crunch.git
-[submodule "vim/bundle/vomodoro"]
-	path = vim/bundle/vomodoro
-	url = git://github.com/gregsexton/Vomodoro.git
 [submodule "vim/bundle/move"]
 	path = vim/bundle/move
 	url = git://github.com/matze/vim-move.git
