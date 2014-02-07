@@ -136,9 +136,6 @@
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
 	url = git://github.com/sanpii/vim-sensible.git
-[submodule "vim/bundle/expand-region"]
-	path = vim/bundle/expand-region
-	url = git://github.com/terryma/vim-expand-region.git
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
