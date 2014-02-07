@@ -121,9 +121,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
-[submodule "vim/bundle/movar"]
-	path = vim/bundle/movar
-	url = git://github.com/robmiller/vim-movar.git
 [submodule "vim/bundle/autoSession"]
 	path = vim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
