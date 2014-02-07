@@ -73,9 +73,6 @@
 [submodule "vim/bundle/sideway"]
 	path = vim/bundle/sideway
 	url = git://github.com/AndrewRadev/sideways.vim.git
-[submodule "vim/bundle/DrawIt"]
-	path = vim/bundle/DrawIt
-	url = git://github.com/vim-scripts/DrawIt.git
 [submodule "todo/standup"]
 	path = todo/standup
 	url = git://github.com/civrot/todo_txt_actions.git
