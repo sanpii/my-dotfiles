@@ -71,9 +71,8 @@
 
     augroup filetype
         autocmd FileType make setlocal noexpandtab
+        autocmd FileType html setlocal indentkeys-=*<Return>
     augroup END
-
-    autocmd FileType html setlocal indentkeys-=*<Return>
 " }}}
 " Recherches {{{
     set hlsearch
