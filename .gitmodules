@@ -168,10 +168,10 @@
 	url = git://github.com/sudar/vim-arduino-syntax.git
 [submodule "vim/bundle/indexed-search"]
 	path = vim/bundle/indexed-search
-	url = https://github.com/henrik/vim-indexed-search
+	url = git://github.com/henrik/vim-indexed-search
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
-	url = https://github.com/tpope/vim-abolish.git
+	url = git://github.com/tpope/vim-abolish.git
 [submodule "vim/vim/bundle/targets"]
 	path = vim/vim/bundle/targets
-	url = https://github.com/wellle/targets.vim.git
+	url = git://github.com/wellle/targets.vim.git
