@@ -29,18 +29,6 @@
     set hidden
     set nowrap
 
-    function! StripTrailingWhitespace()
-        " Don't strip on these filetypes
-        if &ft =~ 'diff'
-            return
-        endif
-        %s/\s\+$//e
-    endfunction
-
-    augroup buffer
-        autocmd BufWritePre * call StripTrailingWhitespace()
-    augroup END
-
     augroup buffer
         autocmd bufwritepost .vimrc source %
     augroup END
@@ -101,6 +89,11 @@
     " airline {{{
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
+    " }}}
+    " better-writespace {{{
+        augroup filetype
+            autocmd FileType * if &ft != 'diff' | autocmd BufWritePre <buffer> StripWhitespace
+        augroup END
     " }}}
     " cfi {{{
         let g:cfi_php_show_params = 1
