@@ -173,7 +173,7 @@
 	path = vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
 [submodule "vim/vim/bundle/targets"]
-	path = vim/vim/bundle/targets
+	path = vim/bundle/targets
 	url = git://github.com/wellle/targets.vim.git
 [submodule "vim/bundle/better-whitespace"]
 	path = vim/bundle/better-whitespace
