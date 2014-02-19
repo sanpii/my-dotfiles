@@ -124,6 +124,9 @@
         let g:Gitv_OpenHorizontal = 1
         let g:Gitv_WrapLines = 0
     " }}}
+    " Indexed search {{{
+        let g:indexed_search_show_index_mappings = 0
+    " }}}
     " LanguageTool {{{
         let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
     " }}}
