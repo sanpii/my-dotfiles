@@ -15,7 +15,7 @@
 	url = git://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
-	url = git://github.com/haya14busa/vim-easymotion.git
+	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/auto_mkdir"]
 	path = vim/bundle/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
