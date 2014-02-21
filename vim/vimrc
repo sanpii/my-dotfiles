@@ -322,9 +322,6 @@
         exec 'set <Tab>=t'
     endif
 
-    let mapleader = ","
-    let maplocalleader = ","
-
     " {{{ Help
         function! Help(query)
             let query = expand(a:query)
