@@ -181,3 +181,6 @@
 [submodule "vim/bundle/hardtime"]
 	path = vim/bundle/hardtime
 	url = git://github.com/takac/vim-hardtime.git
+[submodule "vim/bundle/easyoperator-line"]
+	path = vim/bundle/easyoperator-line
+	url = git://github.com/haya14busa/vim-easyoperator-line.git
