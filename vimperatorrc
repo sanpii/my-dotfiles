@@ -8,8 +8,6 @@ set hintchars="auiectsrnmbépoèvdljz"
 set defsearch="seeks"
 set hlsearch
 
-source ~/.vim/bepo.vim
-
 noremap i gT
 noremap e gt
 noremap T <c-d>
