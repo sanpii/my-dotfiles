@@ -396,12 +396,8 @@
     nnoremap <Left> <nop>
     nnoremap <Right> <nop>
 
-    source ~/.vim/bepo.vim
-
-    nnoremap t gj
-    nnoremap s gk
     nnoremap B ^
-    nnoremap E $
+    nnoremap É $
     nnoremap $ <nop>
     nnoremap ^ <nop>
 " }}}
