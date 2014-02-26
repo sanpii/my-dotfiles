@@ -181,3 +181,6 @@
 [submodule "vim/bundle/easyoperator-line"]
 	path = vim/bundle/easyoperator-line
 	url = git://github.com/haya14busa/vim-easyoperator-line.git
+[submodule "vim/bundle/signature"]
+	path = vim/bundle/signature
+	url = git://github.com/kshenoy/vim-signature.git
