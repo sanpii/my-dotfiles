@@ -392,6 +392,7 @@
 
     nnoremap B ^
     nnoremap É $
+    nnoremap é w
     nnoremap $ <nop>
     nnoremap ^ <nop>
 " }}}
