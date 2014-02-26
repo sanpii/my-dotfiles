@@ -97,9 +97,6 @@
 [submodule "vim/bundle/twig"]
 	path = vim/bundle/twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule "vim/bundle/phpdoc"]
-	path = vim/bundle/phpdoc
-	url = git://github.com/johnhamelink/PhpDoc.git
 [submodule "vim/bundle/matchtag"]
 	path = vim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
