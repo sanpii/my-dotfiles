@@ -16,6 +16,7 @@ gnome-icon-theme
 gpicview
 gtk2-engines
 htop
+httpie
 i3
 icedove
 iceweasel
@@ -28,6 +29,7 @@ libreoffice-impress
 libreoffice-writer
 make
 ntp
+ntpdate
 pcmanfm
 parcellite
 php5
@@ -40,6 +42,7 @@ tmux
 vim-gtk
 vlc
 xarchiver
+xautolock
 xinit
 xserver-xorg
 zathura
