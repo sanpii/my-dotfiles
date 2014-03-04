@@ -1,0 +1,31 @@
+#!/bin/sh
+
+INSTANCE="${1:-BAT0}"
+ALERT_LOW="${2:-10}"
+
+status=$(cat /sys/class/power_supply/$INSTANCE/status)
+capacity=$(cat /sys/class/power_supply/$INSTANCE/capacity)
+
+case "$status" in
+    "Discharging")
+        status='↓'
+        ;;
+    "Charging")
+        status='↑'
+        ;;
+    "Full")
+        exit
+        ;;
+esac
+
+# Full text
+echo "Ψ $capacity% $status"
+
+# Short text
+echo "Ψ $capacity% $status"
+
+# Color
+if test $capacity -le $ALERT_LOW
+then
+    echo "#FF0000"
+fi

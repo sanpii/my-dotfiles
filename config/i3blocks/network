@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+INTERFACE="${1:-eth0}"
+
+state="$(cat /sys/class/net/$INTERFACE/operstate)"
+
+if [ "$state" != "up" ]; then
+        exit 0
+fi
+
+ipaddr="$(ip addr show $INTERFACE | perl -n -e'/inet (.+)\// && print $1')"
+ipaddr="${ipaddr:-0.0.0.0}"
+
+# full text
+echo "$INTERFACE: $ipaddr"
+
+# short text
+echo "$INTERFACELABEL: $ipaddr"
