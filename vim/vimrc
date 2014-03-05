@@ -126,7 +126,7 @@
         let g:Gitv_OpenHorizontal = 1
         let g:Gitv_WrapLines = 0
     " }}}
-    " {{{ hardtime
+    " hardtime {{{
         let g:hardtime_default_on = 1
     " }}}
     " Indexed search {{{
@@ -247,7 +247,7 @@
         let g:seeks_node = 'http://seeks.homecomputing.fr'
         let g:seeks_max_results = -1
     " }}}
-    " {{{ SingleCompile
+    " SingleCompile {{{
         nmap <F9> :SCCompileRun<cr>
     " }}}
     " Symfony2 {{{
@@ -324,7 +324,7 @@
         exec 'set <Tab>=t'
     endif
 
-    " {{{ Help
+    " Help {{{
         function! Help(query)
             let query = expand(a:query)
             if query != ""
@@ -335,7 +335,7 @@
         inoremap <F1> <Esc> :call Help("<cword>")<CR>
         nnoremap <F1> :call Help("<cword>")<CR>
     " }}}
-    " {{{ EndOfLine
+    " EndOfLine {{{
         function! s:EndOfLine()
             normal! $
             if getline(".")[col(".")-1] == ';'
