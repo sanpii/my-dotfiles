@@ -8,10 +8,10 @@ capacity=$(cat /sys/class/power_supply/$INSTANCE/capacity)
 
 case "$status" in
     "Discharging")
-        status='↓'
+        symbol='↓'
         ;;
     "Charging")
-        status='↑'
+        symbol='↑'
         ;;
     "Full")
         exit
@@ -19,13 +19,13 @@ case "$status" in
 esac
 
 # Full text
-echo "Ψ $capacity% $status"
+echo "Ψ $capacity% $symbol"
 
 # Short text
-echo "Ψ $capacity% $status"
+echo "Ψ $capacity% $symbol"
 
 # Color
-if test $capacity -le $ALERT_LOW
+if test $capacity -le $ALERT_LOW -a $status = "Discharging"
 then
     echo "#FF0000"
 fi
