@@ -6,6 +6,11 @@ xrdb ~/.Xresources
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+if [ -e ~/.xinitrc.local ]
+then
+    ~/.xinitrc.local
+fi
+
 if [ -x /usr/bin/dunst ]
 then
     killall notification-daemon &> /dev/null
