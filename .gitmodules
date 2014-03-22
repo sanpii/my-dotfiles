@@ -186,4 +186,7 @@
 	url = git://github.com/kshenoy/vim-signature.git
 [submodule "vim/bundle/wipeout"]
 	path = vim/bundle/wipeout
-	url = https://github.com/artnez/vim-wipeout.git
+	url = git://github.com/artnez/vim-wipeout.git
+[submodule "vim/bundle/snippets"]
+	path = vim/bundle/snippets
+	url = git://github.com/honza/vim-snippets.git
