@@ -19,18 +19,6 @@
     set noshowmatch
     set foldmethod=marker
 
-    function! NeatFoldText()
-        let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-        let lines_count = v:foldend - v:foldstart + 1
-        let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-        let foldchar = matchstr(&fillchars, 'fold:\zs.')
-        let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-        let foldtextend = lines_count_text . repeat(foldchar, 8)
-        let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-        return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-    endfunction
-    set foldtext=NeatFoldText()
-
     if exists('+viewdir')
         augroup buffer
             autocmd BufWinLeave *? silent! mkview
@@ -262,6 +250,9 @@
     " SingleCompile {{{
         nmap <F9> :SCCompileRun<cr>
     " }}}
+    " Spiffy Foldtext {{{
+        let g:SpiffyFoldtext_format = "%c{─}  %<%f{─}┤ %4n lines ├─%l{──}"
+    " }}}
     " Symfony2 {{{
         " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
 
@@ -376,7 +367,7 @@
                 \     content.window.scrollTo(x, y);
                 \ }
                 \ repl.quit();' |
-                \ nc -w 1 localhost 4242 2>&1 > /dev/null
+                \ nc -w 1 localhost 4243 2>&1 > /dev/null
         endfunction
 
         autocmd BufWritePost *.html,*.css,*.js,*.php,*.inc,*.module,*.twig :call Refresh_firefox()

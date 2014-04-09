@@ -190,3 +190,6 @@
 [submodule "vim/bundle/snippets"]
 	path = vim/bundle/snippets
 	url = git://github.com/honza/vim-snippets.git
+[submodule "vim/bundle/spiffy_foldtext"]
+	path = vim/bundle/spiffy_foldtext
+	url = git://github.com/atimholt/spiffy_foldtext.git
