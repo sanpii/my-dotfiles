@@ -243,6 +243,9 @@
         imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
         map <buffer> <leader>u :call PhpInsertUse()<CR>
     " }}}
+    " php-refactor {{{
+        let g:php_refactor_command='refactor.phar'
+    " }}}
     " Seeks {{{
         let g:seeks_node = 'http://seeks.homecomputing.fr'
         let g:seeks_max_results = -1
