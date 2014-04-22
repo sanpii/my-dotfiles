@@ -96,9 +96,6 @@
             autocmd FileType * if &ft != 'diff' | autocmd BufWritePre <buffer> StripWhitespace
         augroup END
     " }}}
-    " cfi {{{
-        let g:cfi_php_show_params = 1
-    " }}}
     " clam {{{
         nnoremap ! :Clam<space>
         vnoremap ! :ClamVisual<space>
@@ -230,14 +227,6 @@
         let NERDTreeMapOpenInTab = "<leader>t"
         let NERDTreeMapOpenInTabSilent = "<leader>T"
         let NERDTreeMapOpenVSplit = "<leader>s"
-    " }}}
-    " piv {{{
-        let g:DisableAutoPHPFolding = 1
-        let php_folding = 0
-    " }}}
-    " php-cs-fixer {{{
-        let g:php_cs_fixer_path = "~/.applications/bin/php-cs-fixer.phar"
-        let g:php_cs_fixer_fixers_list = "indentation,linefeed,trailing_spaces,return,short_tag,unused_use,braces,visibility,phpdoc_params,eof_ending,controls_spaces,elseif"
     " }}}
     " php-namespace {{{
         imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
