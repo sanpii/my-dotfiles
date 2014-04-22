@@ -196,3 +196,6 @@
 [submodule "vim/bundle/PHP-Indenting-for-VIm"]
 	path = vim/bundle/PHP-Indenting
 	url = git://github.com/2072/PHP-Indenting-for-VIm.git
+[submodule "vim/bundle/php-refactoring"]
+	path = vim/bundle/php-refactoring
+	url = git://github.com/vim-php/vim-php-refactoring.git
