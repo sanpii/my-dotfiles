@@ -193,3 +193,6 @@
 [submodule "vim/bundle/spiffy_foldtext"]
 	path = vim/bundle/spiffy_foldtext
 	url = git://github.com/atimholt/spiffy_foldtext.git
+[submodule "vim/bundle/PHP-Indenting-for-VIm"]
+	path = vim/bundle/PHP-Indenting
+	url = git://github.com/2072/PHP-Indenting-for-VIm.git
