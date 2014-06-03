@@ -3,7 +3,7 @@ set complete=sl
 set smartcase
 set focuscontent
 set hintchars="auiectsrnmbépoèvdljz"
-set defsearch="seeks"
+set defsearch="searx"
 set hlsearch
 
 noremap i gT
