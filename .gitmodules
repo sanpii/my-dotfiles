@@ -40,9 +40,6 @@
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
-[submodule "vim/bundle/seeks"]
-	path = vim/bundle/seeks
-	url = git://github.com/sanpii/seeks.vim.git
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git

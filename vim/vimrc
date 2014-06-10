@@ -236,10 +236,6 @@
     " php-refactor {{{
         let g:php_refactor_command='refactor.phar'
     " }}}
-    " Seeks {{{
-        let g:seeks_node = 'http://seeks.homecomputing.fr'
-        let g:seeks_max_results = -1
-    " }}}
     " SingleCompile {{{
         nmap <F9> :SCCompileRun<cr>
     " }}}
