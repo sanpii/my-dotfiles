@@ -27,9 +27,9 @@ then
     /usr/bin/parcellite &
 fi
 
-if [ -x /usr/bin/git-annex ]
+if [ -x /usr/bin/owncloud ]
 then
-    /usr/bin/git-annex assistant --autostart &
+    /usr/bin/owncloud &
 fi
 
 if [ -x /usr/bin/x-terminal-emulator ]
