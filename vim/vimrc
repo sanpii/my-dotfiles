@@ -57,7 +57,6 @@
     highlight LanguageToolError cterm=underline ctermfg=green ctermbg=none
 
     set scrolloff=3
-    set relativenumber
     set number
 " }}}
 " Indentation {{{
