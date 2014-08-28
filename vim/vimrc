@@ -222,7 +222,7 @@
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
     " }}}
     " nerdtree {{{
-        nnoremap <silent> <F3> :NERDTreeToggle<CR>
+        nnoremap <silent> <leader><F3> :NERDTreeToggle<CR>
         let NERDTreeQuitOnOpen = 1
         let NERDTreeMapOpenInTab = "<leader>t"
         let NERDTreeMapOpenInTabSilent = "<leader>T"
@@ -283,17 +283,6 @@
         let g:UltiSnipsJumpBackwardTrigger = '<c-s>'
     " }}}
     " vdebug {{{
-        let g:vdebug_keymap = {
-        \    "run" : "<leader><F5>",
-        \    "run_to_cursor" : "<leader><F1>",
-        \    "step_over" : "<leader><F2>",
-        \    "step_into" : "<leader><F3>",
-        \    "step_out" : "<leader><F4>",
-        \    "close" : "<leader><F6>",
-        \    "detach" : "<leader><F7>",
-        \    "set_breakpoint" : "<leader><F10>",
-        \    "get_context" : "<leader><F11>",
-        \}
     " }}}
 " }}}
 " Mappage {{{
@@ -323,8 +312,8 @@
             endif
         endfunction
 
-        inoremap <F1> <Esc> :call Help("<cword>")<CR>
-        nnoremap <F1> :call Help("<cword>")<CR>
+        inoremap <leader><F1> <Esc> :call Help("<cword>")<CR>
+        nnoremap <leader><F1> :call Help("<cword>")<CR>
     " }}}
     " EndOfLine {{{
         function! s:EndOfLine()
