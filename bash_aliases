@@ -26,8 +26,6 @@ alias l='ls -CF'
 alias sf='php app/console'
 alias ack='ack-grep'
 alias t='~/.todo/cli/todo.sh'
-alias wt='~/.todo/cli/todo.sh -d ~/.todo-work.cfg'
-alias ht='~/.todo/cli/todo.sh -d ~/.todo-home.cfg'
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
@@ -47,3 +45,7 @@ export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --quiet --dumb'
 
 export EDITOR=vim
+
+alias g='git'
+source /usr/share/bash-completion/completions/git
+complete -o default -o nospace -F _git g
