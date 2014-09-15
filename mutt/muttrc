@@ -2,6 +2,7 @@
 
 source ~/.mutt/colors
 
+set charset="utf-8"
 set editor="vim"
 set sort=threads
 
