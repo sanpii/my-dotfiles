@@ -37,9 +37,6 @@
 [submodule "vim/bundle/LanguageTool"]
 	path = vim/bundle/LanguageTool
 	url = git://github.com/vim-scripts/LanguageTool.git
-[submodule "vim/bundle/webapi"]
-	path = vim/bundle/webapi
-	url = git://github.com/mattn/webapi-vim.git
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
