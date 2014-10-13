@@ -14,14 +14,16 @@ modules:
 	git submodule init
 	git submodule update
 
-ctags: $(HOME)/.local/bin/phpctags
-$(HOME)/.local/bin/phpctags:
-	git clone https://github.com/vim-php/phpctags.git $(ROOT)
-	cd $(ROOT) \
+ctags: $(HOME)/.local/bin/ctags
+
+$(HOME)/.local/bin/ctags:
+	wget https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz -O - | tar zx
+	cd ctags \
+		&& ./configure --prefix=$(HOME)/.local \
 		&& make \
-		&& mv phpctags $@
+		&& make install
 	cd $(CURDIR)
-	rm -rf $(ROOT)
+	rm -rf ctags/
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]
