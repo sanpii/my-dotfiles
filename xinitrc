@@ -17,11 +17,6 @@ then
     /usr/bin/dunst &
 fi
 
-if [ -x /usr/bin/davmail ]
-then
-    /usr/bin/davmail &
-fi
-
 if [ -x /usr/bin/parcellite ]
 then
     /usr/bin/parcellite &
