@@ -49,3 +49,5 @@ export EDITOR=vim
 alias g='git'
 source /usr/share/bash-completion/completions/git
 complete -o default -o nospace -F _git g
+
+alias wifi='sudo ~/projects/wifi/wifi.sh'
