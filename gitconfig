@@ -25,6 +25,7 @@
 	a = add
 	b = branch -vv
 	d = diff
+	f = fetch
 	h = help
 	i = issue
 	r = remote -v
