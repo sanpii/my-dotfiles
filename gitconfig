@@ -38,6 +38,7 @@
 	fc = !$(git config core.editor) $(git ls-files -uz | xargs -0)
 	lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lo = log --stat
+	re = rebase
 	st = status
 	new = !sh -c 'git log "$@" @{1}..@{0}'
 	vim = !$(git config core.editor) $(git ls-files -mz | xargs -0)
