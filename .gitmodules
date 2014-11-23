@@ -25,9 +25,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/tasklist"]
-	path = vim/bundle/tasklist
-	url = git://github.com/vim-scripts/TaskList.vim
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
