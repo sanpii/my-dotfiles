@@ -37,9 +37,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
-[submodule "vim/bundle/man"]
-	path = vim/bundle/man
-	url = git://github.com/pydave/vim-man.git
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
