@@ -119,10 +119,6 @@
     " crunch {{{
         noremap <leader>c :CrunchLine<cr>
     " }}}
-    " gitv {{{
-        let g:Gitv_OpenHorizontal = 1
-        let g:Gitv_WrapLines = 0
-    " }}}
     " hardtime {{{
         let g:hardtime_default_on = 1
     " }}}
