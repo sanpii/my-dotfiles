@@ -31,10 +31,9 @@ snippet sfctrl "sfctrl"
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
 use \Symfony\Component\HttpFoundation\Request;
-use \Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use \Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use \Symfony\Component\HttpFoundation\Response;
 
-class `!p snip.rv = snip.basename` extends Controller
+class `!p snip.rv = snip.basename`
 {
 	${1}
 }
@@ -226,15 +225,15 @@ class `!p snip.rv = snip.basename` extends \Twig_Extension
 }
 endsnippet
 
-snippet sfdic "sfdic"
+snippet sfext "sfext"
 <?php
 
 namespace `!v substitute(substitute(expand('%:h'), '/', '\\', 'g'), '^[a-z]*\\\C', '', '')`;
 
-use \Symfony\Component\DependencyInjection\ContainerBuilder;
-use \Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use \Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use \Symfony\Component\Config\FileLocator;
+use \Symfony\Component\DependencyInjection\ContainerBuilder;
+use \Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use \Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class `!p snip.rv = snip.basename` extends Extension
 {
@@ -242,11 +241,6 @@ class `!p snip.rv = snip.basename` extends Extension
 	{
 		$loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 		$loader->load('${2:services.yml}');
-	}
-
-	public function getAlias()
-	{
-		return '${1}';
 	}
 }
 endsnippet
