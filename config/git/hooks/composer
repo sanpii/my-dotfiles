@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# https://gist.github.com/lyrixx/5867424
+
+PREV_COMMIT=$1
+POST_COMMIT=$2
+
+NOCOLOR='\e[0m'
+REDCOLOR='\e[37;41m'
+
+is_issue()
+{
+    local branch=$(git config --get issue.branch || echo 'issues')
+    ! git branch --contains $1 | grep -q $branch
+}
+
+if [[ $PREV_COMMIT == '0000000000000000000000000000000000000000' ]]; then
+    exit
+fi
+is_issue $PREV_COMMIT
+if [[ $? != 0 ]]; then
+    exit;
+fi
+is_issue $POST_COMMIT
+if [[ $? != 0 ]]; then
+    exit
+fi
+
+for f in composer.lock composer.json www/composer.json www/composer.lock; do
+    if [[ -f $f ]]; then
+        DIFF=`git diff --shortstat $PREV_COMMIT..$POST_COMMIT $f`
+        if [[ $DIFF != "" ]]; then
+            echo -e "$REDCOLOR$f has changed. You must run composer install$NOCOLOR"
+            break
+        fi
+    fi
+done
