@@ -24,7 +24,7 @@
 [alias]
 	a = add
 	b = branch -vv
-	d = diff
+	d = diff -M
 	f = fetch
 	h = help
 	i = issue
@@ -34,7 +34,7 @@
 	ad = add
 	ci = commit -v -m
 	co = checkout
-	dc = diff --cached
+	dc = diff --cached -M
 	fc = !$(git config core.editor) $(git ls-files -uz | xargs -0)
 	lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lo = log --stat
