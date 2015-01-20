@@ -55,9 +55,6 @@
 [submodule "todo/standup"]
 	path = todo/standup
 	url = git://github.com/civrot/todo_txt_actions.git
-[submodule "vim/bundle/vala"]
-	path = vim/bundle/vala
-	url = git://github.com/rainux/vim-vala.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
