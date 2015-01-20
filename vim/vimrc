@@ -119,6 +119,9 @@
     " crunch {{{
         noremap <leader>c :CrunchLine<cr>
     " }}}
+    " easymotion {{{
+        let g:EasyMotion_keys = 'auiectsrnmbépoèvdljz'
+    " }}}
     " hardtime {{{
         let g:hardtime_default_on = 1
     " }}}
@@ -277,8 +280,6 @@
     " UltiSnips {{{
         let g:UltiSnipsJumpForwardTrigger = '<c-t>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-s>'
-    " }}}
-    " vdebug {{{
     " }}}
 " }}}
 " Mappage {{{
