@@ -51,6 +51,7 @@
 	svn-commit = !sh -c 'git stash save "Pre svn-commit stash" && git svn dcommit && git stash pop'
 	fix-conflits = !$(git config core.editor) $(git ls-files -uz | xargs -0)
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
+	fixup = "!f() { c=$(git rev-parse \"$1\") && git commit --fixup $c && git rebase -i $c^ --autosquash; };f"
 [pager]
 	log = perl  /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
