@@ -3,7 +3,7 @@ dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config tags, $(wildcar
 
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
-ROOT := $(shell mktemp -d)
+PREFIX := $(HOME)/.local
 
 install: $(home-dotfiles) fonts modules ctags
 
@@ -14,12 +14,12 @@ modules:
 	git submodule init
 	git submodule update
 
-ctags: $(HOME)/.local/bin/ctags
+ctags: $(PREFIX)/bin/ctags
 
-$(HOME)/.local/bin/ctags:
+$(PREFIX)/bin/ctags:
 	wget https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz -O - | tar zx
 	cd ctags \
-		&& ./configure --prefix=$(HOME)/.local \
+		&& ./configure --prefix=$(PREFIX) \
 		&& make \
 		&& make install
 	cd $(CURDIR)
