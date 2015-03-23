@@ -5,7 +5,7 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 PREFIX := $(HOME)/.local
 
-install: $(home-dotfiles) fonts modules ctags
+install: $(home-dotfiles) fonts modules ctags rofi
 
 fonts:
 	fc-cache ~/.fonts
@@ -24,6 +24,18 @@ $(PREFIX)/bin/ctags:
 		&& make install
 	cd $(CURDIR)
 	rm -rf ctags/
+
+roffi: $(PREFIX)/bin/rofi
+
+$(PREFIX)/bin/rofi:
+	git clone https://github.com/DaveDavenport/rofi.git
+	cd rofi \
+		&& autoreconf -i \
+		&& ./configure --prefix=$(PREFIX) \
+		&& make \
+		&& make install
+	cd $(CURDIR)
+	rm -rf rofi
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]

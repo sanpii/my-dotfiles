@@ -58,3 +58,18 @@ URxvt*keysym.M-v: perl:clipboard:paste
 URxvt*keysym.M-C-v: perl:clipboard:paste_escaped
 
 ! }}}
+! rofi {{{
+rofi.columns: 4
+rofi.fg: #CCCCCC
+rofi.bg: #1B455A
+rofi.hlfg: #FFFFFF
+rofi.hlbg: #42A8DC
+rofi.bc: #42A8DC
+rofi.bw: 2
+rofi.location: 6
+rofi.padding: 2
+rofi.yoffset: -22
+rofi.xoffset: 0
+rofi.fixed-num-lines: true
+rofi.ssh-set-title: true
+! }}}
