@@ -12,6 +12,7 @@ bindsym $mod+p exec rofi -show run
 bindsym $mod+l exec xautolock -locknow
 bindsym $mod+Tab exec ~/.config/i3/wp-swap.php
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym Shift+Print exec scrot -u -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 client.focused #42a8dc #1b455a #cccccc
 client.urgent #f73668 #60031b #aaaaaa
