@@ -87,7 +87,7 @@
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
-	url = git://github.com/sanpii/vim-sensible.git
+	url = git://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
