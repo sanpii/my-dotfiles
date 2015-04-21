@@ -149,10 +149,10 @@
     " }}}
     " Text file {{{
         augroup filetype
-            autocmd FileType text :source ~/.vim/text.vim
-            autocmd FileType tex :source ~/.vim/text.vim
-            autocmd FileType markdown :source ~/.vim/text.vim
-            autocmd FileType mail :source ~/.vim/mail.vim
+            autocmd FileType text :exec "source " . vimfiles . "/text.vim"
+            autocmd FileType tex :exec "source " . vimfiles . "/text.vim"
+            autocmd FileType markdown :exec "source " . vimfiles . "/text.vim"
+            autocmd FileType mail :exec "source " . vimfiles . "/mail.vim"
         augroup END
     " }}}
     " move {{{
