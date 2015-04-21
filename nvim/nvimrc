@@ -299,24 +299,6 @@
     " }}}
 " }}}
 " Mappage {{{
-    " Fix meta-keys which generate <Esc>A .. <Esc>z
-    if !has('gui_running')
-        let c='a'
-        while c <= 'z'
-            exec "set <M-".c.">=\e".c
-            exec "imap \e".c." <M-".c.">"
-            let c = nr2char(1+char2nr(c))
-        endw
-        " Map these two on its own to enable Alt-Shift-J and Alt-Shift-K. If I map the
-        " whole spectrum of A-Z, it screws up mouse scrolling somehow. Mouse events
-        " must be interpreted as some form of escape sequence that interferes.
-        exec 'set <M-J>=J'
-        exec 'set <M-K>=K'
-
-        " Tab is mapped to Alt-t, which is mapped from iTerm
-        exec 'set <Tab>=t'
-    endif
-
     " Help {{{
         function! Help(query)
             let query = expand(a:query)
