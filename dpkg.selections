@@ -24,9 +24,9 @@ libreoffice-gtk3
 libreoffice-impress
 libreoffice-writer
 make
+mc
 ntp
 ntpdate
-pcmanfm
 parcellite
 php5
 rxvt-unicode-256color
