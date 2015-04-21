@@ -5,7 +5,7 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 PREFIX := $(HOME)/.local
 
-install: $(home-dotfiles) fonts modules ctags rofi
+install: $(home-dotfiles) fonts modules ctags rofi neovim
 
 fonts:
 	fc-cache ~/.fonts
@@ -36,6 +36,9 @@ $(PREFIX)/bin/rofi:
 		&& make install
 	cd $(CURDIR)
 	rm -rf rofi
+
+neovim:
+	pip install --user neovim
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]

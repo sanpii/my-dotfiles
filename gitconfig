@@ -18,7 +18,7 @@
 	changed = green
 	untracked = cyan
 [core]
-	editor = vim
+	editor = nvim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.config/git/ignore
 [alias]
@@ -64,7 +64,7 @@
 	tool = splice
 	ff = no
 [mergetool "splice"]
-	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
 	trustExitCode = true
 [branch]
 	autosetuprebase = always

@@ -8,8 +8,8 @@ ssh/*.pub
 ssh/*.ppk
 ssh/authorized_keys
 ssh/known_hosts
-vim/.netrwhist
-vim/local.vim
+nvim/.netrwhist
+nvim/local.vim
 weechat/logs
 weechat/weechat.log
 weechat/weechat_fifo_*
