@@ -118,9 +118,6 @@
 [submodule "nvim/bundle/move"]
 	path = nvim/bundle/move
 	url = git://github.com/matze/vim-move.git
-[submodule "nvim/bundle/fixkey"]
-	path = nvim/bundle/fixkey
-	url = git://github.com/drmikehenry/vim-fixkey.git
 [submodule "nvim/bundle/desertink"]
 	path = nvim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
