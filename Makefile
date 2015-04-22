@@ -1,5 +1,5 @@
-dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config tags, $(wildcard *)) \
-	$(filter-out Makefile, $(wildcard config/*))
+dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config local tags, $(wildcard *)) \
+	$(filter-out Makefile, $(wildcard config/* local/share/*))
 
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 

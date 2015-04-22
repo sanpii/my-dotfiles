@@ -2,6 +2,9 @@
 *.local
 vimperator/info
 newsbeuter/*
+config/mc/hotlist
+config/mc/panels.ini
+local/share/mc/history
 ssh/config
 ssh/id_rsa
 ssh/*.pub
