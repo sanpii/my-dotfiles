@@ -24,7 +24,7 @@
 IOD="/usr/sbin/iodine"
 
 # Your top domain
-IOTD="t1.hcpt.fr"
+IOTD="t.hcpt.fr"
 
 # You may choose to store the password in this script or enter it every time
 #IOPASS="your iodine password"
@@ -36,7 +36,7 @@ IODEV="dns0"
 
 # The IP your iodined server uses inside the tunnel
 # The man page calls this tunnel_ip
-IOIP="172.16.0.1"
+IOIP="10.0.0.1"
 
 #### STOP EDITING ####
 
@@ -50,21 +50,21 @@ if ps auxw|grep iodine|grep -v grep
  then
         case "$OS" in
         Darwin|*BSD)
-		route delete default
-		route add $NS -gateway $GW
-		route add default -gateway $IOIP
-		;;
-	Linux)
-		route del default
-		route add $NS gw $GW
-		route add default gw $IOIP $IODEV
-		;;
-	*)
-		echo "Your OS is not osX, BSD, or Linux."
-		echo "I don't know how to add routes on ${OS}."
-		echo "Email krzee and tell him the syntax."
-		;;
-	esac
+        route delete default
+        route add $NS -gateway $GW
+        route add default -gateway $IOIP
+        ;;
+    Linux)
+        route del default
+        route add $NS gw $GW
+        route add default gw $IOIP $IODEV
+        ;;
+    *)
+        echo "Your OS is not osX, BSD, or Linux."
+        echo "I don't know how to add routes on ${OS}."
+        echo "Email krzee and tell him the syntax."
+        ;;
+    esac
  echo "Press enter when you are done with iodine"
  echo "and you want your routes back to normal"
  read yourmind
