@@ -5,7 +5,9 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 PREFIX := $(HOME)/.local
 
-install: $(home-dotfiles) fonts modules ctags rofi neovim
+install: links fonts modules ctags rofi neovim
+
+links: $(home-dotfiles)
 
 fonts:
 	fc-cache ~/.fonts
