@@ -7,7 +7,7 @@ set $mod Mod4
 default_orientation vertical
 workspace_layout stacking
 
-bindsym $mod+e exec /usr/bin/x-terminal-emulator -e mc -d -u
+bindsym $mod+e exec /usr/bin/urxvt -e mc -d -u
 bindsym $mod+p exec rofi -show run
 bindsym $mod+l exec xautolock -locknow
 bindsym $mod+Tab exec ~/.config/i3/wp-swap.php
@@ -167,5 +167,5 @@ bar {
 for_window [instance="^term-scratchpad$"] move to scratchpad
 
 exec --no-startup-id i3-msg 'workspace 2; workspace 6; exec xirc'
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/x-www-browser'
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/x-terminal-emulator'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvt'
