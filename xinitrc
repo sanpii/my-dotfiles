@@ -27,9 +27,9 @@ then
     /usr/bin/owncloud &
 fi
 
-if [ -x /usr/bin/x-terminal-emulator ]
+if [ -x /usr/bin/urxvt ]
 then
-    /usr/bin/x-terminal-emulator -name term-scratchpad &
+    /usr/bin/urxvt -name term-scratchpad &
 fi
 
 if [ -x /usr/bin/xautolock ]
