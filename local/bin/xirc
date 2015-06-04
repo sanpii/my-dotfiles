@@ -1,0 +1,3 @@
+#!/bin/sh
+
+urxvt -title irc -e bash -c 'ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
