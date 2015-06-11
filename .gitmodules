@@ -94,15 +94,9 @@
 [submodule "nvim/bundle/multiple-cursors"]
 	path = nvim/bundle/multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
-[submodule "todo/cli"]
-	path = todo/cli
-	url = git://github.com/ginatrapani/todo.txt-cli.git
 [submodule "nvim/bundle/todo.txt"]
 	path = nvim/bundle/todo.txt
 	url = git://github.com/freitass/todo.txt-vim.git
-[submodule "todo/ex"]
-	path = todo/ex
-	url = git://github.com/sanpii/todo.txt-cli-ex.git
 [submodule "nvim/bundle/ctrlp-funky"]
 	path = nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
