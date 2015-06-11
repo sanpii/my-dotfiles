@@ -124,10 +124,9 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 
-    if [ -f $HOME/.todo/cli/todo_completion ]; then
-        . $HOME/.todo/cli/todo_completion
-        complete -F _todo t
-        complete -F _todo wt
+    if [ -f /usr/share/bash-completion/completions/task ]; then
+        . /usr/share/bash-completion/completions/task
+        complete -F _task t
     fi
 fi
 
