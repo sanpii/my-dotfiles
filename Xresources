@@ -46,7 +46,7 @@ URxvt*perl-ext-common:selection,url-select,keyboard-select,clipboard
 
 ! Clikable URL
 URxvt*keysym.M-u: perl:url-select:select_next
-URxvt*urlLauncher: x-www-browser
+URxvt*urlLauncher: iceweasel
 URxvt*underlineURLs: true
 
 ! Keyboard select
