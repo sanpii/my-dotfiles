@@ -27,22 +27,9 @@ $(PREFIX)/bin/ctags:
 	cd $(CURDIR)
 	rm -rf ctags/
 
-roffi: $(PREFIX)/bin/rofi
-
-$(PREFIX)/bin/rofi:
-	git clone https://github.com/DaveDavenport/rofi.git
-	cd rofi \
-		&& autoreconf -i \
-		&& ./configure --prefix=$(PREFIX) \
-		&& make \
-		&& make install
-	cd $(CURDIR)
-	rm -rf rofi
-
-neovim:
-	pip install --user neovim
-
 $(HOME)/.%: %
+	[ -e `dirname $@` ] || mkdir -p `dirname $@`
+
 	[ ! -e $@ -o -L $@ ]
 	$(RM) $@
 	ln -s $(CURDIR)/$* $@
