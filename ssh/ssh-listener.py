@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 # Echo server program
 import socket
@@ -8,7 +8,7 @@ import os
 import os.path
 
 NOTIFIER  = '/usr/bin/notify-send'
-VIEWER  = '/usr/bin/see'
+VIEWER  = '/usr/bin/xdg-open'
 OPENER = '/usr/bin/xdg-open'
 HOST = 'localhost'
 PORT = 8088
