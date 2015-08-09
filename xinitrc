@@ -6,6 +6,11 @@ xrdb ~/.Xresources
 export XDG_MENU_PREFIX="lxde-"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+if [ -s ~/.Xmodmap ]
+then
+    xmodmap ~/.Xmodmap
+fi
+
 if [ -e ~/.xinitrc.local ]
 then
     ~/.xinitrc.local
