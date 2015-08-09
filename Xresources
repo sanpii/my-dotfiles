@@ -72,4 +72,5 @@ rofi.yoffset: -22
 rofi.xoffset: 0
 rofi.fixed-num-lines: true
 rofi.ssh-set-title: true
+rofi.terminal: urxvt
 ! }}}
