@@ -40,7 +40,7 @@ fi
 
 if [ -x /usr/bin/xautolock ]
 then
-    /usr/bin/xautolock -locker '/usr/bin/i3lock -t -i ~/.config/i3/lockscreen.png' &
+    /usr/bin/xautolock -locker 'blur-lock' &
 fi
 
 exec i3 --force-xinerama
