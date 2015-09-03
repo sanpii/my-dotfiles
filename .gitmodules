@@ -124,9 +124,6 @@
 [submodule "nvim/bundle/better-whitespace"]
 	path = nvim/bundle/better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
-[submodule "nvim/bundle/hardtime"]
-	path = nvim/bundle/hardtime
-	url = git://github.com/takac/vim-hardtime.git
 [submodule "nvim/bundle/easyoperator-line"]
 	path = nvim/bundle/easyoperator-line
 	url = git://github.com/haya14busa/vim-easyoperator-line.git

@@ -138,9 +138,6 @@
     " easymotion {{{
         let g:EasyMotion_keys = 'auiectsrnmbépoèvdljz'
     " }}}
-    " hardtime {{{
-        let g:hardtime_default_on = 1
-    " }}}
     " Indexed search {{{
         let g:indexed_search_show_index_mappings = 0
     " }}}
