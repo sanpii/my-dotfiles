@@ -6,7 +6,7 @@
 ""   Automatic line wrap
 "" ----------------------------------------------------------------------------
 
-source ~/.vim/text.vim
+source ~/.nvim/text.vim
 
 set formatoptions=tcql
 set comments+=n:\|	" '|' is a quote char.
@@ -28,8 +28,6 @@ nmap	<F3>	kgqj
 map!	<F1>	<ESC>gqapi
 map!	<F2>	<ESC>gqqji
 map!	<F3>	<ESC>kgqji
-
-
 
 "" ----------------------------------------------------------------------------
 ""   Suppressing quoted signature(s) if any when replying
@@ -102,8 +100,6 @@ function! Mail_Del_Empty_Quoted()
   exe "normal :%s/^>[[:space:]\%\|\#>]\\+$//e\<CR>"
 endfunction
 
-
-
 "" ----------------------------------------------------------------------------
 ""   Moving the cursor at the begining of the mail
 "" ----------------------------------------------------------------------------
@@ -115,8 +111,6 @@ function! Mail_Begining()
     exe "normal /^$\<CR>"
   endif
 endfunction
-
-
 
 "" ----------------------------------------------------------------------------
 ""
