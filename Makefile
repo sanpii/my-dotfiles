@@ -5,12 +5,9 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 PREFIX := $(HOME)/.local
 
-install: links fonts modules
+install: links modules
 
 links: $(home-dotfiles)
-
-fonts:
-	fc-cache ~/.fonts
 
 modules:
 	git submodule init
