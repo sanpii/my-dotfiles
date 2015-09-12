@@ -132,9 +132,6 @@
     " ctrlp-funky {{{
         noremap <C-F> :CtrlPFunky<cr>
     " }}}
-    " crunch {{{
-        noremap <leader>c :CrunchLine<cr>
-    " }}}
     " easymotion {{{
         let g:EasyMotion_keys = 'auiectsrnmbépoèvdljz'
     " }}}
@@ -142,7 +139,7 @@
         let g:indexed_search_show_index_mappings = 0
     " }}}
     " LanguageTool {{{
-        let g:languagetool_jar = substitute(system("find ~/.config/libreoffice/3/user/extensions -name LanguageTool.jar"), "\n", "", "g")
+        let g:languagetool_jar = '/home/sanpi/.local/opt/LanguageTool/languagetool.jar'
     " }}}
     " Text file {{{
         augroup filetype
@@ -289,6 +286,9 @@
         let g:syntastic_error_symbol = '✗'
         let g:syntastic_warning_symbol = '⚠'
 
+    " }}}
+    " tags {{{
+        let g:vim_tags_ignore_files = []
     " }}}
     " UltiSnips {{{
         let g:UltiSnipsJumpForwardTrigger = '<c-t>'
