@@ -70,3 +70,5 @@
 	autosetuprebase = always
 [push]
 	default = simple
+[status]
+	submodulesummary = true
