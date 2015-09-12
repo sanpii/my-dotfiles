@@ -2,7 +2,6 @@ set newtab=all
 set complete=sl
 set smartcase
 set focuscontent
-set hintchars="auiectsrnmbépoèvdljz"
 set defsearch="searx"
 set hlsearch
 
