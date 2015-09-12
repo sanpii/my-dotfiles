@@ -97,9 +97,6 @@
 [submodule "nvim/bundle/airline"]
 	path = nvim/bundle/airline
 	url = git://github.com/bling/vim-airline.git
-[submodule "nvim/bundle/crunch"]
-	path = nvim/bundle/crunch
-	url = git://github.com/arecarn/crunch.git
 [submodule "nvim/bundle/move"]
 	path = nvim/bundle/move
 	url = git://github.com/matze/vim-move.git
