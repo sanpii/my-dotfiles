@@ -43,4 +43,9 @@ then
     /usr/bin/xautolock -locker 'blur-lock' &
 fi
 
+if [ -x /usr/bin/redshift ]
+then
+    /usr/bin/redshift &
+fi
+
 exec i3 --force-xinerama
