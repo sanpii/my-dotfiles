@@ -13,15 +13,9 @@
 [submodule "nvim/bundle/gundo"]
 	path = nvim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "nvim/bundle/easymotion"]
-	path = nvim/bundle/easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "nvim/bundle/auto_mkdir"]
 	path = nvim/bundle/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
-[submodule "nvim/bundle/behat"]
-	path = nvim/bundle/behat
-	url = git://github.com/veloce/vim-behat.git
 [submodule "nvim/bundle/ctrlp"]
 	path = nvim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
@@ -37,9 +31,6 @@
 [submodule "nvim/bundle/eunuch"]
 	path = nvim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "nvim/bundle/html_annoyance"]
-	path = nvim/bundle/html_annoyance
-	url = git://github.com/tudorprodan/html_annoyance.vim.git
 [submodule "nvim/bundle/neocomplcache"]
 	path = nvim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
@@ -55,9 +46,6 @@
 [submodule "nvim/bundle/pathogen"]
 	path = nvim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "nvim/bundle/drupal"]
-	path = nvim/bundle/drupal
-	url = git://github.com/grota/drupal.vim.git
 [submodule "nvim/bundle/phpcomplete"]
 	path = nvim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
@@ -118,15 +106,9 @@
 [submodule "nvim/bundle/better-whitespace"]
 	path = nvim/bundle/better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
-[submodule "nvim/bundle/easyoperator-line"]
-	path = nvim/bundle/easyoperator-line
-	url = git://github.com/haya14busa/vim-easyoperator-line.git
 [submodule "nvim/bundle/signature"]
 	path = nvim/bundle/signature
 	url = git://github.com/kshenoy/vim-signature.git
-[submodule "nvim/bundle/wipeout"]
-	path = nvim/bundle/wipeout
-	url = git://github.com/artnez/vim-wipeout.git
 [submodule "nvim/bundle/snippets"]
 	path = nvim/bundle/snippets
 	url = git://github.com/honza/vim-snippets.git
