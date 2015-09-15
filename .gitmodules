@@ -127,3 +127,6 @@
 [submodule "nvim/bundle/php-refactoring-toolbox"]
 	path = nvim/bundle/php-refactoring-toolbox
 	url = git://github.com/adoy/vim-php-refactoring-toolbox.git
+[submodule "nvim/bundle/clever-f"]
+	path = nvim/bundle/clever-f
+	url = git://github.com/rhysd/clever-f.vim.git
