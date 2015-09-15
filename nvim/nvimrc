@@ -98,6 +98,7 @@
 " }}}
 " Sauvegardes {{{
     set backup
+    set undofile
 " }}}
 " Plugins {{{
     filetype plugin indent on
