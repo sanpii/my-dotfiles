@@ -19,14 +19,14 @@ stty -ixon
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoredups:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=9000
-HISTFILESIZE=$HISTSIZE
+export HISTSIZE=9000
+export HISTFILESIZE=$HISTSIZE
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -44,7 +44,7 @@ _bash_history_sync() {
   builtin history -r
 }
 
-PROMPT_COMMAND=_bash_history_sync
+export PROMPT_COMMAND=_bash_history_sync
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
