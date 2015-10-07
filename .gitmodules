@@ -121,12 +121,12 @@
 [submodule "nvim-polyglot"]
 	path = nvim/bundle/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
-[submodule "nvim/bundle/numbers"]
-	path = nvim/bundle/numbers
-	url = git://github.com/myusuf3/numbers.vim.git
 [submodule "nvim/bundle/php-refactoring-toolbox"]
 	path = nvim/bundle/php-refactoring-toolbox
 	url = git://github.com/adoy/vim-php-refactoring-toolbox.git
 [submodule "nvim/bundle/clever-f"]
 	path = nvim/bundle/clever-f
 	url = git://github.com/rhysd/clever-f.vim.git
+[submodule "nvim/bundle/relativity"]
+	path = nvim/bundle/relativity
+	url = git://github.com/kennykaye/vim-relativity.git
