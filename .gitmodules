@@ -1,132 +1,132 @@
 [submodule "nvim/bundle/fugitive"]
-	path = nvim/bundle/fugitive
+	path = config/nvim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "nvim/bundle/php-namespace"]
-	path = nvim/bundle/php-namespace
+	path = config/nvim/bundle/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
 [submodule "nvim/bundle/nerdtree"]
-	path = nvim/bundle/nerdtree
+	path = config/nvim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "nvim/bundle/CamelCaseMotion"]
-	path = nvim/bundle/CamelCaseMotion
+	path = config/nvim/bundle/CamelCaseMotion
 	url = git://github.com/bkad/CamelCaseMotion.git
 [submodule "nvim/bundle/gundo"]
-	path = nvim/bundle/gundo
+	path = config/nvim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
 [submodule "nvim/bundle/auto_mkdir"]
-	path = nvim/bundle/auto_mkdir
+	path = config/nvim/bundle/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
 [submodule "nvim/bundle/ctrlp"]
-	path = nvim/bundle/ctrlp
+	path = config/nvim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule "nvim/bundle/lastpos"]
-	path = nvim/bundle/lastpos
+	path = config/nvim/bundle/lastpos
 	url = git://github.com/vim-scripts/lastpos.vim.git
 [submodule "nvim/bundle/LanguageTool"]
-	path = nvim/bundle/LanguageTool
+	path = config/nvim/bundle/LanguageTool
 	url = git://github.com/vim-scripts/LanguageTool.git
 [submodule "nvim/bundle/splice"]
-	path = nvim/bundle/splice
+	path = config/nvim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
 [submodule "nvim/bundle/eunuch"]
-	path = nvim/bundle/eunuch
+	path = config/nvim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
 [submodule "nvim/bundle/neocomplcache"]
-	path = nvim/bundle/neocomplcache
+	path = config/nvim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
 [submodule "nvim/bundle/syntastic"]
-	path = nvim/bundle/syntastic
+	path = config/nvim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "nvim/bundle/vdebug"]
-	path = nvim/bundle/vdebug
+	path = config/nvim/bundle/vdebug
 	url = git://github.com/joonty/vdebug.git
 [submodule "nvim/bundle/sideway"]
-	path = nvim/bundle/sideway
+	path = config/nvim/bundle/sideway
 	url = git://github.com/AndrewRadev/sideways.vim.git
 [submodule "nvim/bundle/pathogen"]
-	path = nvim/bundle/pathogen
+	path = config/nvim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "nvim/bundle/phpcomplete"]
-	path = nvim/bundle/phpcomplete
+	path = config/nvim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "nvim/bundle/matchtag"]
-	path = nvim/bundle/matchtag
+	path = config/nvim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
 [submodule "nvim/bundle/SingleCompile"]
-	path = nvim/bundle/SingleCompile
+	path = config/nvim/bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
 [submodule "nvim/bundle/incbool"]
-	path = nvim/bundle/incbool
+	path = config/nvim/bundle/incbool
 	url = git://github.com/can3p/incbool.vim.git
 [submodule "nvim/bundle/clam"]
-	path = nvim/bundle/clam
+	path = config/nvim/bundle/clam
 	url = git://github.com/sjl/clam.vim.git
 [submodule "nvim/bundle/tags"]
-	path = nvim/bundle/tags
+	path = config/nvim/bundle/tags
 	url = git://github.com/szw/vim-tags.git
 [submodule "nvim/bundle/ultisnips"]
-	path = nvim/bundle/ultisnips
+	path = config/nvim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
 [submodule "nvim/bundle/autoSession"]
-	path = nvim/bundle/autoSession
+	path = config/nvim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
 [submodule "nvim/bundle/sensible"]
-	path = nvim/bundle/sensible
+	path = config/nvim/bundle/sensible
 	url = git://github.com/tpope/vim-sensible.git
 [submodule "nvim/bundle/TextObjectify"]
-	path = nvim/bundle/TextObjectify
+	path = config/nvim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
 [submodule "nvim/bundle/multiple-cursors"]
-	path = nvim/bundle/multiple-cursors
+	path = config/nvim/bundle/multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
 [submodule "nvim/bundle/ctrlp-funky"]
-	path = nvim/bundle/ctrlp-funky
+	path = config/nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
 [submodule "nvim/bundle/airline"]
-	path = nvim/bundle/airline
+	path = config/nvim/bundle/airline
 	url = git://github.com/bling/vim-airline.git
 [submodule "nvim/bundle/move"]
-	path = nvim/bundle/move
+	path = config/nvim/bundle/move
 	url = git://github.com/matze/vim-move.git
 [submodule "nvim/bundle/desertink"]
-	path = nvim/bundle/desertink
+	path = config/nvim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
 [submodule "nvim/bundle/over"]
-	path = nvim/bundle/over
+	path = config/nvim/bundle/over
 	url = git://github.com/osyo-manga/vim-over.git
 [submodule "nvim/bundle/indexed-search"]
-	path = nvim/bundle/indexed-search
+	path = config/nvim/bundle/indexed-search
 	url = git://github.com/henrik/vim-indexed-search
 [submodule "nvim/bundle/abolish"]
-	path = nvim/bundle/abolish
+	path = config/nvim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
 [submodule "nvim/vim/bundle/targets"]
-	path = nvim/bundle/targets
+	path = config/nvim/bundle/targets
 	url = git://github.com/wellle/targets.vim.git
 [submodule "nvim/bundle/better-whitespace"]
-	path = nvim/bundle/better-whitespace
+	path = config/nvim/bundle/better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
 [submodule "nvim/bundle/signature"]
-	path = nvim/bundle/signature
+	path = config/nvim/bundle/signature
 	url = git://github.com/kshenoy/vim-signature.git
 [submodule "nvim/bundle/snippets"]
-	path = nvim/bundle/snippets
+	path = config/nvim/bundle/snippets
 	url = git://github.com/honza/vim-snippets.git
 [submodule "nvim/bundle/spiffy_foldtext"]
-	path = nvim/bundle/spiffy_foldtext
+	path = config/nvim/bundle/spiffy_foldtext
 	url = git://github.com/atimholt/spiffy_foldtext.git
 [submodule "nvim/bundle/PHP-Indenting-for-VIm"]
-	path = nvim/bundle/PHP-Indenting
+	path = config/nvim/bundle/PHP-Indenting
 	url = git://github.com/2072/PHP-Indenting-for-VIm.git
 [submodule "nvim-polyglot"]
-	path = nvim/bundle/polyglot
+	path = config/nvim/bundle/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
 [submodule "nvim/bundle/php-refactoring-toolbox"]
-	path = nvim/bundle/php-refactoring-toolbox
+	path = config/nvim/bundle/php-refactoring-toolbox
 	url = git://github.com/adoy/vim-php-refactoring-toolbox.git
 [submodule "nvim/bundle/clever-f"]
-	path = nvim/bundle/clever-f
+	path = config/nvim/bundle/clever-f
 	url = git://github.com/rhysd/clever-f.vim.git
 [submodule "nvim/bundle/relativity"]
-	path = nvim/bundle/relativity
+	path = config/nvim/bundle/relativity
 	url = git://github.com/kennykaye/vim-relativity.git
