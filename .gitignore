@@ -3,9 +3,9 @@
 /config/mc/hotlist
 /config/mc/hotlist.bak
 /config/mc/panels.ini
+/config/nvim/local.vim
+/config/nvim/.netrwhist
 /local/share/mc/history
-/nvim/local.vim
-/nvim/.netrwhist
 /ssh/authorized_keys
 /ssh/config
 /ssh/id_rsa

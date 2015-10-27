@@ -8,7 +8,7 @@
         autocmd!
     augroup END
 
-    let vimfiles=$HOME . "/.nvim"
+    let vimfiles=$HOME . "/.config/nvim"
 
     exec "source " . vimfiles . "/bundle/pathogen/autoload/pathogen.vim"
     call pathogen#infect()
