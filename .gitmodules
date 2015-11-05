@@ -130,3 +130,6 @@
 [submodule "nvim/bundle/relativity"]
 	path = config/nvim/bundle/relativity
 	url = git://github.com/kennykaye/vim-relativity.git
+[submodule "config/nvim/bundle/troll-stopper"]
+	path = config/nvim/bundle/troll-stopper
+	url = git://github.com/vim-utils/vim-troll-stopper.git
