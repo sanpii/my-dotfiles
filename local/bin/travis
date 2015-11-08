@@ -1,0 +1,66 @@
+#!/bin/bash
+
+set -e
+
+die() {
+    echo $@
+    exit 1
+}
+
+get() {
+    key=$1
+
+    cat .travis.yml | shyaml get-values $key 2> /dev/null
+    if [[ $? != 0 ]]
+    then
+        cat .travis.yml | shyaml get-value $key
+    fi
+}
+
+execute() {
+    commands=$(get "$1")
+
+    IFS=$'\n'
+    for command in $commands
+    do
+        eval $command
+        status=$?
+
+        if [ $status == 0 ]
+        then
+            echo -en "\e[32m\e[1m✓\e[0m"
+        else
+            echo -en "\e[31m\e[1mx\e[0m"
+        fi
+
+        echo " $command"
+
+        if [ $status != 0 ]
+        then
+            exit $status
+        else
+            echo ""
+        fi
+    done
+}
+
+test -e .travis.yml || die 'No .travis.yml script'
+
+language=$(get "language")
+services=$(get "services")
+
+before_script() {
+    execute "before_script"
+}
+
+install() {
+    execute "install"
+}
+
+script() {
+    execute "script"
+}
+
+before_script \
+    && install \
+    && script
