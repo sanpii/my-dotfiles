@@ -1,0 +1,83 @@
+#!/usr/bin/env python2
+# encoding: utf-8
+
+import os
+import re
+import caldav
+import ConfigParser
+from dateutil import parser
+from datetime import datetime, timedelta
+
+def connect(url):
+    client = caldav.DAVClient(url)
+    principal = client.principal()
+    return principal.calendars()
+
+def parse_eventdata(event):
+    for item in event.data.split("\n"):
+        if re.match("^DTSTART\;", item):
+            start = parser.parse(item.split(";")[-1].split(":")[1])
+        if re.match("^DTEND\;", item):
+            end = parser.parse(item.split(";")[-1].split(":")[1])
+        if re.match("^SUMMARY\:", item):
+            title = item.split(":")[1].encode("utf-8")
+
+    return {
+        "title": title,
+        "start": start,
+        "end": end,
+        "start_hour": start.strftime("%Hh%M ") if start.hour != 0 else "",
+        "day": "Demain " if start.date() > datetime.today().date() else "",
+    }
+
+def get_events(calendar):
+    events = []
+
+    latest_events = calendar.date_search(datetime.today())
+
+    name = get_name(calendar).encode("utf-8")
+    for latest_event in latest_events:
+        event = parse_eventdata(latest_event)
+        if event["start"] > datetime.today() and event["start"] - datetime.today() < timedelta(days = 1):
+            events.append(event)
+
+    events.sort(key=lambda item: item["start"])
+
+    return events
+
+def get_name(calendar):
+    return calendar.url.split('/')[-2]
+
+def main():
+    try:
+        config = ConfigParser.RawConfigParser()
+        config.read(os.path.expanduser("~/.config/next_appointment.ini"))
+        caldav_url = "https://%s:%s@%s" \
+                % (config.get("caldav", "user"), config.get("caldav", "password"), config.get("caldav", "url"))
+    except:
+        print("Invalid configuration")
+        exit(1)
+
+    nb_events = 0
+    calendars = connect(caldav_url)
+
+    for calendar in calendars:
+        name = get_name(calendar).encode("utf-8")
+        events = get_events(calendar)
+        if len(events) > 0:
+            print("[%s] " % name),
+            for event in events[:-1]:
+                title = "{day}{start_hour}{title}".format(**event)
+                print("%s -" % title),
+                nb_events += 1
+            else:
+                title = "{day}{start_hour}{title}".format(**events[-1])
+                print(title),
+                nb_events += 1
+
+    if nb_events > 0:
+        print("")
+    else:
+        print("Nothing to do")
+
+main()
