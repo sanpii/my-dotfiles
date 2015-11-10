@@ -24,6 +24,7 @@
 [alias]
 	a = add
 	b = branch -vv
+	c = clone
 	d = diff -M
 	f = fetch
 	h = help
