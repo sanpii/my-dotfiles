@@ -18,6 +18,8 @@
     set mouse=""
     set noshowmatch
     set foldmethod=marker
+    set number
+    set relativenumber
 
     let s:dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
     if isdirectory(expand(s:dir))
