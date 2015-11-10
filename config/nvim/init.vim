@@ -21,21 +21,7 @@
     set number
     set relativenumber
 
-    let s:dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
-    if isdirectory(expand(s:dir))
-        if &directory =~# '^\.,'
-            let &directory = expand(s:dir) . '/swap//,' . &directory
-        endif
-        if &backupdir =~# '^\.,'
-            let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
-        endif
-        if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-            let &undodir = expand(s:dir) . '/undo//,' . &undodir
-        endif
-        if exists('+viewdir')
-            let &viewdir =  expand(s:dir) . '/view//'
-        endif
-    endif
+    let &backupdir=$HOME . "/.local/share/nvim/backup"
 
     if exists('+viewdir')
         augroup buffer
