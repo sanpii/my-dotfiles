@@ -238,6 +238,10 @@
     " php-refactor {{{
         let g:php_refactor_command='refactor.phar'
     " }}}
+    " Sideway {{{
+        nnoremap <c-c> :SidewaysLeft<cr>
+        nnoremap <c-n> :SidewaysRight<cr>
+    " }}}
     " SingleCompile {{{
         nmap <F9> :SCCompileRun<cr>
     " }}}
