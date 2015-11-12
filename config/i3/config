@@ -170,6 +170,7 @@ bar {
 }
 
 for_window [instance="^term-scratchpad$"] move to scratchpad
+for_window [class="pgmodeler" title="Édition des données"] floating disable;
 
 exec --no-startup-id i3-msg 'workspace 2; workspace 6; exec xirc'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/iceweasel'
