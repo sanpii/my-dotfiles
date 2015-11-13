@@ -359,7 +359,7 @@
     nnoremap <leader>wp :setl wrap!<CR>
     nnoremap <leader>sp :setl spell!<CR>
 
-    inoremap ts <esc>
+    inoremap dp <esc>
     inoremap <esc> <nop>
 
     nnoremap B ^
