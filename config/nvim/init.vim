@@ -231,6 +231,9 @@
         let NERDTreeMapOpenInTabSilent = "<leader>T"
         let NERDTreeMapOpenVSplit = "<leader>s"
     " }}}
+    " pgsql {{{
+        let g:sql_type_default = 'pgsql'
+    " }}}
     " php-namespace {{{
         imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
         map <buffer> <leader>u :call PhpInsertUse()<CR>
