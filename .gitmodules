@@ -136,3 +136,6 @@
 [submodule "config/nvim/bundle/dbext"]
 	path = config/nvim/bundle/dbext
 	url = git://github.com/vim-scripts/dbext.vim.git
+[submodule "config/nvim/bundle/pgsql"]
+	path = config/nvim/bundle/pgsql
+	url = git://github.com/exu/pgsql.vim.git
