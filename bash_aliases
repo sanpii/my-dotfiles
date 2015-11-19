@@ -47,6 +47,7 @@ export MAIL=~/Maildir
 
 export PATH=$HOME/.local/bin:$PATH
 
+export PAGER='less'
 export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --quiet --dumb'
 
 export EDITOR=vim
