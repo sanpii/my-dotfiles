@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -e '/usb/bin/synclient' ]
+if [ -e '/usr/bin/synclient' ]
 then
     enable=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 
