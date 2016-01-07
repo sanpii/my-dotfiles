@@ -28,7 +28,8 @@ alias t='task'
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
-man() {
+man()
+{
     env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
         LESS_TERMCAP_md=$(printf "\e[1;31m") \
         LESS_TERMCAP_me=$(printf "\e[0m") \
@@ -37,6 +38,16 @@ man() {
         LESS_TERMCAP_ue=$(printf "\e[0m") \
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
+}
+
+up()
+{
+    levels=${1:-1}
+
+    for level in $(seq $levels)
+    do
+        cd ..
+    done
 }
 
 # Add an "alert" alias for long running commands. Use like so:
