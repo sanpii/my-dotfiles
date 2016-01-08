@@ -23,8 +23,19 @@ alias c='bc -l'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias sf='php app/console'
 alias t='task'
+
+symfony() {
+    local console='bin/console'
+
+    if [[ ! -e $console ]]
+    then
+        console='app/console'
+    fi
+
+    php $console $@
+}
+alias sf=symfony
 
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
