@@ -23,7 +23,6 @@ alias c='bc -l'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias t='task'
 
 symfony() {
     local console='bin/console'
