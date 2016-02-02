@@ -64,7 +64,6 @@ fi
 
 set_prompt()
 {
-    local error_status=$?
     local color_prompt
 
     # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -94,18 +93,17 @@ set_prompt()
 
     PS1="\[\033[G\]"
 
-    # If this is an xterm set the title to user@host:dir
     case "$TERM" in
-        xterm*|rxvt*)
-            PS1+="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
+        xterm*|rxvt*|screen*)
+            PS1+="\[\e]0;\u@\h:\w\]"
         ;;
     esac
 
     if [ "$color_prompt" = yes ]; then
-        PS1+="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[32m\]\$(__git_ps1)\[\e[0m\]"
+        PS1+="\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[32m\]\$(__git_ps1)\[\e[0m\]"
         PS1+="\$(if [[ \$? != 0 ]]; then echo '\[\033[01;31m\]'; fi)\$\[\033[00m\] "
     else
-        PS1+="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(__git_ps1)\$ "
+        PS1+="\u@\h:\w\$(__git_ps1)\$ "
     fi
 }
 PROMPT_COMMAND='set_prompt'
