@@ -39,7 +39,9 @@ def get_events(calendar):
     name = get_name(calendar).encode("utf-8")
     for latest_event in latest_events:
         event = parse_eventdata(latest_event)
-        if event["start"].date() >= today and event["start"].date() - today <= timedelta(days = 1):
+        if event["start"].date() >= today \
+           and datetime.today() <= event["end"] \
+           and event["start"].date() - today <= timedelta(days = 1):
             events.append(event)
 
     events.sort(key=lambda item: item["start"])
