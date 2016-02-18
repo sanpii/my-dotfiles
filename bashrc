@@ -62,6 +62,11 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+empty_git_ps1()
+{
+    echo -n ''
+}
+
 set_prompt()
 {
     local color_prompt
@@ -89,6 +94,9 @@ set_prompt()
 
     if [ -e /usr/share/git/completion/git-prompt.sh ]; then
         source /usr/share/git/completion/git-prompt.sh
+        local git_ps1=__git_ps1
+    else
+        local git_ps1=empty_git_ps1
     fi
 
     PS1="\[\033[G\]"
@@ -100,10 +108,10 @@ set_prompt()
     esac
 
     if [ "$color_prompt" = yes ]; then
-        PS1+="\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[32m\]\$(__git_ps1)\[\e[0m\]"
+        PS1+="\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[32m\]\$($git_ps1)\[\e[0m\]"
         PS1+="\$(if [[ \$? != 0 ]]; then echo '\[\033[01;31m\]'; fi)\$\[\033[00m\] "
     else
-        PS1+="\u@\h:\w\$(__git_ps1)\$ "
+        PS1+="\u@\h:\w\$($git_ps1)\$ "
     fi
 }
 PROMPT_COMMAND='set_prompt'
