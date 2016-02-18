@@ -74,7 +74,10 @@ export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --
 export EDITOR=vim
 
 alias g='git'
-source /usr/share/bash-completion/completions/git
-complete -o default -o nospace -F _git g
+if [ -e /usr/share/bash-completion/completions/git ]
+then
+    source /usr/share/bash-completion/completions/git
+    complete -o default -o nospace -F _git g
+fi
 
 alias wifi='sudo ~/projects/wifi/wifi.sh'
