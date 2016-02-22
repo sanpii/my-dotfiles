@@ -44,8 +44,6 @@ _bash_history_sync() {
   builtin history -r
 }
 
-export PROMPT_COMMAND=_bash_history_sync
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -70,6 +68,8 @@ empty_git_ps1()
 set_prompt()
 {
     local color_prompt
+
+    _bash_history_sync
 
     # uncomment for a colored prompt, if the terminal has the capability; turned
     # off by default to not distract the user: the focus in a terminal window
@@ -114,7 +114,7 @@ set_prompt()
         PS1+="\u@\h:\w\$($git_ps1)\$ "
     fi
 }
-PROMPT_COMMAND='set_prompt'
+export PROMPT_COMMAND='set_prompt'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
