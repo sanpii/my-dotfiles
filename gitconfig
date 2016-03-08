@@ -73,3 +73,5 @@
 	default = simple
 [status]
 	submodulesummary = true
+[rebase]
+	autostash = true
