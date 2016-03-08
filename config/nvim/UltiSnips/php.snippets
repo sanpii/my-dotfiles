@@ -1,3 +1,10 @@
+snippet php "Start script" !b
+<?php
+declare(strict_types = 1);
+
+
+endsnippet
+
 snippet f "Function snip" !b
 ${1:public} function ${2}(${3})
 {
@@ -7,7 +14,7 @@ ${1:public} function ${2}(${3})
 endsnippet
 
 snippet for "Foreach snip" !b
-foreach ($${1} as $${3}){
+foreach ($${1} as $${3}) {
     ${0}
 }
 endsnippet
