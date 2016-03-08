@@ -75,3 +75,5 @@
 	submodulesummary = true
 [rebase]
 	autostash = true
+[stash]
+	showPatch = true
