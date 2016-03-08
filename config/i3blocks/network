@@ -7,7 +7,7 @@ for INTERFACE in $(ls /sys/class/net/); do
 
     if [ "$state" = "up" ]; then
         ipaddr="$(ip addr show $INTERFACE | perl -n -e'/inet (.+)\// && print $1')"
-        ipaddr="${ipaddr:-0.0.0.0}"
+        ipaddr="${ipaddr:- -}"
 
         text="$text | $INTERFACE: $ipaddr"
     fi
