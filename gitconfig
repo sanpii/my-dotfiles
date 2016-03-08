@@ -25,7 +25,7 @@
 	a = add
 	b = branch -vv
 	c = clone
-	d = diff -M
+	d = diff -M --patience
 	f = fetch
 	h = help
 	i = issue
