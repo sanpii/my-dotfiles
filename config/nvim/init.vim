@@ -14,7 +14,6 @@
     call pathogen#infect()
 
     set fileformats=unix
-    filetype on
     set mouse=""
     set noshowmatch
     set foldmethod=marker
@@ -45,8 +44,6 @@
     set wildmode=full
 " }}}
 " Apparence {{{
-    syntax on
-
     colorscheme desertink
 
     set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
@@ -62,10 +59,8 @@
     highlight LanguageToolError cterm=underline ctermfg=green ctermbg=none
 
     set scrolloff=3
-    set number
 " }}}
 " Indentation {{{
-    filetype indent on
     set preserveindent
     set smartindent
     set noexpandtab
@@ -89,8 +84,6 @@
     set undofile
 " }}}
 " Plugins {{{
-    filetype plugin indent on
-
     " airline {{{
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
