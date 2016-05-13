@@ -77,3 +77,5 @@
 	autostash = true
 [stash]
 	showPatch = true
+[color]
+	ui = auto
