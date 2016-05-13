@@ -79,3 +79,5 @@
 	showPatch = true
 [color]
 	ui = auto
+[diff]
+	mnemonicPrefix = true
