@@ -82,6 +82,8 @@ mcview_eof=
 ignore_ftp_chattr_errors=true
 skin=candy
 
+editor_state_full_filename=0
+
 [Layout]
 message_visible=0
 keybar_visible=1
@@ -92,7 +94,7 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-left_panel_size=92
+left_panel_size=83
 horizontal_equal=1
 top_panel_size=1
 
@@ -112,6 +114,8 @@ clipboard_paste=
 base_color=
 rxvt-unicode-256color=
 color_terminals=
+
+screen-256color=
 
 [Panels]
 show_mini_info=true
