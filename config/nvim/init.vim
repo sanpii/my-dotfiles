@@ -29,6 +29,7 @@
         augroup END
     endif
 
+    set spelllang=fr
     set hidden
     set nowrap
 
