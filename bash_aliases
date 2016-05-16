@@ -36,6 +36,14 @@ symfony() {
 }
 alias sf=symfony
 
+lxc()
+{
+    local command=$1
+    shift
+
+    sudo lxc-$command $*
+}
+
 alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
 
 man()
