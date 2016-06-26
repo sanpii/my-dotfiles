@@ -53,10 +53,6 @@
 	fix-conflits = !$(git config core.editor) $(git ls-files -u | cut -d'   ' -f 2 | sort -u)
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
 	fixup = "!f() { c=$(git rev-parse \"$1\") && git commit --fixup $c && git rebase -i $c^ --autosquash; };f"
-[pager]
-	log = perl  /usr/share/git/diff-highlight/diff-highlight | less
-	show = perl /usr/share/git/diff-highlight/diff-highlight | less
-	diff = perl /usr/share/git/diff-highlight/diff-highlight | less
 [include]
 	path = .gitconfig.local
 [rerere]
@@ -81,3 +77,8 @@
 	ui = auto
 [diff]
 	mnemonicPrefix = true
+	compactionHeuristic = true
+[submodule]
+	fetchJobs = 4
+[interactive]
+	diffFilter = diff-highlight
