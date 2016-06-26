@@ -31,9 +31,6 @@
 [submodule "nvim/bundle/eunuch"]
 	path = config/nvim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "nvim/bundle/neocomplcache"]
-	path = config/nvim/bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
 [submodule "nvim/bundle/syntastic"]
 	path = config/nvim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -142,3 +139,6 @@
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/bundle/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
+[submodule "config/nvim/bundle/SimpleAutoComplPop"]
+	path = config/nvim/bundle/SimpleAutoComplPop
+	url = git://github.com/roxma/SimpleAutoComplPop.git
