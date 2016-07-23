@@ -7,7 +7,6 @@ set $mod Mod4
 default_orientation vertical
 workspace_layout stacking
 
-bindsym $mod+e exec /usr/bin/urxvt -e mc -d -u
 bindsym $mod+p exec rofi -no-levenshtein-sort -show run
 bindsym $mod+l exec xautolock -locknow
 bindsym $mod+Tab exec ~/.config/i3/wp-swap.php
