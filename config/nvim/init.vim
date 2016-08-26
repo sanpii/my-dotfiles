@@ -37,6 +37,8 @@
         autocmd bufwritepost .vimrc source %
     augroup END
 
+    set textwidth=80
+
     if v:version >= 703
         set colorcolumn=81
     endif
