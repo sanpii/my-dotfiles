@@ -23,6 +23,7 @@ alias c='bc -l'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias mv='mv -i';
 
 symfony() {
     local console='bin/console'
