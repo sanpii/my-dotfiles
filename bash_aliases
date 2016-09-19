@@ -25,7 +25,14 @@ alias la='ls -A'
 alias l='ls -CF'
 alias mv='mv -i';
 
-symfony() {
+composer()
+{
+    php -n -dextension=curl.so -dextension=pgsql.so ~/.local/bin/composer $@
+}
+alias cps=composer
+
+symfony()
+{
     local console='bin/console'
 
     if [[ ! -e $console ]]
