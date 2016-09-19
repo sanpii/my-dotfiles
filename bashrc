@@ -139,10 +139,34 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 
-    if [ -f /usr/share/bash-completion/completions/task ]; then
-        . /usr/share/bash-completion/completions/task
-        complete -F _task t
-    fi
+
+    function _composercomplete {
+        export COMP_LINE COMP_POINT COMP_WORDBREAKS;
+        local -x COMPOSER_CWD=`pwd`
+        local RESULT STATUS
+
+        # Honour the COMPOSER_HOME variable if set
+        local composer_dir=$COMPOSER_HOME
+        if [ -z "$composer_dir" ]; then
+            composer_dir=$HOME/.composer
+        fi
+
+        RESULT=`cd $composer_dir && composer depends _completion`;
+        STATUS=$?;
+
+        if [ $STATUS -ne 0 ]; then
+            echo $RESULT;
+            return $?;
+        fi;
+
+        local cur;
+        _get_comp_words_by_ref -n : cur;
+
+        COMPREPLY=(`compgen -W "$RESULT" -- $cur`);
+
+        __ltrim_colon_completions "$cur";
+    };
+    complete -F _composercomplete cps;
 fi
 
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
