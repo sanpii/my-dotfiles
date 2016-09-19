@@ -28,9 +28,9 @@ then
     /usr/bin/parcellite &
 fi
 
-if [ -x /usr/bin/owncloud ]
+if [ -x /usr/bin/nextcloud ]
 then
-    /usr/bin/owncloud &
+    /usr/bin/nextcloud &
 fi
 
 if [ -x /usr/bin/urxvt ]
