@@ -40,7 +40,7 @@ fi
 
 if [ -x /usr/bin/xautolock ]
 then
-    /usr/bin/xautolock -locker 'blur-lock' &
+    /usr/bin/xautolock -locker 'i3lock-fancy' &
 fi
 
 if [ -x /usr/bin/redshift ]
