@@ -214,6 +214,7 @@
         let g:vim_tags_ignore_files = []
     " }}}
     " UltiSnips {{{
+        let g:UltiSnipsExpandTrigger = '<tab>'
         let g:UltiSnipsJumpForwardTrigger = '<c-t>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-s>'
     " }}}
