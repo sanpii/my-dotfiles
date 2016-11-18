@@ -14,6 +14,8 @@ def connect(url):
     return principal.calendars()
 
 def parse_eventdata(event):
+    confirmed = True
+
     for item in event.data.split("\n"):
         if re.match("^DTSTART\;", item):
             start = parser.parse(item.split(";")[-1].split(":")[1])
@@ -21,11 +23,14 @@ def parse_eventdata(event):
             end = parser.parse(item.split(";")[-1].split(":")[1])
         if re.match("^SUMMARY\:", item):
             title = item.split(":")[1].encode("utf-8")
+        if re.match("^STATUS\:", item):
+            confirmed = item.split(":")[1].encode("utf-8") != "TENTATIVE"
 
     return {
         "title": title,
         "start": start,
         "end": end,
+        "confirmed": confirmed,
         "start_hour": start.strftime("%Hh%M ") if start.hour != 0 else "",
         "day": "Demain " if start.date() > datetime.today().date() else "",
     }
@@ -71,10 +76,14 @@ def main():
             print("[%s]" % name),
             for event in events[:-1]:
                 title = "{day}{start_hour}{title}".format(**event)
+                if not event["confirmed"]:
+                    title += " ?"
                 print("%s -" % title),
                 nb_events += 1
             else:
                 title = "{day}{start_hour}{title}".format(**events[-1])
+                if not event["confirmed"]:
+                    title += " ?"
                 print(title),
                 nb_events += 1
 
