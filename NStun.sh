@@ -34,6 +34,9 @@ IOTD="t.hcpt.fr"
 # X represents how many tunnel interfaces exist, starting at 0
 IODEV="dns0"
 
+# The interface connecting to the captive portal
+IF="wlan0"
+
 # The IP your iodined server uses inside the tunnel
 # The man page calls this tunnel_ip
 IOIP="10.0.0.1"
@@ -41,6 +44,17 @@ IOIP="10.0.0.1"
 #### STOP EDITING ####
 
 NS=`grep nameserver /etc/resolv.conf|head -1|awk '{print $2}'`
+if [ $NS='127.0.1.1' ];
+ then
+	echo "Local DNS resolver detected"
+	if [ `lsb_release -r  | grep -oP '[0-9]{2}(?=\.)'` -ge "15" ];
+	 then
+		NS=`nmcli device show $IF | grep IP4.DNS | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'`
+	 else
+		NS=`nmcli dev list iface $IF | grep IP4 | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'`
+	 fi
+	echo "Resolver set to $NS"
+fi
 GW=`netstat -rn|grep -v Gateway|grep G|awk '{print $2}'|head -1`
 OS=`uname`
 [ -z $IOPASS ] && echo "Enter your iodine password"
