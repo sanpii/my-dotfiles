@@ -81,7 +81,7 @@
 	url = git://github.com/tacahiroy/ctrlp-funky.git
 [submodule "nvim/bundle/airline"]
 	path = config/nvim/bundle/airline
-	url = git://github.com/bling/vim-airline.git
+	url = git://github.com/vim-airline/vim-airline.git
 [submodule "nvim/bundle/move"]
 	path = config/nvim/bundle/move
 	url = git://github.com/matze/vim-move.git
