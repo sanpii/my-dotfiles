@@ -88,9 +88,6 @@
 [submodule "nvim/bundle/desertink"]
 	path = config/nvim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
-[submodule "nvim/bundle/over"]
-	path = config/nvim/bundle/over
-	url = git://github.com/osyo-manga/vim-over.git
 [submodule "nvim/bundle/indexed-search"]
 	path = config/nvim/bundle/indexed-search
 	url = git://github.com/henrik/vim-indexed-search

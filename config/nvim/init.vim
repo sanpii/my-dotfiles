@@ -45,6 +45,7 @@
 
     set completeopt=longest,menuone
     set wildmode=full
+    set inccommand=split
 " }}}
 " Apparence {{{
     colorscheme desertink
