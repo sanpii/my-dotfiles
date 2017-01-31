@@ -48,4 +48,9 @@ then
     /usr/bin/redshift &
 fi
 
+if [ -x /usr/bin/gpg-agent ]
+then
+    /usr/bin/gpg-agent --daemon
+fi
+
 exec i3 --force-xinerama
