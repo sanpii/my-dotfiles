@@ -25,10 +25,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias mv='mv -i';
 
-composer()
-{
-    php -n -dextension=curl.so -dextension=pgsql.so ~/.local/bin/composer $@
-}
 alias cps=composer
 
 symfony()
