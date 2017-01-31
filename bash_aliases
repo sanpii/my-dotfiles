@@ -19,11 +19,12 @@ fi
 alias sudo='sudo ';
 
 # some more ls aliases
-alias c='bc -l'
+alias c='cd'
+alias m='mkcd'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias mv='mv -i';
+alias mv='mv -i'
 
 alias cps=composer
 
