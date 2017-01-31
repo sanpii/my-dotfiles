@@ -28,6 +28,13 @@ alias mv='mv -i'
 
 alias cps=composer
 
+purge_cache()
+{
+    local host=$1
+
+    ssh reverse-proxy 'for f in $(find /var/cache/nginx/ -type f -exec grep -la "^KEY: '$host'" {} \;); do rm $f; done'
+}
+
 symfony()
 {
     local console='bin/console'
