@@ -67,7 +67,6 @@
 " Indentation {{{
     set preserveindent
     set smartindent
-    set noexpandtab
     set shiftwidth=4
     set shiftround
     set tabstop=4
