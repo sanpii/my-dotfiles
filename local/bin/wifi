@@ -1,0 +1,95 @@
+#!/bin/bash
+
+set -e
+
+readonly COMMAND=${1:-list}
+readonly INTERFACE="${2:-wlp2s0}"
+
+function main()
+{
+    if [[ $(id -u) -ne 0 ]]
+    then
+        fail "Hey, get off, this should only be run by root."
+    fi
+
+    function_exists "${COMMAND}" || fail "$COMMAND doesn't exist"
+
+    eval ${COMMAND}
+}
+
+function function_exists()
+{
+    local function=$1
+
+    type $function >/dev/null 2>&1
+}
+
+function fail()
+{
+    local message="$1"
+
+    echo "$message"
+    exit 1
+}
+
+function connect()
+{
+    ip l set dev $INTERFACE up
+    wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -i$INTERFACE -B
+    dhcpcd
+}
+
+function disconnect()
+{
+    dhcpcd -k
+    pkill wpa_supplicant
+    ip l set dev $INTERFACE down
+}
+
+function list()
+{
+    readonly PARSER='
+BEGIN { FS=":"; OFS="="; }
+/\<Cell/ { if (essid) print essid, channel, security, quality[2]/quality[3]*100; security="none" }
+/\<Channel/ { channel=$2 }
+/\<ESSID:/ { essid=substr($2, 2, length($2) - 2) } # discard quotes
+/\<Quality/ { split($1, quality, "[=/]") }
+/\<IE:.*WPA.*/ { security="wpa" }
+/\<Encryption key:on/ { if(!security) security="wep" }
+END { if (essid) print essid, channel, security, quality[2]/quality[3]*100 }
+'
+
+    ip link set $INTERFACE up
+    iwlist $INTERFACE scan 2>/dev/null | awk "$PARSER" | sort -t= -nrk4 | pretty_printing
+}
+
+function pretty_printing()
+{
+    local bldred='\e[1;31m'
+    local bldgrn='\e[1;32m'
+    local bldylw='\e[1;33m'
+    local bldblu='\e[1;34m'
+    local bldpur='\e[1;35m'
+    local txtrst='\e[0m'
+
+    local IFS='='
+    while read essid channel security signal
+    do
+        if [ "$security" = "wep" -o "$security" = "none" ]
+        then
+            comment=" ~~=)"
+        else
+            comment=
+        fi
+        found_one="yep"
+
+        echo -e "→ ${bldylw}${essid}${txtrst} [${bldgrn}${channel}${txtrst}] (${bldblu}${security}${bldpur}${comment}${txtrst}) : ${bldred}${signal/.*/}${txtred}%${txtrst}"
+    done
+
+    if [ -z "$found_one" ]
+    then
+        echo "Sorry, I don't get anything, this place somewhat lacks datalove…"
+    fi
+}
+
+main $*
