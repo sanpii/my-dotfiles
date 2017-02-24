@@ -126,11 +126,11 @@
     " easymotion {{{
         let g:EasyMotion_keys = 'auiectsrnmbépoèvdljz'
     " }}}
+    " Grammalecte {{{
+        let g:grammalecte_cli_py = '/usr/lib/libreoffice/share/extensions/grammalecte/Grammalecte.py'
+    " }}}
     " Indexed search {{{
         let g:indexed_search_show_index_mappings = 0
-    " }}}
-    " LanguageTool {{{
-        let g:languagetool_jar = '/home/sanpi/.local/opt/LanguageTool/languagetool.jar'
     " }}}
     " Text file {{{
         augroup filetype

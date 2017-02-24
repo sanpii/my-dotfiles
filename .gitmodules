@@ -22,9 +22,6 @@
 [submodule "nvim/bundle/lastpos"]
 	path = config/nvim/bundle/lastpos
 	url = git://github.com/vim-scripts/lastpos.vim.git
-[submodule "nvim/bundle/LanguageTool"]
-	path = config/nvim/bundle/LanguageTool
-	url = git://github.com/vim-scripts/LanguageTool.git
 [submodule "nvim/bundle/splice"]
 	path = config/nvim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
@@ -139,3 +136,6 @@
 [submodule "config/nvim/bundle/SimpleAutoComplPop"]
 	path = config/nvim/bundle/SimpleAutoComplPop
 	url = git://github.com/roxma/SimpleAutoComplPop.git
+[submodule "config/nvim/bundle/grammalecte"]
+	path = config/nvim/bundle/grammalecte
+	url = https://github.com/dpelle/vim-Grammalecte.git
