@@ -46,6 +46,12 @@ function disconnect()
     ip l set dev $INTERFACE down
 }
 
+function reconnect()
+{
+    disconnect
+    connect
+}
+
 function list()
 {
     readonly PARSER='
