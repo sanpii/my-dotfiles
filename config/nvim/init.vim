@@ -91,6 +91,12 @@
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
     " }}}
+    " ale {{{
+        let g:ale_sign_column_always = 1
+        let g:ale_sign_error = '✗'
+        let g:ale_sign_warning = '⚠'
+        let g:ale_linters = {'rust': ['rustc']}
+    " }}}
     " better-writespace {{{
         augroup filetype
             autocmd FileType * if &ft != 'diff' | autocmd BufWritePre <buffer> StripWhitespace
@@ -201,14 +207,6 @@
         augroup END
 
         set wildignore=data/**,app/cache/**,web/bundles/**
-    " }}}
-    " syntastic {{{
-        let g:syntastic_auto_loc_list = 2
-        let g:syntastic_auto_jump = '1'
-        let g:syntastic_php_checkers=['php']
-        let g:syntastic_error_symbol = '✗'
-        let g:syntastic_warning_symbol = '⚠'
-
     " }}}
     " tags {{{
         let g:vim_tags_ignore_files = []

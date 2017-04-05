@@ -28,9 +28,6 @@
 [submodule "nvim/bundle/eunuch"]
 	path = config/nvim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "nvim/bundle/syntastic"]
-	path = config/nvim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
 [submodule "nvim/bundle/vdebug"]
 	path = config/nvim/bundle/vdebug
 	url = git://github.com/joonty/vdebug.git
@@ -139,3 +136,6 @@
 [submodule "config/nvim/bundle/grammalecte"]
 	path = config/nvim/bundle/grammalecte
 	url = https://github.com/dpelle/vim-Grammalecte.git
+[submodule "config/nvim/bundle/ale"]
+	path = config/nvim/bundle/ale
+	url = git://github.com/w0rp/ale.git
