@@ -18,7 +18,7 @@
 	url = git://github.com/DataWraith/auto_mkdir.git
 [submodule "nvim/bundle/ctrlp"]
 	path = config/nvim/bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
+	url = git://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "nvim/bundle/lastpos"]
 	path = config/nvim/bundle/lastpos
 	url = git://github.com/vim-scripts/lastpos.vim.git
@@ -135,7 +135,7 @@
 	url = git://github.com/roxma/SimpleAutoComplPop.git
 [submodule "config/nvim/bundle/grammalecte"]
 	path = config/nvim/bundle/grammalecte
-	url = https://github.com/dpelle/vim-Grammalecte.git
+	url = git://github.com/dpelle/vim-Grammalecte.git
 [submodule "config/nvim/bundle/ale"]
 	path = config/nvim/bundle/ale
 	url = git://github.com/w0rp/ale.git
