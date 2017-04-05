@@ -139,3 +139,6 @@
 [submodule "config/nvim/bundle/ale"]
 	path = config/nvim/bundle/ale
 	url = git://github.com/w0rp/ale.git
+[submodule "config/nvim/bundle/diminactive"]
+	path = config/nvim/bundle/diminactive
+	url = git://github.com/blueyed/vim-diminactive.git
