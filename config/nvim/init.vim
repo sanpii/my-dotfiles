@@ -277,8 +277,8 @@
     inoremap <c-w> <c-g>u<c-w>
 
     " Permet de placer au milieu de l'écran l'occurence de la recherche
-    nnoremap n nzzzv
-    nnoremap N Nzzzv
+    nnoremap <expr> n 'Nn'[v:searchforward] . 'zzzv'
+    nnoremap <expr> N 'nN'[v:searchforward] . 'zzzv'
 
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
