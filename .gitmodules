@@ -130,9 +130,6 @@
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/bundle/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
-[submodule "config/nvim/bundle/SimpleAutoComplPop"]
-	path = config/nvim/bundle/SimpleAutoComplPop
-	url = git://github.com/roxma/SimpleAutoComplPop.git
 [submodule "config/nvim/bundle/grammalecte"]
 	path = config/nvim/bundle/grammalecte
 	url = git://github.com/dpelle/vim-Grammalecte.git
@@ -142,3 +139,6 @@
 [submodule "config/nvim/bundle/diminactive"]
 	path = config/nvim/bundle/diminactive
 	url = git://github.com/blueyed/vim-diminactive.git
+[submodule "config/nvim/bundle/completion-manager"]
+	path = config/nvim/bundle/completion-manager
+	url = git://github.com/roxma/nvim-completion-manager.git
