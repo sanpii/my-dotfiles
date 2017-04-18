@@ -112,6 +112,10 @@
         nmap , <Plug>(clever-f-repeat-back)
     " }}}
     " ctrlp {{{
+        let g:ctrlp_show_hidden = 1
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn|fingerprint)$',
+            \ }
         let g:ctrlp_open_new_file = 'r'
         let g:ctrlp_clear_cache_on_exit = 0
         let g:ctrlp_default_input = 1
