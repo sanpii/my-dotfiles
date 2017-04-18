@@ -121,3 +121,6 @@
 [submodule "config/nvim/bundle/snippets"]
 	path = config/nvim/bundle/snippets
 	url = git://github.com/Shougo/neosnippet-snippets.git
+[submodule "config/nvim/bundle/shot-f"]
+	path = config/nvim/bundle/shot-f
+	url = git://github.com/deris/vim-shot-f.git
