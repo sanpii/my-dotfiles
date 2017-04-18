@@ -7,9 +7,6 @@
 [submodule "nvim/bundle/nerdtree"]
 	path = config/nvim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "nvim/bundle/CamelCaseMotion"]
-	path = config/nvim/bundle/CamelCaseMotion
-	url = git://github.com/bkad/CamelCaseMotion.git
 [submodule "nvim/bundle/gundo"]
 	path = config/nvim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
