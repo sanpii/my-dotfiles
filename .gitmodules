@@ -58,9 +58,6 @@
 [submodule "nvim/bundle/TextObjectify"]
 	path = config/nvim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
-[submodule "nvim/bundle/multiple-cursors"]
-	path = config/nvim/bundle/multiple-cursors
-	url = git://github.com/terryma/vim-multiple-cursors.git
 [submodule "nvim/bundle/ctrlp-funky"]
 	path = config/nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
