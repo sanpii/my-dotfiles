@@ -20,8 +20,6 @@
     set number
     set relativenumber
 
-    let &backupdir=$HOME . "/.local/share/nvim/backup"
-
     if exists('+viewdir')
         augroup buffer
             autocmd BufWinLeave *? silent! mkview
@@ -83,6 +81,8 @@
     set ignorecase
 " }}}
 " Sauvegardes {{{
+    let &backupdir=$HOME . "/.local/share/nvim/backup"
+
     set backup
     set undofile
 " }}}
