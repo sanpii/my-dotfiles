@@ -52,9 +52,6 @@
 [submodule "nvim/bundle/sensible"]
 	path = config/nvim/bundle/sensible
 	url = git://github.com/tpope/vim-sensible.git
-[submodule "nvim/bundle/TextObjectify"]
-	path = config/nvim/bundle/TextObjectify
-	url = git://github.com/paradigm/TextObjectify.git
 [submodule "nvim/bundle/ctrlp-funky"]
 	path = config/nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
