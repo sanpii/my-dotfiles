@@ -1,6 +1,3 @@
-[submodule "nvim/bundle/fugitive"]
-	path = config/nvim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule "nvim/bundle/php-namespace"]
 	path = config/nvim/bundle/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
