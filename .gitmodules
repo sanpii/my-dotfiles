@@ -55,9 +55,6 @@
 [submodule "nvim/bundle/tags"]
 	path = config/nvim/bundle/tags
 	url = git://github.com/szw/vim-tags.git
-[submodule "nvim/bundle/ultisnips"]
-	path = config/nvim/bundle/ultisnips
-	url = git://github.com/SirVer/ultisnips.git
 [submodule "nvim/bundle/autoSession"]
 	path = config/nvim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
@@ -97,9 +94,6 @@
 [submodule "nvim/bundle/signature"]
 	path = config/nvim/bundle/signature
 	url = git://github.com/kshenoy/vim-signature.git
-[submodule "nvim/bundle/snippets"]
-	path = config/nvim/bundle/snippets
-	url = git://github.com/honza/vim-snippets.git
 [submodule "nvim/bundle/spiffy_foldtext"]
 	path = config/nvim/bundle/spiffy_foldtext
 	url = git://github.com/atimholt/spiffy_foldtext.git
@@ -142,3 +136,9 @@
 [submodule "config/nvim/bundle/completion-manager"]
 	path = config/nvim/bundle/completion-manager
 	url = git://github.com/roxma/nvim-completion-manager.git
+[submodule "config/nvim/bundle/neosnippet"]
+	path = config/nvim/bundle/neosnippet
+	url = git://github.com/Shougo/neosnippet.vim.git
+[submodule "config/nvim/bundle/snippets"]
+	path = config/nvim/bundle/snippets
+	url = git://github.com/Shougo/neosnippet-snippets.git

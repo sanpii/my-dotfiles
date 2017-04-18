@@ -159,6 +159,13 @@
         let NERDTreeMapOpenInTabSilent = "<leader>T"
         let NERDTreeMapOpenVSplit = "<leader>s"
     " }}}
+    " neosnippet {{{
+        let g:neosnippet#enable_completed_snippet = 0
+        let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']
+
+        imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+        smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    " }}}
     " pgsql {{{
         let g:sql_type_default = 'pgsql'
     " }}}
@@ -210,11 +217,6 @@
     " }}}
     " tags {{{
         let g:vim_tags_ignore_files = []
-    " }}}
-    " UltiSnips {{{
-        let g:UltiSnipsExpandTrigger = '<tab>'
-        let g:UltiSnipsJumpForwardTrigger = '<c-t>'
-        let g:UltiSnipsJumpBackwardTrigger = '<c-s>'
     " }}}
 " }}}
 " Mappage {{{
