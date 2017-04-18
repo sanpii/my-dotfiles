@@ -73,12 +73,15 @@ man()
 
 up()
 {
-    levels=${1:-1}
+    local levels=${1:-1}
+    local path=""
 
     for level in $(seq $levels)
     do
-        cd ..
+        path="$path../"
     done
+
+    cd "$path"
 }
 
 mkcd()
