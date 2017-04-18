@@ -11,3 +11,5 @@ noremap T <c-d>
 noremap S <c-u>
 noremap <c-e> <c-i>
 noremap <c-i> <c-o>
+
+noremap p <esc>
