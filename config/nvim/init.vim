@@ -127,9 +127,6 @@
     " ctrlp-funky {{{
         noremap <C-F> :CtrlPFunky<cr>
     " }}}
-    " easymotion {{{
-        let g:EasyMotion_keys = 'auiectsrnmbépoèvdljz'
-    " }}}
     " Grammalecte {{{
         let g:grammalecte_cli_py = '/usr/lib/libreoffice/share/extensions/grammalecte/Grammalecte.py'
     " }}}
