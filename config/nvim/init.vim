@@ -202,7 +202,7 @@
             autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
         augroup END
 
-        set wildignore=data/**,app/cache/**,web/bundles/**
+        set wildignore=data/**,app/cache/**,web/bundles/**,var/**
     " }}}
     " tags {{{
         let g:vim_tags_ignore_files = []
