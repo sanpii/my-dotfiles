@@ -103,9 +103,6 @@
 [submodule "nvim/bundle/php-refactoring-toolbox"]
 	path = config/nvim/bundle/php-refactoring-toolbox
 	url = git://github.com/adoy/vim-php-refactoring-toolbox.git
-[submodule "nvim/bundle/clever-f"]
-	path = config/nvim/bundle/clever-f
-	url = git://github.com/rhysd/clever-f.vim.git
 [submodule "nvim/bundle/relativity"]
 	path = config/nvim/bundle/relativity
 	url = git://github.com/kennykaye/vim-relativity.git

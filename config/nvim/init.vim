@@ -106,11 +106,6 @@
         nnoremap ! :Clam<space>
         vnoremap ! :ClamVisual<space>
     " }}}
-    " clever-f {{{
-        let g:clever_f_across_no_line = 1
-        nmap ; <Plug>(clever-f-repeat-forward)
-        nmap , <Plug>(clever-f-repeat-back)
-    " }}}
     " ctrlp {{{
         let g:ctrlp_show_hidden = 1
         let g:ctrlp_custom_ignore = {
