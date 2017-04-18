@@ -151,13 +151,6 @@
         nmap <c-t> <Plug>MoveLineDown
         nmap <c-s> <Plug>MoveLineUp
     " }}}
-    " nerdtree {{{
-        nnoremap <silent> <leader><F3> :NERDTreeToggle<CR>
-        let NERDTreeQuitOnOpen = 1
-        let NERDTreeMapOpenInTab = "<leader>t"
-        let NERDTreeMapOpenInTabSilent = "<leader>T"
-        let NERDTreeMapOpenVSplit = "<leader>s"
-    " }}}
     " neosnippet {{{
         let g:neosnippet#enable_completed_snippet = 0
         let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']
