@@ -5,6 +5,8 @@ set focuscontent
 set defsearch="searx"
 set hlsearch
 
+noremap j 5j
+noremap k 5k
 noremap i gT
 noremap e gt
 noremap T <c-d>
