@@ -280,6 +280,8 @@
     nnoremap é w
     nnoremap $ <nop>
     nnoremap ^ <nop>
+
+    nnoremap <silent> <C-l> :nohl<CR><C-l>
 " }}}
 
 let local_vim=vimfiles . "/local.vim"
