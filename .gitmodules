@@ -73,9 +73,6 @@
 [submodule "config/nvim/bundle/troll-stopper"]
 	path = config/nvim/bundle/troll-stopper
 	url = git://github.com/vim-utils/vim-troll-stopper.git
-[submodule "config/nvim/bundle/pgsql"]
-	path = config/nvim/bundle/pgsql
-	url = git://github.com/exu/pgsql.vim.git
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/bundle/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
