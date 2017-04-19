@@ -49,9 +49,6 @@
 [submodule "nvim/bundle/autoSession"]
 	path = config/nvim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git
-[submodule "nvim/bundle/sensible"]
-	path = config/nvim/bundle/sensible
-	url = git://github.com/tpope/vim-sensible.git
 [submodule "nvim/bundle/ctrlp-funky"]
 	path = config/nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
