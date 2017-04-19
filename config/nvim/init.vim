@@ -172,10 +172,6 @@
     " pgsql {{{
         let g:sql_type_default = 'pgsql'
     " }}}
-    " php-namespace {{{
-        imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
-        map <buffer> <leader>u :call PhpInsertUse()<CR>
-    " }}}
     " Sideway {{{
         nnoremap <c-c> :SidewaysLeft<cr>
         nnoremap <c-n> :SidewaysRight<cr>
