@@ -85,9 +85,6 @@
 [submodule "nvim-polyglot"]
 	path = config/nvim/bundle/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
-[submodule "nvim/bundle/php-refactoring-toolbox"]
-	path = config/nvim/bundle/php-refactoring-toolbox
-	url = git://github.com/adoy/vim-php-refactoring-toolbox.git
 [submodule "nvim/bundle/relativity"]
 	path = config/nvim/bundle/relativity
 	url = git://github.com/kennykaye/vim-relativity.git

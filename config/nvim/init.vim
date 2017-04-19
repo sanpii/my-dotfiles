@@ -176,9 +176,6 @@
         imap <buffer> <leader>u <C-O>:call PhpInsertUse()<CR>
         map <buffer> <leader>u :call PhpInsertUse()<CR>
     " }}}
-    " php-refactor {{{
-        let g:php_refactor_command='refactor.phar'
-    " }}}
     " Sideway {{{
         nnoremap <c-c> :SidewaysLeft<cr>
         nnoremap <c-n> :SidewaysRight<cr>
