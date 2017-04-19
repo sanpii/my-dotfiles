@@ -124,3 +124,6 @@
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/bundle/shot-f
 	url = git://github.com/deris/vim-shot-f.git
+[submodule "config/nvim/bundle/esearch"]
+	path = config/nvim/bundle/esearch
+	url = git://github.com/eugen0329/vim-esearch.git
