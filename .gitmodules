@@ -40,9 +40,6 @@
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/bundle/clam
 	url = git://github.com/sjl/clam.vim.git
-[submodule "nvim/bundle/tags"]
-	path = config/nvim/bundle/tags
-	url = git://github.com/szw/vim-tags.git
 [submodule "nvim/bundle/autoSession"]
 	path = config/nvim/bundle/autoSession
 	url = git://github.com/fabi1cazenave/autoSession.vim.git

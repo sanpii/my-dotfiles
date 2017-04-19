@@ -211,9 +211,6 @@
 
         set wildignore=data/**,app/cache/**,web/bundles/**,var/**
     " }}}
-    " tags {{{
-        let g:vim_tags_ignore_files = []
-    " }}}
 " }}}
 " Mappage {{{
     " Help {{{
