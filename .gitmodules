@@ -127,3 +127,6 @@
 [submodule "config/nvim/bundle/esearch"]
 	path = config/nvim/bundle/esearch
 	url = git://github.com/eugen0329/vim-esearch.git
+[submodule "config/nvim/bundle/language-client"]
+	path = config/nvim/bundle/language-client
+	url = git://github.com/autozimu/LanguageClient-neovim.git

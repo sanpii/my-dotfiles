@@ -143,6 +143,18 @@
             autocmd FileType mail :exec "source " . vimfiles . "/mail.vim"
         augroup END
     " }}}
+    " Language client {{{
+        let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ 'php': ['php', $HOME . '/.local/bin/php-language-server.php'],
+        \ }
+
+        let g:LanguageClient_autoStart = 1
+
+        nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+        nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+        nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+    " }}}
     " move {{{
         let g:move_map_keys = 0
         vmap <c-t> <Plug>MoveBlockDown
