@@ -25,9 +25,6 @@
 [submodule "nvim/bundle/pathogen"]
 	path = config/nvim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "nvim/bundle/phpcomplete"]
-	path = config/nvim/bundle/phpcomplete
-	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "nvim/bundle/matchtag"]
 	path = config/nvim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
