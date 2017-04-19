@@ -7,9 +7,6 @@
 [submodule "nvim/bundle/ctrlp"]
 	path = config/nvim/bundle/ctrlp
 	url = git://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "nvim/bundle/lastpos"]
-	path = config/nvim/bundle/lastpos
-	url = git://github.com/vim-scripts/lastpos.vim.git
 [submodule "nvim/bundle/splice"]
 	path = config/nvim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
