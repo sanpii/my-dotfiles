@@ -34,9 +34,6 @@
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/bundle/clam
 	url = git://github.com/sjl/clam.vim.git
-[submodule "nvim/bundle/autoSession"]
-	path = config/nvim/bundle/autoSession
-	url = git://github.com/fabi1cazenave/autoSession.vim.git
 [submodule "nvim/bundle/ctrlp-funky"]
 	path = config/nvim/bundle/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
