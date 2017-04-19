@@ -70,9 +70,6 @@
 [submodule "nvim/bundle/spiffy_foldtext"]
 	path = config/nvim/bundle/spiffy_foldtext
 	url = git://github.com/atimholt/spiffy_foldtext.git
-[submodule "nvim/bundle/PHP-Indenting-for-VIm"]
-	path = config/nvim/bundle/PHP-Indenting
-	url = git://github.com/2072/PHP-Indenting-for-VIm.git
 [submodule "nvim-polyglot"]
 	path = config/nvim/bundle/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
