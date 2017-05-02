@@ -1,6 +1,4 @@
 " Général {{{
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
-
     augroup buffer
         autocmd!
     augroup END
