@@ -34,9 +34,20 @@ function fail()
 
 function connect()
 {
+    random_mac
+
     ip l set dev $INTERFACE up
     wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -i$INTERFACE -B
     dhcpcd
+}
+
+function random_mac()
+{
+    which macchanger 2> /dev/null
+    if [[ $? -eq 0 ]]
+    then
+        macchanger -r $INTERFACE
+    fi
 }
 
 function disconnect()
@@ -44,6 +55,17 @@ function disconnect()
     dhcpcd -k
     pkill wpa_supplicant
     ip l set dev $INTERFACE down
+
+    restore_mac
+}
+
+function restore_mac()
+{
+    which macchanger 2> /dev/null
+    if [[ $? -eq 0 ]]
+    then
+        macchanger -p $INTERFACE
+    fi
 }
 
 function reconnect()
