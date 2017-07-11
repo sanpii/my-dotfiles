@@ -3,6 +3,7 @@
 [user]
 	name = Sanpi
 	email = sanpi@homecomputing.fr
+	signingkey = 0x157C48CBB4492E49
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -33,11 +34,11 @@
 	s = status -sb
 	t = tag
 	ad = add
-	ci = commit -v -m
+	ci = commit --verbose --message
 	co = checkout
 	dc = diff --cached -M
 	fc = !$(git config core.editor) $(git ls-files -uz | xargs -0)
-	lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --decorate --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %G?'
 	lo = log --stat
 	re = rebase
 	st = status
@@ -80,5 +81,5 @@
 	compactionHeuristic = true
 [submodule]
 	fetchJobs = 4
-[interactive]
-	diffFilter = diff-highlight
+[commit]
+	gpgSign = true
