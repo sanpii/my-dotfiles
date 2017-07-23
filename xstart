@@ -34,9 +34,9 @@ then
     /usr/bin/nextcloud &
 fi
 
-if [ -x /usr/bin/urxvt ]
+if [ -x /usr/bin/alacritty ]
 then
-    /usr/bin/urxvt -name term-scratchpad &
+    /usr/bin/alacritty --title term-scratchpad &
 fi
 
 if [ -x /usr/bin/xautolock ]

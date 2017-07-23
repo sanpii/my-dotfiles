@@ -54,7 +54,7 @@
     highlight SpecialKey cterm=bold ctermfg=darkgrey
 
     set cursorline
-    highlight CursorLine cterm=bold ctermbg=none gui=bold guibg=grey20
+    highlight CursorLine cterm=bold ctermbg=236 gui=bold guibg=grey20
 
     highlight SpellBad cterm=underline ctermfg=red ctermbg=none
     highlight SpellCap cterm=underline ctermfg=green ctermbg=none
