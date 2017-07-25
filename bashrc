@@ -8,7 +8,8 @@ case $- in
       *) return;;
 esac
 
-if [ -n "$DISPLAY" ]; then
+if [ -n "$DISPLAY" -a -z "$TOR" ]
+then
     if which tmux 2>&1 >/dev/null; then
         test -z "$TMUX" && tmux new-session && exit
     fi
@@ -104,8 +105,22 @@ set_prompt()
     case "$TERM" in
         xterm*|rxvt*|screen*)
             PS1+="\[\e]0;\u@\h:\w\]"
+
+            local tor
+
+            if [[ $TOR == 1 ]]
+            then
+                tor="[tor] "
+            fi
+
+            PS1+="\[\e]0;$tor\u@\h:\w\]"
         ;;
     esac
+
+    if [ "$TOR" = "1" ]
+    then
+        PS1+="\033[1;35m(\033[1;32m.\033[1;35m)\033[0m "
+    fi
 
     if [ "$color_prompt" = yes ]; then
         PS1+="\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[32m\]\$($git_ps1)\[\e[0m\]"

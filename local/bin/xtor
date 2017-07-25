@@ -1,0 +1,3 @@
+#!/bin/bash
+
+alacritty -e /home/sanpi/.local/bin/tor

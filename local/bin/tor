@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+sudo rc-service tor start
+sudo rc-service polipo start
+
+export http_proxy=http://localhost:8123
+export https_proxy=http://localhost:8123
+
+is_tor=$(wget -q -O - https://check.torproject.org/api/ip | jq --raw-output .IsTor | tr -d $'\n')
+if [ "$is_tor" = "true" ]
+then
+    export TOR=1
+    bash
+fi
