@@ -25,7 +25,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias mv='mv -i'
+alias cp='cp -i'
 alias make="make -j$(nproc)"
+alias t='tree'
 
 alias cps=composer
 
