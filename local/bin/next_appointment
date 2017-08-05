@@ -82,7 +82,7 @@ def main():
                 nb_events += 1
             else:
                 title = "{day}{start_hour}{title}".format(**events[-1])
-                if not event["confirmed"]:
+                if not events[-1]["confirmed"]:
                     title += " ?"
                 print(title),
                 nb_events += 1
