@@ -88,8 +88,10 @@ up()
 
 mkcd()
 {
-    mkdir -p $1
-    cd $1
+    local dir="$1"
+
+    mkdir -p "$dir"
+    cd "$dir"
 }
 
 # Add an "alert" alias for long running commands. Use like so:
