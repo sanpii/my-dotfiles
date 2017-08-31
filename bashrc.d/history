@@ -1,0 +1,28 @@
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=9000
+export HISTFILESIZE=$HISTSIZE
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+function history()
+{
+    _bash_history_sync
+    builtin history "$@"
+}
+
+function _bash_history_sync()
+{
+    builtin history -a
+    HISTFILESIZE=$HISTFILESIZE
+    builtin history -c
+    builtin history -r
+}

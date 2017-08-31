@@ -1,5 +1,6 @@
 *.pyc
 *.local
+/bashrc.d/local
 /config/mc/hotlist
 /config/mc/hotlist.bak
 /config/mc/panels.ini

@@ -1,0 +1,2 @@
+# disable XON/XOFF flow control (^s/^q)
+stty -ixon
