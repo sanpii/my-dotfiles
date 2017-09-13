@@ -37,26 +37,35 @@ function connect()
     random_mac
 
     ip l set dev $INTERFACE up
-    wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -i$INTERFACE -B
+
+    if is_wifi
+    then
+        wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -i$INTERFACE -B
+    fi
+
     dhcpcd
 }
 
 function random_mac()
 {
+    set +e
     which macchanger 2> /dev/null
     if [[ $? -eq 0 ]]
     then
         macchanger -r $INTERFACE
     fi
+    set -e
 }
 
 function disconnect()
 {
+    set +e
     dhcpcd -k
     pkill wpa_supplicant
     ip l set dev $INTERFACE down
 
     restore_mac
+    set -e
 }
 
 function restore_mac()
@@ -76,6 +85,12 @@ function reconnect()
 
 function list()
 {
+    if ! is_wifi
+    then
+        echo "List command only available for wifi device"
+        exit 1
+    fi
+
     readonly PARSER='
 BEGIN { FS=":"; OFS="="; }
 /\<Cell/ { if (essid) print essid, channel, security, quality[2]/quality[3]*100; security="none" }
@@ -118,6 +133,11 @@ function pretty_printing()
     then
         echo "Sorry, I don't get anything, this place somewhat lacks datalove…"
     fi
+}
+
+function is_wifi()
+{
+    [[ "$INTERFACE" =~ "wlp*" ]]
 }
 
 main $*
