@@ -150,12 +150,16 @@ mode "resize" {
 
 bindsym $mod+o mode "resize"
 
+bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%- unmute && killall -USR1 i3blocks
+bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute && killall -USR1 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute && killall -USR1 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && killall -USR1 i3blocks
 bindsym XF86AudioMute exec amixer -q set Master toggle && killall -USR1 i3blocks
 
 bindsym XF86TouchpadToggle exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
