@@ -6,7 +6,7 @@
 ""   Automatic line wrap
 "" ----------------------------------------------------------------------------
 
-source ~/.nvim/text.vim
+source ~/.config/nvim/text.vim
 
 set formatoptions=tcql
 set comments+=n:\|	" '|' is a quote char.
