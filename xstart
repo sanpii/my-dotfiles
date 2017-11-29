@@ -25,34 +25,24 @@ then
     /usr/bin/dunst &
 fi
 
-if [ -x /usr/bin/parcellite ]
-then
-    /usr/bin/parcellite &
-fi
+function start()
+{
+    local command="$1"
+    shift
+    local arguments="$@"
 
-if [ -x /usr/bin/nextcloud ]
-then
-    /usr/bin/nextcloud &
-fi
 
-if [ -x /usr/bin/alacritty ]
-then
-    /usr/bin/alacritty --title term-scratchpad &
-fi
+    if [ -x "$command" ]
+    then
+        "$command" $arguments &
+    fi
+}
 
-if [ -x /usr/bin/xautolock ]
-then
-    /usr/bin/xautolock -locker 'i3lock-fancy' &
-fi
-
-if [ -x /usr/bin/redshift ]
-then
-    /usr/bin/redshift &
-fi
-
-if [ -x /usr/bin/gpg-agent ]
-then
-    /usr/bin/gpg-agent --daemon
-fi
+start /usr/bin/parcellite
+start /usr/bin/nextcloud
+start /usr/bin/alacritty --title term-scratchpad
+start /usr/bin/xautolock -locker 'i3lock-fancy'
+start /usr/bin/redshift
+start /usr/bin/gpg-agent --daemon
 
 i3 --force-xinerama
