@@ -44,5 +44,6 @@ start /usr/bin/alacritty --title term-scratchpad
 start /usr/bin/xautolock -locker 'i3lock-fancy'
 start /usr/bin/redshift
 start /usr/bin/gpg-agent --daemon
+start /usr/bin/keepassxc
 
 i3 --force-xinerama
