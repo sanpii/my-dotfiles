@@ -2,19 +2,22 @@
 
 set -e
 
-readonly COMMAND=${1:-list}
 readonly INTERFACE="${2:-wlp2s0}"
 
 function main()
 {
+    local command=${1:-list}
+    shift
+    local args="$@"
+
     if [[ $(id -u) -ne 0 ]]
     then
         fail "Hey, get off, this should only be run by root."
     fi
 
-    function_exists "${COMMAND}" || fail "$COMMAND doesn't exist"
+    function_exists "${command}" || fail "$command doesn't exist"
 
-    eval ${COMMAND}
+    eval $command "$args"
 }
 
 function function_exists()
@@ -38,7 +41,7 @@ function connect()
 
     ip l set dev $INTERFACE up
 
-    if is_wifi
+    if [[ is_wifi ]]
     then
         wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -i$INTERFACE -B
     fi
@@ -83,9 +86,33 @@ function reconnect()
     connect
 }
 
+function add()
+{
+    local ssid=$1
+    local password="${2:-}"
+    local conf=''
+
+    if [ -z "$password" ]
+    then
+        conf='
+network={
+    ssid="'$ssid'"
+    key_mgmt=NONE
+}'
+    else
+        conf='
+network={
+    ssid="'$ssid'"
+    psk="'$password'"
+}'
+    fi
+
+    echo "$conf" >> /etc/wpa_supplicant/wpa_supplicant.conf
+}
+
 function list()
 {
-    if ! is_wifi
+    if [[ ! is_wifi ]]
     then
         echo "List command only available for wifi device"
         exit 1
@@ -137,7 +164,7 @@ function pretty_printing()
 
 function is_wifi()
 {
-    [[ "$INTERFACE" =~ "wlp*" ]]
+    "$INTERFACE" =~ "wlp*"
 }
 
-main $*
+main "$@"
