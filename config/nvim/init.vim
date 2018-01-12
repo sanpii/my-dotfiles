@@ -137,7 +137,7 @@
     " }}}
     " Language client {{{
         let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
             \ 'php': ['php', $HOME . '/.local/bin/php-language-server.php'],
         \ }
 
