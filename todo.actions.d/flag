@@ -1,0 +1,27 @@
+#!/bin/bash
+
+readonly CMD=$(basename $0)
+readonly ACTION=$1
+shift 1
+readonly ITEM=$@
+
+usage()
+{
+    echo "    $CMD"
+    echo "      List flagged tasks."
+    echo "    $CMD ITEM#"
+    echo "      Flag task ITEM#."
+}
+
+if [ "$1" = "usage" ]
+then
+    usage
+    exit 0
+fi
+
+if [ -z $ITEM ]
+then
+    $TODO_FULL_SH list ' f:1'
+else
+    $TODO_FULL_SH append $ITEM f:1
+fi

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+main()
+{
+    local action="$1"
+    local file="${2-todo}"
+
+    if [[ "$action" == "usage" ]]
+    then
+        usage
+        exit 0
+    fi
+
+    case "$file" in
+        "todo")
+            $EDITOR "$TODO_FILE"
+        ;;
+        "done")
+            $EDITOR "$DONE_FILE"
+        ;;
+        "report")
+            $EDITOR "$REPORT_FILE"
+        ;;
+        *)
+            usage
+            exit 1
+        ;;
+
+    esac
+}
+
+usage()
+{
+    echo "    $(basename $0) FILE#"
+    echo '      Edit todo/done or report file'
+}
+
+main $*
