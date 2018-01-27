@@ -45,5 +45,6 @@ start /usr/bin/xautolock -locker 'i3lock-fancy'
 start /usr/bin/redshift
 start /usr/bin/gpg-agent --daemon
 start /usr/bin/keepassxc
+start /usr/bin/udiskie --tray --use-udisks2
 
 i3 --force-xinerama
