@@ -35,7 +35,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+X kill
@@ -174,4 +174,4 @@ for_window [class="pgmodeler" title="Édition des données"] floating disable;
 
 exec --no-startup-id i3-msg 'workspace 2; workspace 6; exec xirc'
 exec --no-startup-id i3-msg 'workspace 1; exec x-www-browser'
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/alacritty'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvt'

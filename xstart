@@ -40,7 +40,7 @@ function start()
 
 start /usr/bin/parcellite
 start /usr/bin/nextcloud
-start /usr/bin/alacritty --title term-scratchpad
+start /usr/bin/urxvt --title term-scratchpad
 start /usr/bin/xautolock -locker 'i3lock-fancy'
 start /usr/bin/redshift
 start /usr/bin/gpg-agent --daemon
