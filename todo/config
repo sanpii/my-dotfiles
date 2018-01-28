@@ -79,4 +79,4 @@ export COLOR_CONTEXT=$BLUE
 # priority hiding, context hiding, and project hiding. That is,
 # just before the list output is displayed.
 #
-# export TODOTXT_FINAL_FILTER='cat'
+export TODOTXT_FINAL_FILTER='~/.todo/futureTasks'
