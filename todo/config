@@ -1,7 +1,7 @@
 # === FILE LOCATIONS ===
 
 # Your todo.txt directory
-export TODO_DIR="$HOME/.local/opt/share/todo"
+export TODO_DIR=${TODO_DIR:-"$HOME/.local/opt/share/todo"}
 
 # Your todo/done/report.txt locations
 export TODO_FILE="$TODO_DIR/todo.txt"
