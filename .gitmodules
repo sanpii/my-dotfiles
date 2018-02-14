@@ -100,3 +100,6 @@
 [submodule "config/nvim/bundle/language-client"]
 	path = config/nvim/bundle/language-client
 	url = git://github.com/autozimu/LanguageClient-neovim.git
+[submodule "config/nvim/bundle/VerticalHelp"]
+	path = config/nvim/bundle/VerticalHelp
+	url = git://github.com/vim-scripts/VerticalHelp.git
