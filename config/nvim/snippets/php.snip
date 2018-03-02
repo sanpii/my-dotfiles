@@ -1,6 +1,5 @@
 snippet php
-	<?php
-	declare(strict_types = 1);
+	<?php declare(strict_types = 1);
 
 	${0:TARGET}
 
@@ -12,6 +11,18 @@ snippet f
 
 snippet for
 	foreach ($${1} as $${3}) {
+	    ${0:TARGET}
+	}
+
+snippet class
+	class `expand('%:t:r')` ${1}
+	{
+	    ${0:TARGET}
+	}
+
+snippet trait
+	trait `expand('%:t:r')`
+	{
 	    ${0:TARGET}
 	}
 
