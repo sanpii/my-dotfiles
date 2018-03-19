@@ -36,6 +36,7 @@
 	ad = add
 	ci = commit --verbose --message
 	co = checkout
+	cp = cherry-pick
 	dc = diff --cached -M
 	fc = !$(git config core.editor) $(git ls-files -uz | xargs -0)
 	lg = log --decorate --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %G?'
