@@ -1,4 +1,4 @@
-dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config local tags, $(wildcard *)) \
+dotfiles = $(filter-out Makefile dpkg.selections NStun.sh config local mozilla tags, $(wildcard *)) \
 	$(filter-out Makefile, $(wildcard config/* local/share/* local/bin/*))
 
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
