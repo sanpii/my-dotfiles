@@ -14,11 +14,6 @@ then
     xmodmap ~/.Xmodmap
 fi
 
-if [ -e ~/.xstart.local ]
-then
-    ~/.xstart.local
-fi
-
 if [ -x /usr/bin/dunst ]
 then
     killall notification-daemon &> /dev/null
@@ -46,5 +41,10 @@ start /usr/bin/redshift
 start /usr/bin/gpg-agent --daemon
 start /usr/bin/keepassxc
 start /usr/bin/udiskie --tray --use-udisks2
+
+if [ -e ~/.xstart.local ]
+then
+    ~/.xstart.local
+fi
 
 i3 --force-xinerama
