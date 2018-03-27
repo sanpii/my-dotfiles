@@ -33,6 +33,7 @@ function start()
     fi
 }
 
+start /usr/bin/pulseaudio --start
 start /usr/bin/parcellite
 start /usr/bin/nextcloud
 start /usr/bin/urxvt --title term-scratchpad
