@@ -2125,6 +2125,8 @@ user_pref("full-screen-api.enabled", true);
 user_pref("javascript.options.wasm", true);
 /* 2603 */
 user_pref("browser.download.useDownloadDir", true);
+/* 2662 */
+user_pref("browser.download.forbid_open_with", false);
 /* 2701 */
 user_pref("network.cookie.cookieBehavior", 0);
 /* 2802 */
