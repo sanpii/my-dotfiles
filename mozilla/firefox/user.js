@@ -2121,6 +2121,8 @@ user_pref("browser.sessionstore.resume_from_crash", true);
 user_pref("browser.display.use_document_fonts", 1);
 /* 2418 */
 user_pref("full-screen-api.enabled", true);
+/* 2422 */
+user_pref("javascript.options.wasm", true);
 /* 2603 */
 user_pref("browser.download.useDownloadDir", true);
 /* 2701 */
