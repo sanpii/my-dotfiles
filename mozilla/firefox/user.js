@@ -2145,7 +2145,7 @@ user_pref("privacy.clearOnShutdown.offlineApps", false);
 user_pref("privacy.clearOnShutdown.sessions", false);
 user_pref("privacy.clearOnShutdown.siteSettings", false);
 /* 5003 */
-user_pref("browser.tabs.closeWindowWithLastTab", true);
+user_pref("browser.tabs.closeWindowWithLastTab", false);
 /* 5021d */
 user_pref("browser.tabs.loadDivertedInBackground", true);
 
