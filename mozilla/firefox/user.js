@@ -2132,7 +2132,7 @@ user_pref("browser.download.useDownloadDir", true);
 /* 2662 */
 user_pref("browser.download.forbid_open_with", false);
 /* 2701 */
-user_pref("network.cookie.cookieBehavior", 0);
+user_pref("network.cookie.cookieBehavior", 1);
 /* 2802 */
 user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 /* 2803 */
