@@ -2119,6 +2119,10 @@ user_pref("browser.sessionstore.max_windows_undo", 3);
 user_pref("browser.sessionstore.resume_from_crash", true);
 /* 1401 */
 user_pref("browser.display.use_document_fonts", 1);
+/* 0204 */
+user_pref("general.useragent.locale", "fr-FR");
+/* 0205 */
+user_pref("intl.locale.requested", "");
 /* 2418 */
 user_pref("full-screen-api.enabled", true);
 /* 2422 */
