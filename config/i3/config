@@ -46,12 +46,6 @@ bindsym $mod+t focus down
 bindsym $mod+s focus up
 bindsym $mod+r focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+C move left
 bindsym $mod+Shift+T move down
@@ -123,6 +117,88 @@ bindsym $mod+Shift+dollar move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+dollar scratchpad show
+
+mode "mouse" {
+    set $slow 1
+    set $quick 15
+    set $fast 250
+
+    bindsym k exec "xdotool mousemove_relative -- 0 -$slow"
+    bindsym j exec "xdotool mousemove_relative 0 $slow"
+    bindsym l exec "xdotool mousemove_relative $slow 0"
+    bindsym h exec "xdotool mousemove_relative -- -$slow 0"
+
+    bindsym Up exec "xdotool mousemove_relative -- 0 -$slow"
+    bindsym Down exec "xdotool mousemove_relative 0 $slow"
+    bindsym Right exec "xdotool mousemove_relative $slow 0"
+    bindsym Left exec "xdotool mousemove_relative -- -$slow 0"
+
+    bindsym k exec "xdotool mousemove_relative -- 0 -$slow"
+    bindsym j exec "xdotool mousemove_relative 0 $slow"
+    bindsym l exec "xdotool mousemove_relative $slow 0"
+    bindsym h exec "xdotool mousemove_relative -- -$slow 0"
+
+    bindsym Up exec "xdotool mousemove_relative -- 0 -$slow"
+    bindsym Down exec "xdotool mousemove_relative 0 $slow"
+    bindsym Right exec "xdotool mousemove_relative $slow 0"
+    bindsym Left exec "xdotool mousemove_relative -- -$slow 0"
+
+    bindsym Shift+k exec "xdotool mousemove_relative -- 0 -$quick"
+    bindsym Shift+j exec "xdotool mousemove_relative 0 $quick"
+    bindsym Shift+l exec "xdotool mousemove_relative $quick 0"
+    bindsym Shift+h exec "xdotool mousemove_relative -- -$quick 0"
+
+    bindsym Shift+Up exec "xdotool mousemove_relative -- 0 -$quick"
+    bindsym Shift+Down exec "xdotool mousemove_relative 0 $quick"
+    bindsym Shift+Right exec "xdotool mousemove_relative $quick 0"
+    bindsym Shift+Left exec "xdotool mousemove_relative -- -$quick 0"
+
+    bindsym Shift+k exec "xdotool mousemove_relative -- 0 -$quick"
+    bindsym Shift+j exec "xdotool mousemove_relative 0 $quick"
+    bindsym Shift+l exec "xdotool mousemove_relative $quick 0"
+    bindsym Shift+h exec "xdotool mousemove_relative -- -$quick 0"
+
+    bindsym Shift+Up exec "xdotool mousemove_relative -- 0 -$quick"
+    bindsym Shift+Down exec "xdotool mousemove_relative 0 $quick"
+    bindsym Shift+Right exec "xdotool mousemove_relative $quick 0"
+    bindsym Shift+Left exec "xdotool mousemove_relative -- -$quick 0"
+
+    bindsym Ctrl+Shift+k exec "xdotool mousemove_relative -- 0 -$fast"
+    bindsym Ctrl+Shift+j exec "xdotool mousemove_relative 0 $fast"
+    bindsym Ctrl+Shift+l exec "xdotool mousemove_relative $fast 0"
+    bindsym Ctrl+Shift+h exec "xdotool mousemove_relative -- -$fast 0"
+
+    bindsym Ctrl+Shift+Up exec "xdotool mousemove_relative -- 0 -$fast"
+    bindsym Ctrl+Shift+Down exec "xdotool mousemove_relative 0 $fast"
+    bindsym Ctrl+Shift+Right exec "xdotool mousemove_relative $fast 0"
+    bindsym Ctrl+Shift+Left exec "xdotool mousemove_relative -- -$fast 0"
+
+    bindsym Ctrl+Shift+k exec "xdotool mousemove_relative -- 0 -$fast"
+    bindsym Ctrl+Shift+j exec "xdotool mousemove_relative 0 $fast"
+    bindsym Ctrl+Shift+l exec "xdotool mousemove_relative $fast 0"
+    bindsym Ctrl+Shift+h exec "xdotool mousemove_relative -- -$fast 0"
+
+    bindsym Ctrl+Shift+Up exec "xdotool mousemove_relative -- 0 -$fast"
+    bindsym Ctrl+Shift+Down exec "xdotool mousemove_relative 0 $fast"
+    bindsym Ctrl+Shift+Right exec "xdotool mousemove_relative $fast 0"
+    bindsym Ctrl+Shift+Left exec "xdotool mousemove_relative -- -$fast 0"
+
+    bindsym u exec "xdotool click 1"
+    bindsym i exec "xdotool click 2"
+    bindsym e exec "xdotool click 3"
+
+    bindsym Shift+u exec "xdotool mousedown 1"
+    bindsym Shift+i exec "xdotool mousedown 2"
+    bindsym Shift+e exec "xdotool mousedown 3"
+
+    bindsym Ctrl+Shift+u exec "xdotool mouseup 1"
+    bindsym Ctrl+Shift+i exec "xdotool mouseup 2"
+    bindsym Ctrl+Shift+e exec "xdotool mouseup 3"
+
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "mouse"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
