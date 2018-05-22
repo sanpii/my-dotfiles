@@ -1,0 +1,57 @@
+#!/bin/sh
+
+function main()
+{
+    xdotool getactivewindow getwindowgeometry \
+        | awk '/Geometry/{split($2, dim, "x"); if (dim[1] > dim[2]) {exit 1}}' \
+        && split v \
+        || split h
+}
+
+function split()
+{
+    local orientation=$1
+    local width=$(get_window_width)
+    local height=$(get_window_height)
+
+    if [ "$orientation" = "h" ]
+    then
+        width=$(expr $width / 2)
+        i3_msg 'split horizontal'
+    else
+        height=$(expr $height / 2)
+        i3_msg 'split vertical'
+    fi
+
+    i3_msg 'exec urxvt'
+    sleep 0.5s
+
+    if [ "$orientation" = "h" ]
+    then
+        i3_msg "resize shrink width ${width} px"
+    else
+        i3_msg "resize shrink height ${height} px"
+    fi
+}
+
+function get_window_width()
+{
+    get_window_info | sed --quiet --expression "s/^ \+Width: \([0-9]\+\).*/\1/p"
+}
+
+function get_window_height()
+{
+    get_window_info | sed --quiet --expression "s/^ \+Height: \([0-9]\+\).*/\1/p"
+}
+
+function get_window_info()
+{
+    xwininfo -id $(xdotool getactivewindow)
+}
+
+function i3_msg()
+{
+    i3-msg --quiet $*
+}
+
+main
