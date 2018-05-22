@@ -27,7 +27,7 @@
 	b = branch -vv
 	c = clone
 	d = diff -M --patience
-	f = fetch
+	f = fetch --prune
 	h = help
 	i = issue
 	r = remote -v
