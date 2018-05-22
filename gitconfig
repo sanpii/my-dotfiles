@@ -42,6 +42,7 @@
 	lg = log --decorate --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %G?'
 	lo = log --stat
 	re = rebase
+	sm = submodule
 	st = status
 	new = !sh -c 'git log "$@" @{1}..@{0}'
 	vim = !$(git config core.editor) $(git ls-files -mz | xargs -0)
