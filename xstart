@@ -2,6 +2,7 @@
 
 . "$HOME/.bashrc.d/aliases"
 xrdb ~/.Xresources
+setxkbmap fr bepo
 
 export XDG_CURRENT_DESKTOP=GNOME
 export XDG_MENU_PREFIX="lxde-"
