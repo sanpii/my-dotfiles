@@ -28,6 +28,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias make="make -j$(nproc)"
 alias t='todo.sh'
+alias cg='cargo'
 
 alias cps=composer
 
