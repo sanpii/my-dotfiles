@@ -121,6 +121,9 @@
     " ctrlp-funky {{{
         noremap <C-F> :CtrlPFunky<cr>
     " }}}
+    " deoplete {{{
+        let g:deoplete#enable_at_startup = 1
+    " }}}
     " Grammalecte {{{
         let g:grammalecte_cli_py = '/usr/lib/libreoffice/share/extensions/grammalecte/Grammalecte.py'
     " }}}

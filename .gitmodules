@@ -82,9 +82,6 @@
 [submodule "config/nvim/bundle/diminactive"]
 	path = config/nvim/bundle/diminactive
 	url = git://github.com/blueyed/vim-diminactive.git
-[submodule "config/nvim/bundle/completion-manager"]
-	path = config/nvim/bundle/completion-manager
-	url = git://github.com/roxma/nvim-completion-manager.git
 [submodule "config/nvim/bundle/neosnippet"]
 	path = config/nvim/bundle/neosnippet
 	url = git://github.com/Shougo/neosnippet.vim.git
@@ -103,3 +100,6 @@
 [submodule "config/nvim/bundle/VerticalHelp"]
 	path = config/nvim/bundle/VerticalHelp
 	url = git://github.com/vim-scripts/VerticalHelp.git
+[submodule "config/nvim/bundle/deoplete"]
+	path = config/nvim/bundle/deoplete
+	url = git://github.com/Shougo/deoplete.nvim.git
