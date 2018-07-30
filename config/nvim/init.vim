@@ -273,6 +273,7 @@
     nnoremap <leader>p :setl paste!<CR>
     nnoremap <leader>wp :setl wrap!<CR>
     nnoremap <leader>sp :setl spell!<CR>
+    nnoremap <leader>h :edit %:h<CR>
 
     inoremap dp <esc>
     inoremap <esc> <nop>
