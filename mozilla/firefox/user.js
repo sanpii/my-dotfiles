@@ -1,7 +1,7 @@
 /******
 * name: ghacks user.js
-* date: 30 May 2018
-* version 61-alpha: You Can't Hurry Pants
+* date: 06 July 2018
+* version 61-beta: You Can't Hurry Pants
 *   "My mama said, "You can't hurry pants. No, you'll just have to wait""
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
@@ -39,7 +39,7 @@
 
  ******/
 
-/* START: internal custom pref to test for syntax errors (thanks earthling)
+/* START: internal custom pref to test for syntax errors
  * [NOTE] In FF60+, not all syntax errors cause parsing to abort i.e. reaching the last debug
  * pref no longer necessarily means that all prefs have been applied. Check the console right
  * after startup for any warnings/error messages related to non-applied prefs
@@ -68,11 +68,18 @@ user_pref("_user.js.parrot", "0100 syntax error: the parrot's dead!");
 /* 0101: disable default browser check
  * [SETTING] General>Startup>Always check if Firefox is your default browser ***/
 user_pref("browser.shell.checkDefaultBrowser", false);
-/* 0102: set start page (0=blank, 1=home, 2=last visited page, 3=resume previous session)
+/* 0102: set START page (0=blank, 1=home, 2=last visited page, 3=resume previous session)
  * [SETTING] General>Startup>When Firefox starts ***/
-   // user_pref("browser.startup.page", 0);
-/* 0103: set your "home" page (see 0102) ***/
-   // user_pref("browser.startup.homepage", "https://www.example.com/");
+user_pref("browser.startup.page", 0);
+/* 0103: set HOME+NEWWINDOW page
+ * about:home=Activity Stream (default, see 0514), custom URL, about:blank
+ * [SETTING] Home>New Windows and Tabs>Homepage and new windows ***/
+user_pref("browser.startup.homepage", "about:blank");
+/* 0104: set NEWTAB page
+ * true=Activity Stream (default, see 0514), false=blank page
+ * [SETTING] Home>New Windows and Tabs>New tabs ***/
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.newtab.preload", false);
 
 /*** 0200: GEOLOCATION ***/
 user_pref("_user.js.parrot", "0200 syntax error: the parrot's definitely deceased!");
@@ -192,9 +199,6 @@ user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // (FF51+)
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit", false); // (FF51-57)
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // (FF58+)
-/* 0360: disable new tab tile ads & preload & marketing junk ***/
-user_pref("browser.newtab.preload", false);
-user_pref("browser.newtabpage.enabled", false);
 /* 0370: disable "Snippets" (Mozilla content shown on about:home screen)
  * [1] https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service ***/
 user_pref("browser.aboutHomeSnippets.updateUrl", "data:,");
@@ -227,7 +231,6 @@ user_pref("extensions.blocklist.url", "https://blocklists.settings.services.mozi
  * As Firefox transitions to Kinto, the blocklists have been broken down into entries for certs to be
  * revoked, extensions and plugins to be disabled, and gfx environments that cause problems or crashes ***/
 user_pref("services.blocklist.update_enabled", true);
-user_pref("services.blocklist.signing.enforced", true);
 /* 0403: disable individual unwanted/unneeded parts of the Kinto blocklists ***/
    // user_pref("services.blocklist.onecrl.collection", ""); // revoked certificates
    // user_pref("services.blocklist.addons.collection", "");
@@ -328,12 +331,6 @@ user_pref("privacy.trackingprotection.ui.enabled", true);
      [2] https://dxr.mozilla.org/mozilla-central/source/browser/extensions
 ***/
 user_pref("_user.js.parrot", "0500 syntax error: the parrot's cashed in 'is chips!");
-/* 0501: disable experiments
- * [1] https://wiki.mozilla.org/Telemetry/Experiments ***/
-user_pref("experiments.enabled", false);
-user_pref("experiments.manifest.uri", "");
-user_pref("experiments.supported", false);
-user_pref("experiments.activeExperiment", false);
 /* 0502: disable Mozilla permission to silently opt you into tests ***/
 user_pref("network.allow-experiments", false);
 /* 0503: disable Normandy/Shield (FF60+)
@@ -343,6 +340,7 @@ user_pref("network.allow-experiments", false);
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
 user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("shield.savant.enabled", false); // (FF61+)
 /* 0505: disable System Add-on updates
  * [NOTE] In FF61 and lower, you will not get any System Add-on updates except when you update Firefox ***/
    // user_pref("extensions.systemAddon.update.enabled", false); // (FF62+)
@@ -471,13 +469,17 @@ user_pref("network.proxy.autoconfig_url.include_path", false); // default: false
  * TRR = Trusted Recursive Resolver
  * .mode: 0=off, 1=race, 2=TRR first, 3=TRR only, 4=race for stats, but always use native result
  * [WARNING] DoH bypasses hosts and gives info to yet another party (e.g. Cloudflare)
- * [1] https://www.ghacks.net/2018/04/02/configure-dns-over-https-in-firefox/ ***/
+ * [1] https://www.ghacks.net/2018/04/02/configure-dns-over-https-in-firefox/
+ * [2] https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/ ***/
    // user_pref("network.trr.mode", 0);
    // user_pref("network.trr.bootstrapAddress", "");
    // user_pref("network.trr.uri", "");
 /* 0708: disable FTP (FF60+)
  * [1] https://www.ghacks.net/2018/02/20/firefox-60-with-new-preference-to-disable-ftp/ ***/
    // user_pref("network.ftp.enabled", false);
+/* 0709: disable using UNC (Uniform Naming Convention) paths (FF61+)
+ * [1] https://trac.torproject.org/projects/tor/ticket/26424 ***/
+user_pref("network.file.disable_unc_paths", true); // (hidden pref)
 
 /*** 0800: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS [SETUP]
      If you are in a private environment (no unwanted eyeballs) and your device is private
@@ -1086,7 +1088,7 @@ user_pref("dom.popup_allowed_events", "click dblclick");
      including service and shared workers. Shared workers can be utilized by multiple scripts and
      communicate between browsing contexts (windows/tabs/iframes) and can even control your cache.
 
-     [WARNING] Disabling workers *will* break sites (e.g. Google Street View, Twitter).
+     [WARNING] Disabling "web workers" might break sites
      [UPDATE] uMatrix 1.2.0+ allows a per-scope control for workers (2301-deprecated) and service workers (2302)
               #Required reading [#] https://github.com/gorhill/uMatrix/releases/tag/1.2.0
 
@@ -1242,12 +1244,6 @@ user_pref("mathml.disabled", true);
  * [1] https://trac.torproject.org/projects/tor/ticket/10089
  * [2] http://kb.mozillazine.org/Middlemouse.contentLoadURL ***/
 user_pref("middlemouse.contentLoadURL", false);
-/* 2612: disable remote JAR files being opened, regardless of content type (FF42+)
- * [1] https://bugzilla.mozilla.org/1173171
- * [2] https://www.fxsitecompat.com/en-CA/docs/2015/jar-protocol-support-has-been-disabled-by-default/ ***/
-user_pref("network.jar.block-remote-files", true);
-/* 2613: disable JAR from opening Unsafe File Types ***/
-user_pref("network.jar.open-unsafe-types", false);
 /* 2614: limit HTTP redirects (this does not control redirects with HTML meta tags or JS)
  * [WARNING] A low setting of 5 or under will probably break some sites (e.g. gmail logins)
  * To control HTML Meta tag and JS redirects, use an extension. Default is 20 ***/
@@ -1398,8 +1394,8 @@ user_pref("network.cookie.leave-secure-alone", true); // default: true
  * [WARNING] This *will* break other extensions including legacy, and *will* break some sites ***/
    // user_pref("dom.indexedDB.enabled", false);
 /* 2730: disable offline cache
- * [NOTE] For FF60 and under, this is required 'true' for Storage API (2750) ***/
-   // user_pref("browser.cache.offline.enable", false);
+ * [NOTE] For FF51-FF60 (ESR not included), this is required 'true' for Storage API (2750) ***/
+user_pref("browser.cache.offline.enable", false);
 /* 2730b: disable offline cache on insecure sites (FF60+)
  * [1] https://blog.mozilla.org/security/2018/02/12/restricting-appcache-secure-contexts/ ***/
 user_pref("browser.cache.offline.insecure.enable", false);
@@ -1410,16 +1406,15 @@ user_pref("offline-apps.allow_by_default", false);
 /* 2740: disable service workers cache and cache storage
  * [1] https://w3c.github.io/ServiceWorker/#privacy ***/
 user_pref("dom.caches.enabled", false);
-/* 2750: disable Storage API
+/* 2750: disable Storage API (FF51+)
  * The API gives sites the ability to find out how much space they can use, how much
  * they are already using, and even control whether or not they need to be alerted
  * before the user agent disposes of site data in order to make room for other things.
- * [NOTE] For FF60 and under, if Storage API is enabled, then Offline Cache (2730) must be also be enabled
+ * [NOTE] For FF51-FF60 (ESR not included), if Storage API is enabled, then Offline Cache (2730) must be also be enabled
  * [1] https://developer.mozilla.org/docs/Web/API/StorageManager
  * [2] https://developer.mozilla.org/docs/Web/API/Storage_API
  * [3] https://blog.mozilla.org/l10n/2017/03/07/firefox-l10n-report-aurora-54/ ***/
-   // user_pref("dom.storageManager.enabled", false); // (FF51+)
-   // user_pref("browser.storageManager.enabled", false); // controls "Site Data" UI visibility (FF53+)
+   // user_pref("dom.storageManager.enabled", false);
 
 /*** 2800: SHUTDOWN [SETUP]
      You should set the values to what suits you best. Be aware that the settings below clear
@@ -1489,6 +1484,7 @@ user_pref("privacy.sanitize.timeSpan", 0);
  ** 1337893 - isolate DNS cache (FF55+)
  ** 1344170 - isolate blob: URI (FF55+)
  ** 1300671 - isolate data:, about: URLs (FF55+)
+ ** 1473247 - isolate IP addresses (FF63+)
 
  NOTE: FPI has some issues depending on your Firefox release
  ** 1418931 - [fixed in FF58+] IndexedDB (Offline Website Data) with FPI Origin Attributes
@@ -1540,7 +1536,7 @@ user_pref("privacy.firstparty.isolate.restrict_opener_access", true);
  ** 1337161 - hide gamepads from content (see 4606) (FF56+)
  ** 1372072 - spoof network information API as "unknown" (see 4607) (FF56+)
  ** 1333641 - reduce fingerprinting in WebSpeech API (see 4608) (FF56+)
- ** 1372069 & 1403813 - block geolocation requests (same as if you deny a site permission) (see 0201, 0211) (FF56+)
+ ** 1372069 & 1403813 & 1441295 - block geolocation requests (same as denying a site permission) (see 0201, 0211) (FF56-62)
  ** 1369309 - spoof media statistics (see 4610) (FF57+)
  ** 1382499 - reduce screen co-ordinate fingerprinting in Touch API (see 4611) (FF57+)
  ** 1217290 & 1409677 - enable fingerprinting resistance for WebGL (see 2010-12) (FF57+)
@@ -2104,12 +2100,34 @@ user_pref("extensions.shield-recipe-client.api_url", "");
    // [-] https://bugzilla.mozilla.org/1433324
 user_pref("browser.newtabpage.activity-stream.enabled", false);
 // 2301: disable workers
+   // [WARNING] Disabling workers *will* break sites (e.g. Google Street View, Twitter)
    // [NOTE] CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
    // [-] https://bugzilla.mozilla.org/1434934
 user_pref("dom.workers.enabled", false);
 // 5000's: open "page/selection source" in a new window
    // [-] https://bugzilla.mozilla.org/1418403
    // user_pref("view_source.tab", false);
+// * * * /
+// ***/
+
+/* ESR60.x still uses all the following prefs
+// [NOTE] replace the * with a slash in the line above to re-enable them
+// FF61
+// 0501: disable experiments
+   // [1] https://wiki.mozilla.org/Telemetry/Experiments
+   // [-] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1420908,1450801
+user_pref("experiments.enabled", false);
+user_pref("experiments.manifest.uri", "");
+user_pref("experiments.supported", false);
+user_pref("experiments.activeExperiment", false);
+// 2612: disable remote JAR files being opened, regardless of content type (FF42+)
+   // [1] https://bugzilla.mozilla.org/1173171
+   // [2] https://www.fxsitecompat.com/en-CA/docs/2015/jar-protocol-support-has-been-disabled-by-default/
+   // [-] https://bugzilla.mozilla.org/1427726
+user_pref("network.jar.block-remote-files", true);
+// 2613: disable JAR from opening Unsafe File Types
+   // [-] https://bugzilla.mozilla.org/1427726
+user_pref("network.jar.open-unsafe-types", false);
 // * * * /
 // ***/
 
