@@ -151,13 +151,6 @@
         nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
         nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
     " }}}
-    " move {{{
-        let g:move_map_keys = 0
-        vmap <c-t> <Plug>MoveBlockDown
-        vmap <c-s> <Plug>MoveBlockUp
-        nmap <c-t> <Plug>MoveLineDown
-        nmap <c-s> <Plug>MoveLineUp
-    " }}}
     " neosnippet {{{
         let g:neosnippet#enable_completed_snippet = 0
         let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']

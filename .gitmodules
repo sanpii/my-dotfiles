@@ -40,9 +40,6 @@
 [submodule "nvim/bundle/airline"]
 	path = config/nvim/bundle/airline
 	url = git://github.com/vim-airline/vim-airline.git
-[submodule "nvim/bundle/move"]
-	path = config/nvim/bundle/move
-	url = git://github.com/matze/vim-move.git
 [submodule "nvim/bundle/desertink"]
 	path = config/nvim/bundle/desertink
 	url = git://github.com/toupeira/vim-desertink.git
