@@ -13,7 +13,6 @@
 
     set fileformats=unix
     set mouse=""
-    set noshowmatch
     set foldmethod=marker
     set number
     set relativenumber
@@ -30,16 +29,12 @@
     set nowrap
 
     augroup buffer
-        autocmd bufwritepost .vimrc source %
+        autocmd bufwritepost $MYVIMRC source %
     augroup END
 
     set textwidth=80
+    set colorcolumn=81
 
-    if v:version >= 703
-        set colorcolumn=81
-    endif
-
-    set completeopt=longest,menuone
     set wildmode=full
     set inccommand=split
 
@@ -53,17 +48,9 @@
     highlight NonText cterm=bold ctermfg=darkgrey
     highlight SpecialKey cterm=bold ctermfg=darkgrey
 
-    set cursorline
-    highlight CursorLine cterm=bold ctermbg=236 gui=bold guibg=grey20
-
-    highlight SpellBad cterm=underline ctermfg=red ctermbg=none
-    highlight SpellCap cterm=underline ctermfg=green ctermbg=none
-    highlight LanguageToolError cterm=underline ctermfg=green ctermbg=none
-
     set scrolloff=3
 " }}}
 " Indentation {{{
-    set preserveindent
     set smartindent
     set shiftwidth=4
     set shiftround
@@ -125,10 +112,7 @@
         let g:deoplete#enable_at_startup = 1
     " }}}
     " Grammalecte {{{
-        let g:grammalecte_cli_py = '/usr/lib/libreoffice/share/extensions/grammalecte/Grammalecte.py'
-    " }}}
-    " Indexed search {{{
-        let g:indexed_search_show_index_mappings = 0
+        let g:grammalecte_cli_py = '/usr/bin/grammalecte-cli.py'
     " }}}
     " Text file {{{
         augroup filetype
@@ -171,35 +155,6 @@
     " Spiffy Foldtext {{{
         let g:SpiffyFoldtext_format = "%c{─}  %<%f{─}┤ %4n lines ├─%l{──}"
     " }}}
-    " Symfony2 {{{
-        " http://knplabs.fr/blog/boost-your-productivity-with-sf2-and-vim
-
-        " first set path
-        set path+=**
-
-        " jump to a twig view in symfony
-        function! s:SfJumpToView()
-            mark C
-            normal! ]M
-            let end = line(".")
-            normal! [m
-            try
-                call search('\v[^.:]+\.html\.twig', '', end)
-                normal! gf
-            catch
-                normal! g`C
-                echohl WarningMsg | echomsg "Template file not found" | echohl None
-            endtry
-        endfunction
-        com! SfJumpToView call s:SfJumpToView()
-
-        " create a mapping only in a Controller file
-        augroup buffer
-            autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
-        augroup END
-
-        set wildignore=data/**,app/cache/**,web/bundles/**,var/**
-    " }}}
 " }}}
 " Mappage {{{
     " Help {{{
@@ -226,9 +181,10 @@
         nnoremap A :call <SID>EndOfLine()<CR>a
     " }}}
 
+    " Don't move on *
     nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
-    " VimTip 436
+    " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
     inoremap <c-u> <c-g>u<c-u>
     inoremap <c-w> <c-g>u<c-w>
 
