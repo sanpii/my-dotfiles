@@ -238,23 +238,6 @@
         cnoremap <c-s> <up>
         cnoremap <c-t> <down>
     " }}}
-    " Autoreload firefox {{{
-        " https://github.com/bard/mozrepl/wiki/
-
-        function! Refresh_firefox()
-            silent !echo  '
-                \ if (content.location.href.match(/^http:\/\/localhost/)) {
-                \     y = content.window.pageYOffset;
-                \     x = content.window.pageXOffset;
-                \     BrowserReload();
-                \     content.window.scrollTo(x, y);
-                \ }
-                \ repl.quit();' |
-                \ nc -w 1 localhost 4243 2>&1 > /dev/null
-        endfunction
-
-        autocmd BufWritePost *.html,*.css,*.js,*.php,*.inc,*.module,*.twig :call Refresh_firefox()
-    " }}}
 
     nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
