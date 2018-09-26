@@ -232,12 +232,6 @@
 
         nnoremap A :call <SID>EndOfLine()<CR>a
     " }}}
-    " Command line {{{
-        cnoremap <c-a> <home>
-        cnoremap <c-e> <end>
-        cnoremap <c-s> <up>
-        cnoremap <c-t> <down>
-    " }}}
 
     nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
