@@ -246,7 +246,7 @@
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
 
-    nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+    nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 
     nnoremap <leader>p :setl paste!<CR>
     nnoremap <leader>wp :setl wrap!<CR>
