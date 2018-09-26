@@ -213,12 +213,13 @@
         function! Help(query)
             let query = expand(a:query)
             if query != ""
-                exec ":H " . query
+                exec ":vert bo help " . query
             endif
         endfunction
 
         inoremap <leader><F1> <Esc> :call Help("<cword>")<CR>
         nnoremap <leader><F1> :call Help("<cword>")<CR>
+        cabbrev h vert bo help
     " }}}
     " EndOfLine {{{
         function! s:EndOfLine()
