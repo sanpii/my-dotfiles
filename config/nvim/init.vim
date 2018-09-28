@@ -135,6 +135,10 @@
         nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
         nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
     " }}}
+    " ncm2 {{{
+        autocmd BufEnter * call ncm2#enable_for_buffer()
+        set completeopt=noinsert,menuone,noselect
+    " }}}
     " neosnippet {{{
         let g:neosnippet#enable_completed_snippet = 0
         let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']

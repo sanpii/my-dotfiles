@@ -94,6 +94,9 @@
 [submodule "config/nvim/bundle/language-client"]
 	path = config/nvim/bundle/language-client
 	url = git://github.com/autozimu/LanguageClient-neovim.git
-[submodule "config/nvim/bundle/deoplete"]
-	path = config/nvim/bundle/deoplete
-	url = git://github.com/Shougo/deoplete.nvim.git
+[submodule "config/nvim/bundle/ncm2"]
+	path = config/nvim/bundle/ncm2
+	url = https://github.com/ncm2/ncm2.git
+[submodule "config/nvim/bundle/yarp"]
+	path = config/nvim/bundle/yarp
+	url = https://github.com/roxma/nvim-yarp.git
