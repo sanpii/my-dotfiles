@@ -100,3 +100,6 @@
 [submodule "config/nvim/bundle/yarp"]
 	path = config/nvim/bundle/yarp
 	url = https://github.com/roxma/nvim-yarp.git
+[submodule "config/nvim/bundle/openscad"]
+	path = config/nvim/bundle/openscad
+	url = git://github.com/sirtaj/vim-openscad.git
