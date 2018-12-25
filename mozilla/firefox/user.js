@@ -2239,6 +2239,8 @@ user_pref("browser.display.use_document_fonts", 1);
 /* 0204 */
 user_pref("general.useragent.locale", "fr-FR");
 /* 0205 */
+/* 2030 */
+user_pref("media.autoplay.default", 2);
 user_pref("intl.locale.requested", "");
 /* 2418 */
 user_pref("full-screen-api.enabled", true);
