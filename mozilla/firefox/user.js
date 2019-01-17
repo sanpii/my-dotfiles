@@ -1,8 +1,8 @@
 /******
 * name: ghacks user.js
-* date: 11 December 2018
-* version 63: Pants Romance
-*   "Rah rah ah-ah-ah! Ro mah ro-mah-mah. Gaga oh-la-la! Want your pants romance"
+* date: 17 January 2019
+* version 64: Crocodile Pants
+*   "I remember when Pants was young, me and Suzie had so much fun"
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
@@ -51,7 +51,7 @@
      0800: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS
      0900: PASSWORDS
      1000: CACHE / SESSION (RE)STORE / FAVICONS
-     1200: HTTPS (SSL/TLS / OCSP / CERTS / HSTS / HPKP / CIPHERS)
+     1200: HTTPS (SSL/TLS / OCSP / CERTS / HPKP / CIPHERS)
      1400: FONTS
      1600: HEADERS / REFERERS
      1700: CONTAINERS
@@ -86,6 +86,7 @@ user_pref("_user.js.parrot", "0100 syntax error: the parrot's dead!");
  * [SETTING] General>Startup>Always check if Firefox is your default browser ***/
 user_pref("browser.shell.checkDefaultBrowser", false);
 /* 0102: set START page (0=blank, 1=home, 2=last visited page, 3=resume previous session)
+ * [NOTE] Session Restore is not used in PB mode (0110) and is cleared with history (2803, 2804)
  * [SETTING] General>Startup>Restore previous session ***/
 user_pref("browser.startup.page", 0);
 /* 0103: set HOME+NEWWINDOW page
@@ -105,17 +106,18 @@ user_pref("browser.newtab.preload", false);
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.ping.endpoint", "");
-/* 0105b: disable AS Snippets
+/* 0105b: disable Activity Stream Snippets
  * Runs code received from a server (aka Remote Code Execution) and sends information back to a metrics server
  * [1] https://abouthome-snippets-service.readthedocs.io/ ***/
-user_pref("browser.newtabpage.activity-stream.disableSnippets", true);
-user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); // has setting (see 0105)
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
-/* 0105c: disable AS Top Stories, Pocket-based and/or sponsored content ***/
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // has setting (see 0105)
-user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false); // has setting (see 0105)
-user_pref("browser.newtabpage.activity-stream.showSponsored", false); // has setting (see 0105)
-/* 0105d: disable AS recent Highlights in the Library [FF57+] ***/
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "");
+user_pref("browser.newtabpage.activity-stream.disableSnippets", true);
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+/* 0105c: disable Activity Stream Top Stories, Pocket-based and/or sponsored content ***/
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+/* 0105d: disable Activity Stream recent Highlights in the Library [FF57+] ***/
    // user_pref("browser.library.activity-stream.enabled", false);
 /* 0110: start Firefox in PB (Private Browsing) mode
  * [NOTE] In this mode *all* windows are "private windows" and the PB mode icon is not displayed
@@ -126,7 +128,8 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false); // has set
  * new instance. Closing all Private Windows clears all traces. Repeat as required. PB also does
  * not allow indexedDB which breaks many Extensions that use it including uBlock Origin and uMatrix
  * [SETTING] Privacy & Security>History>Custom Settings>Always use private browsing mode
- * [1] https://wiki.mozilla.org/Private_Browsing ***/
+ * [1] https://wiki.mozilla.org/Private_Browsing
+ * [2] https://spreadprivacy.com/is-private-browsing-really-private/ ***/
    // user_pref("browser.privatebrowsing.autostart", true);
 
 /*** [SECTION 0200]: GEOLOCATION ***/
@@ -201,7 +204,7 @@ user_pref("browser.search.update", false);
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 /* 0310: disable sending the URL of the website where a plugin crashed ***/
 user_pref("dom.ipc.plugins.reportCrashURL", false);
-/* 0320: disable about:addons' Get Add-ons panel (uses Google-Analytics) ***/
+/* 0320: disable about:addons' Get Add-ons panel (uses Google Analytics) ***/
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
 user_pref("extensions.webservice.discoverURL", "");
 /* 0330: disable telemetry
@@ -231,12 +234,22 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
  * If disabled, no policy is shown or upload takes place, ever
  * [1] https://bugzilla.mozilla.org/1195552 ***/
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
+/* 0335: disable Telemetry Coverage
+ * [1] https://blog.mozilla.org/data/2018/08/20/effectively-measuring-search-in-firefox/ ***/
+user_pref("toolkit.telemetry.coverage.opt-out", true); // [HIDDEN PREF]
+user_pref("toolkit.coverage.opt-out", true); // [FF64+] [HIDDEN PREF]
+user_pref("toolkit.coverage.endpoint.base", "");
 /* 0350: disable crash reports ***/
 user_pref("breakpad.reportURL", "");
 /* 0351: disable sending of crash reports ***/
 user_pref("browser.tabs.crashReporting.sendReport", false); // [FF44+]
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // [FF51+]
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // [FF58+]
+/* 0370: disable Pocket [FF46+]
+ * Pocket is a third party (now owned by Mozilla) "save for later" cloud service
+ * [1] https://en.wikipedia.org/wiki/Pocket_(application)
+ * [2] https://www.gnu.gl/blog/Posts/multiple-vulnerabilities-in-pocket/ ***/
+user_pref("extensions.pocket.enabled", false);
 /* 0380: disable Browser Error Reporter [FF60+]
  * [1] https://support.mozilla.org/en-US/kb/firefox-nightly-error-collection
  * [2] https://firefox-source-docs.mozilla.org/browser/browser/BrowserErrorReporter.html ***/
@@ -376,32 +389,18 @@ user_pref("network.allow-experiments", false);
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
 user_pref("app.shield.optoutstudies.enabled", false);
-/* 0505: disable System Add-on updates
- * [NOTE] In FF61 and lower, you will not get any System Add-on updates except when you update Firefox ***/
-   // user_pref("extensions.systemAddon.update.enabled", false); // [FF62+]
-   // user_pref("extensions.systemAddon.update.url", "");
+/* 0505: disable System Add-on updates ***/
+user_pref("extensions.systemAddon.update.enabled", false); // [FF62+]
+user_pref("extensions.systemAddon.update.url", ""); // [FF44+]
 /* 0506: disable PingCentre telemetry (used in several System Add-ons) [FF57+]
  * Currently blocked by 'datareporting.healthreport.uploadEnabled' (see 0333) ***/
 user_pref("browser.ping-centre.telemetry", false);
-/* 0510: disable Pocket [FF46+]
- * Pocket is a third party (now owned by Mozilla) "save for later" cloud service
- * [1] https://en.wikipedia.org/wiki/Pocket_(application)
- * [2] https://www.gnu.gl/blog/Posts/multiple-vulnerabilities-in-pocket/ ***/
-user_pref("extensions.pocket.enabled", false);
 /* 0515: disable Screenshots
  * alternatively in FF60+, disable uploading to the Screenshots server
  * [1] https://github.com/mozilla-services/screenshots
  * [2] https://www.ghacks.net/2017/05/28/firefox-screenshots-integrated-in-firefox-nightly/ ***/
    // user_pref("extensions.screenshots.disabled", true); // [FF55+]
    // user_pref("extensions.screenshots.upload-disabled", true); // [FF60+]
-/* 0516: disable Onboarding [FF55+]
- * Onboarding is an interactive tour/setup for new installs/profiles and features. Every time
- * about:home or about:newtab is opened, the onboarding overlay is injected into that page
- * [NOTE] Onboarding uses Google Analytics [2], and leaks resource://URIs [3]
- * [1] https://wiki.mozilla.org/Firefox/Onboarding
- * [2] https://github.com/mozilla/onboard/commit/db4d6c8726c89a5d6a241c1b1065827b525c5baf
- * [3] https://bugzilla.mozilla.org/863246#c154 ***/
-user_pref("browser.onboarding.enabled", false);
 /* 0517: disable Form Autofill
  * [NOTE] Stored data is NOT secure (uses a JSON file)
  * [NOTE] Heuristics controls Form Autofill on forms without @autocomplete attributes
@@ -464,6 +463,9 @@ user_pref("network.dns.disableIPv6", true);
 /* 0702: disable HTTP2 (which was based on SPDY which is now deprecated)
  * HTTP2 raises concerns with "multiplexing" and "server push", does nothing to enhance
  * privacy, and in fact opens up a number of server-side fingerprinting opportunities
+ * [SETUP-PERF] Relax this if you have FPI enabled (see 4000) *AND* you understand the
+ * consequences. FPI isolates these, but it was designed with the Tor protocol in mind,
+ * and the Tor Browser has extra protection, including enhanced sanitizing per Identity.
  * [1] https://http2.github.io/faq/
  * [2] https://blog.scottlogic.com/2014/11/07/http-2-a-quick-look.html
  * [3] https://queue.acm.org/detail.cfm?id=2716278
@@ -472,6 +474,9 @@ user_pref("network.http.spdy.enabled", false);
 user_pref("network.http.spdy.enabled.deps", false);
 user_pref("network.http.spdy.enabled.http2", false);
 /* 0703: disable HTTP Alternative Services [FF37+]
+ * [SETUP-PERF] Relax this if you have FPI enabled (see 4000) *AND* you understand the
+ * consequences. FPI isolates these, but it was designed with the Tor protocol in mind,
+ * and the Tor Browser has extra protection, including enhanced sanitizing per Identity.
  * [1] https://tools.ietf.org/html/rfc7838#section-9
  * [2] https://www.mnot.net/blog/2016/03/09/alt-svc ***/
 user_pref("network.http.altsvc.enabled", false);
@@ -647,9 +652,13 @@ user_pref("signon.formlessCapture.enabled", false);
  * [2] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1217152,1319119 ***/
 user_pref("signon.autofillForms.http", false);
 user_pref("security.insecure_field_warning.contextual.enabled", true);
-/* 0911: prevent cross-origin images from triggering an HTTP-Authentication prompt [FF55+]
- * [1] https://bugzilla.mozilla.org/1357835 ***/
-user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
+/* 0912: limit (or disable) HTTP authentication credentials dialogs triggered by sub-resources [FF41+]
+ * hardens against potential credentials phishing
+ * 0=don't allow sub-resources to open HTTP authentication credentials dialogs
+ * 1=don't allow cross-origin sub-resources to open HTTP authentication credentials dialogs
+ * 2=allow sub-resources to open HTTP authentication credentials dialogs (default)
+ * [1] https://www.fxsitecompat.com/en-CA/docs/2015/http-auth-dialog-can-no-longer-be-triggered-by-cross-origin-resources/ ***/
+user_pref("network.auth.subresource-http-auth-allow", 1);
 
 /*** [SECTION 1000]: CACHE / SESSION (RE)STORE / FAVICONS [SETUP-CHROME]
      ETAG [1] and other [2][3] cache tracking/fingerprinting techniques can be averted by
@@ -693,21 +702,18 @@ user_pref("browser.cache.disk_cache_ssl", false);
    // user_pref("network.dnsCacheExpiration", 60);
 
 /** SESSIONS & SESSION RESTORE ***/
-/* 1020: limit Session Restore to last active tab and window
- * [SETUP-CHROME] This also disables the "Recently Closed Tabs" feature
- * It does not affect "Recently Closed Windows" or any history. ***/
-user_pref("browser.sessionstore.max_tabs_undo", 0);
-user_pref("browser.sessionstore.max_windows_undo", 0);
+/* 1020: exclude "Undo Closed Tabs" in Session Restore ***/
+   // user_pref("browser.sessionstore.max_tabs_undo", 0);
 /* 1021: disable storing extra session data [SETUP-CHROME]
  * extra session data contains contents of forms, scrollbar positions, cookies and POST data
  * define on which sites to save extra session data:
  * 0=everywhere, 1=unencrypted sites, 2=nowhere ***/
 user_pref("browser.sessionstore.privacy_level", 2);
 /* 1022: disable resuming session from crash ***/
-user_pref("browser.sessionstore.resume_from_crash", false);
+   // user_pref("browser.sessionstore.resume_from_crash", false);
 /* 1023: set the minimum interval between session save operations
  * Increasing this can help on older machines and some websites, as well as reducing writes, see [1]
- * Default is 15000 (15 secs). Try 30000 (30sec), 60000 (1min) etc
+ * Default is 15000 (15 secs). Try 30000 (30 secs), 60000 (1 min) etc
  * [SETUP-CHROME] This can also affect entries in the "Recently Closed Tabs" feature:
  * i.e. the longer the interval the more chance a quick tab open/close won't be captured.
  * This longer interval *may* affect history but we cannot replicate any history not recorded
@@ -729,14 +735,13 @@ user_pref("browser.shell.shortcutFavicons", false);
 /* 1032: disable favicons in web notifications ***/
 user_pref("alerts.showFavicons", false); // [DEFAULT: false]
 
-/*** [SECTION 1200]: HTTPS (SSL/TLS / OCSP / CERTS / HSTS / HPKP / CIPHERS)
+/*** [SECTION 1200]: HTTPS (SSL/TLS / OCSP / CERTS / HPKP / CIPHERS)
    Note that your cipher and other settings can be used server side as a fingerprint attack
    vector, see [1] (It's quite technical but the first part is easy to understand
    and you can stop reading when you reach the second section titled "Enter Bro")
 
-   Option 1: Use Firefox defaults for the 1260's items (item 1260 default for SHA-1, is local
-             only anyway). There is nothing *weak* about Firefox's defaults, but Mozilla (and
-             other browsers) will always lag for fear of breakage and upset end-users
+   Option 1: Use defaults for ciphers (1260's). There is nothing *weak* about these, but
+             due to breakage, browsers can't deprecate them until the web stops using them
    Option 2: Disable the ciphers in 1261, 1262 and 1263. These shouldn't break anything.
              Optionally, disable the ciphers in 1264.
 
@@ -758,11 +763,13 @@ user_pref("security.ssl.require_safe_negotiation", true);
    // user_pref("security.tls.version.min", 3);
 user_pref("security.tls.version.max", 4);
 /* 1203: disable SSL session tracking [FF36+]
- * SSL Session IDs speed up HTTPS connections (no need to renegotiate) and last for 24hrs.
- * Since the ID is unique, web servers can (and do) use it for tracking. If set to true,
- * this disables sending SSL Session IDs and TLS Session Tickets to prevent session tracking
+ * SSL Session IDs are unique, last up to 24hrs in Firefox, and can be used for tracking
+ * [SETUP-PERF] Relax this if you have FPI enabled (see 4000) *AND* you understand the
+ * consequences. FPI isolates these, but it was designed with the Tor protocol in mind,
+ * and the Tor Browser has extra protection, including enhanced sanitizing per Identity.
  * [1] https://tools.ietf.org/html/rfc5077
- * [2] https://bugzilla.mozilla.org/967977 ***/
+ * [2] https://bugzilla.mozilla.org/967977
+ * [3] https://arxiv.org/abs/1810.07304 ***/
 user_pref("security.ssl.disable_session_identifiers", true); // [HIDDEN PREF]
 /* 1204: disable SSL Error Reporting
  * [1] https://firefox-source-docs.mozilla.org/browser/base/sslerrorreport/preferences.html ***/
@@ -795,21 +802,31 @@ user_pref("security.OCSP.enabled", 1);
  * [2] https://www.imperialviolet.org/2014/04/19/revchecking.html ***/
 user_pref("security.OCSP.require", true);
 
-/** CERTS / HSTS (HTTP Strict Transport Security) / HPKP (HTTP Public Key Pinning) ***/
-/* 1220: disable Windows 8.1's Microsoft Family Safety cert [FF50+] [WINDOWS]
+/** CERTS / HPKP (HTTP Public Key Pinning) ***/
+/* 1220: disable or limit SHA-1 certificates
+ * 0=all SHA1 certs are allowed
+ * 1=all SHA1 certs are blocked
+ * 2=deprecated option that now maps to 1
+ * 3=only allowed for locally-added roots (e.g. anti-virus)
+ * 4=only allowed for locally-added roots or for certs in 2015 and earlier
+ * [SETUP-CHROME] When disabled, some man-in-the-middle devices (e.g. security scanners and
+ * antivirus products, may fail to connect to HTTPS sites. SHA-1 is *almost* obsolete.
+ * [1] https://blog.mozilla.org/security/2016/10/18/phasing-out-sha-1-on-the-public-web/ ***/
+user_pref("security.pki.sha1_enforcement_level", 1);
+/* 1221: disable Windows 8.1's Microsoft Family Safety cert [FF50+] [WINDOWS]
  * 0=disable detecting Family Safety mode and importing the root
  * 1=only attempt to detect Family Safety mode (don't import the root)
  * 2=detect Family Safety mode and import the root
  * [1] https://trac.torproject.org/projects/tor/ticket/21686 ***/
 user_pref("security.family_safety.mode", 0);
-/* 1221: disable intermediate certificate caching (fingerprinting attack vector) [RESTART]
+/* 1222: disable intermediate certificate caching (fingerprinting attack vector) [RESTART]
  * [NOTE] This affects login/cert/key dbs. The effect is all credentials are session-only.
  * Saved logins and passwords are not available. Reset the pref and restart to return them.
  * [TEST] https://fiprinca.0x90.eu/poc/
  * [1] https://bugzilla.mozilla.org/1334485 - related bug
  * [2] https://bugzilla.mozilla.org/1216882 - related bug (see comment 9) ***/
    // user_pref("security.nocertdb", true); // [HIDDEN PREF]
-/* 1222: enforce strict pinning
+/* 1223: enforce strict pinning
  * PKP (Public Key Pinning) 0=disabled 1=allow user MiTM (such as your antivirus), 2=strict
  * [WARNING] If you rely on an AV (antivirus) to protect your web browsing
  * by inspecting ALL your web traffic, then leave at current default=1
@@ -827,16 +844,6 @@ user_pref("security.mixed_content.block_display_content", true);
 user_pref("security.mixed_content.block_object_subrequest", true);
 
 /** CIPHERS [see the section 1200 intro] ***/
-/* 1260: disable or limit SHA-1
- * 0=all SHA1 certs are allowed
- * 1=all SHA1 certs are blocked (including perfectly valid ones from 2015 and earlier)
- * 2=deprecated option that now maps to 1
- * 3=only allowed for locally-added roots (e.g. anti-virus)
- * 4=only allowed for locally-added roots or for certs in 2015 and earlier
- * [SETUP-CHROME] When disabled, some man-in-the-middle devices (e.g. security scanners and
- * antivirus products, may fail to connect to HTTPS sites. SHA-1 is *almost* obsolete.
- * [1] https://blog.mozilla.org/security/2016/10/18/phasing-out-sha-1-on-the-public-web/ ***/
-user_pref("security.pki.sha1_enforcement_level", 1);
 /* 1261: disable 3DES (effective key size < 128)
  * [1] https://en.wikipedia.org/wiki/3des#Security
  * [2] http://en.citizendium.org/wiki/Meet-in-the-middle_attack
@@ -924,7 +931,7 @@ user_pref("gfx.font_rendering.graphite.enabled", false);
      Our default settings provide the best balance between protection and amount of breakage.
      To harden it a bit more you can set XOriginPolicy (1603) to 2 (+ optionally 1604 to 1 or 2).
      To fix broken sites (including your modem/router), temporarily set XOriginPolicy=0 and XOriginTrimmingPolicy=2 in about:config,
-     use the site and then change the values back. If you visit those sites regularly (e.g. Vimeo), use an extension.
+     use the site and then change the values back. If you visit those sites regularly (e.g. vimeo), use an extension.
 
                     full URI: https://example.com:8888/foo/bar.html?id=1234
        scheme+host+port+path: https://example.com:8888/foo/bar.html
@@ -968,9 +975,12 @@ user_pref("network.http.referer.hideOnionSource", true);
 user_pref("privacy.donottrackheader.enabled", true);
 
 /*** [SECTION 1700]: CONTAINERS
-     [1] https://support.mozilla.org/kb/containers-experiment
-     [2] https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
-     [3] https://github.com/mozilla/testpilot-containers
+     If you want to *really* leverage containers, we highly recommend Temporary Containers [2].
+     Read the article by the extension author [3], and check out the github wiki/repo [4].
+     [1] https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
+     [2] https://addons.mozilla.org/firefox/addon/temporary-containers/
+     [3] https://medium.com/@stoically/enhance-your-privacy-in-firefox-with-temporary-containers-33925cd6cd21
+     [4] https://github.com/stoically/temporary-containers/wiki
 ***/
 user_pref("_user.js.parrot", "1700 syntax error: the parrot's bit the dust!");
 /* 1701: enable Container Tabs setting in preferences (see 1702) [FF50+]
@@ -1032,18 +1042,11 @@ user_pref("_user.js.parrot", "2000 syntax error: the parrot's snuffed it!");
 /* 2001: disable WebRTC (Web Real-Time Communication)
  * [1] https://www.privacytools.io/#webrtc ***/
 user_pref("media.peerconnection.enabled", false);
-user_pref("media.peerconnection.use_document_iceservers", false);
-user_pref("media.peerconnection.video.enabled", false);
-user_pref("media.peerconnection.identity.enabled", false);
-user_pref("media.peerconnection.identity.timeout", 1);
-user_pref("media.peerconnection.turn.disable", true);
-user_pref("media.peerconnection.ice.tcp", false);
-user_pref("media.navigator.video.enabled", false); // video capability for WebRTC
 /* 2002: limit WebRTC IP leaks if using WebRTC
  * [TEST] https://browserleaks.com/webrtc
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1189041,1297416
  * [2] https://wiki.mozilla.org/Media/WebRTC/Privacy ***/
-user_pref("media.peerconnection.ice.default_address_only", true); // [FF42-FF50]
+user_pref("media.peerconnection.ice.default_address_only", true);
 user_pref("media.peerconnection.ice.no_host", true); // [FF51+]
 /* 2010: disable WebGL (Web Graphics Library), force bare minimum feature set if used & disable WebGL extensions
  * [1] https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
@@ -1186,7 +1189,7 @@ user_pref("dom.allow_cut_copy", false); // [HIDDEN PREF]
 user_pref("dom.disable_beforeunload", true);
 /* 2414: disable shaking the screen ***/
 user_pref("dom.vibrator.enabled", false);
-/* 2420: disable asm.js [FF22+]
+/* 2420: disable asm.js [FF22+] [SETUP-PERF]
  * [1] http://asmjs.org/
  * [2] https://www.mozilla.org/security/advisories/mfsa2015-29/
  * [3] https://www.mozilla.org/security/advisories/mfsa2015-50/
@@ -1199,7 +1202,7 @@ user_pref("javascript.options.asmjs", false);
  * [1] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0817 ***/
    // user_pref("javascript.options.ion", false);
    // user_pref("javascript.options.baselinejit", false);
-/* 2422: disable WebAssembly [FF52+]
+/* 2422: disable WebAssembly [FF52+] [SETUP-PERF]
  * [1] https://developer.mozilla.org/docs/WebAssembly ***/
 user_pref("javascript.options.wasm", false);
 /* 2426: disable Intersection Observer API [FF53+]
@@ -1281,11 +1284,11 @@ user_pref("browser.uitour.url", "");
  * [SETTING] Devtools>Advanced Settings>Enable browser chrome and add-on debugging toolboxes
  * [1] https://github.com/pyllyukko/user.js/issues/179#issuecomment-246468676 ***/
 user_pref("devtools.chrome.enabled", false);
-/* 2608: disable WebIDE to prevent remote debugging and extension downloads
+/* 2608: disable WebIDE to prevent remote debugging and ADB extension download
  * [1] https://trac.torproject.org/projects/tor/ticket/16222 ***/
-user_pref("devtools.webide.autoinstallADBHelper", false);
 user_pref("devtools.debugger.remote-enabled", false);
 user_pref("devtools.webide.enabled", false);
+user_pref("devtools.webide.autoinstallADBExtension", false); // [FF64+]
 /* 2609: disable MathML (Mathematical Markup Language) [FF51+]
  * [TEST] http://browserspy.dk/mathml.php
  * [1] https://bugzilla.mozilla.org/1173199 ***/
@@ -1304,7 +1307,7 @@ user_pref("middlemouse.contentLoadURL", false);
 user_pref("network.http.redirection-limit", 10);
 /* 2615: disable websites overriding Firefox's keyboard shortcuts [FF58+]
  * 0 (default) or 1=allow, 2=block
- * [NOTE] At the time of writing, causes issues with delete and backspace keys
+ * [NOTE] In FF65 and under, causes issues with delete and backspace keys (see 1445942)
  * [SETTING] to add site exceptions: Page Info>Permissions>Override Keyboard Shortcuts ***/
    // user_pref("permissions.default.shortcuts", 2);
 /* 2616: remove special permissions for certain mozilla domains [FF35+]
@@ -1373,9 +1376,6 @@ user_pref("xpinstall.whitelist.required", true); // [DEFAULT: true]
 /* 2680: enable CSP (Content Security Policy)
  * [1] https://developer.mozilla.org/docs/Web/HTTP/CSP ***/
 user_pref("security.csp.enable", true); // [DEFAULT: true]
-/* 2681: disable CSP violation events [FF59+]
- * [1] https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent ***/
-user_pref("security.csp.enable_violation_events", false);
 /* 2682: enable CSP 1.1 experimental hash-source directive [FF29+]
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=855326,883975 ***/
 user_pref("security.csp.experimentalEnabled", true);
@@ -1438,7 +1438,7 @@ user_pref("network.cookie.leave-secure-alone", true); // [DEFAULT: true]
  * To control *website* IDB data, control allowing cookies and service workers, or use
  * Temporary Containers. To mitigate *website* IDB, FPI helps (4001), and/or sanitize
  * on close (Offline Website Data, see 2800) or on-demand (Ctrl-Shift-Del), or automatically
- * via an extenion. Note that IDB currently cannot be sanitized by host.
+ * via an extension. Note that IDB currently cannot be sanitized by host.
  * [1] https://blog.mozilla.org/addons/2018/08/03/new-backend-for-storage-local-api/ ***/
 user_pref("dom.indexedDB.enabled", true); // [DEFAULT: true]
 /* 2730: disable offline cache ***/
@@ -1487,7 +1487,7 @@ user_pref("privacy.clearOnShutdown.history", true); // Browsing & Download Histo
 user_pref("privacy.clearOnShutdown.offlineApps", true); // Offline Website Data
 user_pref("privacy.clearOnShutdown.sessions", true); // Active Logins
 user_pref("privacy.clearOnShutdown.siteSettings", false); // Site Preferences
-/* 2804: reset default history items to clear with Ctrl-Shift-Del (to match above)
+/* 2804: reset default history items to clear with Ctrl-Shift-Del (to match 2803)
  * This dialog can also be accessed from the menu History>Clear Recent History
  * Firefox remembers your last choices. This will reset them when you start Firefox.
  * [NOTE] Regardless of what you set privacy.cpd.downloads to, as soon as the dialog
@@ -1576,6 +1576,7 @@ user_pref("privacy.firstparty.isolate.restrict_opener_access", true); // [DEFAUL
       FF56: The version number will be rounded down to the nearest multiple of 10
       FF57: The version number will match current ESR (1393283, 1418672, 1418162)
       FF59: The OS will be reported as Windows, OSX, Android, or Linux (to reduce breakage) (1404608)
+      FF66: The OS in HTTP Headers will be reduced to Windows or Android (1509829)
  ** 1369319 - disable device sensor API (see 4604) (FF56+)
  ** 1369357 - disable site specific zoom (see 4605) (FF56+)
  ** 1337161 - hide gamepads from content (see 4606) (FF56+)
@@ -1754,13 +1755,16 @@ user_pref("_user.js.parrot", "5000 syntax error: this is an ex-parrot!");
    // user_pref("browser.backspace_action", 2); // 0=previous page, 1=scroll up, 2=do nothing
    // user_pref("browser.tabs.closeWindowWithLastTab", false);
    // user_pref("browser.tabs.loadBookmarksInTabs", true); // open bookmarks in a new tab [FF57+]
-   // user_pref("browser.urlbar.decodeURLsOnCopy", true); // see Bugzilla 1320061 [FF53+]
+   // user_pref("browser.urlbar.decodeURLsOnCopy", true); // see bugzilla 1320061 [FF53+]
    // user_pref("general.autoScroll", false); // middle-click enabling auto-scrolling [WINDOWS] [MAC]
    // user_pref("ui.key.menuAccessKey", 0); // disable alt key toggling the menu bar [RESTART]
 /* OTHER ***/
    // user_pref("browser.bookmarks.max_backups", 2);
+   // user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", false); // disable CFR [FF64+]
+      // [SETTING] General>Browsing>Recommend extensions as you browse
+      // [1] https://support.mozilla.org/en-US/kb/extension-recommendations
    // user_pref("identity.fxaccounts.enabled", false); // disable and hide Firefox Accounts and Sync [FF60+] [RESTART]
-   // user_pref("network.manage-offline-status", false); // see Bugzilla 620472
+   // user_pref("network.manage-offline-status", false); // see bugzilla 620472
    // user_pref("reader.parse-on-load.enabled", false); // "Reader View"
    // user_pref("xpinstall.signatures.required", false); // enforced extension signing (Nightly/ESR)
 
@@ -2206,6 +2210,26 @@ user_pref("media.autoplay.enabled", false);
 // 5000's: enable "Ctrl+Tab cycles through tabs in recently used order" - replaced by browser.ctrlTab.recentlyUsedOrder
    // [-] https://bugzilla.mozilla.org/1473595
    // user_pref("browser.ctrlTab.previews", true);
+// * * * /
+// FF64
+// 0516: disable Onboarding [FF55+]
+   // Onboarding is an interactive tour/setup for new installs/profiles and features. Every time
+   // about:home or about:newtab is opened, the onboarding overlay is injected into that page
+   // [NOTE] Onboarding uses Google Analytics [2], and leaks resource://URIs [3]
+   // [1] https://wiki.mozilla.org/Firefox/Onboarding
+   // [2] https://github.com/mozilla/onboard/commit/db4d6c8726c89a5d6a241c1b1065827b525c5baf
+   // [3] https://bugzilla.mozilla.org/863246#c154
+   // [-] https://bugzilla.mozilla.org/1462415
+user_pref("browser.onboarding.enabled", false);
+// 2608: disable WebIDE ADB extension downloads - both renamed
+   // [1] https://trac.torproject.org/projects/tor/ticket/16222
+   // [-] https://bugzilla.mozilla.org/1491315
+user_pref("devtools.webide.autoinstallADBHelper", false);
+user_pref("devtools.webide.adbAddonURL", "");
+// 2681: disable CSP violation events [FF59+]
+   // [1] https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent
+   // [-] https://bugzilla.mozilla.org/1488165
+user_pref("security.csp.enable_violation_events", false);
 // * * * /
 // ***/
 
