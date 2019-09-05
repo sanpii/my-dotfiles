@@ -29,13 +29,13 @@ END {
     if (type == "swap")
         printf("SWAP: %.1fG\n", (swap_total-swap_free)/1024/1024)
     else
-        printf("Ω %.1f%\n", mem_used)
+        printf(" %.1f%\n", mem_used)
 
     # TODO: short text
     if (type == "swap")
         printf("SWAP: %.1fG\n", (swap_total-swap_free)/1024/1024)
     else
-        printf("Ω %.1f%\n", (mem_total - mem_free)/mem_total*100)
+        printf(" %.1f%\n", (mem_total - mem_free)/mem_total*100)
 
     # color
     if (+ mem_used > + alert_max)

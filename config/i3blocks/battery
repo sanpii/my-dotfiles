@@ -21,10 +21,10 @@ then
     esac
 
     # Full text
-    echo "Ψ $capacity% $symbol"
+    echo -e "\ue00a $capacity% $symbol"
 
     # Short text
-    echo "Ψ $capacity% $symbol"
+    echo -e "\ue00a $capacity% $symbol"
 
     # Color
     if test $capacity -le $ALERT_LOW -a $status = "Discharging"

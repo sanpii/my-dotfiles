@@ -4,10 +4,10 @@ load="$(cut -d ' ' -f1 /proc/loadavg)"
 cpus="$(nproc)"
 
 # full text
-echo "ν $load"
+echo -e "\ue62e $load"
 
 # short text
-echo "ν $load"
+echo -e "\ue62e $load"
 
 # color if load is too high
 if [ $(awk 'BEGIN{ print "'$cpus'"<="'$load'" }') -eq 1 ]; then
