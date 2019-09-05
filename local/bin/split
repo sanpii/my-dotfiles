@@ -23,7 +23,7 @@ function split()
         i3_msg 'split vertical'
     fi
 
-    i3_msg 'exec urxvt'
+    i3_msg 'exec alacritty'
     sleep 0.5s
 
     if [ "$orientation" = "h" ]

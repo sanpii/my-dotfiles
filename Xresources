@@ -1,66 +1,3 @@
-! urxvt {{{
-
-URxvt*urgentOnBell: True
-URxvt*fading: 30
-
-! Font
-URxvt*font: xft:Hack:style=Regular:pixelsize=15
-
-! Sidebar
-URxvt*saveLines: 0
-URxvt*scrollBar: false
-
-URxvt*foreground: #eeeeeeeeecec
-URxvt*background: #000000000000
-URxvt*color0: #2e2e34343636
-URxvt*color1: #ffff00000000
-URxvt*color2: #4e4e9a9a0606
-URxvt*color3: #c4c4a0a00000
-URxvt*color4: #34346565a4a4
-URxvt*color5: #757550507b7b
-URxvt*color6: #060698989a9a
-URxvt*color7: #d3d3d7d7cfcf
-URxvt*color8: #555557575353
-URxvt*color9: #efef29292929
-URxvt*color10: #8a8ae2e23434
-URxvt*color11: #fcfce9e94f4f
-URxvt*color12: #72729f9fcfcf
-URxvt*color13: #adad7f7fa8a8
-URxvt*color14: #3434e2e2e2e2
-URxvt*color15: #eeeeeeeeecec
-URxvt*color16: #4c4c4c4c4c4c
-URxvt*color17: #a8a830303030
-URxvt*color18: #202088882020
-URxvt*color19: #a8a888880000
-URxvt*color20: #555555559898
-URxvt*color21: #888830308888
-URxvt*color22: #303088888888
-URxvt*color23: #d8d8d8d8d8d8
-
-URxvt*iso14755: false
-URxvt*iso14755_52: false
-
-! Extensions
-URxvt*perl-lib: /home/sanpi/.urxvt/perl
-URxvt*perl-ext-common:selection,url-select,keyboard-select,clipboard,font-size
-
-! Clikable URL
-URxvt*keysym.M-u: perl:url-select:select_next
-URxvt*urlLauncher: x-www-browser
-URxvt*underlineURLs: true
-
-! Keyboard select
-URxvt*keysym.M-Escape: perl:keyboard-select:activate
-
-! Clipboard
-URxvt*keysym.M-c: perl:clipboard:copy
-URxvt*keysym.M-v: perl:clipboard:paste
-URxvt*keysym.M-C-v: perl:clipboard:paste_escaped
-
-! font-size
-URxvt.keysym.C-equal:  font-size:reset
-
-! }}}
 ! rofi {{{
 rofi.columns: 4
 rofi.color-enabled: true
@@ -74,5 +11,5 @@ rofi.yoffset: -22
 rofi.xoffset: 0
 rofi.fixed-num-lines: true
 rofi.ssh-set-title: true
-rofi.terminal: urxvt
+rofi.terminal: i3-sensible-terminal
 ! }}}

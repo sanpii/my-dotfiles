@@ -1,3 +1,4 @@
+alacritty
 alsa-utils
 apt-file
 bash-completion
@@ -29,7 +30,6 @@ ntp
 ntpdate
 parcellite
 php5
-rxvt-unicode-256color
 scrot
 sudo
 synaptic
