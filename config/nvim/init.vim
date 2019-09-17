@@ -121,23 +121,6 @@
             autocmd FileType mail :exec "source " . vimfiles . "/mail.vim"
         augroup END
     " }}}
-    " Language client {{{
-        let g:LanguageClient_serverCommands = {
-            \ 'c': ['clangd'],
-            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-            \ 'php': ['php', $HOME . '/.local/bin/php-language-server.php'],
-        \ }
-
-        let g:LanguageClient_autoStart = 1
-
-        nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-        nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-        nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-    " }}}
-    " ncm2 {{{
-        autocmd BufEnter * call ncm2#enable_for_buffer()
-        set completeopt=noinsert,menuone,noselect
-    " }}}
     " neosnippet {{{
         let g:neosnippet#enable_completed_snippet = 0
         let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']

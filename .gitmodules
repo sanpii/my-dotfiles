@@ -88,15 +88,12 @@
 [submodule "config/nvim/bundle/esearch"]
 	path = config/nvim/pack/bundle/start/esearch
 	url = git://github.com/eugen0329/vim-esearch.git
-[submodule "config/nvim/bundle/language-client"]
-	path = config/nvim/pack/bundle/start/language-client
-	url = git://github.com/autozimu/LanguageClient-neovim.git
-[submodule "config/nvim/bundle/ncm2"]
-	path = config/nvim/pack/bundle/start/ncm2
-	url = https://github.com/ncm2/ncm2.git
 [submodule "config/nvim/bundle/yarp"]
 	path = config/nvim/pack/bundle/start/yarp
 	url = https://github.com/roxma/nvim-yarp.git
 [submodule "config/nvim/bundle/openscad"]
 	path = config/nvim/pack/bundle/start/openscad
 	url = git://github.com/sirtaj/vim-openscad.git
+[submodule "config/nvim/pack/bundle/start/coc"]
+	path = config/nvim/pack/bundle/start/coc
+	url = git://github.com/neoclide/coc.nvim.git
