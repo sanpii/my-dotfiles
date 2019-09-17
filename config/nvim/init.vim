@@ -8,9 +8,6 @@
 
     let vimfiles=$HOME . "/.config/nvim"
 
-    exec "source " . vimfiles . "/bundle/pathogen/autoload/pathogen.vim"
-    call pathogen#infect()
-
     set fileformats=unix
     set mouse=""
     set foldmethod=marker

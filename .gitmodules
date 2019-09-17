@@ -1,105 +1,102 @@
 [submodule "nvim/bundle/gundo"]
-	path = config/nvim/bundle/gundo
+	path = config/nvim/pack/bundle/start/gundo
 	url = git://github.com/sjl/gundo.vim.git
 [submodule "nvim/bundle/auto_mkdir"]
-	path = config/nvim/bundle/auto_mkdir
+	path = config/nvim/pack/bundle/start/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
 [submodule "nvim/bundle/ctrlp"]
-	path = config/nvim/bundle/ctrlp
+	path = config/nvim/pack/bundle/start/ctrlp
 	url = git://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "nvim/bundle/splice"]
-	path = config/nvim/bundle/splice
+	path = config/nvim/pack/bundle/start/splice
 	url = git://github.com/sjl/splice.vim.git
 [submodule "nvim/bundle/eunuch"]
-	path = config/nvim/bundle/eunuch
+	path = config/nvim/pack/bundle/start/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
 [submodule "nvim/bundle/vdebug"]
-	path = config/nvim/bundle/vdebug
+	path = config/nvim/pack/bundle/start/vdebug
 	url = git://github.com/joonty/vdebug.git
 [submodule "nvim/bundle/sideway"]
-	path = config/nvim/bundle/sideway
+	path = config/nvim/pack/bundle/start/sideway
 	url = git://github.com/AndrewRadev/sideways.vim.git
-[submodule "nvim/bundle/pathogen"]
-	path = config/nvim/bundle/pathogen
-	url = git://github.com/tpope/vim-pathogen.git
 [submodule "nvim/bundle/matchtag"]
-	path = config/nvim/bundle/matchtag
+	path = config/nvim/pack/bundle/start/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
 [submodule "nvim/bundle/SingleCompile"]
-	path = config/nvim/bundle/SingleCompile
+	path = config/nvim/pack/bundle/start/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
 [submodule "nvim/bundle/incbool"]
-	path = config/nvim/bundle/incbool
+	path = config/nvim/pack/bundle/start/incbool
 	url = git://github.com/can3p/incbool.vim.git
 [submodule "nvim/bundle/clam"]
-	path = config/nvim/bundle/clam
+	path = config/nvim/pack/bundle/start/clam
 	url = git://github.com/sjl/clam.vim.git
 [submodule "nvim/bundle/ctrlp-funky"]
-	path = config/nvim/bundle/ctrlp-funky
+	path = config/nvim/pack/bundle/start/ctrlp-funky
 	url = git://github.com/tacahiroy/ctrlp-funky.git
 [submodule "nvim/bundle/airline"]
-	path = config/nvim/bundle/airline
+	path = config/nvim/pack/bundle/start/airline
 	url = git://github.com/vim-airline/vim-airline.git
 [submodule "nvim/bundle/desertink"]
-	path = config/nvim/bundle/desertink
+	path = config/nvim/pack/bundle/start/desertink
 	url = git://github.com/toupeira/vim-desertink.git
 [submodule "nvim/bundle/indexed-search"]
-	path = config/nvim/bundle/indexed-search
+	path = config/nvim/pack/bundle/start/indexed-search
 	url = git://github.com/henrik/vim-indexed-search
 [submodule "nvim/bundle/abolish"]
-	path = config/nvim/bundle/abolish
+	path = config/nvim/pack/bundle/start/abolish
 	url = git://github.com/tpope/vim-abolish.git
 [submodule "nvim/vim/bundle/targets"]
-	path = config/nvim/bundle/targets
+	path = config/nvim/pack/bundle/start/targets
 	url = git://github.com/wellle/targets.vim.git
 [submodule "nvim/bundle/better-whitespace"]
-	path = config/nvim/bundle/better-whitespace
+	path = config/nvim/pack/bundle/start/better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
 [submodule "nvim/bundle/signature"]
-	path = config/nvim/bundle/signature
+	path = config/nvim/pack/bundle/start/signature
 	url = git://github.com/kshenoy/vim-signature.git
 [submodule "nvim/bundle/spiffy_foldtext"]
-	path = config/nvim/bundle/spiffy_foldtext
+	path = config/nvim/pack/bundle/start/spiffy_foldtext
 	url = git://github.com/atimholt/spiffy_foldtext.git
 [submodule "nvim-polyglot"]
-	path = config/nvim/bundle/polyglot
+	path = config/nvim/pack/bundle/start/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
 [submodule "nvim/bundle/relativity"]
-	path = config/nvim/bundle/relativity
+	path = config/nvim/pack/bundle/start/relativity
 	url = git://github.com/kennykaye/vim-relativity.git
 [submodule "config/nvim/bundle/troll-stopper"]
-	path = config/nvim/bundle/troll-stopper
+	path = config/nvim/pack/bundle/start/troll-stopper
 	url = git://github.com/vim-utils/vim-troll-stopper.git
 [submodule "config/nvim/bundle/gnupg"]
-	path = config/nvim/bundle/gnupg
+	path = config/nvim/pack/bundle/start/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
 [submodule "config/nvim/bundle/grammalecte"]
-	path = config/nvim/bundle/grammalecte
+	path = config/nvim/pack/bundle/start/grammalecte
 	url = git://github.com/dpelle/vim-Grammalecte.git
 [submodule "config/nvim/bundle/diminactive"]
-	path = config/nvim/bundle/diminactive
+	path = config/nvim/pack/bundle/start/diminactive
 	url = git://github.com/blueyed/vim-diminactive.git
 [submodule "config/nvim/bundle/neosnippet"]
-	path = config/nvim/bundle/neosnippet
+	path = config/nvim/pack/bundle/start/neosnippet
 	url = git://github.com/Shougo/neosnippet.vim.git
 [submodule "config/nvim/bundle/snippets"]
-	path = config/nvim/bundle/snippets
+	path = config/nvim/pack/bundle/start/snippets
 	url = git://github.com/Shougo/neosnippet-snippets.git
 [submodule "config/nvim/bundle/shot-f"]
-	path = config/nvim/bundle/shot-f
+	path = config/nvim/pack/bundle/start/shot-f
 	url = git://github.com/deris/vim-shot-f.git
 [submodule "config/nvim/bundle/esearch"]
-	path = config/nvim/bundle/esearch
+	path = config/nvim/pack/bundle/start/esearch
 	url = git://github.com/eugen0329/vim-esearch.git
 [submodule "config/nvim/bundle/language-client"]
-	path = config/nvim/bundle/language-client
+	path = config/nvim/pack/bundle/start/language-client
 	url = git://github.com/autozimu/LanguageClient-neovim.git
 [submodule "config/nvim/bundle/ncm2"]
-	path = config/nvim/bundle/ncm2
+	path = config/nvim/pack/bundle/start/ncm2
 	url = https://github.com/ncm2/ncm2.git
 [submodule "config/nvim/bundle/yarp"]
-	path = config/nvim/bundle/yarp
+	path = config/nvim/pack/bundle/start/yarp
 	url = https://github.com/roxma/nvim-yarp.git
 [submodule "config/nvim/bundle/openscad"]
-	path = config/nvim/bundle/openscad
+	path = config/nvim/pack/bundle/start/openscad
 	url = git://github.com/sirtaj/vim-openscad.git
