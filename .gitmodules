@@ -88,9 +88,6 @@
 [submodule "config/nvim/bundle/esearch"]
 	path = config/nvim/pack/bundle/start/esearch
 	url = git://github.com/eugen0329/vim-esearch.git
-[submodule "config/nvim/bundle/yarp"]
-	path = config/nvim/pack/bundle/start/yarp
-	url = https://github.com/roxma/nvim-yarp.git
 [submodule "config/nvim/bundle/openscad"]
 	path = config/nvim/pack/bundle/start/openscad
 	url = git://github.com/sirtaj/vim-openscad.git
