@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=xautolock
+Exec=/usr/bin/xautolock -locker 'i3lock-fancy'
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

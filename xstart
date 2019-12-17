@@ -21,28 +21,7 @@ then
     /usr/bin/dunst &
 fi
 
-function start()
-{
-    local command="$1"
-    shift
-    local arguments="$@"
-
-
-    if [ -x "$command" ]
-    then
-        "$command" $arguments &
-    fi
-}
-
-start /usr/bin/pulseaudio --start
-start /usr/bin/parcellite
-start /usr/bin/nextcloud
-start /usr/bin/urxvt --title term-scratchpad
-start /usr/bin/xautolock -locker 'i3lock-fancy'
-start /usr/bin/redshift
-start /usr/bin/gpg-agent --daemon
-start /usr/bin/keepassxc
-start /usr/bin/udiskie --tray --use-udisks2
+/usr/bin/dex -a
 
 if [ -e ~/.xstart.local ]
 then

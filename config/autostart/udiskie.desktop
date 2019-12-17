@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=udiskie
+Exec=/usr/bin/udiskie --tray
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

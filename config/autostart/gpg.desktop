@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=gpg
+Exec=/usr/bin/gpg-daemon --daemon
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
