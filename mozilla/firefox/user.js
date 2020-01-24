@@ -1,8 +1,8 @@
+
 /******
 * name: ghacks user.js
-* date: 19 December 2019
-* version 71: Dancing Pants
-*   "Ooh-ooh, see that girl, watch that scene, dig in the dancing pants"
+* date: 24 January 2020
+* version 72
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
@@ -84,10 +84,10 @@
 user_pref("_user.js.parrot", "START: Oh yes, the Norwegian Blue... what's wrong with it?");
 
 /* 0000: disable about:config warning
- * The XUL version can still be accessed in FF71+ @ chrome://global/content/config.xul
- * and in FF73+ @ chrome://global/content/config.xhtml ***/
-user_pref("general.warnOnAboutConfig", false); // for the XUL version
-user_pref("browser.aboutConfig.showWarning", false); // for the new HTML version [FF71+]
+ * FF71-72: chrome://global/content/config.xul
+ * FF73+: chrome://global/content/config.xhtml ***/
+user_pref("general.warnOnAboutConfig", false); // XUL/XHTML version
+user_pref("browser.aboutConfig.showWarning", false); // HTML version [FF71+]
 
 /*** [SECTION 0100]: STARTUP ***/
 user_pref("_user.js.parrot", "0100 syntax error: the parrot's dead!");
@@ -114,7 +114,6 @@ user_pref("browser.newtab.preload", false);
 /* 0105a: disable Activity Stream telemetry ***/
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.telemetry.ping.endpoint", "");
 /* 0105b: disable Activity Stream Snippets
  * Runs code received from a server (aka Remote Code Execution) and sends information back to a metrics server
  * [1] https://abouthome-snippets-service.readthedocs.io/ ***/
@@ -239,7 +238,6 @@ user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); // [FF55+]
 user_pref("toolkit.telemetry.updatePing.enabled", false); // [FF56+]
 user_pref("toolkit.telemetry.bhrPing.enabled", false); // [FF57+] Background Hang Reporter
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false); // [FF57+]
-user_pref("toolkit.telemetry.hybridContent.enabled", false); // [FF59+]
 /* 0331: disable Telemetry Coverage
  * [1] https://blog.mozilla.org/data/2018/08/20/effectively-measuring-search-in-firefox/ ***/
 user_pref("toolkit.telemetry.coverage.opt-out", true); // [HIDDEN PREF]
@@ -361,6 +359,7 @@ user_pref("browser.ping-centre.telemetry", false);
 /* 0517: disable Form Autofill
  * [NOTE] Stored data is NOT secure (uses a JSON file)
  * [NOTE] Heuristics controls Form Autofill on forms without @autocomplete attributes
+ * [SETTING] Options>Privacy & Security>Forms and Autofill>Autofill addresses (FF74+)
  * [1] https://wiki.mozilla.org/Firefox/Features/Form_Autofill
  * [2] https://www.ghacks.net/2017/05/24/firefoxs-new-form-autofill-is-awesome/ ***/
 user_pref("extensions.formautofill.addresses.enabled", false); // [FF55+]
@@ -1265,14 +1264,6 @@ user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true); // [FF58+]
  * [WARNING] This will break a LOT of sites' functionality AND extensions!
  * You are better off using an extension for more granular control ***/
    // user_pref("dom.storage.enabled", false);
-/* 2720: enforce IndexedDB (IDB) as enabled
- * IDB is required for extensions and Firefox internals (even before FF63 in [1])
- * To control *website* IDB data, control allowing cookies and service workers, or use
- * Temporary Containers. To mitigate *website* IDB, FPI helps (4001), and/or sanitize
- * on close (Offline Website Data, see 2800) or on-demand (Ctrl-Shift-Del), or automatically
- * via an extension. Note that IDB currently cannot be sanitized by host.
- * [1] https://blog.mozilla.org/addons/2018/08/03/new-backend-for-storage-local-api/ ***/
-user_pref("dom.indexedDB.enabled", true); // [DEFAULT: true]
 /* 2730: disable offline cache ***/
 user_pref("browser.cache.offline.enable", false);
 /* 2740: disable service worker cache and cache storage
@@ -1439,7 +1430,7 @@ user_pref("privacy.firstparty.isolate", true);
       FF65: pointerEvent.pointerid (1492766)
  ** 1485266 - disable exposure of system colors to CSS or canvas (see 4615) (FF67+)
  ** 1407366 - enable inner window letterboxing (see 4504) (FF67+)
- ** 1540726 - return "light" with prefers-color-scheme (FF67+)
+ ** 1540726 - return "light" with prefers-color-scheme (see 4616) (FF67+)
       [1] https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
  ** 1564422 - spoof audioContext outputLatency (FF70+)
  ** 1595823 - spoof audioContext sampleRate (FF72+)
@@ -1569,6 +1560,9 @@ user_pref("dom.w3c_pointer_events.enabled", false);
   // [SETUP-CHROME] Might affect CSS in themes and extensions
   // [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=232227,1330876
 user_pref("ui.use_standins_for_native_colors", true);
+// 4616: enforce prefers-color-scheme as light [FF67+]
+  // 0=light, 1=dark : This overrides your OS value
+user_pref("ui.systemUsesDarkTheme", 0); // [HIDDEN PREF]
 // * * * /
 // ***/
 
@@ -1644,130 +1638,11 @@ user_pref("_user.js.parrot", "5000 syntax error: this is an ex-parrot!");
    // user_pref("xpinstall.signatures.required", false); // enforced extension signing (Nightly/ESR)
 
 /*** [SECTION 9999]: DEPRECATED / REMOVED / LEGACY / RENAMED
-     Documentation denoted as [-]. Items deprecated prior to FF61 have been archived at [1], which
-     also provides a link-clickable, viewer-friendly version of the deprecated bugzilla tickets
+     Documentation denoted as [-]. Items deprecated in FF68 or earlier have been archived at [1],
+     which also provides a link-clickable, viewer-friendly version of the deprecated bugzilla tickets
      [1] https://github.com/ghacksuserjs/ghacks-user.js/issues/123
 ***/
 user_pref("_user.js.parrot", "9999 syntax error: the parrot's deprecated!");
-/* FF61
-// 0501: disable experiments
-   // [1] https://wiki.mozilla.org/Telemetry/Experiments
-   // [-] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1420908,1450801
-user_pref("experiments.enabled", false);
-user_pref("experiments.manifest.uri", "");
-user_pref("experiments.supported", false);
-user_pref("experiments.activeExperiment", false);
-// 2612: disable remote JAR files being opened, regardless of content type [FF42+]
-   // [1] https://bugzilla.mozilla.org/1173171
-   // [2] https://www.fxsitecompat.com/en-CA/docs/2015/jar-protocol-support-has-been-disabled-by-default/
-   // [-] https://bugzilla.mozilla.org/1427726
-user_pref("network.jar.block-remote-files", true);
-// 2613: disable JAR from opening Unsafe File Types
-   // [-] https://bugzilla.mozilla.org/1427726
-user_pref("network.jar.open-unsafe-types", false);
-// ***/
-/* FF62
-// 1803: disable Java plugin
-   // [-] (part5) https://bugzilla.mozilla.org/1461243
-user_pref("plugin.state.java", 0);
-// ***/
-/* FF63
-// 0205: disable GeoIP-based search results
-   // [NOTE] May not be hidden if Firefox has changed your settings due to your locale
-   // [-] https://bugzilla.mozilla.org/1462015
-user_pref("browser.search.countryCode", "US"); // [HIDDEN PREF]
-// 0301a: disable auto-update checks for Firefox
-   // [SETTING] General>Firefox Updates>Never check for updates
-   // [-] https://bugzilla.mozilla.org/1420514
-   // user_pref("app.update.enabled", false);
-// 0503: disable "Savant" Shield study [FF61+]
-   // [-] https://bugzilla.mozilla.org/1457226
-user_pref("shield.savant.enabled", false);
-// 1031: disable favicons in tabs and new bookmarks - merged into browser.chrome.site_icons
-   // [-] https://bugzilla.mozilla.org/1453751
-   // user_pref("browser.chrome.favicons", false);
-// 2030: disable autoplay of HTML5 media - replaced by media.autoplay.default
-   // This may break video playback on various sites
-   // [-] https://bugzilla.mozilla.org/1470082
-user_pref("media.autoplay.enabled", false);
-// 2704: set cookie lifetime in days (see 2703)
-   // [-] https://bugzilla.mozilla.org/1457170
-   // user_pref("network.cookie.lifetime.days", 90); // [DEFAULT: 90]
-// 5000's: enable "Ctrl+Tab cycles through tabs in recently used order" - replaced by browser.ctrlTab.recentlyUsedOrder
-   // [-] https://bugzilla.mozilla.org/1473595
-   // user_pref("browser.ctrlTab.previews", true);
-// ***/
-/* FF64
-// 0516: disable Onboarding [FF55+]
-   // Onboarding is an interactive tour/setup for new installs/profiles and features. Every time
-   // about:home or about:newtab is opened, the onboarding overlay is injected into that page
-   // [NOTE] Onboarding uses Google Analytics [2], and leaks resource://URIs [3]
-   // [1] https://wiki.mozilla.org/Firefox/Onboarding
-   // [2] https://github.com/mozilla/onboard/commit/db4d6c8726c89a5d6a241c1b1065827b525c5baf
-   // [3] https://bugzilla.mozilla.org/863246#c154
-   // [-] https://bugzilla.mozilla.org/1462415
-user_pref("browser.onboarding.enabled", false);
-// 2608: disable WebIDE ADB extension downloads - both renamed
-   // [1] https://trac.torproject.org/projects/tor/ticket/16222
-   // [-] https://bugzilla.mozilla.org/1491315
-user_pref("devtools.webide.autoinstallADBHelper", false);
-user_pref("devtools.webide.adbAddonURL", "");
-// 2681: disable CSP violation events [FF59+]
-   // [1] https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent
-   // [-] https://bugzilla.mozilla.org/1488165
-user_pref("security.csp.enable_violation_events", false);
-// ***/
-/* FF65
-// 0850a: disable location bar autocomplete and suggestion types
-   // If you enforce any of the suggestion types (see the other 0850a), you MUST enforce 'autocomplete'
-   //   - If *ALL* of the suggestion types are false, 'autocomplete' must also be false
-   //   - If *ANY* of the suggestion types are true, 'autocomplete' must also be true
-   // [-] https://bugzilla.mozilla.org/1502392
-user_pref("browser.urlbar.autocomplete.enabled", false);
-// 0908: remove user & password info when attempting to fix an entered URL (i.e. 0802 is true)
-   // e.g. //user:password@foo -> //user@(prefix)foo(suffix) NOT //user:password@(prefix)foo(suffix)
-   // [-] https://bugzilla.mozilla.org/1510580
-user_pref("browser.fixup.hide_user_pass", true); // [DEFAULT: true]
-// ***/
-/* FF66
-// 0380: disable Browser Error Reporter [FF60+]
-   // [1] https://support.mozilla.org/en-US/kb/firefox-nightly-error-collection
-   // [2] https://firefox-source-docs.mozilla.org/browser/browser/BrowserErrorReporter.html
-   // [-] https://bugzilla.mozilla.org/1509888
-user_pref("browser.chrome.errorReporter.enabled", false);
-user_pref("browser.chrome.errorReporter.submitUrl", "");
-// 0502: disable Mozilla permission to silently opt you into tests
-   // [-] https://bugzilla.mozilla.org/1415625
-user_pref("network.allow-experiments", false);
-// ***/
-/* FF67
-// 2428: enforce DOMHighResTimeStamp API
-   // [WARNING] Required for normalization of timestamps and any timer resolution mitigations
-   // [-] https://bugzilla.mozilla.org/1485264
-user_pref("dom.event.highrestimestamp.enabled", true); // [DEFAULT: true]
-// 5000's: disable CFR [FF64+] - split into two new prefs: *cfr.addons, *cfr.features
-   // [SETTING] General>Browsing>Recommend extensions as you browse
-   // [1] https://support.mozilla.org/en-US/kb/extension-recommendations
-   // [-] https://bugzilla.mozilla.org/1528953
-   // user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", false);
-// ***/
-/* FF68
-// 0105b: disable Activity Stream Legacy Snippets
-   // [-] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1546190,1540939
-user_pref("browser.newtabpage.activity-stream.disableSnippets", true);
-user_pref("browser.aboutHomeSnippets.updateUrl", "");
-// 0307: disable auto updating of lightweight themes (LWT)
-   // Not to be confused with themes in 0301* + 0302*, which use the FF55+ Theme API
-   // Mozilla plan to convert existing LWTs and remove LWT support in the future, see [1]
-   // [1] https://blog.mozilla.org/addons/2018/09/20/future-themes-here/
-   // [-] (part3b) https://bugzilla.mozilla.org/1525762
-user_pref("lightweightThemes.update.enabled", false);
-// 2682: enable CSP 1.1 experimental hash-source directive [FF29+]
-   // [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=855326,883975
-   // [-] https://bugzilla.mozilla.org/1386214
-user_pref("security.csp.experimentalEnabled", true);
-// ***/
-
 /* ESR68.x still uses all the following prefs
 // [NOTE] replace the * with a slash in the line above to re-enable them
 // FF69
@@ -1792,6 +1667,23 @@ user_pref("devtools.webide.autoinstallADBExtension", false); // [FF64+]
    // [2] https://bugzilla.mozilla.org/959985
    // [-] https://bugzilla.mozilla.org/1574480
 user_pref("offline-apps.allow_by_default", false);
+// * * * /
+// FF72
+// 0105a: disable Activity Stream telemetry
+   // [-] https://bugzilla.mozilla.org/1597697
+user_pref("browser.newtabpage.activity-stream.telemetry.ping.endpoint", "");
+// 0330: disable Hybdrid Content telemetry
+   // [-] https://bugzilla.mozilla.org/1520491
+user_pref("toolkit.telemetry.hybridContent.enabled", false); // [FF59+]
+// 2720: enforce IndexedDB (IDB) as enabled
+   // IDB is required for extensions and Firefox internals (even before FF63 in [1])
+   // To control *website* IDB data, control allowing cookies and service workers, or use
+   // Temporary Containers. To mitigate *website* IDB, FPI helps (4001), and/or sanitize
+   // on close (Offline Website Data, see 2800) or on-demand (Ctrl-Shift-Del), or automatically
+   // via an extension. Note that IDB currently cannot be sanitized by host.
+   // [1] https://blog.mozilla.org/addons/2018/08/03/new-backend-for-storage-local-api/
+   // [-] https://bugzilla.mozilla.org/1488583
+user_pref("dom.indexedDB.enabled", true); // [DEFAULT: true]
 // * * * /
 // ***/
 
@@ -1824,10 +1716,23 @@ user_pref("browser.sessionstore.max_tabs_undo", 20);
 user_pref("browser.sessionstore.max_windows_undo", 3);
 /* 1021 */
 user_pref("browser.sessionstore.resume_from_crash", true);
+/* 1211 */
+user_pref("security.OCSP.enabled", 0);
+/* 1212 */
+user_pref("security.OCSP.require", false);
 /* 1401 */
 user_pref("browser.display.use_document_fonts", 1);
 /* 1405 */
 user_pref("gfx.downloadable_fonts.woff2.enabled", true);
+/* 1820 */
+user_pref("media.gmp-provider.enabled", true);
+user_pref("media.gmp.trial-create.enabled", true);
+user_pref("media.gmp-manager.updateEnabled", true);
+/* 1825 */
+user_pref("media.gmp-widevinecdm.visible", true);
+user_pref("media.gmp-widevinecdm.enabled", true);
+/* 1830 */
+user_pref("media.eme.enabled", true);
 /* 2010 */
 user_pref("webgl.disabled", false);
 user_pref("webgl.min_capability_mode", false);
@@ -1840,6 +1745,8 @@ user_pref("media.autoplay.default", 2);
 user_pref("full-screen-api.enabled", true);
 /* 2422 */
 user_pref("javascript.options.wasm", true);
+/* 2508 */
+user_pref("layers.acceleration.disabled", false);
 /* 2603 */
 user_pref("browser.download.useDownloadDir", true);
 /* 2662 */
@@ -1859,10 +1766,11 @@ user_pref("privacy.clearOnShutdown.sessions", false);
 user_pref("privacy.clearOnShutdown.siteSettings", false);
 /* 4501 */
 user_pref("privacy.resistFingerprinting", false);
+/* 4504 */
+user_pref("privacy.resistFingerprinting.letterboxing", false);
 /* 5003 */
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 /* 5021d */
 user_pref("browser.tabs.loadDivertedInBackground", true);
-
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
