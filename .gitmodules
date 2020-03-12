@@ -94,3 +94,6 @@
 [submodule "config/nvim/pack/bundle/start/coc"]
 	path = config/nvim/pack/bundle/start/coc
 	url = git://github.com/neoclide/coc.nvim.git
+[submodule "config/nvim/pack/bundle/start/vipsql"]
+	path = config/nvim/pack/bundle/start/vipsql
+	url = https://github.com/martingms/vipsql.git

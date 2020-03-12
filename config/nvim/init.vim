@@ -141,6 +141,17 @@
     " Spiffy Foldtext {{{
         let g:SpiffyFoldtext_format = "%c{─}  %<%f{─}┤ %4n lines ├─%l{──}"
     " }}}
+    " Visql {{{
+        noremap <leader>po :VipsqlOpenSession<CR>
+        noremap <silent> <leader>pk :VipsqlCloseSession<CR>
+        nnoremap <leader>ps :VipsqlShell<CR>
+        vnoremap <leader>ps :VipsqlSendSelection<CR>
+        noremap <leader>pr :VipsqlSendRange<CR>
+        noremap <leader>pl :VipsqlSendCurrentLine<CR>
+        noremap <leader>pb :VipsqlSendBuffer<CR>
+        noremap <leader>pc :VipsqlSendInterrupt<CR>
+        let g:vipsql_new_buffer_config = 'setlocal filetype=pgsql'
+    " }}}
 " }}}
 " Mappage {{{
     " Help {{{
@@ -183,7 +194,7 @@
 
     nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 
-    nnoremap <leader>p :setl paste!<CR>
+    nnoremap <leader>P :setl paste!<CR>
     nnoremap <leader>wp :setl wrap!<CR>
     nnoremap <leader>sp :setl spell!<CR>
     nnoremap <leader>h :edit %:h<CR>
