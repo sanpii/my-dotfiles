@@ -55,7 +55,7 @@
 	svn-commit = !sh -c 'git stash save "Pre svn-commit stash" && git svn dcommit && git stash pop'
 	fix-conflits = !$(git config core.editor) $(git ls-files -u | cut -d'   ' -f 2 | sort -u)
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
-	fixup = "!f() { c=$(git rev-parse \"$1\") && git commit --fixup $c && git rebase -p -i $c^ --autosquash; };f"
+	fixup = "!f() { c=$(git rev-parse \"${1-HEAD~}\") && git commit --fixup $c && git rebase -p -i $c^ --autosquash; };f"
 [include]
 	path = .gitconfig.local
 [rerere]
