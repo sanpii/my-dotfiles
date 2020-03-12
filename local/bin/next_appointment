@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/python2 -W ignore
 # encoding: utf-8
 
 import os
@@ -14,7 +14,7 @@ def connect(url):
     return principal.calendars()
 
 def parse_eventdata(event):
-    confirmed = True
+    status = "confirmed"
 
     for item in event.data.split("\n"):
         if re.match("^DTSTART\;", item):
@@ -24,13 +24,13 @@ def parse_eventdata(event):
         if re.match("^SUMMARY\:", item):
             title = item.split(":")[1].encode("utf-8")
         if re.match("^STATUS\:", item):
-            confirmed = item.split(":")[1].encode("utf-8") != "TENTATIVE"
+            status = item.split(":")[1].encode("utf-8").lower()
 
     return {
         "title": title,
         "start": start,
         "end": end,
-        "confirmed": confirmed,
+        "status": status,
         "start_hour": start.strftime("%Hh%M ") if start.hour != 0 else "",
         "day": "Demain " if start.date() > datetime.today().date() else "",
     }
@@ -56,6 +56,14 @@ def get_events(calendar):
 def get_name(calendar):
     return calendar.url.split('/')[-2]
 
+def print_event(event):
+    title = "{day}{start_hour}{title}".format(**event)
+    if event["status"] == "tentative":
+        title += " ?"
+    elif event["status"] == "cancelled":
+        title += " ×"
+    print(title),
+
 def main():
     try:
         config = ConfigParser.RawConfigParser()
@@ -75,16 +83,11 @@ def main():
         if len(events) > 0:
             print("[%s]" % name),
             for event in events[:-1]:
-                title = "{day}{start_hour}{title}".format(**event)
-                if not event["confirmed"]:
-                    title += " ?"
-                print("%s -" % title),
+                print_event(event)
+                print("-"),
                 nb_events += 1
             else:
-                title = "{day}{start_hour}{title}".format(**events[-1])
-                if not events[-1]["confirmed"]:
-                    title += " ?"
-                print(title),
+                print_event(events[-1])
                 nb_events += 1
 
     if nb_events > 0:
