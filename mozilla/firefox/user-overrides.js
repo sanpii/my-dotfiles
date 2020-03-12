@@ -83,3 +83,5 @@ user_pref("privacy.resistFingerprinting.letterboxing", false);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 /* 5021d */
 user_pref("browser.tabs.loadDivertedInBackground", true);
+
+user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");

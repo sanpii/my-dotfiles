@@ -1772,5 +1772,7 @@ user_pref("privacy.resistFingerprinting.letterboxing", false);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 /* 5021d */
 user_pref("browser.tabs.loadDivertedInBackground", true);
+
+user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
