@@ -1,8 +1,8 @@
 
 /******
 * name: ghacks user.js
-* date: 11 March 2020
-* version 73
+* date: 07 April 2020
+* version 74
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
@@ -151,10 +151,10 @@ user_pref("_user.js.parrot", "0200 syntax error: the parrot's definitely decease
  * [SETTING] to add site exceptions: Page Info>Permissions>Access Your Location
  * [SETTING] to manage site exceptions: Options>Privacy & Security>Permissions>Location>Settings ***/
    // user_pref("permissions.default.geo", 2);
-/* 0203: use Mozilla geolocation service instead of Google when geolocation is enabled
+/* 0203: use Mozilla geolocation service instead of Google when geolocation is enabled [FF74+]
  * Optionally enable logging to the console (defaults to false) ***/
-user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
-   // user_pref("geo.wifi.logging.enabled", true); // [HIDDEN PREF]
+user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
+   // user_pref("geo.provider.network.logging.enabled", true); // [HIDDEN PREF]
 /* 0204: disable using the OS's geolocation service ***/
 user_pref("geo.provider.ms-windows-location", false); // [WINDOWS]
 user_pref("geo.provider.use_corelocation", false); // [MAC]
@@ -659,7 +659,9 @@ user_pref("security.ssl.require_safe_negotiation", true);
  * [1] https://www.ssllabs.com/ssl-pulse/ ***/
    // user_pref("security.tls.version.min", 3);
    // user_pref("security.tls.version.max", 4);
-/* 1203: disable SSL session tracking [FF36+]
+/* 1203: enforce TLS 1.0 and 1.1 downgrades as session only */
+user_pref("security.tls.version.enable-deprecated", false);
+/* 1204: disable SSL session tracking [FF36+]
  * SSL Session IDs are unique, last up to 24hrs in Firefox, and can be used for tracking
  * [SETUP-PERF] Relax this if you have FPI enabled (see 4000) *AND* you understand the
  * consequences. FPI isolates these, but it was designed with the Tor protocol in mind,
@@ -668,12 +670,12 @@ user_pref("security.ssl.require_safe_negotiation", true);
  * [2] https://bugzilla.mozilla.org/967977
  * [3] https://arxiv.org/abs/1810.07304 ***/
 user_pref("security.ssl.disable_session_identifiers", true); // [HIDDEN PREF]
-/* 1204: disable SSL Error Reporting
+/* 1205: disable SSL Error Reporting
  * [1] https://firefox-source-docs.mozilla.org/browser/base/sslerrorreport/preferences.html ***/
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.url", "");
-/* 1205: disable TLS1.3 0-RTT (round-trip time) [FF51+]
+/* 1206: disable TLS1.3 0-RTT (round-trip time) [FF51+]
  * [1] https://github.com/tlswg/tls13-spec/issues/1001
  * [2] https://blog.cloudflare.com/tls-1-3-overview-and-q-and-a/ ***/
 user_pref("security.tls.enable_0rtt_data", false);
@@ -868,10 +870,10 @@ user_pref("privacy.userContext.ui.enabled", true);
 /* 1702: enable Container Tabs [FF50+]
  * [SETTING] General>Tabs>Enable Container Tabs ***/
 user_pref("privacy.userContext.enabled", true);
-/* 1704: set behaviour on "+ Tab" button to display container menu [FF53+] [SETUP-CHROME]
- * 0=no menu (default), 1=show when clicked, 2=show on long press
- * [1] https://bugzilla.mozilla.org/1328756 ***/
-user_pref("privacy.userContext.longPressBehavior", 2);
+/* 1703: set behaviour on "+ Tab" button to display container menu on left click [FF74+]
+ * [NOTE] The menu is always shown on long press and right click
+ * [SETTING] General>Tabs>Enable Container Tabs>Settings>Select a container for each new tab ***/
+   // user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
 
 /*** [SECTION 1800]: PLUGINS ***/
 user_pref("_user.js.parrot", "1800 syntax error: the parrot's pushing up daisies!");
@@ -919,7 +921,6 @@ user_pref("webgl.disabled", true);
 user_pref("webgl.enable-webgl2", false);
 /* 2012: limit WebGL ***/
 user_pref("webgl.min_capability_mode", true);
-user_pref("webgl.disable-extensions", true);
 user_pref("webgl.disable-fail-if-major-performance-caveat", true);
 /* 2022: disable screensharing ***/
 user_pref("media.getusermedia.screensharing.enabled", false);
@@ -1055,7 +1056,7 @@ user_pref("dom.vibrator.enabled", false);
  * [6] https://rh0dev.github.io/blog/2017/the-return-of-the-jit/ ***/
 user_pref("javascript.options.asmjs", false);
 /* 2421: disable Ion and baseline JIT to help harden JS against exploits
- * [WARNING] If false, causes the odd site issue and there is also a performance loss
+ * [WARNING] Disabling Ion/JIT can cause some site issues and performance loss
  * [1] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0817 ***/
    // user_pref("javascript.options.ion", false);
    // user_pref("javascript.options.baselinejit", false);
@@ -1188,6 +1189,15 @@ user_pref("pdfjs.disabled", false); // [DEFAULT: false]
 /* 2621: disable links launching Windows Store on Windows 8/8.1/10 [WINDOWS]
  * [1] https://www.ghacks.net/2016/03/25/block-firefox-chrome-windows-store/ ***/
 user_pref("network.protocol-handler.external.ms-windows-store", false);
+/* 2622: enforce no system colors; they can be fingerprinted
+ * [SETTING] General>Language and Appearance>Fonts and Colors>Colors>Use system colors ***/
+user_pref("browser.display.use_system_colors", false); // [DEFAULT: false]
+/* 2623: disable permissions delegation [FF73+]
+ * Currently applies to cross-origin geolocation, camera, mic and screen-sharing
+ * permissions, and fullscreen requests. Disabling delegation means any prompts
+ * for these will show/use their correct 3rd party origin
+ * [1] https://groups.google.com/forum/#!topic/mozilla.dev.platform/BdFOMAuCGW8/discussion */
+user_pref("permissions.delegation.enabled", false);
 
 /** DOWNLOADS ***/
 /* 2650: discourage downloading to desktop
@@ -1217,7 +1227,7 @@ user_pref("browser.download.hide_plugins_without_extensions", false);
  * [1] archived: https://archive.is/DYjAM ***/
 user_pref("extensions.enabledScopes", 5); // [HIDDEN PREF]
 user_pref("extensions.autoDisableScopes", 15); // [DEFAULT: 15]
-/* 2662: disable webextension restrictions on certain mozilla domains (also see 4503) [FF60+]
+/* 2662: disable webextension restrictions on certain mozilla domains (you also need 4503) [FF60+]
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1384330,1406795,1415644,1453988 ***/
    // user_pref("extensions.webextensions.restrictedDomains", "");
 
@@ -1690,6 +1700,21 @@ user_pref("toolkit.telemetry.hybridContent.enabled", false); // [FF59+]
    // [1] https://blog.mozilla.org/addons/2018/08/03/new-backend-for-storage-local-api/
    // [-] https://bugzilla.mozilla.org/1488583
 user_pref("dom.indexedDB.enabled", true); // [DEFAULT: true]
+// * * * /
+// FF74
+// 0203: use Mozilla geolocation service instead of Google when geolocation is enabled
+   // Optionally enable logging to the console (defaults to false)
+   // [-] https://bugzilla.mozilla.org/1613627
+user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
+   // user_pref("geo.wifi.logging.enabled", true); // [HIDDEN PREF]
+// 1704: set behaviour on "+ Tab" button to display container menu [FF53+] [SETUP-CHROME]
+   // 0=no menu (default), 1=show when clicked, 2=show on long press
+   // [1] https://bugzilla.mozilla.org/1328756
+   // [-] https://bugzilla.mozilla.org/1606265
+user_pref("privacy.userContext.longPressBehavior", 2);
+// 2012: limit WebGL
+   // [-] https://bugzilla.mozilla.org/1477756
+user_pref("webgl.disable-extensions", true);
 // * * * /
 // ***/
 
