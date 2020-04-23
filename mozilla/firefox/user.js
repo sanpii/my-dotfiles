@@ -1,14 +1,14 @@
 
 /******
 * name: ghacks user.js
-* date: 07 April 2020
-* version 74
+* date: 23 April 2020
+* version 75
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
 
 * releases: These are end-of-stable-life-cycle legacy archives.
-            *Always* use the master branch user.js for a current up-to-date version.
+            *Always* use the master branch user.js for a current up-to-date version
        url: https://github.com/ghacksuserjs/ghacks-user.js/releases
 
 * README:
@@ -159,12 +159,6 @@ user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/
 user_pref("geo.provider.ms-windows-location", false); // [WINDOWS]
 user_pref("geo.provider.use_corelocation", false); // [MAC]
 user_pref("geo.provider.use_gpsd", false); // [LINUX]
-/* 0205: disable GeoIP-based search results
- * [NOTE] May not be hidden if Firefox has changed your settings due to your locale
- * [1] https://trac.torproject.org/projects/tor/ticket/16254
- * [2] https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine ***/
-user_pref("browser.search.region", "US"); // [HIDDEN PREF]
-user_pref("browser.search.geoip.url", "");
 /* 0206: disable geographically specific results/search engines e.g. "browser.search.*.US"
  * i.e. ignore all of Mozilla's various search engines in multiple locales ***/
 user_pref("browser.search.geoSpecificDefaults", false);
@@ -175,7 +169,9 @@ user_pref("browser.search.geoSpecificDefaults.url", "");
  * [TEST] https://addons.mozilla.org/about ***/
 user_pref("intl.accept_languages", "en-US, en");
 /* 0211: enforce US English locale regardless of the system locale
- * [1] https://bugzilla.mozilla.org/867501 ***/
+ * [SETUP-WEB] May break some input methods e.g xim/ibus for CJK languages, see [2]
+ * [1] https://bugzilla.mozilla.org/867501
+ * [2] https://bugzilla.mozilla.org/1629630 ***/
 user_pref("javascript.use_us_english_locale", true); // [HIDDEN PREF]
 /* 0212: enforce fallback text encoding to match en-US
  * When the content or server doesn't declare a charset the browser will
@@ -397,7 +393,7 @@ user_pref("_user.js.parrot", "0700 syntax error: the parrot's given up the ghost
 /* 0701: disable IPv6
  * IPv6 can be abused, especially regarding MAC addresses. They also do not play nice
  * with VPNs. That's even assuming your ISP and/or router and/or website can handle it.
- * Firefox telemetry (April 2019) shows only 5% of all connections are IPv6.
+ * Firefox telemetry (April 2019) shows only 5% of all connections are IPv6
  * [NOTE] This is just an application level fallback. Disabling IPv6 is best done at an
  * OS/network level, and/or configured properly in VPN setups. If you are not masking your IP,
  * then this won't make much difference. If you are masking your IP, then it can only help.
@@ -597,6 +593,10 @@ user_pref("browser.cache.disk.enable", false);
  * [NOTE] This means any permission changes are session only
  * [1] https://bugzilla.mozilla.org/967812 ***/
    // user_pref("permissions.memory_only", true); // [HIDDEN PREF]
+/* 1007: disable media cache from writing to disk in Private Browsing
+ * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB */
+user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); // [FF75+]
+user_pref("media.memory_cache_max_size", 16384);
 
 /** SESSIONS & SESSION RESTORE ***/
 /* 1020: exclude "Undo Closed Tabs" in Session Restore ***/
@@ -655,7 +655,7 @@ user_pref("security.ssl.require_safe_negotiation", true);
 /* 1202: control TLS versions with min and max
  * 1=TLS 1.0, 2=TLS 1.1, 3=TLS 1.2, 4=TLS 1.3
  * [WARNING] Leave these at default, otherwise you alter your TLS fingerprint.
- * Firefox telemetry (April 2019) shows only 0.5% of TLS web traffic uses 1.0 or 1.1
+ * Firefox telemetry (April 2020) shows only 0.25% of TLS web traffic uses 1.0 or 1.1
  * [1] https://www.ssllabs.com/ssl-pulse/ ***/
    // user_pref("security.tls.version.min", 3);
    // user_pref("security.tls.version.max", 4);
@@ -1028,14 +1028,14 @@ user_pref("_user.js.parrot", "2400 syntax error: the parrot's kicked the bucket!
 /* 2401: disable website control over browser right-click context menu
  * [NOTE] Shift-Right-Click will always bring up the browser right-click context menu ***/
    // user_pref("dom.event.contextmenu.enabled", false);
-/* 2402: disable website access to clipboard events/content
- * [SETUP-WEB] This will break some sites functionality such as pasting into facebook, wordpress
+/* 2402: disable website access to clipboard events/content [SETUP-HARDEN]
+ * [NOTE] This will break some sites' functionality e.g. Outlook, Twitter, Facebook, Wordpress
  * This applies to onCut/onCopy/onPaste events - i.e. it requires interaction with the website
  * [WARNING] If both 'middlemouse.paste' and 'general.autoScroll' are true (at least one
  * is default false) then enabling this pref can leak clipboard content, see [2]
  * [1] https://www.ghacks.net/2014/01/08/block-websites-reading-modifying-clipboard-contents-firefox/
  * [2] https://bugzilla.mozilla.org/1528289 */
-user_pref("dom.event.clipboardevents.enabled", false);
+   // user_pref("dom.event.clipboardevents.enabled", false);
 /* 2404: disable clipboard commands (cut/copy) from "non-privileged" content [FF41+]
  * this disables document.execCommand("cut"/"copy") to protect your clipboard
  * [1] https://bugzilla.mozilla.org/1170911 ***/
@@ -1055,11 +1055,14 @@ user_pref("dom.vibrator.enabled", false);
  * [5] https://www.mozilla.org/security/advisories/mfsa2017-05/#CVE-2017-5400
  * [6] https://rh0dev.github.io/blog/2017/the-return-of-the-jit/ ***/
 user_pref("javascript.options.asmjs", false);
-/* 2421: disable Ion and baseline JIT to help harden JS against exploits
+/* 2421: disable Ion and baseline JIT to harden against JS exploits [SETUP-HARDEN]
+ * [NOTE] In FF75+, when **both** Ion and JIT are disabled, **and** the new
+ * hidden pref is enabled, then Ion can still be used by extensions (1599226)
  * [WARNING] Disabling Ion/JIT can cause some site issues and performance loss
  * [1] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0817 ***/
    // user_pref("javascript.options.ion", false);
    // user_pref("javascript.options.baselinejit", false);
+   // user_pref("javascript.options.jit_trustedprincipals", true); // [FF75+] [HIDDEN PREF]
 /* 2422: disable WebAssembly [FF52+] [SETUP-PERF]
  * [NOTE] In FF71+ this no longer affects extensions (1576254)
  * [1] https://developer.mozilla.org/docs/WebAssembly ***/
