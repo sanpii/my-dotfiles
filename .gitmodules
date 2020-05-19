@@ -97,3 +97,6 @@
 [submodule "config/nvim/pack/bundle/start/vipsql"]
 	path = config/nvim/pack/bundle/start/vipsql
 	url = https://github.com/martingms/vipsql.git
+[submodule "config/nvim/pack/bundle/start/loupe"]
+	path = config/nvim/pack/bundle/start/loupe
+	url = https://github.com/wincent/loupe.git

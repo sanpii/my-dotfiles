@@ -60,10 +60,6 @@
         autocmd FileType html setlocal indentkeys-=*<Return>
     augroup END
 " }}}
-" Recherches {{{
-    set smartcase
-    set ignorecase
-" }}}
 " Sauvegardes {{{
     let &backupdir=$HOME . "/.local/share/nvim/backup"
 
@@ -188,10 +184,6 @@
     " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
     inoremap <c-u> <c-g>u<c-u>
     inoremap <c-w> <c-g>u<c-w>
-
-    " Permet de placer au milieu de l'écran l'occurence de la recherche
-    nnoremap <expr> n 'Nn'[v:searchforward] . 'zzzv'
-    nnoremap <expr> N 'nN'[v:searchforward] . 'zzzv'
 
     " Re-selectionner le texte précédemment collé
     nnoremap <leader>v V`]
