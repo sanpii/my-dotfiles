@@ -79,9 +79,9 @@ user_pref("privacy.clearOnShutdown.siteSettings", false);
 user_pref("privacy.resistFingerprinting", false);
 /* 4504 */
 user_pref("privacy.resistFingerprinting.letterboxing", false);
-/* 5003 */
+/* 5000 */
+user_pref("extensions.pocket.enabled", false);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
-/* 5021d */
-user_pref("browser.tabs.loadDivertedInBackground", true);
 
+user_pref("browser.tabs.loadDivertedInBackground", true);
 user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");
