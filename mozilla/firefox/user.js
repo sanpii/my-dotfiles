@@ -1820,5 +1820,7 @@ user_pref("browser.download.dir", "/home/sanpi/Downloads");
 user_pref("general.smoothScroll", false);
 user_pref("browser.tabs.loadDivertedInBackground", true);
 user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");
+user_pref("media.videocontrols.picture-in-picture.enabled", false);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
