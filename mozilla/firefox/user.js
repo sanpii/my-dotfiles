@@ -1,8 +1,8 @@
 
 /******
 * name: ghacks user.js
-* date: 24 May 2020
-* version 76
+* date: 14 Jun 2020
+* version 77
 * authors: v52+ github | v51- www.ghacks.net
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
@@ -442,6 +442,11 @@ user_pref("network.file.disable_unc_paths", true); // [HIDDEN PREF]
  * [4] https://en.wikipedia.org/wiki/GIO_(software) ***/
 user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF]
 
+/*** [SECTION 0709]: HOTFIX for FF77, FIXED in FF78 ***/
+/* 0709: disabling UNC can cause extension storage to fail
+ * [1] https://github.com/ghacksuserjs/ghacks-user.js/issues/923 ***/
+user_pref("network.file.disable_unc_paths", false); // [HIDDEN PREF]
+
 /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS
      Change items 0850 and above to suit for privacy vs convenience and functionality. Consider
      your environment (no unwanted eyeballs), your device (restricted access), your device's
@@ -507,9 +512,6 @@ user_pref("browser.urlbar.speculativeConnect.enabled", false);
 /* 0850d: disable location bar autofill
  * [1] https://support.mozilla.org/en-US/kb/address-bar-autocomplete-firefox#w_url-autocomplete ***/
    // user_pref("browser.urlbar.autoFill", false);
-/* 0850e: disable location bar one-off searches [FF51+]
- * [1] https://www.ghacks.net/2016/08/09/firefox-one-off-searches-address-bar/ ***/
-   // user_pref("browser.urlbar.oneOffSearches", false);
 /* 0860: disable search and form history
  * [SETUP-WEB] Be aware thet autocomplete form data can be read by third parties, see [1] [2]
  * [NOTE] We also clear formdata on exit (see 2803)
@@ -740,7 +742,8 @@ user_pref("security.mixed_content.block_object_subrequest", true);
 /* 1244: enable https-only-mode [FF76+]
  * [NOTE] This is experimental
  * [1] https://bugzilla.mozilla.org/1613063 */
-   // user_pref("dom.security.https_only_mode", true);
+   // user_pref("dom.security.https_only_mode", true); // [FF76+]
+   // user_pref("dom.security.https_only_mode.upgrade_local", true); // [FF77+]
 
 /** CIPHERS [WARNING: do not meddle with your cipher suite: see the section 1200 intro] ***/
 /* 1261: disable 3DES (effective key size < 128)
@@ -753,8 +756,8 @@ user_pref("security.mixed_content.block_object_subrequest", true);
    // user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", false);
 /* 1263: disable DHE (Diffie-Hellman Key Exchange)
  * [1] https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH ***/
-   // user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
-   // user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
+   // user_pref("security.ssl3.dhe_rsa_aes_128_sha", false); // [DEFAULT: false FF79+]
+   // user_pref("security.ssl3.dhe_rsa_aes_256_sha", false); // [DEFAULT: false FF79+]
 /* 1264: disable the remaining non-modern cipher suites as of FF52 ***/
    // user_pref("security.ssl3.rsa_aes_128_sha", false);
    // user_pref("security.ssl3.rsa_aes_256_sha", false);
@@ -1076,7 +1079,7 @@ user_pref("javascript.options.wasm", false);
    // user_pref("dom.IntersectionObserver.enabled", false);
 /* 2429: enable (limited but sufficient) window.opener protection [FF65+]
  * Makes rel=noopener implicit for target=_blank in anchor and area elements when no rel attribute is set ***/
-user_pref("dom.targetBlankNoOpener.enabled", true);
+user_pref("dom.targetBlankNoOpener.enabled", true); // [DEFAULT: true FF78+]
 
 /*** [SECTION 2500]: HARDWARE FINGERPRINTING ***/
 user_pref("_user.js.parrot", "2500 syntax error: the parrot's shuffled off 'is mortal coil!");
@@ -1132,10 +1135,6 @@ user_pref("browser.helperApps.deleteTempFileOnExit", true);
 /* 2604: disable page thumbnail collection
  * look in profile/thumbnails directory - you may want to clean that out ***/
 user_pref("browser.pagethumbnails.capturing_disabled", true); // [HIDDEN PREF]
-/* 2605: block web content in file processes [FF55+]
- * [SETUP-WEB] You may want to disable this for corporate or developer environments
- * [1] https://bugzilla.mozilla.org/1343184 ***/
-user_pref("browser.tabs.remote.allowLinkedWebInFileUriProcess", false); // [DEFAULT: false FF76+]
 /* 2606: disable UITour backend so there is no chance that a remote page can use it ***/
 user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
@@ -1145,7 +1144,7 @@ user_pref("browser.uitour.url", "");
 user_pref("devtools.chrome.enabled", false);
 /* 2608: disable remote debugging
  * [1] https://trac.torproject.org/projects/tor/ticket/16222 ***/
-user_pref("devtools.debugger.remote-enabled", false);
+user_pref("devtools.debugger.remote-enabled", false); // [DEFAULT: false]
 /* 2609: disable MathML (Mathematical Markup Language) [FF51+] [SETUP-HARDEN]
  * [TEST] https://ghacksuserjs.github.io/TorZillaPrint/TorZillaPrint.html#misc
  * [1] https://bugzilla.mozilla.org/1173199 ***/
@@ -1446,7 +1445,7 @@ user_pref("privacy.firstparty.isolate", true);
       FF60: Fix keydown/keyup events (1438795)
  ** 1337157 - disable WebGL debug renderer info (see 4613) (FF60+)
  ** 1459089 - disable OS locale in HTTP Accept-Language headers (ANDROID) (FF62+)
- ** 1479239 - return "no-preference" with prefers-reduced-motion (FF63+)
+ ** 1479239 - return "no-preference" with prefers-reduced-motion (see 4617) (FF63+)
  ** 1363508 - spoof/suppress Pointer Events (see 4614) (FF64+)
       FF65: pointerEvent.pointerid (1492766)
  ** 1485266 - disable exposure of system colors to CSS or canvas (see 4615) (FF67+)
@@ -1586,6 +1585,9 @@ user_pref("ui.use_standins_for_native_colors", true);
 // 4616: enforce prefers-color-scheme as light [FF67+]
    // 0=light, 1=dark : This overrides your OS value
 user_pref("ui.systemUsesDarkTheme", 0); // [HIDDEN PREF]
+// 4617: enforce prefers-reduced-motion as no-preference [FF63+]
+   // 0=no-preference, 1=reduce
+user_pref("ui.prefersReducedMotion", 0); // [HIDDEN PREF]
 // * * * /
 // ***/
 
@@ -1594,8 +1596,8 @@ user_pref("ui.systemUsesDarkTheme", 0); // [HIDDEN PREF]
      to use RFP (4500) or an extension, in which case they become POINTLESS.
      (a) Many of the components that make up your UA can be derived by other means.
          And when those values differ, you provide more bits and raise entropy.
-         Examples of leaks include navigator objects, date locale/formats, iframes,
-         headers, tcp/ip attributes, feature detection, and **many** more.
+         Examples of leaks include workers, navigator objects, date locale/formats,
+         iframes, headers, tcp/ip attributes, feature detection, and **many** more.
      ALL values below intentionally left blank - use RFP, or get a vetted, tested
          extension and mimic RFP values to *lower* entropy, or randomize to *raise* it
 ***/
@@ -1728,6 +1730,17 @@ user_pref("webgl.disable-extensions", true);
    // [2] https://trac.torproject.org/projects/tor/ticket/16931
    // [-] https://bugzilla.mozilla.org/1618188
 user_pref("extensions.blocklist.url", "https://blocklists.settings.services.mozilla.com/v1/blocklist/3/%APP_ID%/%APP_VERSION%/");
+// * * * /
+// FF77
+// 0850e: disable location bar one-off searches [FF51+]
+   // [1] https://www.ghacks.net/2016/08/09/firefox-one-off-searches-address-bar/
+   // [-] https://bugzilla.mozilla.org/1628926
+   // user_pref("browser.urlbar.oneOffSearches", false);
+// 2605: block web content in file processes [FF55+]
+   // [SETUP-WEB] You may want to disable this for corporate or developer environments
+   // [1] https://bugzilla.mozilla.org/1343184
+   // [-] https://bugzilla.mozilla.org/1603007
+user_pref("browser.tabs.remote.allowLinkedWebInFileUriProcess", false);
 // * * * /
 // ***/
 
