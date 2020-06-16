@@ -91,3 +91,6 @@ user_pref("browser.tabs.loadDivertedInBackground", true);
 user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");
 user_pref("media.videocontrols.picture-in-picture.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
