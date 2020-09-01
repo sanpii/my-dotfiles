@@ -1,10 +1,10 @@
-#!/usr/bin/python2 -W ignore
+#!/usr/bin/python
 # encoding: utf-8
 
 import os
 import re
 import caldav
-import ConfigParser
+import configparser
 from dateutil import parser
 from datetime import datetime, timedelta
 
@@ -22,9 +22,9 @@ def parse_eventdata(event):
         if re.match("^DTEND\;", item):
             end = parser.parse(item.split(";")[-1].split(":")[1])
         if re.match("^SUMMARY\:", item):
-            title = item.split(":")[1].encode("utf-8")
+            title = item.split(":")[1]
         if re.match("^STATUS\:", item):
-            status = item.split(":")[1].encode("utf-8").lower()
+            status = item.split(":")[1].lower()
 
     return {
         "title": title,
@@ -62,11 +62,11 @@ def print_event(event):
         title += " ?"
     elif event["status"] == "cancelled":
         title += " ×"
-    print(title),
+    print(title, end = ''),
 
 def main():
     try:
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         config.read(os.path.expanduser("~/.config/next_appointment.ini"))
         caldav_url = "https://%s:%s@%s" \
                 % (config.get("caldav", "user"), config.get("caldav", "password"), config.get("caldav", "url"))
@@ -78,13 +78,13 @@ def main():
     calendars = connect(caldav_url)
 
     for calendar in calendars:
-        name = get_name(calendar).encode("utf-8")
+        name = get_name(calendar)
         events = get_events(calendar)
         if len(events) > 0:
-            print("[%s]" % name),
+            print(" [%s] " % name, end = ''),
             for event in events[:-1]:
                 print_event(event)
-                print("-"),
+                print(" - ", end = ''),
                 nb_events += 1
             else:
                 print_event(events[-1])
