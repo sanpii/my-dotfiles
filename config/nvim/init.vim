@@ -113,6 +113,15 @@
     " Grammalecte {{{
         let g:grammalecte_cli_py = '/usr/bin/grammalecte-cli.py'
     " }}}
+    " Language client {{{
+        let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rust-analyzer'],
+        \ }
+
+        nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+        nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    " }}}
     " Text file {{{
         augroup filetype
             autocmd FileType text :exec "source " . vimfiles . "/text.vim"
