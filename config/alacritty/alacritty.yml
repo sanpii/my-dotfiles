@@ -3,3 +3,7 @@ font:
     family: 'Hack Nerd Font'
     style: Regular
   size: 12.0
+
+colors:
+  primary:
+    background: '#000000'
