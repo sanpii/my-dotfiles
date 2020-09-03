@@ -1,8 +1,8 @@
 
 /******
 * name: ghacks user.js
-* date: 13 Aug 2020
-* version 79
+* date: 03 Sep 2020
+* version 80
 * url: https://github.com/ghacksuserjs/ghacks-user.js
 * license: MIT: https://github.com/ghacksuserjs/ghacks-user.js/blob/master/LICENSE.txt
 
@@ -117,7 +117,7 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false);
  * Runs code received from a server (aka Remote Code Execution) and sends information back to a metrics server
  * [1] https://abouthome-snippets-service.readthedocs.io/ ***/
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
-user_pref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "{}");
 /* 0105c: disable Activity Stream Top Stories, Pocket-based and/or sponsored content ***/
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
@@ -371,7 +371,7 @@ user_pref("network.prefetch-next", false);
 /* 0602: disable DNS prefetching
  * [1] https://developer.mozilla.org/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control ***/
 user_pref("network.dns.disablePrefetch", true);
-user_pref("network.dns.disablePrefetchFromHTTPS", true); // [HIDDEN PREF ESR] [DEFAULT: true FF70+]
+user_pref("network.dns.disablePrefetchFromHTTPS", true); // [HIDDEN PREF ESR68 or lower] [DEFAULT: true FF70+]
 /* 0603: disable predictor / prefetching ***/
 user_pref("network.predictor.enabled", false);
 user_pref("network.predictor.enable-prefetch", false); // [FF48+]
@@ -506,7 +506,7 @@ user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
  * [1] https://support.mozilla.org/en-US/kb/address-bar-autocomplete-firefox#w_url-autocomplete ***/
    // user_pref("browser.urlbar.autoFill", false);
 /* 0860: disable search and form history
- * [SETUP-WEB] Be aware thet autocomplete form data can be read by third parties, see [1] [2]
+ * [SETUP-WEB] Be aware that autocomplete form data can be read by third parties, see [1] [2]
  * [NOTE] We also clear formdata on exit (see 2803)
  * [SETTING] Privacy & Security>History>Custom Settings>Remember search and form history
  * [1] https://blog.mindedsecurity.com/2011/10/autocompleteagain.html
@@ -530,20 +530,21 @@ user_pref("_user.js.parrot", "0900 syntax error: the parrot's expired!");
  * [NOTE] This does not clear any passwords already saved
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
    // user_pref("signon.rememberSignons", false);
-/* 0902: use a master password
+/* 0902: use a primary password
  * There are no preferences for this. It is all handled internally.
- * [SETTING] Privacy & Security>Logins and Passwords>Use a master password
+ * [SETTING] Privacy & Security>Logins and Passwords>Use a Primary Password
  * [1] https://support.mozilla.org/kb/use-primary-password-protect-stored-logins-and-pas ***/
-/* 0903: set how often Firefox should ask for the master password
+/* 0903: set how often Firefox should ask for the primary password
  * 0=the first time (default), 1=every time it's needed, 2=every n minutes (see 0904) ***/
 user_pref("security.ask_for_password", 2);
-/* 0904: set how often in minutes Firefox should ask for the master password (see 0903)
+/* 0904: set how often in minutes Firefox should ask for the primary password (see 0903)
  * in minutes, default is 30 ***/
 user_pref("security.password_lifetime", 5);
 /* 0905: disable auto-filling username & password form fields
  * can leak in cross-site forms *and* be spoofed
  * [NOTE] Username & password is still available when you enter the field
- * [SETTING] Privacy & Security>Logins and Passwords>Autofill logins and passwords ***/
+ * [SETTING] Privacy & Security>Logins and Passwords>Autofill logins and passwords
+ * [1] https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/ ***/
 user_pref("signon.autofillForms", false);
 /* 0909: disable formless login capture for Password Manager [FF51+] ***/
 user_pref("signon.formlessCapture.enabled", false);
@@ -734,11 +735,13 @@ user_pref("security.mixed_content.block_display_content", true);
 /* 1243: block unencrypted requests from Flash on encrypted pages to mitigate MitM attacks [FF59+]
  * [1] https://bugzilla.mozilla.org/1190623 ***/
 user_pref("security.mixed_content.block_object_subrequest", true);
-/* 1244: enable https-only-mode [FF76+]
- * [NOTE] This is experimental
- * [SETTING] Privacy & Security>HTTPS-Only Mode (FF81+)
- * [1] https://bugzilla.mozilla.org/1613063 */
+/* 1244: enable HTTPS-Only mode [FF76+]
+ * When "https_only_mode" (all windows) is true, "https_only_mode_pbm" (private windows only) is ignored
+ * [SETTING] to add site exceptions: Page Info>Permissions>Use insecure HTTP (FF80+)
+ * [SETTING] Privacy & Security>HTTPS-Only Mode (FF80+ with browser.preferences.exposeHTTPSOnly = true)
+ * [1] https://bugzilla.mozilla.org/1613063 ***/
    // user_pref("dom.security.https_only_mode", true); // [FF76+]
+   // user_pref("dom.security.https_only_mode_pbm", true); // [FF80+]
    // user_pref("dom.security.https_only_mode.upgrade_local", true); // [FF77+]
 
 /** CIPHERS [WARNING: do not meddle with your cipher suite: see the section 1200 intro]
@@ -808,9 +811,9 @@ user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 user_pref("gfx.font_rendering.graphite.enabled", false);
 /* 1409: limit system font exposure to a whitelist [FF52+] [RESTART]
  * If the whitelist is empty, then whitelisting is considered disabled and all fonts are allowed
- * [NOTE] RFP in FF80+ restricts the whitelist to bundled and "Base Fonts" (see 4618)
+ * [NOTE] in FF80 RFP restricts the whitelist to bundled and "Base Fonts"
+ * ...and in FF81+ the whitelist **overrides** RFP's font visibility (see 4618)
  * [WARNING] Creating your own probably highly-unique whitelist will raise your entropy.
- * Eventually privacy.resistFingerprinting (see 4500) will cover this
  * [1] https://bugzilla.mozilla.org/1121643 ***/
    // user_pref("font.system.whitelist", ""); // [HIDDEN PREF]
 
@@ -955,16 +958,6 @@ user_pref("media.autoplay.blocking_policy", 2);
 
 /*** [SECTION 2200]: WINDOW MEDDLING & LEAKS / POPUPS ***/
 user_pref("_user.js.parrot", "2200 syntax error: the parrot's 'istory!");
-/* 2201: prevent websites from disabling new window features ***/
-user_pref("dom.disable_window_open_feature.close", true);
-user_pref("dom.disable_window_open_feature.location", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.menubar", true);
-user_pref("dom.disable_window_open_feature.minimizable", true);
-user_pref("dom.disable_window_open_feature.personalbar", true); // bookmarks toolbar
-user_pref("dom.disable_window_open_feature.resizable", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.status", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.titlebar", true);
-user_pref("dom.disable_window_open_feature.toolbar", true);
 /* 2202: prevent scripts from moving and resizing open windows ***/
 user_pref("dom.disable_window_move_resize", true);
 /* 2203: open links targeting new windows in a new tab instead
@@ -972,7 +965,7 @@ user_pref("dom.disable_window_move_resize", true);
  * You can still right-click a link and open in a new window.
  * [TEST] https://ghacksuserjs.github.io/TorZillaPrint/TorZillaPrint.html#screen
  * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/9881 ***/
-user_pref("browser.link.open_newwindow", 3);
+user_pref("browser.link.open_newwindow", 3); // 2=new window, 3=new tab
 user_pref("browser.link.open_newwindow.restriction", 0);
 /* 2204: disable Fullscreen API (requires user interaction) to prevent screen-resolution leaks
  * [NOTE] You can still manually toggle the browser's fullscreen state (F11),
@@ -1769,6 +1762,17 @@ user_pref("webgl.disable-extensions", true);
    // [2] https://trac.torproject.org/projects/tor/ticket/16931
    // [-] https://bugzilla.mozilla.org/1618188
 user_pref("extensions.blocklist.url", "https://blocklists.settings.services.mozilla.com/v1/blocklist/3/%APP_ID%/%APP_VERSION%/");
+// 2201: prevent websites from disabling new window features
+   // [-] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1507375,1660524
+user_pref("dom.disable_window_open_feature.close", true);
+user_pref("dom.disable_window_open_feature.location", true); // [DEFAULT: true]
+user_pref("dom.disable_window_open_feature.menubar", true);
+user_pref("dom.disable_window_open_feature.minimizable", true);
+user_pref("dom.disable_window_open_feature.personalbar", true); // bookmarks toolbar
+user_pref("dom.disable_window_open_feature.resizable", true); // [DEFAULT: true]
+user_pref("dom.disable_window_open_feature.status", true); // [DEFAULT: true]
+user_pref("dom.disable_window_open_feature.titlebar", true);
+user_pref("dom.disable_window_open_feature.toolbar", true);
 // * * * /
 // FF77
 // 0850e: disable location bar one-off searches [FF51+]
