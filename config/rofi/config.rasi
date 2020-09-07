@@ -1,0 +1,15 @@
+configuration {
+    columns: 4;
+    location: 6;
+    padding: 2;
+    yoffset: -22;
+    xoffset: 0;
+    fixed-num-lines: true;
+    terminal: "alacritty";
+    color-normal: "#393939, #ffffff, #393939, #268bd2, #ffffff";
+    color-urgent: "#393939, #f3843d, #393939, #268bd2, #ffc39c";
+    color-active: "#393939, #268bd2, #393939, #268bd2, #205171";
+    color-window: "#393939, #393939, #268bd2";
+}
+
+/* vim:ft=css
