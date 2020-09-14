@@ -103,9 +103,6 @@
     " ctrlp-funky {{{
         noremap <C-F> :CtrlPFunky<cr>
     " }}}
-    " deoplete {{{
-        let g:deoplete#enable_at_startup = 1
-    " }}}
     " Gundo {{{
         let g:gundo_prefer_python3 = 1
         nnoremap <leader>u :GundoToggle<cr>
@@ -134,9 +131,6 @@
 
         imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
         smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    " }}}
-    " pgsql {{{
-        let g:sql_type_default = 'pgsql'
     " }}}
     " Sideway {{{
         nnoremap <c-c> :SidewaysLeft<cr>
