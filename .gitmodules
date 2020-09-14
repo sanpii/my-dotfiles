@@ -88,3 +88,6 @@
 [submodule "config/nvim/pack/bundle/start/language-client"]
 	path = config/nvim/pack/bundle/start/language-client
 	url = git://github.com/autozimu/LanguageClient-neovim.git
+[submodule "config/nvim/pack/bundle/start/deoplete"]
+	path = config/nvim/pack/bundle/start/deoplete
+	url = git://github.com/Shougo/deoplete.nvim
