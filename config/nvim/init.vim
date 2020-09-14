@@ -30,6 +30,7 @@
 " Apparence {{{
     colorscheme desertink
 
+    set termguicolors
     set list
     set listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
     set showbreak=↪
