@@ -84,7 +84,7 @@
 	url = git://github.com/sirtaj/vim-openscad.git
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
-	url = https://github.com/wincent/loupe.git
+	url = git://github.com/wincent/loupe.git
 [submodule "config/nvim/pack/bundle/start/language-client"]
 	path = config/nvim/pack/bundle/start/language-client
 	url = git://github.com/autozimu/LanguageClient-neovim.git
