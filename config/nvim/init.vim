@@ -13,13 +13,6 @@
     set number
     set relativenumber
 
-    if exists('+viewdir')
-        augroup buffer
-            autocmd BufWinLeave *? silent! mkview
-            autocmd BufWinEnter *? silent! loadview
-        augroup END
-    endif
-
     set spelllang=fr
     set hidden
     set nowrap
@@ -62,6 +55,12 @@
 
     set backup
     set undofile
+
+    augroup buffer
+        autocmd BufWinLeave *? silent! mkview
+        autocmd BufWinEnter *? silent! loadview
+    augroup END
+
 " }}}
 " Mappage {{{
     " Help {{{
