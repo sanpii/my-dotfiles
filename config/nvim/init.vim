@@ -34,10 +34,10 @@
     set list
     set listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
     set showbreak=↪
-    highlight NonText cterm=bold ctermfg=darkgrey
-    highlight SpecialKey cterm=bold ctermfg=darkgrey
-
     set scrolloff=3
+
+    highlight NonText gui=bold guifg=darkgrey
+    highlight SpecialKey gui=bold guifg=darkgrey
 " }}}
 " Indentation {{{
     set smartindent
