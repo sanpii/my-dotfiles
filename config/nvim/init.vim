@@ -25,6 +25,7 @@
     set colorcolumn=81
 
     set inccommand=split
+    set completeopt=menuone,noinsert,noselect
 " }}}
 " Apparence {{{
     colorscheme desertink
