@@ -36,6 +36,12 @@
     set inccommand=split
 
     set conceallevel=0
+
+    augroup filetype
+        autocmd FileType text :exec "source " . vimfiles . "/text.vim"
+        autocmd FileType tex :exec "source " . vimfiles . "/text.vim"
+        autocmd FileType markdown :exec "source " . vimfiles . "/text.vim"
+    augroup END
 " }}}
 " Apparence {{{
     colorscheme desertink
@@ -65,82 +71,6 @@
 
     set backup
     set undofile
-" }}}
-" Plugins {{{
-    " airline {{{
-        let g:airline_powerline_fonts = 1
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline_left_sep = "\uE0B4"
-        let g:airline_right_sep = "\uE0B6"
-    " }}}
-    " better-writespace {{{
-        augroup filetype
-            autocmd FileType * if &ft != 'diff' | autocmd BufWritePre <buffer> StripWhitespace
-        augroup END
-    " }}}
-    " clam {{{
-        nnoremap ! :Clam<space>
-        vnoremap ! :ClamVisual<space>
-    " }}}
-    " ctrlp {{{
-        let g:ctrlp_show_hidden = 1
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn|fingerprint)$',
-            \ }
-        let g:ctrlp_open_new_file = 'r'
-        let g:ctrlp_clear_cache_on_exit = 0
-        let g:ctrlp_default_input = 1
-        let g:ctrlp_extensions = ['funky', 'tag']
-        let g:ctrlp_prompt_mappings = {
-            \ 'PrtSelectMove("j")':   ['<c-t>'],
-            \ 'PrtSelectMove("k")':   ['<c-s>'],
-            \ 'PrtHistory(-1)':       ['<c-n>'],
-            \ 'PrtHistory(1)':        ['<c-p>'],
-            \ 'AcceptSelection("t")': ['<Enter>'],
-            \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>'],
-            \ }
-    " }}}
-    " ctrlp-funky {{{
-        noremap <C-F> :CtrlPFunky<cr>
-    " }}}
-    " Gundo {{{
-        let g:gundo_prefer_python3 = 1
-        nnoremap <leader>u :GundoToggle<cr>
-    " }}}
-    " Language client {{{
-        let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rust-analyzer'],
-        \ }
-
-        let g:LanguageClient_useVirtualText = "No"
-        nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-        nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    " }}}
-    " Text file {{{
-        augroup filetype
-            autocmd FileType text :exec "source " . vimfiles . "/text.vim"
-            autocmd FileType tex :exec "source " . vimfiles . "/text.vim"
-            autocmd FileType markdown :exec "source " . vimfiles . "/text.vim"
-        augroup END
-    " }}}
-    " neosnippet {{{
-        let g:neosnippet#enable_completed_snippet = 0
-        let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets']
-
-        imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-        smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    " }}}
-    " Sideway {{{
-        nnoremap <c-c> :SidewaysLeft<cr>
-        nnoremap <c-n> :SidewaysRight<cr>
-    " }}}
-    " SingleCompile {{{
-        nmap <F9> :SCCompileRun<cr>
-    " }}}
-    " Spiffy Foldtext {{{
-        let g:SpiffyFoldtext_format = "%c{─}  %<%f{─}┤ %4n lines ├─%l{──}"
-    " }}}
 " }}}
 " Mappage {{{
     " Help {{{
