@@ -9,7 +9,6 @@
     let vimfiles=$HOME . "/.config/nvim"
 
     set fileformats=unix
-    set mouse=""
     set foldmethod=marker
     set number
     set relativenumber
@@ -32,10 +31,7 @@
     set textwidth=80
     set colorcolumn=81
 
-    set wildmode=full
     set inccommand=split
-
-    set conceallevel=0
 
     augroup filetype
         autocmd FileType text :exec "source " . vimfiles . "/text.vim"
@@ -46,7 +42,8 @@
 " Apparence {{{
     colorscheme desertink
 
-    set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
+    set list
+    set listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
     set showbreak=↪
     highlight NonText cterm=bold ctermfg=darkgrey
     highlight SpecialKey cterm=bold ctermfg=darkgrey
