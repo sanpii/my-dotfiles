@@ -110,9 +110,6 @@
         let g:gundo_prefer_python3 = 1
         nnoremap <leader>u :GundoToggle<cr>
     " }}}
-    " Grammalecte {{{
-        let g:grammalecte_cli_py = '/usr/bin/grammalecte-cli.py'
-    " }}}
     " Language client {{{
         let g:LanguageClient_serverCommands = {
             \ 'rust': ['rust-analyzer'],

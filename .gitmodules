@@ -70,9 +70,6 @@
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/pack/bundle/start/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
-[submodule "config/nvim/bundle/grammalecte"]
-	path = config/nvim/pack/bundle/start/grammalecte
-	url = git://github.com/dpelle/vim-Grammalecte.git
 [submodule "config/nvim/bundle/diminactive"]
 	path = config/nvim/pack/bundle/start/diminactive
 	url = git://github.com/blueyed/vim-diminactive.git
