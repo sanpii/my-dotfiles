@@ -122,7 +122,6 @@
             autocmd FileType text :exec "source " . vimfiles . "/text.vim"
             autocmd FileType tex :exec "source " . vimfiles . "/text.vim"
             autocmd FileType markdown :exec "source " . vimfiles . "/text.vim"
-            autocmd FileType mail :exec "source " . vimfiles . "/mail.vim"
         augroup END
     " }}}
     " neosnippet {{{
