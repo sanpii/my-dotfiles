@@ -32,12 +32,6 @@
     set colorcolumn=81
 
     set inccommand=split
-
-    augroup filetype
-        autocmd FileType text :exec "source " . vimfiles . "/text.vim"
-        autocmd FileType tex :exec "source " . vimfiles . "/text.vim"
-        autocmd FileType markdown :exec "source " . vimfiles . "/text.vim"
-    augroup END
 " }}}
 " Apparence {{{
     colorscheme desertink
