@@ -148,17 +148,6 @@
     " Spiffy Foldtext {{{
         let g:SpiffyFoldtext_format = "%c{─}  %<%f{─}┤ %4n lines ├─%l{──}"
     " }}}
-    " Visql {{{
-        noremap <leader>po :VipsqlOpenSession<CR>
-        noremap <silent> <leader>pk :VipsqlCloseSession<CR>
-        nnoremap <leader>ps :VipsqlShell<CR>
-        vnoremap <leader>ps :VipsqlSendSelection<CR>
-        noremap <leader>pr :VipsqlSendRange<CR>
-        noremap <leader>pl :VipsqlSendCurrentLine<CR>
-        noremap <leader>pb :VipsqlSendBuffer<CR>
-        noremap <leader>pc :VipsqlSendInterrupt<CR>
-        let g:vipsql_new_buffer_config = 'setlocal filetype=pgsql'
-    " }}}
 " }}}
 " Mappage {{{
     " Help {{{
