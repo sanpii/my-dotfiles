@@ -43,9 +43,6 @@
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
 	url = git://github.com/tpope/vim-abolish.git
-[submodule "nvim/vim/bundle/targets"]
-	path = config/nvim/pack/bundle/start/targets
-	url = git://github.com/wellle/targets.vim.git
 [submodule "nvim/bundle/better-whitespace"]
 	path = config/nvim/pack/bundle/start/better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
