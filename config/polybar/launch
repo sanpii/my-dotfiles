@@ -1,0 +1,5 @@
+#!/bin/bash
+
+killall polybar
+MONITOR=HDMI-1 polybar bottom1
+MONITOR=DVI-I-1 polybar bottom2

@@ -27,4 +27,4 @@ then
     ~/.xstart.local
 fi
 
-i3 --force-xinerama
+i3

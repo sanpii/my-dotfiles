@@ -1,8 +1,12 @@
 configuration {
+    modi: "run,window,ssh";
+    display-run: "";
+    display-window: "";
+    display-ssh: "歷";
     columns: 4;
     location: 6;
     padding: 2;
-    yoffset: -22;
+    yoffset: -34;
     xoffset: 0;
     fixed-num-lines: true;
     terminal: "alacritty";
@@ -10,6 +14,8 @@ configuration {
     color-urgent: "#393939, #f3843d, #393939, #268bd2, #ffc39c";
     color-active: "#393939, #268bd2, #393939, #268bd2, #205171";
     color-window: "#393939, #393939, #268bd2";
+    show-icons: true;
+    kb-mode-next: "Super+Tab";
 }
 
 /* vim:ft=css

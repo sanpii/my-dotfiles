@@ -13,8 +13,9 @@ bindsym $mod+Tab exec ~/.config/i3/wp-swap.php
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym Shift+Print exec scrot -u -e 'mv $f /tmp/ && gimp /tmp/$f'
 
-client.focused #42a8dc #1b455a #cccccc
-client.urgent #f73668 #60031b #aaaaaa
+# class        border  backgr. text    indicator child_border
+client.focused #475359 #3B4252 #CFD8DC #CFD8DC   #475359
+client.urgent  #BF616A #60031b #CFD8DC #CFD8DC   #BF616A
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+equal move scratchpad
@@ -236,16 +237,10 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    font pango:Hack Nerd Font, Awesome 12
-    status_command i3blocks
-}
-
 for_window [instance="^term-scratchpad$"] move to scratchpad
 for_window [class="pgmodeler" title="Édition des données"] floating disable;
 
+exec_always --no-startup-id $HOME/.config/polybar/launch
 exec --no-startup-id i3-msg 'workspace 1; exec firefox; exec /usr/bin/alacritty'
 exec --no-startup-id i3-msg 'workspace 2; workspace 6'
 exec --no-startup-id i3-msg 'workspace 1; workspace 2; exec /usr/bin/thunderbird; exec xirc'

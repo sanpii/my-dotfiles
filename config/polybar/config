@@ -1,0 +1,180 @@
+[colors]
+cyan = #88C0D0
+green = #A3BE8C
+grey = #3B4252
+lightgrey = #475359
+orange = #D08770
+purple = #B48EAD
+red = #BF616A
+white = #CFD8DC
+yellow = #EBCB8B
+
+[icons]
+indicator = 
+cpu = 
+memory = 
+clock = 
+agenda = 
+
+[bar/bottom1]
+monitor = HDMI-1
+bottom = true
+
+height = 3%
+radius-bottom = 15
+
+modules-left = i3
+modules-center = agenda
+modules-right = network cpu memory audio date
+
+tray-position = right
+tray-maxsize = 20
+
+font-0 = "Hack Nerd Font:style=Regular:size=12.0"
+
+background = ${colors.grey}
+foreground = ${colors.white}
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[bar/bottom2]
+monitor = DVI-I-1
+bottom = true
+
+height = 3%
+radius-bottom = 15
+
+modules-left = i3
+modules-center = mpd
+modules-right = date
+
+font-0 = "Hack Nerd Font:style=Regular:size=12.0"
+
+background = ${colors.grey}
+foreground = ${colors.white}
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+enable-scroll = true
+fuzzy-match = true
+
+label-focused = %{T4}ﱣ%{T-}
+label-focused-foreground = ${colors.yellow}
+label-focused-padding = 1
+
+label-unfocused = %{T4}ﱤ%{T-}
+label-unfocused-foreground = ${colors.green}
+label-unfocused-padding = 1
+
+label-visible = %{T4}ﱤ%{T-}
+label-visible-foreground = ${colors.yellow}
+label-visible-padding = 1
+
+label-urgent = %{T4}ﱤ%{T-}
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+[module/agenda]
+type = custom/script
+exec = next_appointment
+interval = 900
+
+[module/network]
+type = internal/network
+
+label-disconnected = 
+label-connected =  %local_ip%
+interface = enp14s0
+
+[module/cpu]
+type = internal/cpu
+
+format = <label> <bar-load>
+label = ${icons.cpu}
+format-padding = 1
+
+bar-load-width = 10
+bar-load-foreground-0 = ${colors.cyan}
+bar-load-foreground-1 = ${colors.green}
+bar-load-foreground-2 = ${colors.yellow}
+bar-load-foreground-3 = ${colors.red}
+bar-load-indicator =
+bar-load-fill = █
+bar-load-empty = █
+bar-load-empty-foreground = ${colors.lightgrey}
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = ${icons.memory}
+
+bar-used-width = 10
+bar-used-foreground-0 = ${colors.cyan}
+bar-used-foreground-1 = ${colors.green}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.red}
+bar-used-indicator =
+bar-used-fill = █
+bar-used-empty = █
+bar-used-empty-foreground = ${colors.lightgrey}
+
+[module/audio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+format-volume-padding = 1
+label-volume = 墳
+label-muted = 婢
+label-muted-padding = 1
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.yellow}
+bar-volume-foreground-7 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = ${icons.indicator}
+bar-volume-indicator-foreground = ${colors.green}
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.lightgrey}
+
+[module/mpd]
+type = internal/mpd
+host = 192.168.1.11
+
+format-online = <icon-prev> <icon-pause> <icon-next> <bar-progress> <label-time> <label-song>
+format-online-padding = 1
+format-paused = <icon-play>
+format-paused-padding = 1
+format-stopped = <icon-play>
+format-stopped-padding = 1
+
+icon-play = 
+icon-pause = 
+icon-prev = ﭢ
+icon-next = ﭠ
+
+bar-progress-width = 20
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+[module/date]
+type = internal/date
+
+format = %{A1:~/.config/polybar/calendar:} <label> %{A}
+label =  %date% %time%
+date = %d/%m/%Y
+time = %H:%M:%S
+
+click-left = ~/.config/polybar/calendar
