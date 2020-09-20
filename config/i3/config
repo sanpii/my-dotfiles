@@ -9,7 +9,7 @@ workspace_layout stacking
 
 bindsym $mod+p exec rofi -no-levenshtein-sort -show run
 bindsym $mod+l exec xautolock -locknow
-bindsym $mod+Tab exec ~/.config/i3/wp-swap.php
+bindsym $mod+Tab exec ~/projects/rust/wp-swap/target/release/wp-swap
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym Shift+Print exec scrot -u -e 'mv $f /tmp/ && gimp /tmp/$f'
 
