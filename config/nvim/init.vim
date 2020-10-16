@@ -26,6 +26,8 @@
 
     set inccommand=split
     set completeopt=menuone,noinsert,noselect
+
+    set splitbelow
 " }}}
 " Apparence {{{
     colorscheme desertink
