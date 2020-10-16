@@ -91,3 +91,6 @@
 [submodule "config/nvim/pack/bundle/start/lightline"]
 	path = config/nvim/pack/bundle/start/lightline
 	url = git://github.com/itchyny/lightline.vim
+[submodule "config/nvim/pack/bundle/start/css-color"]
+	path = config/nvim/pack/bundle/start/css-color
+	url = git://github.com/ap/vim-css-color
