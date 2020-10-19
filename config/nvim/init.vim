@@ -91,9 +91,6 @@
         nnoremap A :call <SID>EndOfLine()<CR>a
     " }}}
 
-    " Don't move on *
-    nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
-
     " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
     inoremap <c-u> <c-g>u<c-u>
     inoremap <c-w> <c-g>u<c-w>
