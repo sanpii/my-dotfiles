@@ -1,0 +1,6 @@
+/* https://github.com/ueokande/vim-vixen/issues/203#issuecomment-647050023 */
+#statuspanel-inner {
+    display: block !important;
+    position: fixed !important;
+    top: 68px !important;
+}

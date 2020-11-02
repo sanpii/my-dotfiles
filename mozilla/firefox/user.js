@@ -1874,6 +1874,7 @@ user_pref("extensions.pocket.enabled", false);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 user_pref("browser.download.dir", "/home/sanpi/Downloads");
 user_pref("general.smoothScroll", false);
