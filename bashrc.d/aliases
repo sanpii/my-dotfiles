@@ -117,5 +117,5 @@ alias g='git'
 if [ -e /usr/share/bash-completion/completions/git ]
 then
     source /usr/share/bash-completion/completions/git
-    complete -o default -o nospace -F _git g
+    __git_complete g __git_main
 fi
