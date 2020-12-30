@@ -35,8 +35,8 @@ font-0 = "Hack Nerd Font:style=Regular:size=12.0"
 background = ${colors.grey}
 foreground = ${colors.white}
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-down = i3wm-wsnext
+scroll-up = i3wm-wsprev
 
 [bar/bottom2]
 monitor = DVI-I-1
