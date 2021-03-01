@@ -198,12 +198,11 @@ mode "mouse" {
 
 bindsym $mod+m mode "mouse"
 
-
-bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%- unmute && killall -USR1 i3blocks
-bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute && killall -USR1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute && killall -USR1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && killall -USR1 i3blocks
-bindsym XF86AudioMute exec amixer -q set Master toggle && killall -USR1 i3blocks
+bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
+bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 bindsym XF86TouchpadToggle exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 
