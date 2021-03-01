@@ -37,7 +37,6 @@
 	ad = add
 	ci = commit --verbose --message
 	co = checkout
-	cp = cherry-pick
 	dc = diff --cached -M
 	fc = !$(git config core.editor) $(git ls-files -uz | xargs -0)
 	lg = log --decorate --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %G?'
@@ -45,6 +44,7 @@
 	re = rebase
 	sm = submodule
 	st = status
+	chp = cherry-pick
 	new = !sh -c 'git log "$@" @{1}..@{0}'
 	vim = !$(git config core.editor) $(git ls-files -mz | xargs -0)
 	info = !~/.config/git/contrib/git-info
