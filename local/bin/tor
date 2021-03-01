@@ -2,15 +2,25 @@
 
 set -euo pipefail
 
-sudo systemctl start tor
-sudo systemctl start polipo
+main() {
+    start tor
+    start polipo
 
-export http_proxy=http://localhost:8123
-export https_proxy=http://localhost:8123
+    export http_proxy=http://localhost:8123
+    export https_proxy=http://localhost:8123
 
-is_tor=$(wget -q -O - https://check.torproject.org/api/ip | jq --raw-output .IsTor | tr -d $'\n')
-if [ "$is_tor" = "true" ]
-then
-    export TOR=1
-    bash
-fi
+    is_tor=$(wget -q -O - https://check.torproject.org/api/ip | jq --raw-output .IsTor | tr -d $'\n')
+    if [ "$is_tor" = "true" ]
+    then
+        export TOR=1
+        bash
+    fi
+}
+
+start() {
+    local service=$1
+
+    systemctl is-active --quiet $service || sudo systemctl start $service
+}
+
+main
