@@ -13,7 +13,7 @@ main()
     sed -i -e "/END:/r $SRCDIR/user-overrides.js" -e 'x;$G' "$SRCDIR/user.js"
 
     git add "$SRCDIR/user.js"
-    echo git commit --message "[firefox] Updates user.js for Fx$(echo $version | cut -d '.' -f 1)"
+    git commit --message "[firefox] Updates user.js for Fx$(echo $version | cut -d '.' -f 1)"
 }
 
 main
