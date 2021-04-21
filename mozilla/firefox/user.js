@@ -1727,6 +1727,8 @@ user_pref("browser.urlbar.autoFill.typed", true);
 user_pref("browser.formfill.enable", true);
 /* 0864 */
 user_pref("dom.forms.datetime", true);
+/* 0901 */
+user_pref("signon.rememberSignons", false);
 /* 1020 */
 user_pref("browser.sessionstore.max_tabs_undo", 20);
 user_pref("browser.sessionstore.max_windows_undo", 3);
@@ -1794,11 +1796,11 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.download.dir", "/home/sanpi/Downloads");
 user_pref("general.smoothScroll", false);
 user_pref("browser.tabs.loadDivertedInBackground", true);
-user_pref("identity.sync.tokenserver.uri", "https://sync.homecomputing.fr/token/1.0/sync/1.5");
 user_pref("media.videocontrols.picture-in-picture.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+user_pref("findbar.highlightAll", true);
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
