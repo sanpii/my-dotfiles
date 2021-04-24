@@ -1712,6 +1712,8 @@ user_pref("browser.startup.page", 3);
 user_pref("general.useragent.locale", "fr-FR");
 /* 0205 */
 user_pref("intl.locale.requested", "");
+/* 0411 */
+user_pref("browser.safebrowsing.malware.enabled", false);
 /* 0801 */
 user_pref("keyword.enabled", true);
 /* 0804 */
