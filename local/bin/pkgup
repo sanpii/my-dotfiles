@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main()
+{
+    local version=$1
+
+    sed -i 's/^pkgver=.*$/pkgver='$version'/;s/^pkgrel=.*$/pkgrel=1/;s/^sha256sums=.*$/sha256sums=()/' PKGBUILD
+
+    updpkgsums
+    makepkg --printsrcinfo > .SRCINFO
+    makepkg
+
+    git add PKGBUILD .SRCINFO
+    git commit -m "v$version"
+}
+
+main $*
