@@ -60,8 +60,6 @@ lxc()
     sudo lxc-$command $*
 }
 
-alias irc='ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
-
 man()
 {
     env LESS_TERMCAP_mb=$(printf "\e[1;31m") \

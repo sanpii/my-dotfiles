@@ -1,5 +1,0 @@
-#!/bin/sh
-
-alacritty --title irc --command bash -c 'ssh -t irc.homecomputing.fr "tmux attach-session -t irc"'
-~/.ssh/ssh-listener.py --stop
-rm /tmp/ssh-listener.pid
