@@ -36,7 +36,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+X kill
@@ -215,6 +215,6 @@ for_window [instance="^term-scratchpad$"] move to scratchpad
 for_window [class="pgmodeler" title="Édition des données"] floating disable;
 
 exec_always --no-startup-id $HOME/.config/polybar/launch
-exec --no-startup-id i3-msg 'workspace 1; exec firefox; exec /usr/bin/alacritty'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox; exec /usr/bin/wezterm'
 exec --no-startup-id i3-msg 'workspace 2; workspace 6'
 exec --no-startup-id i3-msg 'workspace 1; workspace 2; exec /usr/bin/thunderbird; exec xirc'
