@@ -1754,6 +1754,8 @@ user_pref("media.gmp-widevinecdm.visible", true);
 user_pref("media.gmp-widevinecdm.enabled", true);
 /* 1830 */
 user_pref("media.eme.enabled", true);
+/* 2001 */
+user_pref("media.peerconnection.enabled", true);
 /* 2010 */
 user_pref("webgl.disabled", false);
 user_pref("webgl.min_capability_mode", false);
