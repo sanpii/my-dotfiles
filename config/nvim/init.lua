@@ -25,7 +25,6 @@
     vim.o.colorcolumn = '+1'
 
     vim.o.inccommand = 'split'
-    vim.o.completeopt = 'menuone,noinsert,noselect'
 
     vim.o.splitbelow = true
 -- }}}

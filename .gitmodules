@@ -82,9 +82,6 @@
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
 	url = git://github.com/wincent/loupe.git
-[submodule "config/nvim/pack/bundle/start/deoplete"]
-	path = config/nvim/pack/bundle/start/deoplete
-	url = git://github.com/Shougo/deoplete.nvim
 [submodule "config/nvim/pack/bundle/start/lightline"]
 	path = config/nvim/pack/bundle/start/lightline
 	url = git://github.com/itchyny/lightline.vim
@@ -94,3 +91,6 @@
 [submodule "config/nvim/pack/bundle/start/lspconfig"]
 	path = config/nvim/pack/bundle/start/lspconfig
 	url = git://github.com/neovim/nvim-lspconfig.git
+[submodule "config/nvim/pack/bundle/start/compe"]
+	path = config/nvim/pack/bundle/start/compe
+	url = git://github.com/hrsh7th/nvim-compe.git
