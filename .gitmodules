@@ -58,12 +58,6 @@
 [submodule "config/nvim/bundle/diminactive"]
 	path = config/nvim/pack/bundle/start/diminactive
 	url = git://github.com/blueyed/vim-diminactive.git
-[submodule "config/nvim/bundle/neosnippet"]
-	path = config/nvim/pack/bundle/start/neosnippet
-	url = git://github.com/Shougo/neosnippet.vim.git
-[submodule "config/nvim/bundle/snippets"]
-	path = config/nvim/pack/bundle/start/snippets
-	url = git://github.com/Shougo/neosnippet-snippets.git
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
 	url = git://github.com/deris/vim-shot-f.git
@@ -88,3 +82,9 @@
 [submodule "config/nvim/pack/bundle/start/clap"]
 	path = config/nvim/pack/bundle/start/clap
 	url = git://github.com/liuchengxu/vim-clap.git
+[submodule "config/nvim/pack/bundle/start/vsnip"]
+	path = config/nvim/pack/bundle/start/vsnip
+	url = git://github.com/hrsh7th/vim-vsnip.git
+[submodule "config/nvim/pack/bundle/start/friendly-snippets"]
+	path = config/nvim/pack/bundle/start/friendly-snippets
+	url = git://github.com/rafamadriz/friendly-snippets.git

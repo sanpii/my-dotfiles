@@ -6,6 +6,7 @@ require'compe'.setup {
     source = {
         nvim_lsp = true,
         path = true,
+        vsnip = true,
     },
 }
 
