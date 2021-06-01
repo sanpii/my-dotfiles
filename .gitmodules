@@ -76,9 +76,6 @@
 [submodule "config/nvim/pack/bundle/start/lightline"]
 	path = config/nvim/pack/bundle/start/lightline
 	url = git://github.com/itchyny/lightline.vim
-[submodule "config/nvim/pack/bundle/start/css-color"]
-	path = config/nvim/pack/bundle/start/css-color
-	url = git://github.com/ap/vim-css-color
 [submodule "config/nvim/pack/bundle/start/lspconfig"]
 	path = config/nvim/pack/bundle/start/lspconfig
 	url = git://github.com/neovim/nvim-lspconfig.git
@@ -94,3 +91,6 @@
 [submodule "config/nvim/pack/bundle/start/shade"]
 	path = config/nvim/pack/bundle/start/shade
 	url = git://github.com/sunjon/Shade.nvim.git
+[submodule "config/nvim/pack/bundle/start/colorizer"]
+	path = config/nvim/pack/bundle/start/colorizer
+	url = git://github.com/norcalli/nvim-colorizer.lua.git
