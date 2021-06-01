@@ -4,9 +4,6 @@
 [submodule "nvim/bundle/auto_mkdir"]
 	path = config/nvim/pack/bundle/start/auto_mkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
-[submodule "nvim/bundle/ctrlp"]
-	path = config/nvim/pack/bundle/start/ctrlp
-	url = git://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "nvim/bundle/splice"]
 	path = config/nvim/pack/bundle/start/splice
 	url = git://github.com/sjl/splice.vim.git
@@ -31,9 +28,6 @@
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/pack/bundle/start/clam
 	url = git://github.com/sjl/clam.vim.git
-[submodule "nvim/bundle/ctrlp-funky"]
-	path = config/nvim/pack/bundle/start/ctrlp-funky
-	url = git://github.com/tacahiroy/ctrlp-funky.git
 [submodule "nvim/bundle/desertink"]
 	path = config/nvim/pack/bundle/start/desertink
 	url = git://github.com/toupeira/vim-desertink.git
@@ -73,9 +67,6 @@
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
 	url = git://github.com/deris/vim-shot-f.git
-[submodule "config/nvim/bundle/esearch"]
-	path = config/nvim/pack/bundle/start/esearch
-	url = git://github.com/eugen0329/vim-esearch.git
 [submodule "config/nvim/bundle/openscad"]
 	path = config/nvim/pack/bundle/start/openscad
 	url = git://github.com/sirtaj/vim-openscad.git
@@ -94,3 +85,6 @@
 [submodule "config/nvim/pack/bundle/start/compe"]
 	path = config/nvim/pack/bundle/start/compe
 	url = git://github.com/hrsh7th/nvim-compe.git
+[submodule "config/nvim/pack/bundle/start/clap"]
+	path = config/nvim/pack/bundle/start/clap
+	url = git://github.com/liuchengxu/vim-clap.git
