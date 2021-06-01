@@ -73,9 +73,6 @@
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
 	url = git://github.com/wincent/loupe.git
-[submodule "config/nvim/pack/bundle/start/lightline"]
-	path = config/nvim/pack/bundle/start/lightline
-	url = git://github.com/itchyny/lightline.vim
 [submodule "config/nvim/pack/bundle/start/lspconfig"]
 	path = config/nvim/pack/bundle/start/lspconfig
 	url = git://github.com/neovim/nvim-lspconfig.git
@@ -94,3 +91,6 @@
 [submodule "config/nvim/pack/bundle/start/colorizer"]
 	path = config/nvim/pack/bundle/start/colorizer
 	url = git://github.com/norcalli/nvim-colorizer.lua.git
+[submodule "config/nvim/pack/bundle/start/lualine"]
+	path = config/nvim/pack/bundle/start/lualine
+	url = git://github.com/hoob3rt/lualine.nvim.git
