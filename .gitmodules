@@ -22,9 +22,6 @@
 [submodule "nvim/bundle/SingleCompile"]
 	path = config/nvim/pack/bundle/start/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
-[submodule "nvim/bundle/incbool"]
-	path = config/nvim/pack/bundle/start/incbool
-	url = git://github.com/can3p/incbool.vim.git
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/pack/bundle/start/clam
 	url = git://github.com/sjl/clam.vim.git
@@ -88,3 +85,6 @@
 [submodule "config/nvim/pack/bundle/start/lualine"]
 	path = config/nvim/pack/bundle/start/lualine
 	url = git://github.com/hoob3rt/lualine.nvim.git
+[submodule "config/nvim/pack/bundle/start/dial"]
+	path = config/nvim/pack/bundle/start/dial
+	url = git://github.com/monaqa/dial.nvim.git
