@@ -61,9 +61,6 @@
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/pack/bundle/start/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
-[submodule "config/nvim/bundle/diminactive"]
-	path = config/nvim/pack/bundle/start/diminactive
-	url = git://github.com/blueyed/vim-diminactive.git
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
 	url = git://github.com/deris/vim-shot-f.git
@@ -94,3 +91,6 @@
 [submodule "config/nvim/pack/bundle/start/friendly-snippets"]
 	path = config/nvim/pack/bundle/start/friendly-snippets
 	url = git://github.com/rafamadriz/friendly-snippets.git
+[submodule "config/nvim/pack/bundle/start/shade"]
+	path = config/nvim/pack/bundle/start/shade
+	url = git://github.com/sunjon/Shade.nvim.git
