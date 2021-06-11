@@ -1,5 +1,3 @@
-lua << EOF
-
 local lspconfig = require('lspconfig')
 
 local on_attach = function(client, bufnr)
@@ -19,5 +17,3 @@ end
 for _, lsp in ipairs({"rust_analyzer"}) do
     lspconfig[lsp].setup{ on_attach = on_attach }
 end
-
-EOF
