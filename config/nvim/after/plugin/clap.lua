@@ -1,5 +1,3 @@
-lua << EOF
-
 vim.g.clap_theme = 'material_design_dark'
 vim.g.clap_insert_mode_only = true
 vim.g.clap_open_preview = 'never'
@@ -10,7 +8,7 @@ function ctrlp()
     vim.cmd('Clap files')
 
     if dir ~= '' and dir ~= '.' then
-        vim.api.nvim_feedkeys(dir .. '/', 'i', false)
+        vim.api.nvim_feedkeys(dir, 'i', false)
     end
 end
 
@@ -39,11 +37,12 @@ function clap_switch(order)
     vim.cmd('Clap ' .. providers[current_id])
 end
 
-EOF
 
-nnoremap <silent> <c-p> :call v:lua.ctrlp()<cr>
+vim.api.nvim_set_keymap('n', '<c-p>', ':call v:lua.ctrlp()<cr>', {noremap = true, silent = true})
 
-autocmd FileType clap_input inoremap <silent> <buffer> <c-t> <c-r>=clap#navigation#linewise('down')<cr>
-autocmd FileType clap_input inoremap <silent> <buffer> <c-s> <c-r>=clap#navigation#linewise('up')<cr>
-autocmd FileType clap_input inoremap <silent> <buffer> <c-p> <esc>:call v:lua.clap_switch(-1)<cr><right>
-autocmd FileType clap_input inoremap <silent> <buffer> <c-f> <esc>:call v:lua.clap_switch(+1)<cr>
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <tab> <c-r>=clap#navigation#linewise("down")<cr>')
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <c-t> <c-r>=clap#navigation#linewise("down")<cr>')
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <s-tab> <c-r>=clap#navigation#linewise("up")<cr>')
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <c-s> <c-r>=clap#navigation#linewise("up")<cr>')
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <c-p> <esc>:call v:lua.clap_switch(-1)<cr><right>')
+vim.cmd('autocmd FileType clap_input inoremap <silent> <buffer> <c-f> <esc>:call v:lua.clap_switch(+1)<cr>')
