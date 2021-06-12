@@ -94,3 +94,6 @@
 [submodule "config/nvim/pack/bundle/start/dial"]
 	path = config/nvim/pack/bundle/start/dial
 	url = git://github.com/monaqa/dial.nvim.git
+[submodule "config/nvim/pack/bundle/start/lspkind"]
+	path = config/nvim/pack/bundle/start/lspkind
+	url = git://github.com/onsails/lspkind-nvim.git
