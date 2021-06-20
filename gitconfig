@@ -1,6 +1,6 @@
 [init]
 	templatedir = ~/.config/git/templates
-	defaultBranch = master
+	defaultBranch = main
 [user]
 	name = Sanpi
 	email = sanpi@homecomputing.fr
