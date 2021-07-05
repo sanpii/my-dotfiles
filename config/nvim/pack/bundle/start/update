@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main()
+{
+    for bundle in $(ls -1d */)
+    do
+        update "$bundle"
+    done
+}
+
+update()
+{
+    local bundle=$1
+
+    echo "Updates $bundle"
+    cd "$bundle"
+    git fetch --quiet
+
+    if [[ $(git branch --show-current) = "" ]]
+    then
+        local tag=$(git tag | tail -1)
+
+        git checkout --quiet "$tag"
+    else
+        git rebase --quiet origin
+    fi
+
+    cd ..
+}
+
+if [[ $# -eq 1 ]]
+then
+    update $1
+else
+    main
+fi
