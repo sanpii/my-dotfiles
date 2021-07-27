@@ -13,9 +13,6 @@
 [submodule "nvim/bundle/eunuch"]
 	path = config/nvim/pack/bundle/start/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "nvim/bundle/vdebug"]
-	path = config/nvim/pack/bundle/start/vdebug
-	url = git://github.com/joonty/vdebug.git
 [submodule "nvim/bundle/sideway"]
 	path = config/nvim/pack/bundle/start/sideway
 	url = git://github.com/AndrewRadev/sideways.vim.git
