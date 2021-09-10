@@ -47,6 +47,9 @@
     vim.o.tabstop = 4
     vim.o.softtabstop = 4
     vim.o.expandtab = true
+    vim.o.breakindent = true
+    vim.o.breakindentopt = 'shift:2'
+    vim.o.showbreak = '↳'
 
     vim.cmd('augroup filetype')
         vim.cmd('autocmd FileType make setlocal noexpandtab')
