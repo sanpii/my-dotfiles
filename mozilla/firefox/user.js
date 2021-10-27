@@ -1,8 +1,8 @@
 
 /******
 * name: arkenfox user.js
-* date: 12 October 2021
-* version 93
+* date: 27 October 2021
+* version 91.1
 * url: https://github.com/arkenfox/user.js
 * license: MIT: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
 
@@ -128,7 +128,7 @@ user_pref("geo.provider.use_gpsd", false); // [LINUX]
 /* 0203: disable region updates
  * [1] https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html ***/
 user_pref("browser.region.network.url", ""); // [FF78+]
-user_pref("browser.region.update.enabled", false); // [[FF79+]
+user_pref("browser.region.update.enabled", false); // [FF79+]
 /* 0204: set search region
  * [NOTE] May not be hidden if Firefox has changed your settings due to your region (0203) ***/
    // user_pref("browser.search.region", "US"); // [HIDDEN PREF]
@@ -164,9 +164,6 @@ user_pref("app.update.background.scheduling.enabled", false);
 /* 0306: disable search engine updates (e.g. OpenSearch)
  * [NOTE] This does not affect Mozilla's built-in or Web Extension search engines ***/
 user_pref("browser.search.update", false);
-/* 0307: disable System Add-on updates ***/
-user_pref("extensions.systemAddon.update.enabled", false); // [FF62+]
-user_pref("extensions.systemAddon.update.url", ""); // [FF44+]
 
 /** RECOMMENDATIONS ***/
 /* 0320: disable recommendation pane in about:addons (uses Google Analytics) ***/
@@ -322,13 +319,12 @@ user_pref("network.proxy.socks_remote_dns", true);
  * [SETUP-CHROME] Can break extensions for profiles on network shares
  * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/26424 ***/
 user_pref("network.file.disable_unc_paths", true); // [HIDDEN PREF]
-/* 0704: disable GIO as a potential proxy bypass vector
+/* 0704: disable GIO as a potential proxy bypass vector [FF60+]
  * Gvfs/GIO has a set of supported protocols like obex, network, archive, computer, dav, cdda,
  * gphoto2, trash, etc. By default only smb and sftp protocols are accepted so far (as of FF64)
  * [1] https://bugzilla.mozilla.org/1433507
- * [2] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/23044
- * [3] https://en.wikipedia.org/wiki/GVfs
- * [4] https://en.wikipedia.org/wiki/GIO_(software) ***/
+ * [2] https://en.wikipedia.org/wiki/GVfs
+ * [3] https://en.wikipedia.org/wiki/GIO_(software) ***/
 user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF]
 /* 0705: disable DNS-over-HTTPS (DoH) rollout [FF60+]
  * 0=off by default, 2=TRR (Trusted Recursive Resolver) first, 3=TRR only, 5=explicitly off
@@ -339,8 +335,9 @@ user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF]
  * [4] https://www.eff.org/deeplinks/2020/12/dns-doh-and-odoh-oh-my-year-review-2020 ***/
    // user_pref("network.trr.mode", 5);
 /* 0706: disable proxy direct failover for system requests [FF91+]
- * [WARNING] Default true is a security feature against malicious extensions
- * [SETUP-CHROME] If you use a proxy and you trust your extensions ***/
+ * [WARNING] Default true is a security feature against malicious extensions [1]
+ * [SETUP-CHROME] If you use a proxy and you trust your extensions
+ * [1] https://blog.mozilla.org/security/2021/10/25/securing-the-proxy-api-for-firefox-add-ons/ ***/
    // user_pref("network.proxy.failover_direct", false);
 
 /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS ***/
@@ -376,11 +373,6 @@ user_pref("browser.urlbar.speculativeConnect.enabled", false);
  * 0=never resolve single words, 1=heuristic (default), 2=always resolve
  * [1] https://bugzilla.mozilla.org/1642623 ***/
 user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-/* 0807: disable location bar contextual suggestions [FF92+]
- * [SETTING] Privacy & Security>Address Bar>Contextual Suggestions
- * [1] https://blog.mozilla.org/data/2021/09/15/data-and-firefox-suggest/ ***/
-user_pref("browser.urlbar.suggest.quicksuggest", false);
-user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 /* 0808: disable tab-to-search [FF85+]
  * Alternatively, you can exclude on a per-engine basis by unchecking them in Options>Search
  * [SETTING] Privacy & Security>Address Bar>When using the address bar, suggest>Search engines ***/
@@ -1073,7 +1065,7 @@ user_pref("browser.display.use_system_colors", false); // [DEFAULT: false]
  * Fingerprinting: provides a uniform look and feel across platforms [2]
  * [1] https://bugzilla.mozilla.org/1381938
  * [2] https://bugzilla.mozilla.org/1411425 ***/
-user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true FF89+]
+user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true]
 /* 4512: enforce links targeting new windows to open in a new tab instead
  * 1=most recent window or tab, 2=new window, 3=new tab
  * Stops malicious window sizes and some screen resolution leaks.
@@ -1273,6 +1265,7 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
    // user_pref("security.ssl3.rsa_aes_256_gcm_sha384", false); // no PFS
    // user_pref("security.ssl3.rsa_aes_128_sha", false); // no PFS
    // user_pref("security.ssl3.rsa_aes_256_sha", false); // no PFS
+   // user_pref("security.ssl3.rsa_des_ede3_sha", false); // 3DES
 /* 7004: control TLS versions
  * [WHY] Passive fingerprinting. Downgrades are still possible: behind user interaction ***/
    // user_pref("security.tls.version.min", 3); // [DEFAULT: 3]
@@ -1318,6 +1311,10 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
  * [WHY] Fingerprintable. Breakage. Cut/copy/paste require user
  * interaction, and paste is limited to focused editable fields ***/
    // user_pref("dom.event.clipboardevents.enabled", false);
+/* 7014: disable System Add-on updates
+ * [WHY] It can compromise security. System addons ship with prefs, use those ***/
+   // user_pref("extensions.systemAddon.update.enabled", false); // [FF62+]
+   // user_pref("extensions.systemAddon.update.url", ""); // [FF44+]
 
 /*** [SECTION 8000]: DON'T BOTHER: NON-RFP
    [WHY] They are insufficient to help anti-fingerprinting and do more harm than good
@@ -1406,14 +1403,6 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", 
    [1] https://github.com/arkenfox/user.js/issues/123
 ***/
 user_pref("_user.js.parrot", "9999 syntax error: the parrot's shuffled off 'is mortal coil!");
-/* ESR91.x still uses all the following prefs
-// [NOTE] replace the * with a slash in the line above to re-enable them
-// FF93
-// 7003: disable non-modern cipher suites
-   // [-] https://bugzilla.mozilla.org/1724072
-   // user_pref("security.ssl3.rsa_des_ede3_sha", false); // 3DES
-// ***/
-
 /* ESR78.x still uses all the following prefs
 // [NOTE] replace the * with a slash in the line above to re-enable them
 // FF79
