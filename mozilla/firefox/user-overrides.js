@@ -71,16 +71,15 @@ user_pref("browser.download.forbid_open_with", false);
 /* 2701 */
 user_pref("network.cookie.cookieBehavior", 1);
 /* 2802 */
-user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("network.cookie.lifetimePolicy", 0);
 /* 2803 */
 user_pref("privacy.clearOnShutdown.cache", false);
-user_pref("privacy.clearOnShutdown.cookies", false);
-user_pref("privacy.clearOnShutdown.downloads", true);
 user_pref("privacy.clearOnShutdown.formdata", false);
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.offlineApps", false);
 user_pref("privacy.clearOnShutdown.sessions", false);
-user_pref("privacy.clearOnShutdown.siteSettings", false);
+/* 2810 */
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 /* 4501 */
 user_pref("privacy.resistFingerprinting", false);
 /* 4504 */
