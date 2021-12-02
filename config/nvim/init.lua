@@ -14,7 +14,6 @@
     vim.o.relativenumber = true
 
     vim.o.spelllang = 'fr'
-    vim.o.hidden = true
     vim.o.wrap = false
 
     vim.cmd('augroup buffer')
