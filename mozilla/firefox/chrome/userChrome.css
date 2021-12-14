@@ -1,3 +1,7 @@
+#tabContextMenu #context_openANewTab {
+    display: none !important;
+}
+
 /* https://github.com/ueokande/vim-vixen/issues/203#issuecomment-647050023 */
 #statuspanel-inner {
     display: block !important;
