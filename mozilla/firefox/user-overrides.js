@@ -100,3 +100,5 @@ user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("findbar.highlightAll", true);
+/* 7013 */
+user_pref("dom.event.clipboardevents.enabled", false);
