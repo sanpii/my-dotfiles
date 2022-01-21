@@ -1,8 +1,8 @@
 
 /******
 * name: arkenfox user.js
-* date: 8 December 2021
-* version 95
+* date: 21 January 2021
+* version 96
 * url: https://github.com/arkenfox/user.js
 * license: MIT: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
 
@@ -52,18 +52,16 @@
   1600: HEADERS / REFERERS
   1700: CONTAINERS
   2000: PLUGINS / MEDIA / WEBRTC
-  2300: WEB WORKERS
   2400: DOM (DOCUMENT OBJECT MODEL)
   2600: MISCELLANEOUS
-  2700: PERSISTENT STORAGE
+  2700: ETP (ENHANCED TRACKING PROTECTION)
   2800: SHUTDOWN & SANITIZING
-  4000: FPI (FIRST PARTY ISOLATION)
   4500: RFP (RESIST FINGERPRINTING)
   5000: OPTIONAL OPSEC
   5500: OPTIONAL HARDENING
   6000: DON'T TOUCH
   7000: DON'T BOTHER
-  8000: DON'T BOTHER: NON-RFP
+  8000: DON'T BOTHER: FINGERPRINTING
   9000: PERSONAL
   9999: DEPRECATED / REMOVED / LEGACY / RENAMED
 
@@ -134,35 +132,14 @@ user_pref("browser.region.update.enabled", false); // [FF79+]
  * [SETTING] General>Language and Appearance>Language>Choose your preferred language...
  * [TEST] https://addons.mozilla.org/about ***/
 user_pref("intl.accept_languages", "en-US, en");
-/* 0211: use US English locale regardless of the system locale
+/* 0211: use en-US locale regardless of the system or region locale
  * [SETUP-WEB] May break some input methods e.g xim/ibus for CJK languages [1]
+ * [TEST] https://arkenfox.github.io/TZP/tests/formatting.html
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=867501,1629630 ***/
 user_pref("javascript.use_us_english_locale", true); // [HIDDEN PREF]
 
 /*** [SECTION 0300]: QUIETER FOX ***/
 user_pref("_user.js.parrot", "0300 syntax error: the parrot's not pinin' for the fjords!");
-/** UPDATES ***/
-/* 0301: disable auto-INSTALLING Firefox updates [NON-WINDOWS]
- * [NOTE] You will still get prompts to update, and should do so in a timely manner
- * [SETTING] General>Firefox Updates>Check for updates but let you choose to install them ***/
-user_pref("app.update.auto", false);
-/* 0302: disable auto-INSTALLING Firefox updates via a background service [FF90+] [WINDOWS]
- * [SETTING] General>Firefox Updates>Automatically install updates>When Firefox is not running
- * [1] https://support.mozilla.org/kb/enable-background-updates-firefox-windows ***/
-user_pref("app.update.background.scheduling.enabled", false);
-/* 0303: disable auto-CHECKING for extension and theme updates ***/
-   // user_pref("extensions.update.enabled", false);
-/* 0304: disable auto-INSTALLING extension and theme updates (after the check in 0303)
- * [SETTING] about:addons>Extensions>[cog-wheel-icon]>Update Add-ons Automatically (toggle) ***/
-   // user_pref("extensions.update.autoUpdateDefault", false);
-/* 0305: disable extension metadata
- * used when installing/updating an extension, and in daily background update checks:
- * when false, extension detail tabs will have no description ***/
-   // user_pref("extensions.getAddons.cache.enabled", false);
-/* 0306: disable search engine updates (e.g. OpenSearch)
- * [NOTE] This does not affect Mozilla's built-in or Web Extension search engines ***/
-user_pref("browser.search.update", false);
-
 /** RECOMMENDATIONS ***/
 /* 0320: disable recommendation pane in about:addons (uses Google Analytics) ***/
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
@@ -234,9 +211,6 @@ user_pref("network.captive-portal-service.enabled", false); // [FF52+]
 /* 0361: disable Network Connectivity checks [FF65+]
  * [1] https://bugzilla.mozilla.org/1460537 ***/
 user_pref("network.connectivity-service.enabled", false);
-/* 0362: enforce disabling of Web Compatibility Reporter [FF56+]
- * Web Compatibility Reporter adds a "Report Site Issue" button to send data to Mozilla ***/
-user_pref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
 
 /*** [SECTION 0400]: SAFE BROWSING (SB)
    SB has taken many steps to preserve privacy. If required, a full url is never sent
@@ -316,9 +290,9 @@ user_pref("network.proxy.socks_remote_dns", true);
  * [SETUP-CHROME] Can break extensions for profiles on network shares
  * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/26424 ***/
 user_pref("network.file.disable_unc_paths", true); // [HIDDEN PREF]
-/* 0704: disable GIO as a potential proxy bypass vector [FF60+]
- * Gvfs/GIO has a set of supported protocols like obex, network, archive, computer, dav, cdda,
- * gphoto2, trash, etc. By default only smb and sftp protocols are accepted so far (as of FF64)
+/* 0704: disable GIO as a potential proxy bypass vector
+ * Gvfs/GIO has a set of supported protocols like obex, network, archive, computer,
+ * dav, cdda, gphoto2, trash, etc. By default only sftp is accepted (FF87+)
  * [1] https://bugzilla.mozilla.org/1433507
  * [2] https://en.wikipedia.org/wiki/GVfs
  * [3] https://en.wikipedia.org/wiki/GIO_(software) ***/
@@ -328,6 +302,12 @@ user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF]
  * [SETUP-CHROME] If you use a proxy and you trust your extensions
  * [1] https://blog.mozilla.org/security/2021/10/25/securing-the-proxy-api-for-firefox-add-ons/ ***/
    // user_pref("network.proxy.failover_direct", false);
+/* 0706: disable proxy bypass for system request failures [FF95+]
+ * RemoteSettings, UpdateService, Telemetry [1]
+ * [WARNING] If false, this will break the fallback for some security features
+ * [SETUP-CHROME] If you use a proxy and you understand the security impact
+ * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1732792,1733994,1733481 ***/
+   // user_pref("network.proxy.allow_bypass", false); // [HIDDEN PREF]
 /* 0710: disable DNS-over-HTTPS (DoH) rollout [FF60+]
  * 0=off by default, 2=TRR (Trusted Recursive Resolver) first, 3=TRR only, 5=explicitly off
  * see "doh-rollout.home-region": USA Feb 2020, Canada July 2021 [3]
@@ -478,17 +458,18 @@ user_pref("_user.js.parrot", "1200 syntax error: the parrot's a stiff!");
  * safe from the attack if it disables renegotiations but the problem is that the browser can't
  * know that. Setting this pref to true is the only way for the browser to ensure there will be
  * no unsafe renegotiations on the channel between the browser and the server.
- * [STATS] SSL Labs (July 2021) reports over 99% of sites have secure renegotiation [4]
+ * [STATS] SSL Labs (July 2021) reports over 99% of top sites have secure renegotiation [4]
  * [1] https://wiki.mozilla.org/Security:Renegotiation
  * [2] https://datatracker.ietf.org/doc/html/rfc5746
  * [3] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555
  * [4] https://www.ssllabs.com/ssl-pulse/ ***/
 user_pref("security.ssl.require_safe_negotiation", true);
-/* 1203: reset TLS 1.0 and 1.1 downgrades i.e. session only ***/
-user_pref("security.tls.version.enable-deprecated", false); // [DEFAULT: false]
 /* 1206: disable TLS1.3 0-RTT (round-trip time) [FF51+]
+ * This data is not forward secret, as it is encrypted solely under keys derived using
+ * the offered PSK. There are no guarantees of non-replay between connections
  * [1] https://github.com/tlswg/tls13-spec/issues/1001
- * [2] https://blog.cloudflare.com/tls-1-3-overview-and-q-and-a/ ***/
+ * [2] https://www.rfc-editor.org/rfc/rfc9001.html#name-replay-attacks-with-0-rtt
+ * [3] https://blog.cloudflare.com/tls-1-3-overview-and-q-and-a/ ***/
 user_pref("security.tls.enable_0rtt_data", false);
 
 /** OCSP (Online Certificate Status Protocol)
@@ -554,8 +535,8 @@ user_pref("dom.security.https_only_mode", true); // [FF76+]
 /* 1245: enable HTTPS-Only mode for local resources [FF77+] ***/
    // user_pref("dom.security.https_only_mode.upgrade_local", true);
 /* 1246: disable HTTP background requests [FF82+]
- * When attempting to upgrade, if the server doesn't respond within 3 seconds,
- * Firefox sends HTTP requests in order to check if the server supports HTTPS or not
+ * When attempting to upgrade, if the server doesn't respond within 3 seconds, Firefox sends
+ * a top-level HTTP request without path in order to check if the server supports HTTPS or not
  * This is done to avoid waiting for a timeout which takes 90 seconds
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1642387,1660945 ***/
 user_pref("dom.security.https_only_mode_send_http_background_request", false);
@@ -575,8 +556,6 @@ user_pref("browser.ssl_override_behavior", 1);
  * i.e. it doesn't work for HSTS discrepancies (https://subdomain.preloaded-hsts.badssl.com/)
  * [TEST] https://expired.badssl.com/ ***/
 user_pref("browser.xul.error_pages.expert_bad_cert", true);
-/* 1273: display "Not Secure" text on HTTP sites ***/
-user_pref("security.insecure_connection_text.enabled", true); // [FF60+]
 
 /*** [SECTION 1400]: FONTS ***/
 user_pref("_user.js.parrot", "1400 syntax error: the parrot's bereft of life!");
@@ -593,7 +572,6 @@ user_pref("gfx.font_rendering.opentype_svg.enabled", false);
    // user_pref("layout.css.font-visibility.trackingprotection", 1);
 
 /*** [SECTION 1600]: HEADERS / REFERERS
-   Expect some breakage e.g. banks: use an extension if you need precise control
                   full URI: https://example.com:8888/foo/bar.html?id=1234
      scheme+host+port+path: https://example.com:8888/foo/bar.html
           scheme+host+port: https://example.com:8888
@@ -602,15 +580,12 @@ user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 user_pref("_user.js.parrot", "1600 syntax error: the parrot rests in peace!");
 /* 1601: control when to send a cross-origin referer
  * 0=always (default), 1=only if base domains match, 2=only if hosts match
- * [SETUP-WEB] Known to cause issues with older modems/routers and some sites e.g vimeo, icloud, instagram ***/
+ * [SETUP-WEB] Breakage: older modems/routers and some sites e.g banks, vimeo, icloud, instagram
+ * If "2" is too strict, then override to "0" and use Smart Referer (Strict mode + add exceptions) ***/
 user_pref("network.http.referer.XOriginPolicy", 2);
 /* 1602: control the amount of cross-origin information to send [FF52+]
  * 0=send full URI (default), 1=scheme+host+port+path, 2=scheme+host+port ***/
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
-/* 1603: enable the DNT (Do Not Track) HTTP header
- * [NOTE] DNT is enforced with Enhanced Tracking Protection (2710)
- * [SETTING] Privacy & Security>Enhanced Tracking Protection>Send websites a "Do Not Track" signal... ***/
-   // user_pref("privacy.donottrackheader.enabled", true);
 
 /*** [SECTION 1700]: CONTAINERS
    Check out Temporary Containers [2], read the article [3], and visit the wiki/repo [4]
@@ -658,11 +633,13 @@ user_pref("media.peerconnection.ice.default_address_only", true);
  * [NOTE] This is covered by the EME master switch (2022) ***/
    // user_pref("media.gmp-widevinecdm.enabled", false);
 /* 2022: disable all DRM content (EME: Encryption Media Extension)
+ * Optionally hide the setting which also disables the DRM prompt
  * [SETUP-WEB] e.g. Netflix, Amazon Prime, Hulu, HBO, Disney+, Showtime, Starz, DirectTV
  * [SETTING] General>DRM Content>Play DRM-controlled content
  * [TEST] https://bitmovin.com/demos/drm
  * [1] https://www.eff.org/deeplinks/2017/10/drms-dead-canary-how-we-just-lost-web-what-we-learned-it-and-what-we-need-do-next ***/
 user_pref("media.eme.enabled", false);
+   // user_pref("browser.eme.ui.enabled", false);
 /* 2030: disable autoplay of HTML5 media [FF63+]
  * 0=Allow all, 1=Block non-muted media (default), 5=Block all
  * [NOTE] You can set exceptions under site permissions
@@ -674,46 +651,6 @@ user_pref("media.eme.enabled", false);
  * [NOTE] If you have trouble with some video sites, then add an exception (2030)
  * [1] https://support.mozilla.org/questions/1293231 ***/
 user_pref("media.autoplay.blocking_policy", 2);
-
-/*** [SECTION 2300]: WEB WORKERS
-   A worker is a JS "background task" running in a global context, i.e. it is different from
-   the current window. Workers can spawn new workers (must be the same origin & scheme),
-   including service and shared workers. Shared workers can be utilized by multiple scripts and
-   communicate between browsing contexts (windows/tabs/iframes) and can even control your cache.
-
-   [1]    Web Workers: https://developer.mozilla.org/docs/Web/API/Web_Workers_API
-   [2]         Worker: https://developer.mozilla.org/docs/Web/API/Worker
-   [3] Service Worker: https://developer.mozilla.org/docs/Web/API/Service_Worker_API
-   [4]   SharedWorker: https://developer.mozilla.org/docs/Web/API/SharedWorker
-   [5]   ChromeWorker: https://developer.mozilla.org/docs/Web/API/ChromeWorker
-   [6]  Notifications: https://support.mozilla.org/questions/1165867#answer-981820
-***/
-user_pref("_user.js.parrot", "2300 syntax error: the parrot's off the twig!");
-/* 2302: disable service workers [FF32, FF44-compat]
- * Service workers essentially act as proxy servers that sit between web apps, and the
- * browser and network, are event driven, and can control the web page/site they are associated
- * with, intercepting and modifying navigation and resource requests, and caching resources.
- * [NOTE] Service workers require HTTPS, have no DOM access, and are not supported in PB mode [1]
- * [SETUP-WEB] Disabling service workers will break some sites. This pref is required true for
- * service worker notifications (2304), push notifications (disabled, 2305) and service worker
- * cache (2740). If you enable this pref, then check those settings as well
- * [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1320796#c7 ***/
-user_pref("dom.serviceWorkers.enabled", false);
-/* 2304: disable Web Notifications
- * [NOTE] Web Notifications can also use service workers (2302) and are behind a prompt (7002)
- * [1] https://developer.mozilla.org/docs/Web/API/Notifications_API ***/
-   // user_pref("dom.webnotifications.enabled", false); // [FF22+]
-   // user_pref("dom.webnotifications.serviceworker.enabled", false); // [FF44+]
-/* 2305: disable Push Notifications [FF44+]
- * Push is an API that allows websites to send you (subscribed) messages even when the site
- * isn't loaded, by pushing messages to your userAgentID through Mozilla's Push Server
- * [NOTE] Push requires service workers (2302) to subscribe to and display, and is behind
- * a prompt (7002). Disabling service workers alone doesn't stop Firefox polling the
- * Mozilla Push Server. To remove all subscriptions, reset your userAgentID.
- * [1] https://support.mozilla.org/kb/push-notifications-firefox
- * [2] https://developer.mozilla.org/docs/Web/API/Push_API ***/
-user_pref("dom.push.enabled", false);
-   // user_pref("dom.push.userAgentID", "");
 
 /*** [SECTION 2400]: DOM (DOCUMENT OBJECT MODEL) ***/
 user_pref("_user.js.parrot", "2400 syntax error: the parrot's kicked the bucket!");
@@ -818,66 +755,31 @@ user_pref("extensions.postDownloadThirdPartyPrompt", false);
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1384330,1406795,1415644,1453988 ***/
    // user_pref("extensions.webextensions.restrictedDomains", "");
 
-/*** [SECTION 2700]: PERSISTENT STORAGE
-   Data SET by websites including
-          cookies : profile\cookies.sqlite
-     localStorage : profile\webappsstore.sqlite
-        indexedDB : profile\storage\default
-   serviceWorkers :
-
-   [NOTE] indexedDB and serviceWorkers are not available in Private Browsing Mode
-   [NOTE] Blocking cookies also blocks websites access to: localStorage (incl. sessionStorage),
-   indexedDB, sharedWorker, and serviceWorker (and therefore service worker cache and notifications)
-   If you set a site exception for cookies (either "Allow" or "Allow for Session") then they become
-   accessible to websites except shared/service workers where the cookie setting must be "Allow"
-***/
+/*** [SECTION 2700]: ETP (ENHANCED TRACKING PROTECTION) ***/
 user_pref("_user.js.parrot", "2700 syntax error: the parrot's joined the bleedin' choir invisible!");
-/* 2701: disable or isolate 3rd-party cookies and site-data [SETUP-WEB]
- * 0 = Accept cookies and site data
- * 1 = (Block) All third-party cookies
- * 2 = (Block) All cookies
- * 3 = (Block) Cookies from unvisited websites
- * 4 = (Block) Cross-site tracking cookies (default)
- * 5 = (Isolate All) Cross-site cookies (TCP: Total Cookie Protection / dFPI: dynamic FPI) [1] (FF86+)
- * Option 5 with FPI enabled (4001) is ignored and not shown, and option 4 used instead
- * [NOTE] You can set cookie exceptions under site permissions or use an extension
- * [NOTE] Enforcing category to custom ensures ETP related prefs are always honored
- * [SETTING] Privacy & Security>Enhanced Tracking Protection>Custom>Cookies
- * [1] https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/ ***/
-user_pref("network.cookie.cookieBehavior", 1);
-user_pref("browser.contentblocking.category", "custom");
-/* 2710: enable Enhanced Tracking Protection (ETP) in all windows
- * [SETTING] Privacy & Security>Enhanced Tracking Protection>Custom>Tracking content
+/* 2701: enable ETP Strict Mode [FF86+]
+ * ETP Strict Mode enables Total Cookie Protection (TCP)
+ * [NOTE] Adding site exceptions disables all ETP protections for that site and increases the risk of
+ * cross-site state tracking e.g. exceptions for SiteA and SiteB means PartyC on both sites is shared
+ * [1] https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/
  * [SETTING] to add site exceptions: Urlbar>ETP Shield
  * [SETTING] to manage site exceptions: Options>Privacy & Security>Enhanced Tracking Protection>Manage Exceptions ***/
-user_pref("privacy.trackingprotection.enabled", true);
-/* 2711: enable various ETP lists ***/
-user_pref("privacy.trackingprotection.socialtracking.enabled", true);
-   // user_pref("privacy.trackingprotection.cryptomining.enabled", true); // [DEFAULT: true]
-   // user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // [DEFAULT: true]
-/* 2740: disable service worker cache and cache storage
- * [NOTE] We clear service worker cache on exit (2811)
- * [1] https://w3c.github.io/ServiceWorker/#privacy ***/
-   // user_pref("dom.caches.enabled", false);
-/* 2750: disable Storage API [FF51+]
- * The API gives sites the ability to find out how much space they can use, how much
- * they are already using, and even control whether or not they need to be alerted
- * before the user agent disposes of site data in order to make room for other things.
- * [1] https://developer.mozilla.org/docs/Web/API/StorageManager
- * [2] https://developer.mozilla.org/docs/Web/API/Storage_API
- * [3] https://blog.mozilla.org/l10n/2017/03/07/firefox-l10n-report-aurora-54/ ***/
-   // user_pref("dom.storageManager.enabled", false);
-/* 2755: disable Storage Access API [FF65+]
- * [1] https://developer.mozilla.org/docs/Web/API/Storage_Access_API ***/
-   // user_pref("dom.storage_access.enabled", false);
-/* 2760: enable Local Storage Next Generation (LSNG) [FF65+] ***/
-user_pref("dom.storage.next_gen", true); // [DEFAULT: true FF92+]
+user_pref("browser.contentblocking.category", "strict");
+/* 2702: disable ETP web compat features [FF93+]
+ * [SETUP-HARDEN] Includes skip lists, heuristics (SmartBlock) and automatic grants
+ * [1] https://blog.mozilla.org/security/2021/07/13/smartblock-v2/
+ * [2] https://hg.mozilla.org/mozilla-central/rev/e5483fd469ab#l4.12 ***/
+   // user_pref("privacy.antitracking.enableWebcompat", false);
+/* 2710: enable state partitioning of service workers [FF96+] ***/
+user_pref("privacy.partition.serviceWorkers", true);
 
 /*** [SECTION 2800]: SHUTDOWN & SANITIZING ***/
 user_pref("_user.js.parrot", "2800 syntax error: the parrot's bleedin' demised!");
 /** COOKIES + SITE DATA : ALLOWS EXCEPTIONS ***/
 /* 2801: delete cookies and site data on exit
  * 0=keep until they expire (default), 2=keep until you close Firefox
+ * [NOTE] A "cookie" block permission also controls localStorage/sessionStorage, indexedDB,
+ * sharedWorkers and serviceWorkers. serviceWorkers require an "Allow" permission
  * [SETTING] Privacy & Security>Cookies and Site Data>Delete cookies and site data when Firefox is closed
  * [SETTING] to add site exceptions: Ctrl+I>Permissions>Cookies>Allow
  *   If using FPI the syntax must be https://example.com/^firstPartyDomain=example.com
@@ -939,46 +841,6 @@ user_pref("privacy.cpd.cookies", false);
  * [NOTE] Values 5 (last 5 minutes) and 6 (last 24 hours) are not listed in the dropdown,
  * which will display a blank value, and are not guaranteed to work ***/
 user_pref("privacy.sanitize.timeSpan", 0);
-
-/*** [SECTION 4000]: FPI (FIRST PARTY ISOLATION)
-   1278037 - indexedDB (FF51+)
-   1277803 - favicons (FF52+)
-   1264562 - OCSP cache (FF52+)
-   1268726 - Shared Workers (FF52+)
-   1316283 - SSL session cache (FF52+)
-   1317927 - media cache (FF53+)
-   1323644 - HSTS and HPKP (FF54+)
-   1334690 - HTTP Alternative Services (FF54+)
-   1334693 - SPDY/HTTP2 (FF55+)
-   1337893 - DNS cache (FF55+)
-   1344170 - blob: URI (FF55+)
-   1300671 - data:, about: URLs (FF55+)
-   1473247 - IP addresses (FF63+)
-   1542309 - top-level domain URLs when host is in the public suffix list (FF68+)
-   1506693 - pdfjs range-based requests (FF68+)
-   1330467 - site permissions (FF69+)
-   1534339 - IPv6 (FF73+)
-   1721858 - WebSocket (FF92+)
-***/
-user_pref("_user.js.parrot", "4000 syntax error: the parrot's pegged out");
-/* 4001: enable First Party Isolation [FF51+]
- * [SETUP-WEB] Breaks some cross-origin logins
- * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1260931,1299996 ***/
-user_pref("privacy.firstparty.isolate", true);
-/* 4002: enforce FPI restriction for window.opener [FF54+]
- * [NOTE] Setting this to false may reduce the breakage in 4001
- * FF65+ blocks postMessage with targetOrigin "*" if originAttributes don't match. But
- * to reduce breakage it ignores the 1st-party domain (FPD) originAttribute [2][3]
- * The 2nd pref removes that limitation and will only allow communication if FPDs also match
- * [1] https://bugzilla.mozilla.org/1319773#c22
- * [2] https://bugzilla.mozilla.org/1492607
- * [3] https://developer.mozilla.org/docs/Web/API/Window/postMessage ***/
-   // user_pref("privacy.firstparty.isolate.restrict_opener_access", true); // [DEFAULT: true]
-   // user_pref("privacy.firstparty.isolate.block_post_message", true);
-/* 4003: enable scheme with FPI [FF78+]
- * [NOTE] Experimental: existing data and site permissions are incompatible
- * and some site exceptions may not work e.g. HTTPS-only mode (1244) ***/
-   // user_pref("privacy.firstparty.isolate.use_site", true);
 
 /*** [SECTION 4500]: RFP (RESIST FINGERPRINTING)
    RFP covers a wide range of ongoing fingerprinting solutions.
@@ -1065,7 +927,7 @@ user_pref("privacy.resistFingerprinting.letterboxing", true); // [HIDDEN PREF]
    // user_pref("privacy.resistFingerprinting.exemptedDomains", "*.example.invalid");
    // user_pref("privacy.resistFingerprinting.testGranularityMask", 0);
 /* 4506: set RFP's font visibility level (1402) [FF94+] ***/
-   // user_pref("layout.css.font-visibility.resistFingerprinting", 1);
+   // user_pref("layout.css.font-visibility.resistFingerprinting", 1); // [DEFAULT: 1]
 /* 4507: disable showing about:blank as soon as possible during startup [FF60+]
  * When default true this no longer masks the RFP chrome resizing activity
  * [1] https://bugzilla.mozilla.org/1448423 ***/
@@ -1228,8 +1090,32 @@ user_pref("dom.targetBlankNoOpener.enabled", true); // [DEFAULT: true]
  * string is restored if the tab reverts back to the original page. This change prevents some cross-site attacks
  * [TEST] https://arkenfox.github.io/TZP/tests/windownamea.html ***/
 user_pref("privacy.window.name.update.enabled", true); // [DEFAULT: true]
-/* 6050: prefsCleaner: reset previously active items removed from arkenfox FF92+ ***/
-   // placeholder
+/* 0607: enforce Local Storage Next Generation (LSNG) [FF65+] ***/
+user_pref("dom.storage.next_gen", true); // [DEFAULT: true FF92+]
+/* 6008: enforce no First Party Isolation [FF51+]
+ * [WARNING] Replaced with network partitioning (FF85+) and TCP (2701),
+ * and enabling FPI disables those. FPI is no longer maintained ***/
+user_pref("privacy.firstparty.isolate", false); // [DEFAULT: false]
+/* 6009: enforce SmartBlock shims [FF81+]
+ * In FF96+ these are listed in about:compat
+ * [1] https://blog.mozilla.org/security/2021/03/23/introducing-smartblock/ ***/
+user_pref("extensions.webcompat.enable_shims", true); // [DEFAULT: true]
+/* 6010: enforce/reset TLS 1.0/1.1 downgrades to session only
+ * [NOTE] In FF97+ the TLS 1.0/1.1 downgrade UX was removed
+ * [TEST] https://tls-v1-1.badssl.com:1010/ ***/
+user_pref("security.tls.version.enable-deprecated", false); // [DEFAULT: false]
+/* 6011: enforce disabling of Web Compatibility Reporter [FF56+]
+ * Web Compatibility Reporter adds a "Report Site Issue" button to send data to Mozilla
+ * [WHY] To prevent wasting Mozilla's time with a custom setup ***/
+user_pref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
+/* 6050: prefsCleaner: reset items removed from arkenfox FF92+ ***/
+   // user_pref("dom.caches.enabled", "");
+   // user_pref("dom.storageManager.enabled", "");
+   // user_pref("dom.storage_access.enabled", "");
+   // user_pref("privacy.firstparty.isolate.block_post_message", "");
+   // user_pref("privacy.firstparty.isolate.restrict_opener_access", "");
+   // user_pref("privacy.firstparty.isolate.use_site", "");
+   // user_pref("security.insecure_connection_text.enabled", "");
 
 /*** [SECTION 7000]: DON'T BOTHER ***/
 user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies!");
@@ -1265,16 +1151,17 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
    // user_pref("security.ssl3.rsa_aes_128_sha", false); // no PFS
    // user_pref("security.ssl3.rsa_aes_256_sha", false); // no PFS
 /* 7004: control TLS versions
- * [WHY] Passive fingerprinting. Downgrades are still possible: behind user interaction ***/
+ * [WHY] Passive fingerprinting and security ***/
    // user_pref("security.tls.version.min", 3); // [DEFAULT: 3]
    // user_pref("security.tls.version.max", 4);
 /* 7005: disable SSL session IDs [FF36+]
- * [WHY] Passive fingerprinting and perf costs. These are session-only and isolated
- * with network partitioning (FF85+) or when using FPI and/or containers ***/
+ * [WHY] Passive fingerprinting and perf costs. These are session-only
+ * and isolated with network partitioning (FF85+) and/or containers ***/
    // user_pref("security.ssl.disable_session_identifiers", true); // [HIDDEN PREF]
 /* 7006: onions
  * [WHY] Firefox doesn't support hidden services. Use Tor Browser ***/
    // user_pref("dom.securecontext.whitelist_onions", true); // 1382359
+   // user_pref("dom.securecontext.allowlist_onions", true); // [FF97+] 1382359/1744006
    // user_pref("network.http.referer.hideOnionSource", true); // 1305144
 /* 7007: referers
  * [WHY] Only cross-origin referers (1600s) need control ***/
@@ -1293,7 +1180,7 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
    // user_pref("network.http.spdy.enabled.http2", false);
    // user_pref("network.http.spdy.websockets", false); // [FF65+]
 /* 7010: disable HTTP Alternative Services [FF37+]
- * [WHY] Already isolated by network partitioning (FF85+) or FPI ***/
+ * [WHY] Already isolated with network partitioning (FF85+) ***/
    // user_pref("network.http.altsvc.enabled", false);
    // user_pref("network.http.altsvc.oe", false); // [DEFAULT: false FF94+]
 /* 7011: disable website control over browser right-click context menu
@@ -1313,8 +1200,34 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
  * [WHY] It can compromise security. System addons ship with prefs, use those ***/
    // user_pref("extensions.systemAddon.update.enabled", false); // [FF62+]
    // user_pref("extensions.systemAddon.update.url", ""); // [FF44+]
+/* 7015: enable the DNT (Do Not Track) HTTP header
+ * [WHY] DNT is enforced with Tracking Protection which is used in ETP Strict (2701) ***/
+   // user_pref("privacy.donottrackheader.enabled", true);
+/* 7016: customize ETP settings
+ * [WHY] Arkenfox only supports strict (2701) which sets these at runtime ***/
+   // user_pref("network.cookie.cookieBehavior", 5);
+   // user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
+   // user_pref("privacy.partition.network_state.ocsp_cache", true);
+   // user_pref("privacy.trackingprotection.enabled", true);
+   // user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+   // user_pref("privacy.trackingprotection.cryptomining.enabled", true); // [DEFAULT: true]
+   // user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // [DEFAULT: true]
+/* 7017: disable service workers [FF32, FF44-compat]
+ * [WHY] Already isolated (FF96+) with TCP (2701) behind a pref (2710)
+ * or blocked with TCP in 3rd parties (FF95 or lower) ***/
+   // user_pref("dom.serviceWorkers.enabled", false);
+/* 7018: disable Web Notifications
+ * [WHY] Web Notifications are behind a prompt (7002)
+ * [1] https://blog.mozilla.org/en/products/firefox/block-notification-requests/ ***/
+   // user_pref("dom.webnotifications.enabled", false); // [FF22+]
+   // user_pref("dom.webnotifications.serviceworker.enabled", false); // [FF44+]
+/* 7019: disable Push Notifications [FF44+]
+ * [WHY] Push requires subscription
+ * [NOTE] To remove all subscriptions, reset "dom.push.userAgentID"
+ * [1] https://support.mozilla.org/kb/push-notifications-firefox ***/
+   // user_pref("dom.push.enabled", false);
 
-/*** [SECTION 8000]: DON'T BOTHER: NON-RFP
+/*** [SECTION 8000]: DON'T BOTHER: FINGERPRINTING
    [WHY] They are insufficient to help anti-fingerprinting and do more harm than good
    [WARNING] DO NOT USE with RFP. RFP already covers these and they can interfere
 ***/
@@ -1362,6 +1275,16 @@ user_pref("browser.startup.homepage_override.mstone", "ignore"); // master switc
    // user_pref("browser.warnOnQuitShortcut", false); // [FF94+]
    // user_pref("full-screen-api.warning.delay", 0);
    // user_pref("full-screen-api.warning.timeout", 0);
+/* UPDATES ***/
+   // user_pref("app.update.auto", false); // [NON-WINDOWS] disable auto app updates
+      // [NOTE] You will still get prompts to update, and should do so in a timely manner
+      // [SETTING] General>Firefox Updates>Check for updates but let you choose to install them
+   // user_pref("browser.search.update", false); // disable search engine updates (e.g. OpenSearch)
+      // [NOTE] This does not affect Mozilla's built-in or Web Extension search engines
+   // user_pref("extensions.update.enabled", false); // disable extension and theme update checks
+   // user_pref("extensions.update.autoUpdateDefault", false); // disable installing extension and theme updates
+      // [SETTING] about:addons>Extensions>[cog-wheel-icon]>Update Add-ons Automatically (toggle)
+   // user_pref("extensions.getAddons.cache.enabled", false); // disable extension metadata (extension detail tab)
 /* APPEARANCE ***/
    // user_pref("browser.download.autohideButton", false); // [FF57+]
    // user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
@@ -1416,6 +1339,12 @@ user_pref("_user.js.parrot", "9999 syntax error: the parrot's shuffled off 'is m
 // 0807: disable location bar contextual suggestions [FF92+] - replaced by new 0807
    // [-] https://bugzilla.mozilla.org/1735976
 user_pref("browser.urlbar.suggest.quicksuggest", false);
+// FF96
+// 0302: disable auto-INSTALLING Firefox updates via a background service + hide the setting [FF90+] [WINDOWS]
+   // [SETTING] General>Firefox Updates>Automatically install updates>When Firefox is not running
+   // [1] https://support.mozilla.org/kb/enable-background-updates-firefox-windows
+   // [-] https://bugzilla.mozilla.org/1738983
+user_pref("app.update.background.scheduling.enabled", false);
 // ***/
 
 /* 0101 */
