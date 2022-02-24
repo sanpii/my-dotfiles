@@ -46,25 +46,6 @@ return {
     keys = keys,
     hide_tab_bar_if_only_one_tab = true,
     tab_bar_at_bottom = true,
-    colors = {
-        tab_bar = {
-            background = "#000000",
-            active_tab = {
-                bg_color = "#000000",
-                fg_color = "#ffffff",
-                intensity = "Bold",
-            },
-            inactive_tab = {
-                bg_color = "#000000",
-                fg_color = "#d3d7cf",
-                intensity = "Half",
-            },
-            inactive_tab_hover = {
-                bg_color = "#b4d5ff",
-                fg_color = "#000000",
-            },
-        },
-    },
     window_padding = {
         left = 0,
         right = 0,
