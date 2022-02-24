@@ -67,9 +67,6 @@
 [submodule "config/nvim/pack/bundle/start/lspconfig"]
 	path = config/nvim/pack/bundle/start/lspconfig
 	url = git://github.com/neovim/nvim-lspconfig.git
-[submodule "config/nvim/pack/bundle/start/compe"]
-	path = config/nvim/pack/bundle/start/compe
-	url = git://github.com/hrsh7th/nvim-compe.git
 [submodule "config/nvim/pack/bundle/start/vsnip"]
 	path = config/nvim/pack/bundle/start/vsnip
 	url = git://github.com/hrsh7th/vim-vsnip.git
@@ -94,3 +91,18 @@
 [submodule "config/nvim/pack/bundle/start/lsp-status"]
 	path = config/nvim/pack/bundle/start/lsp-status
 	url = git://github.com/nvim-lua/lsp-status.nvim.git
+[submodule "config/nvim/pack/bundle/start/cmp"]
+	path = config/nvim/pack/bundle/start/cmp
+	url = git://github.com/hrsh7th/nvim-cmp.git
+[submodule "config/nvim/pack/bundle/start/cmp-nvim-lsp"]
+	path = config/nvim/pack/bundle/start/cmp-nvim-lsp
+	url = git://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "config/nvim/pack/bundle/start/cmp-buffer"]
+	path = config/nvim/pack/bundle/start/cmp-buffer
+	url = git://github.com/hrsh7th/cmp-buffer.git
+[submodule "config/nvim/pack/bundle/start/cmp-path"]
+	path = config/nvim/pack/bundle/start/cmp-path
+	url = git://github.com/hrsh7th/cmp-path.git
+[submodule "config/nvim/pack/bundle/start/cmp-vsnip"]
+	path = config/nvim/pack/bundle/start/cmp-vsnip
+	url = git://github.com/hrsh7th/cmp-vsnip.git

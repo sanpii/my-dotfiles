@@ -1,4 +1,4 @@
 require('lspkind').init({
-    with_text = false,
+    mode = 'symbol',
     preset = 'codicons',
 })
