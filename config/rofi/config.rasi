@@ -3,19 +3,15 @@ configuration {
     display-run: "";
     display-window: "";
     display-ssh: "歷";
-    columns: 4;
     location: 6;
-    padding: 2;
-    yoffset: -34;
+    yoffset: -32;
     xoffset: 0;
     fixed-num-lines: true;
-    terminal: "alacritty";
-    color-normal: "#393939, #ffffff, #393939, #268bd2, #ffffff";
-    color-urgent: "#393939, #f3843d, #393939, #268bd2, #ffc39c";
-    color-active: "#393939, #268bd2, #393939, #268bd2, #205171";
-    color-window: "#393939, #393939, #268bd2";
+    terminal: "wezterm";
     show-icons: true;
     kb-mode-next: "Super+Tab";
 }
+
+@theme "default_theme"
 
 /* vim:ft=css

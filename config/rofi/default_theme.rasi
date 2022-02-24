@@ -1,0 +1,7 @@
+listview {
+    columns: 4;
+}
+
+@import "glue_pro_blue"
+
+/* vim:ft=css
