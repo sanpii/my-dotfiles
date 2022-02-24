@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=snapclient
+Exec=/usr/bin/snapclient -h 192.168.1.11
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
