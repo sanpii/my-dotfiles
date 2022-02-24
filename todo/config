@@ -1,12 +1,12 @@
 # === FILE LOCATIONS ===
 
 # Your todo.txt directory
-export TODO_DIR=${TODO_DIR:-"$HOME/.local/opt/share/todo"}
+export TODO_DIR="${HOME}/.local/opt/share/todo"
 
 # Your todo/done/report.txt locations
-export TODO_FILE="$TODO_DIR/todo.txt"
-export DONE_FILE="$TODO_DIR/done.txt"
-export REPORT_FILE="$TODO_DIR/report.txt"
+export TODO_FILE="${TODO_DIR}/todo.txt"
+export DONE_FILE="${TODO_DIR}/done.txt"
+export REPORT_FILE="${TODO_DIR}/report.txt"
 
 export TODOTXT_DEFAULT_ACTION="list"
 # You can customize your actions directory location
@@ -60,7 +60,7 @@ export TODOTXT_DATE_ON_ADD=1
 # There is highlighting for tasks that have been done,
 # but haven't been archived yet.
 #
-export COLOR_DONE=$DARK_GREY
+export COLOR_DONE=${DARK_GREY}
 
 # There is highlighting for projects and contexts.
 #
