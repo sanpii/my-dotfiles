@@ -23,6 +23,7 @@
 	editor = nvim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.config/git/ignore
+	attributesfile = ~/.gitattributes
 [alias]
 	a = add
 	b = branch -vv
@@ -58,7 +59,7 @@
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
 	fixup = "!f() { c=$(git rev-parse \"${1-HEAD~}\") && git commit --fixup $c && git rebase -r -i $c^ --autosquash; };f"
 [pager]
-	log = perl  /usr/share/git/diff-highlight/diff-highlight | less
+	log = perl /usr/share/git/diff-highlight/diff-highlight | less
 	show = perl /usr/share/git/diff-highlight/diff-highlight | less
 	diff = perl /usr/share/git/diff-highlight/diff-highlight | less
 [include]
@@ -90,3 +91,5 @@
 	fetchJobs = 4
 [commit]
 	gpgSign = true
+[diff "image"]
+	command = git-diff-image
