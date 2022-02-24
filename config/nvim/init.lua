@@ -37,8 +37,8 @@
     vim.o.scrolloff=3
     vim.opt.fillchars:append {eob = ' '}
 
-    -- highlight NonText gui=bold guifg=darkgrey
-    -- highlight SpecialKey gui=bold guifg=darkgrey
+    vim.cmd("highlight NonText gui=bold guifg=darkgrey")
+    vim.cmd("highlight SpecialKey gui=bold guifg=darkgrey")
 -- }}}
 -- Indentation {{{
     vim.o.smartindent = true
