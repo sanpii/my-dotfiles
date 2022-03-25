@@ -1,5 +1,12 @@
 local lspconfig = require('lspconfig')
 
+vim.o.updatetime = 300
+
+
+vim.cmd('augroup lsp')
+    vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })')
+vim.cmd('augroup END')
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -14,8 +21,8 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<f2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     buf_set_keymap('n', '<f5>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
-    map('n', '<leader>«', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
-    map('n', '<leader>»', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
+    map('n', 'g(', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
+    map('n', 'g)', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 end
 
 for _, lsp in ipairs({"rust_analyzer"}) do
