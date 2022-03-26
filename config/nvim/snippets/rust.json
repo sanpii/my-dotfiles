@@ -1,0 +1,13 @@
+{
+    "enum": {
+        "prefix": "enum",
+        "body": [
+            "#[derive(Clone, Copy, Debug, PartialEq)]",
+            "enum ${1:Name} {",
+            "    ${2:Variant1},",
+            "}",
+            ""
+        ],
+        "description": "enum … { … }"
+    }
+}
