@@ -90,7 +90,7 @@ type = internal/network
 
 label-disconnected = 
 label-connected =  %local_ip%
-interface = enp14s0
+interface = enp5s0
 
 [module/cpu]
 type = internal/cpu
