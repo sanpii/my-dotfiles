@@ -198,6 +198,7 @@ mode "mouse" {
 
 bindsym $mod+m mode "mouse"
 
+bindsym $mod+XF86AudioPause exec ssh cuddles mpc toggle
 bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
 bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
