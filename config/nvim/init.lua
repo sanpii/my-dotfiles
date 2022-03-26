@@ -30,15 +30,14 @@
 -- Apparence {{{
     vim.cmd('colorscheme tango')
 
-    vim.o.termguicolors = true
+    vim.cmd([[let &t_Cs = "\e[4:3m"]])
+    vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
     vim.o.list = true
     vim.o.listchars='tab:»·,trail:·,precedes:…,extends:…,nbsp:‗'
     vim.o.showbreak='↪'
     vim.o.scrolloff=3
     vim.opt.fillchars:append {eob = ' '}
-
-    vim.cmd("highlight NonText gui=bold guifg=darkgrey")
-    vim.cmd("highlight SpecialKey gui=bold guifg=darkgrey")
 -- }}}
 -- Indentation {{{
     vim.o.smartindent = true

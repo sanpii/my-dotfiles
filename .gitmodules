@@ -25,9 +25,6 @@
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/pack/bundle/start/clam
 	url = git://github.com/sjl/clam.vim.git
-[submodule "nvim/bundle/desertink"]
-	path = config/nvim/pack/bundle/start/desertink
-	url = git://github.com/toupeira/vim-desertink.git
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
 	url = git://github.com/tpope/vim-abolish.git
