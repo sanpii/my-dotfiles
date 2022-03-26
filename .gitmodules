@@ -106,3 +106,6 @@
 [submodule "config/nvim/pack/bundle/start/cmp-vsnip"]
 	path = config/nvim/pack/bundle/start/cmp-vsnip
 	url = git://github.com/hrsh7th/cmp-vsnip.git
+[submodule "config/nvim/pack/bundle/start/lsp_signature"]
+	path = config/nvim/pack/bundle/start/lsp_signature
+	url = https://github.com/ray-x/lsp_signature.nvim
