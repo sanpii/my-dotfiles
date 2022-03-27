@@ -18,9 +18,8 @@ cal --color=always \
         -hide-scrollbar \
         -bw 2 \
         -m -3 \
-        -theme-str '#window {anchor:southeast; location: northwest;}' \
+        -theme-str '#window {anchor:southeast; location: northwest; width: 250px; }' \
         -eh 1 \
-        -width -25 \
         -no-custom \
         -l 6 \
         -p "$date      " > /dev/null
