@@ -6,6 +6,7 @@
 /config/mc/hotlist.bak
 /config/mc/panels.ini
 /config/nvim/local.vim
+/config/nvim/spell
 /config/nvim/.netrwhist
 /local/share/mc/history
 /ssh/authorized_keys
