@@ -8,7 +8,7 @@ local keys = {
     {key="phys:F", mods="LEADER|CTRL", action=wezterm.action{SendString="\x05"}},
     {key="phys:J", mods="LEADER|CTRL", action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
     {key="phys:E", mods="LEADER|CTRL", action=wezterm.action{ActivateTabRelative=-1}},
-    {key=";", mods="LEADER|CTRL", action=wezterm.action{ActivateTabRelative=1}},
+    {key="n", mods="LEADER|CTRL", action=wezterm.action{ActivateTabRelative=1}},
     {key="phys:H", mods="LEADER|CTRL", action=wezterm.action{MoveTabRelative=-1}},
     {key="phys:L", mods="LEADER|CTRL", action=wezterm.action{MoveTabRelative=1}},
     {key="phys:B", mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
