@@ -10,21 +10,28 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    local map = vim.api.nvim_set_keymap
+    local function buf_set_keymap(mode, lhs, callback)
+        local opts = { noremap = true, silent = true, callback = callback }
 
-    local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, '', opts)
+    end
 
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    buf_set_keymap('n', '<f2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    buf_set_keymap('n', '<f5>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    map('n', 'g(', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
-    map('n', 'g)', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
+    buf_set_keymap('n', 'gd', vim.lsp.buf.definition)
+    buf_set_keymap('n', 'K', vim.lsp.buf.hover)
+    buf_set_keymap('n', '<f2>', vim.lsp.buf.rename)
+    buf_set_keymap('n', '<f5>', vim.lsp.buf.code_action)
+
+    local function map(mode, lhs, callback)
+        local opts = { noremap = true, silent = true, callback = callback }
+
+        vim.api.nvim_set_keymap(mode, lhs, '', opts)
+    end
+
+    map('n', 'g(', vim.lsp.diagnostic.goto_prev)
+    map('n', 'g)', vim.lsp.diagnostic.goto_next)
 end
 
 for _, lsp in ipairs({"rust_analyzer"}) do
