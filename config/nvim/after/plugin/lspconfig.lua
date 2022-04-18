@@ -3,9 +3,11 @@ local lspconfig = require('lspconfig')
 vim.o.updatetime = 300
 
 
-vim.cmd('augroup lsp')
-    vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })')
-vim.cmd('augroup END')
+vim.api.nvim_create_autocmd("CursorHold", {
+    pattern = '*',
+    command = 'lua vim.diagnostic.open_float(nil, { focusable = false })',
+    group = 'lsp',
+})
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end

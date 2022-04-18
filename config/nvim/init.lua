@@ -1,10 +1,7 @@
 -- Général {{{
-    vim.cmd('augroup buffer')
-        vim.cmd('autocmd!')
-    vim.cmd('augroup END')
-    vim.cmd('augroup filetype')
-        vim.cmd('autocmd!')
-    vim.cmd('augroup END')
+    vim.api.nvim_create_augroup('buffer', {clear = true})
+    vim.api.nvim_create_augroup('filetype', {clear = true})
+    vim.api.nvim_create_augroup('lsp', {clear = true})
 
     local vimfiles = vim.env.HOME .. '/.config/nvim'
 
@@ -16,9 +13,11 @@
     vim.o.spelllang = 'fr'
     vim.o.wrap = false
 
-    vim.cmd('augroup buffer')
-        vim.cmd('autocmd bufwritepost ' .. vimfiles .. '/init.lua luafile %')
-    vim.cmd('augroup END')
+    vim.api.nvim_create_autocmd("BufWritePost", {
+            pattern = vimfiles .. '/init.lua',
+            command = 'luafile %',
+            group = 'buffer',
+    })
 
     vim.o.textwidth = 80
     vim.o.colorcolumn = '+1'
@@ -49,11 +48,6 @@
     vim.o.breakindent = true
     vim.o.breakindentopt = 'shift:2'
     vim.o.showbreak = '↳'
-
-    vim.cmd('augroup filetype')
-        vim.cmd('autocmd FileType make setlocal noexpandtab')
-        vim.cmd('autocmd FileType html setlocal indentkeys-=*<Return>')
-    vim.cmd('augroup END')
 -- }}}
 -- Sauvegardes {{{
     vim.o.backupdir = os.getenv('HOME') .. '/.local/share/nvim/backup'
@@ -61,11 +55,17 @@
     vim.o.backup = true
     vim.o.undofile = true
 
-    vim.cmd('augroup buffer')
-        vim.cmd('autocmd BufWinLeave *? silent! mkview')
-        vim.cmd('autocmd BufWinEnter *? silent! loadview')
-    vim.cmd('augroup END')
+    vim.api.nvim_create_autocmd("BufWinLeave", {
+        pattern = '*?',
+        command = 'silent! mkview',
+        group = 'buffer',
+    })
 
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+        pattern = '*?',
+        command = 'silent! loadview',
+        group = 'buffer',
+    })
 -- }}}
 -- Mappage {{{
     local map = vim.api.nvim_set_keymap
