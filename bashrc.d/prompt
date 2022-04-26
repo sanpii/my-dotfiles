@@ -45,7 +45,7 @@ function set_prompt()
     PS1="\[\033[G\]"
 
     case "$TERM" in
-        xterm*|rxvt*|screen*)
+        xterm*|rxvt*|screen*|wezterm)
             PS1+="\[\e]0;\u@\h:\w\]"
 
             local tor
