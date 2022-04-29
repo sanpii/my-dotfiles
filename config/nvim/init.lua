@@ -21,6 +21,7 @@
 
     vim.o.textwidth = 80
     vim.o.colorcolumn = '+1'
+    vim.o.cursorline = true
 
     vim.o.inccommand = 'split'
 
