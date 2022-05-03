@@ -1,108 +1,108 @@
 [submodule "nvim/bundle/gundo"]
 	path = config/nvim/pack/bundle/start/gundo
-	url = git://github.com/sjl/gundo.vim.git
+	url = https://github.com/sjl/gundo.vim
 [submodule "nvim/bundle/auto_mkdir"]
 	path = config/nvim/pack/bundle/start/auto_mkdir
-	url = git://github.com/DataWraith/auto_mkdir.git
+	url = https://github.com/DataWraith/auto_mkdir
 [submodule "nvim/bundle/ctrlp"]
 	path = config/nvim/pack/bundle/start/ctrlp
-	url = git://github.com/ctrlpvim/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "nvim/bundle/splice"]
 	path = config/nvim/pack/bundle/start/splice
-	url = git://github.com/sjl/splice.vim.git
+	url = https://github.com/sjl/splice.vim
 [submodule "nvim/bundle/eunuch"]
 	path = config/nvim/pack/bundle/start/eunuch
-	url = git://github.com/tpope/vim-eunuch.git
+	url = https://github.com/tpope/vim-eunuch
 [submodule "nvim/bundle/sideway"]
 	path = config/nvim/pack/bundle/start/sideway
-	url = git://github.com/AndrewRadev/sideways.vim.git
+	url = https://github.com/AndrewRadev/sideways.vim
 [submodule "nvim/bundle/matchtag"]
 	path = config/nvim/pack/bundle/start/matchtag
-	url = git://github.com/gregsexton/MatchTag.git
+	url = https://github.com/gregsexton/MatchTag
 [submodule "nvim/bundle/SingleCompile"]
 	path = config/nvim/pack/bundle/start/SingleCompile
-	url = git://github.com/xuhdev/SingleCompile.git
+	url = https://github.com/xuhdev/SingleCompile
 [submodule "nvim/bundle/clam"]
 	path = config/nvim/pack/bundle/start/clam
-	url = git://github.com/sjl/clam.vim.git
+	url = https://github.com/sjl/clam.vim
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
-	url = git://github.com/tpope/vim-abolish.git
+	url = https://github.com/tpope/vim-abolish
 [submodule "nvim/bundle/better-whitespace"]
 	path = config/nvim/pack/bundle/start/better-whitespace
-	url = git://github.com/ntpeters/vim-better-whitespace.git
+	url = https://github.com/ntpeters/vim-better-whitespace
 [submodule "nvim/bundle/signature"]
 	path = config/nvim/pack/bundle/start/signature
-	url = git://github.com/kshenoy/vim-signature.git
+	url = https://github.com/kshenoy/vim-signature
 [submodule "nvim/bundle/spiffy_foldtext"]
 	path = config/nvim/pack/bundle/start/spiffy_foldtext
-	url = git://github.com/atimholt/spiffy_foldtext.git
+	url = https://github.com/atimholt/spiffy_foldtext
 [submodule "nvim-polyglot"]
 	path = config/nvim/pack/bundle/start/polyglot
-	url = git://github.com/sheerun/vim-polyglot.git
+	url = https://github.com/sheerun/vim-polyglot
 [submodule "nvim/bundle/relativity"]
 	path = config/nvim/pack/bundle/start/relativity
-	url = git://github.com/kennykaye/vim-relativity.git
+	url = https://github.com/kennykaye/vim-relativity
 [submodule "config/nvim/bundle/troll-stopper"]
 	path = config/nvim/pack/bundle/start/troll-stopper
-	url = git://github.com/vim-utils/vim-troll-stopper.git
+	url = https://github.com/vim-utils/vim-troll-stopper
 [submodule "config/nvim/bundle/gnupg"]
 	path = config/nvim/pack/bundle/start/gnupg
-	url = git://github.com/jamessan/vim-gnupg.git
+	url = https://github.com/jamessan/vim-gnupg
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
-	url = git://github.com/deris/vim-shot-f.git
+	url = https://github.com/deris/vim-shot-f
 [submodule "config/nvim/bundle/esearch"]
 	path = config/nvim/pack/bundle/start/esearch
-	url = git://github.com/eugen0329/vim-esearch.git
+	url = https://github.com/eugen0329/vim-esearch
 [submodule "config/nvim/bundle/openscad"]
 	path = config/nvim/pack/bundle/start/openscad
-	url = git://github.com/sirtaj/vim-openscad.git
+	url = https://github.com/sirtaj/vim-openscad
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
-	url = git://github.com/wincent/loupe.git
+	url = https://github.com/wincent/loupe
 [submodule "config/nvim/pack/bundle/start/lspconfig"]
 	path = config/nvim/pack/bundle/start/lspconfig
-	url = git://github.com/neovim/nvim-lspconfig.git
+	url = https://github.com/neovim/nvim-lspconfig
 [submodule "config/nvim/pack/bundle/start/vsnip"]
 	path = config/nvim/pack/bundle/start/vsnip
-	url = git://github.com/hrsh7th/vim-vsnip.git
+	url = https://github.com/hrsh7th/vim-vsnip
 [submodule "config/nvim/pack/bundle/start/friendly-snippets"]
 	path = config/nvim/pack/bundle/start/friendly-snippets
-	url = git://github.com/rafamadriz/friendly-snippets.git
+	url = https://github.com/rafamadriz/friendly-snippets
 [submodule "config/nvim/pack/bundle/start/shade"]
 	path = config/nvim/pack/bundle/start/shade
-	url = git://github.com/sunjon/Shade.nvim.git
+	url = https://github.com/sunjon/Shade.nvim
 [submodule "config/nvim/pack/bundle/start/colorizer"]
 	path = config/nvim/pack/bundle/start/colorizer
-	url = git://github.com/norcalli/nvim-colorizer.lua.git
+	url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "config/nvim/pack/bundle/start/lualine"]
 	path = config/nvim/pack/bundle/start/lualine
-	url = git://github.com/hoob3rt/lualine.nvim.git
+	url = https://github.com/hoob3rt/lualine.nvim
 [submodule "config/nvim/pack/bundle/start/dial"]
 	path = config/nvim/pack/bundle/start/dial
-	url = git://github.com/monaqa/dial.nvim.git
+	url = https://github.com/monaqa/dial.nvim
 [submodule "config/nvim/pack/bundle/start/lspkind"]
 	path = config/nvim/pack/bundle/start/lspkind
-	url = git://github.com/onsails/lspkind-nvim.git
+	url = https://github.com/onsails/lspkind-nvim
 [submodule "config/nvim/pack/bundle/start/lsp-status"]
 	path = config/nvim/pack/bundle/start/lsp-status
-	url = git://github.com/nvim-lua/lsp-status.nvim.git
+	url = https://github.com/nvim-lua/lsp-status.nvim
 [submodule "config/nvim/pack/bundle/start/cmp"]
 	path = config/nvim/pack/bundle/start/cmp
-	url = git://github.com/hrsh7th/nvim-cmp.git
+	url = https://github.com/hrsh7th/nvim-cmp
 [submodule "config/nvim/pack/bundle/start/cmp-nvim-lsp"]
 	path = config/nvim/pack/bundle/start/cmp-nvim-lsp
-	url = git://github.com/hrsh7th/cmp-nvim-lsp.git
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
 [submodule "config/nvim/pack/bundle/start/cmp-buffer"]
 	path = config/nvim/pack/bundle/start/cmp-buffer
-	url = git://github.com/hrsh7th/cmp-buffer.git
+	url = https://github.com/hrsh7th/cmp-buffer
 [submodule "config/nvim/pack/bundle/start/cmp-path"]
 	path = config/nvim/pack/bundle/start/cmp-path
-	url = git://github.com/hrsh7th/cmp-path.git
+	url = https://github.com/hrsh7th/cmp-path
 [submodule "config/nvim/pack/bundle/start/cmp-vsnip"]
 	path = config/nvim/pack/bundle/start/cmp-vsnip
-	url = git://github.com/hrsh7th/cmp-vsnip.git
+	url = https://github.com/hrsh7th/cmp-vsnip
 [submodule "config/nvim/pack/bundle/start/lsp_signature"]
 	path = config/nvim/pack/bundle/start/lsp_signature
 	url = https://github.com/ray-x/lsp_signature.nvim
