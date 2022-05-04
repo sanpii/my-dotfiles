@@ -7,10 +7,4 @@ if ! shopt -oq posix; then
     elif [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
-
-    if [ -f ~/.composer/vendor/stecman/composer-bash-completion-plugin/hooks/bash-completion ]
-    then
-        . ~/.composer/vendor/stecman/composer-bash-completion-plugin/hooks/bash-completion
-        complete -F _composercomplete cps;
-    fi
 fi

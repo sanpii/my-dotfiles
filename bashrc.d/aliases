@@ -18,7 +18,6 @@ fi
 # command word following the alias is also checked for alias expansion."
 alias sudo='sudo ';
 
-# some more ls aliases
 alias c='cd'
 alias m='mkcd'
 alias ll='ls -l'
@@ -28,28 +27,6 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias make="make -j$(nproc)"
 alias cg='cargo'
-
-alias cps=composer
-
-purge_cache()
-{
-    local host=$1
-
-    ssh reverse-proxy 'for f in $(find /var/cache/nginx/ -type f -exec grep -la "^KEY: '$host'" {} \;); do rm $f; done'
-}
-
-symfony()
-{
-    local console='bin/console'
-
-    if [[ ! -e $console ]]
-    then
-        console='app/console'
-    fi
-
-    php $console $@
-}
-alias sf=symfony
 
 lxc()
 {
@@ -90,11 +67,6 @@ mkcd()
 
     mkdir -p "$dir"
     cd "$dir"
-}
-
-vql()
-{
-    vim -c 'setlocal buftype=nofile | setlocal ft=sql | VipsqlOpenSession '"$*"
 }
 
 # Add an "alert" alias for long running commands. Use like so:
