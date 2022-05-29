@@ -212,6 +212,11 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
+# dunst
+bindsym Mod1+space exec dunstctl close
+bindsym Mod1+Shift+space exec dunstctl close-all
+bindsym Mod1+h exec dunstctl history-pop
+
 for_window [instance="^term-scratchpad$"] move to scratchpad
 for_window [class="pgmodeler" title="Édition des données"] floating disable;
 
