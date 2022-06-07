@@ -38,16 +38,14 @@ def parse_eventdata(event):
 def get_events(calendar):
     events = []
     today = datetime.today().date()
+    tomorrow = today + timedelta(days = 1)
 
-    latest_events = calendar.date_search(today)
+    latest_events = calendar.date_search(start = today, end = tomorrow, expand = True)
 
     name = get_name(calendar).encode("utf-8")
     for latest_event in latest_events:
         event = parse_eventdata(latest_event)
-        if event["start"].date() >= today \
-           and datetime.today() <= event["end"] \
-           and event["start"].date() - today <= timedelta(days = 1):
-            events.append(event)
+        events.append(event)
 
     events.sort(key=lambda item: item["start"])
 
