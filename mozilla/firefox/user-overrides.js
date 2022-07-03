@@ -78,6 +78,7 @@ user_pref("privacy.clearOnShutdown.formdata", false);
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.offlineApps", false);
 user_pref("privacy.clearOnShutdown.sessions", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
 /* 2810 */
 user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 /* 4501 */
