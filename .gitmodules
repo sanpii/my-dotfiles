@@ -28,9 +28,6 @@
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule "nvim/bundle/better-whitespace"]
-	path = config/nvim/pack/bundle/start/better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace
 [submodule "nvim/bundle/signature"]
 	path = config/nvim/pack/bundle/start/signature
 	url = https://github.com/kshenoy/vim-signature
@@ -109,3 +106,6 @@
 [submodule "config/nvim/pack/bundle/start/tango"]
 	path = config/nvim/pack/bundle/start/tango
 	url = https://github.com/sanpii/tango.vim
+[submodule "config/nvim/pack/bundle/start/retrail"]
+	path = config/nvim/pack/bundle/start/retrail
+	url = https://github.com/zakharykaplan/nvim-retrail
