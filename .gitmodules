@@ -28,9 +28,6 @@
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule "nvim/bundle/signature"]
-	path = config/nvim/pack/bundle/start/signature
-	url = https://github.com/kshenoy/vim-signature
 [submodule "nvim/bundle/spiffy_foldtext"]
 	path = config/nvim/pack/bundle/start/spiffy_foldtext
 	url = https://github.com/atimholt/spiffy_foldtext
@@ -109,3 +106,6 @@
 [submodule "config/nvim/pack/bundle/start/retrail"]
 	path = config/nvim/pack/bundle/start/retrail
 	url = https://github.com/zakharykaplan/nvim-retrail
+[submodule "config/nvim/pack/bundle/start/marks"]
+	path = config/nvim/pack/bundle/start/marks
+	url = https://github.com/chentoast/marks.nvim
