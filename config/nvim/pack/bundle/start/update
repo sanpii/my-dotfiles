@@ -18,7 +18,7 @@ update()
     cd "$bundle"
     git fetch --quiet
 
-    if [[ $(git branch --show-current) = "" ]]
+    if [[ -z $(git branch --show-current) ]]
     then
         local tag=$(git tag | tail -1)
 

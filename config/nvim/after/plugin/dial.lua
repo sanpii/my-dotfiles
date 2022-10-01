@@ -1,11 +1,13 @@
-local dial = require('dial');
+local augend = require('dial.augend');
 
-dial.augends["custom#boolean"] = dial.common.enum_cyclic {
-    name = "boolean",
-    strlist = {"true", "false"},
+require("dial.config").augends:register_group{
+    default = {
+        augend.constant.new {
+            elements = {"true", "false"},
+            cyclic = true,
+        }
+    }
 }
-
-table.insert(dial.config.searchlist.normal, "custom#boolean")
 
 local map = vim.api.nvim_set_keymap
 
