@@ -5,6 +5,7 @@
 
     local vimfiles = vim.env.HOME .. '/.config/nvim'
 
+    vim.o.mouse = ''
     vim.o.fileformats = 'unix'
     vim.o.foldmethod = 'marker'
     vim.o.number = true
