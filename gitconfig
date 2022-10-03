@@ -59,9 +59,9 @@
 	create = "!f(){ git init \"$@\"; if [ -n \"$@\" ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
 	fixup = "!f() { c=$(git rev-parse \"${1-HEAD~}\") && git commit --fixup $c && git rebase -r -i $c^ --autosquash; };f"
 [pager]
-	log = perl /usr/share/git/diff-highlight/diff-highlight | less
-	show = perl /usr/share/git/diff-highlight/diff-highlight | less
-	diff = perl /usr/share/git/diff-highlight/diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
 [include]
 	path = .gitconfig.local
 [rerere]
