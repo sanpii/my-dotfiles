@@ -10,10 +10,11 @@ require("dial.config").augends:register_group{
 }
 
 local map = vim.api.nvim_set_keymap
+local dial = require('dial.map');
 
-map('n', '<C-a>', '<Plug>(dial-increment)', {})
-map('n', '<C-x>', '<Plug>(dial-decrement)', {})
-map('v', '<C-a>', '<Plug>(dial-increment)', {})
-map('v', '<C-x>', '<Plug>(dial-decrement)', {})
-map('v', 'g<C-a>', '<Plug>(dial-increment-additional)', {})
-map('v', 'g<C-x>', '<Plug>(dial-decrement-additional)', {})
+map("n", "<C-a>", dial.inc_normal(), {noremap = true})
+map("n", "<C-x>", dial.dec_normal(), {noremap = true})
+map("v", "<C-a>", dial.inc_visual(), {noremap = true})
+map("v", "<C-x>", dial.dec_visual(), {noremap = true})
+map("v", "g<C-a>", dial.inc_gvisual(), {noremap = true})
+map("v", "g<C-x>", dial.dec_gvisual(), {noremap = true})
