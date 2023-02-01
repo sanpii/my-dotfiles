@@ -64,9 +64,6 @@
 [submodule "config/nvim/pack/bundle/start/friendly-snippets"]
 	path = config/nvim/pack/bundle/start/friendly-snippets
 	url = https://github.com/rafamadriz/friendly-snippets
-[submodule "config/nvim/pack/bundle/start/shade"]
-	path = config/nvim/pack/bundle/start/shade
-	url = https://github.com/sunjon/Shade.nvim
 [submodule "config/nvim/pack/bundle/start/colorizer"]
 	path = config/nvim/pack/bundle/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua
@@ -109,3 +106,6 @@
 [submodule "config/nvim/pack/bundle/start/marks"]
 	path = config/nvim/pack/bundle/start/marks
 	url = https://github.com/chentoast/marks.nvim
+[submodule "config/nvim/pack/bundle/start/tint"]
+	path = config/nvim/pack/bundle/start/tint
+	url = https://github.com/levouh/tint.nvim/
