@@ -4,10 +4,10 @@ set -euo pipefail
 
 main() {
     start tor
-    start polipo
+    start privoxy
 
-    export http_proxy=http://localhost:8123
-    export https_proxy=http://localhost:8123
+    export http_proxy=http://localhost:8118
+    export https_proxy=http://localhost:8118
 
     is_tor=$(wget -q -O - https://check.torproject.org/api/ip | jq --raw-output .IsTor | tr -d $'\n')
     if [ "$is_tor" = "true" ]
