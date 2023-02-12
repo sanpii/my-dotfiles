@@ -69,7 +69,7 @@
 	url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "config/nvim/pack/bundle/start/lualine"]
 	path = config/nvim/pack/bundle/start/lualine
-	url = https://github.com/hoob3rt/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
 [submodule "config/nvim/pack/bundle/start/dial"]
 	path = config/nvim/pack/bundle/start/dial
 	url = https://github.com/monaqa/dial.nvim
