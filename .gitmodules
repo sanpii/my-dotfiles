@@ -28,9 +28,6 @@
 [submodule "nvim/bundle/abolish"]
 	path = config/nvim/pack/bundle/start/abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule "nvim/bundle/spiffy_foldtext"]
-	path = config/nvim/pack/bundle/start/spiffy_foldtext
-	url = https://github.com/atimholt/spiffy_foldtext
 [submodule "nvim-polyglot"]
 	path = config/nvim/pack/bundle/start/polyglot
 	url = https://github.com/sheerun/vim-polyglot
