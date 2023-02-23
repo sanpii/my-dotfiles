@@ -7,9 +7,6 @@
 [submodule "nvim/bundle/eunuch"]
 	path = config/nvim/pack/bundle/start/eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "nvim/bundle/sideway"]
-	path = config/nvim/pack/bundle/start/sideway
-	url = https://github.com/AndrewRadev/sideways.vim
 [submodule "nvim/bundle/matchtag"]
 	path = config/nvim/pack/bundle/start/matchtag
 	url = https://github.com/gregsexton/MatchTag
