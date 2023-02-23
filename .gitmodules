@@ -4,9 +4,6 @@
 [submodule "nvim/bundle/auto_mkdir"]
 	path = config/nvim/pack/bundle/start/auto_mkdir
 	url = https://github.com/DataWraith/auto_mkdir
-[submodule "nvim/bundle/ctrlp"]
-	path = config/nvim/pack/bundle/start/ctrlp
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "nvim/bundle/splice"]
 	path = config/nvim/pack/bundle/start/splice
 	url = https://github.com/sjl/splice.vim
@@ -97,3 +94,9 @@
 [submodule "config/nvim/pack/bundle/start/tint"]
 	path = config/nvim/pack/bundle/start/tint
 	url = https://github.com/levouh/tint.nvim/
+[submodule "config/nvim/pack/bundle/start/telescope"]
+	path = config/nvim/pack/bundle/start/telescope
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "config/nvim/pack/bundle/start/plenary"]
+	path = config/nvim/pack/bundle/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
