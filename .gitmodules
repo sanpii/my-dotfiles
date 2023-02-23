@@ -40,9 +40,6 @@
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
 	url = https://github.com/deris/vim-shot-f
-[submodule "config/nvim/bundle/esearch"]
-	path = config/nvim/pack/bundle/start/esearch
-	url = https://github.com/eugen0329/vim-esearch
 [submodule "config/nvim/bundle/openscad"]
 	path = config/nvim/pack/bundle/start/openscad
 	url = https://github.com/sirtaj/vim-openscad
@@ -100,3 +97,6 @@
 [submodule "config/nvim/pack/bundle/start/plenary"]
 	path = config/nvim/pack/bundle/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "config/nvim/pack/bundle/start/spectre"]
+	path = config/nvim/pack/bundle/start/spectre
+	url = https://github.com/nvim-pack/nvim-spectre
