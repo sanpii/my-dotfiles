@@ -1,6 +1,3 @@
-[submodule "nvim/bundle/gundo"]
-	path = config/nvim/pack/bundle/start/gundo
-	url = https://github.com/sjl/gundo.vim
 [submodule "nvim/bundle/auto_mkdir"]
 	path = config/nvim/pack/bundle/start/auto_mkdir
 	url = https://github.com/DataWraith/auto_mkdir
@@ -100,3 +97,6 @@
 [submodule "config/nvim/pack/bundle/start/spectre"]
 	path = config/nvim/pack/bundle/start/spectre
 	url = https://github.com/nvim-pack/nvim-spectre
+[submodule "config/nvim/pack/bundle/start/telescope-undo"]
+	path = config/nvim/pack/bundle/start/telescope-undo
+	url = https://github.com/debugloop/telescope-undo.nvim
