@@ -20,7 +20,7 @@ local keys = {
     {key="mapped:-", mods="CTRL", action="DecreaseFontSize"},
     {key="mapped:+", mods="CTRL", action="IncreaseFontSize"},
     {key="mapped:=", mods="CTRL", action="ResetFontSize"},
-    {key="Insert", mods="SHIFT", action="Paste"},
+    {key="Insert", mods="SHIFT", action=wezterm.action{PasteFrom="Clipboard"}},
     {key="PageUp", mods="SHIFT", action=wezterm.action{ScrollByPage=-1}},
     {key="PageDown", mods="SHIFT", action=wezterm.action{ScrollByPage=1}},
 };
