@@ -2,7 +2,6 @@ local lspconfig = require('lspconfig')
 
 vim.o.updatetime = 300
 
-
 vim.api.nvim_create_autocmd("CursorHold", {
     pattern = '*',
     command = 'lua vim.diagnostic.open_float(nil, { focusable = false })',
@@ -15,7 +14,6 @@ local on_attach = function(client, bufnr)
 
         vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, '', opts)
     end
-
 
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -32,19 +30,19 @@ local on_attach = function(client, bufnr)
 
     map('n', 'g(', vim.lsp.diagnostic.goto_prev)
     map('n', 'g)', vim.lsp.diagnostic.goto_next)
+
+    client.server_capabilities.semanticTokensProvider = nil
 end
 
 for _, lsp in ipairs({"rust_analyzer"}) do
     lspconfig[lsp].setup({ on_attach = on_attach })
 end
 
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false
     }
 )
-
 
 local signs = {
     { name = "DiagnosticSignError", text = "" },
