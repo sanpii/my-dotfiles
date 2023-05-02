@@ -3,6 +3,7 @@ require('lualine').setup({
         theme = 'ayu_dark',
     },
     sections = {
-        lualine_c = { 'filename', "require'lsp-status'.status()" }
+        lualine_b = {},
+        lualine_c = { 'filename', 'diagnostics', "require'lsp-status'.status()" },
     },
 })
