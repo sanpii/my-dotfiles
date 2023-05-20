@@ -91,6 +91,8 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+/* 7013 */
+user_pref("dom.event.clipboardevents.enabled", false);
 
 user_pref("browser.download.dir", "/home/sanpi/Downloads");
 user_pref("general.smoothScroll", false);
@@ -101,5 +103,4 @@ user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("findbar.highlightAll", true);
-/* 7013 */
-user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("widget.gtk.overlay-scrollbars.enabled", false);
