@@ -1313,5 +1313,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("findbar.highlightAll", true);
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
+user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");

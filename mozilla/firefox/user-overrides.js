@@ -104,3 +104,4 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("findbar.highlightAll", true);
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
+user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
