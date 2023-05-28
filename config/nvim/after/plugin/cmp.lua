@@ -7,10 +7,10 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format(),
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<Tab>'] = cmp.mapping.confirm({ select = false }),
-    },
+    }),
     sources = cmp.config.sources(
         {
             { name = 'nvim_lsp' },
