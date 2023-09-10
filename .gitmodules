@@ -78,7 +78,7 @@
 	url = https://github.com/sanpii/tango.vim
 [submodule "config/nvim/pack/bundle/start/retrail"]
 	path = config/nvim/pack/bundle/start/retrail
-	url = https://github.com/zakharykaplan/nvim-retrail
+	url = https://github.com/kaplanz/retrail.nvim
 [submodule "config/nvim/pack/bundle/start/marks"]
 	path = config/nvim/pack/bundle/start/marks
 	url = https://github.com/chentoast/marks.nvim
