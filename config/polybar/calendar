@@ -1,25 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+eval "$(xdotool getmouselocation --shell)"
 
-export TERM=xterm
-
-date=$(date '+%A %d %B %Y')
-
-cal --color=always \
-    | sed 's/\x1b\[[7;]*m/\<b\>\<u\>/g' \
-    | sed 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
-    | tail -n +2 \
-    | head -n -1 \
-    | rofi \
-        -dmenu \
-        -markup-rows \
-        -no-fullscreen \
-        -hide-scrollbar \
-        -bw 2 \
-        -m -3 \
-        -theme-str '#window {anchor:southeast; location: northwest; width: 250px; }' \
-        -eh 1 \
-        -no-custom \
-        -l 6 \
-        -p "$date      " > /dev/null
+export GTK_THEME=Arc-Darker:dark
+yad --calendar --show-weeks  --undecorated --button yad-close:0 --mouse
