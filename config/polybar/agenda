@@ -1,0 +1,27 @@
+#!/bin/bash
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    next_appointment short &
+    next_appointment dialog > /tmp/next_appointment &
+    wait
+}
+
+dialog() {
+    export GTK_THEME=Arc-Darker:dark
+    cat /tmp/next_appointment | yad --list --tree --tree-expanded --column=event --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+}
+
+main $*
