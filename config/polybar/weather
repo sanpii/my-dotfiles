@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    meteo short
+}
+
+dialog() {
+    xdg-open https://meteofrance.com/previsions-meteo-france/nantes/44000
+    #meteo dialog
+}
+
+main $*

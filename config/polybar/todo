@@ -1,0 +1,56 @@
+#!/bin/bash
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    n=$(t | head -n -2 | wc -l)
+    pri=$(t listpri | head -1 | sed  's/.* (\([A-Z]\)) .*/\1/')
+
+    case $pri in
+        "A")
+            color="#BF616A"
+        ;;
+        "B")
+            color="#EBCB8B"
+        ;;
+        "C")
+            color="#A3BE8C"
+        ;;
+        "D")
+            color="#88C0D0"
+        ;;
+        *)
+            color=""
+        ;;
+    esac
+
+    if [[ "$n" == 0 ]]
+    then
+        n='-'
+    fi
+
+    echo -n "%{F$color} $n%{F-}"
+}
+
+dialog() {
+    export GTK_THEME=Arc-Darker:dark
+    local todo=$(t | head -n -2)
+
+    if [[ -n "$todo" ]]
+    then
+        echo "$todo" | yad --list --column=task --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+    fi
+}
+
+main $*

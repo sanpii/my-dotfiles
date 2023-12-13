@@ -21,7 +21,13 @@ short() {
 
 dialog() {
     export GTK_THEME=Arc-Darker:dark
-    cat /tmp/next_appointment | yad --list --tree --tree-expanded --column=event --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+
+    local events=$(cat /tmp/next_appointment)
+
+    if [[ -n "$events" ]]
+    then
+        echo "$events" | yad --list --tree --tree-expanded --column=event --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+    fi
 }
 
 main $*
