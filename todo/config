@@ -12,7 +12,7 @@ export TODOTXT_DEFAULT_ACTION="list"
 # You can customize your actions directory location
 #export TODO_ACTIONS_DIR="$HOME/.todo.actions.d"
 
-export TODOTXT_DATE_ON_ADD=1
+export TODOTXT_DATE_ON_ADD=true
 
 # === COLOR MAP ===
 
