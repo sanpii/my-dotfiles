@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    network short
+}
+
+dialog() {
+    export GTK_THEME=Arc-Darker:dark
+
+    local ips=$(network dialog)
+
+    if [[ -n "$ips" ]]
+    then
+        echo "$ips" | yad --list --tree --tree-expanded --column=ip --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+    fi
+}
+
+main $*
