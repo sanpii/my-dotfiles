@@ -2,7 +2,12 @@
 
 set -e
 
-readonly INTERFACE="${2:-wlp2s0}"
+function default_if()
+{
+    iw dev | awk '$1=="Interface"{print $2}'
+}
+
+readonly INTERFACE="${2:-$(default_if)}"
 
 function main()
 {
