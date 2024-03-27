@@ -1,5 +1,8 @@
 #!/bin/bash
 
 killall polybar
-MONITOR=HDMI-1 polybar bottom1
-MONITOR=DVI-I-1 polybar bottom2
+
+for monitor in $(xrandr | grep '\bconnected\b' | awk '{ print$1 }')
+do
+    MONITOR=$monitor polybar bottom-$monitor
+done
