@@ -20,8 +20,7 @@ short() {
 }
 
 dialog() {
-    xdg-open https://meteofrance.com/previsions-meteo-france/nantes/44000
-    #meteo dialog
+    xdg-open $(meteo dialog)
 }
 
 main $*
