@@ -46,18 +46,12 @@
 [submodule "config/nvim/pack/bundle/start/colorizer"]
 	path = config/nvim/pack/bundle/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua
-[submodule "config/nvim/pack/bundle/start/lualine"]
-	path = config/nvim/pack/bundle/start/lualine
-	url = https://github.com/nvim-lualine/lualine.nvim
 [submodule "config/nvim/pack/bundle/start/dial"]
 	path = config/nvim/pack/bundle/start/dial
 	url = https://github.com/monaqa/dial.nvim
 [submodule "config/nvim/pack/bundle/start/lspkind"]
 	path = config/nvim/pack/bundle/start/lspkind
 	url = https://github.com/onsails/lspkind-nvim
-[submodule "config/nvim/pack/bundle/start/lsp-status"]
-	path = config/nvim/pack/bundle/start/lsp-status
-	url = https://github.com/nvim-lua/lsp-status.nvim
 [submodule "config/nvim/pack/bundle/start/cmp"]
 	path = config/nvim/pack/bundle/start/cmp
 	url = https://github.com/hrsh7th/nvim-cmp
@@ -97,3 +91,9 @@
 [submodule "config/nvim/pack/bundle/start/telescope-undo"]
 	path = config/nvim/pack/bundle/start/telescope-undo
 	url = https://github.com/debugloop/telescope-undo.nvim
+[submodule "config/nvim/pack/bundle/start/heirline"]
+	path = config/nvim/pack/bundle/start/heirline
+	url = https://github.com/rebelot/heirline.nvim
+[submodule "config/nvim/pack/bundle/start/web-devicons"]
+	path = config/nvim/pack/bundle/start/web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons

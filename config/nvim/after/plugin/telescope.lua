@@ -88,7 +88,14 @@ require('telescope').setup{
     },
     pickers = {
         find_files = {
+            disable_devicons = true,
             find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        },
+        buffers = {
+            disable_devicons = true,
+        },
+        oldfiles = {
+            disable_devicons = true,
         },
     },
 }
