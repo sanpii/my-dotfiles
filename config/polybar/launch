@@ -4,5 +4,5 @@ killall polybar
 
 for monitor in $(xrandr | grep '\bconnected\b' | awk '{ print$1 }')
 do
-    MONITOR=$monitor polybar bottom-$monitor
+    MONITOR=$monitor polybar bottom
 done
