@@ -22,7 +22,10 @@ update()
     then
         local tag=$(git tag | tail -1)
 
-        git checkout --quiet "$tag"
+        if [[ -n "$tag" ]]
+        then
+            git checkout --quiet "$tag"
+        fi
     else
         git rebase --quiet origin
     fi
