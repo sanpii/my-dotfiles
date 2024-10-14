@@ -14,8 +14,8 @@ main() {
 }
 
 short() {
-    next_appointment short &
-    next_appointment dialog > /tmp/next_appointment &
+    next_appointment short 2> /dev/null || echo '×' &
+    next_appointment dialog > /tmp/next_appointment 2> /dev/null &
     wait
 }
 
