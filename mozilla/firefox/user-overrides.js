@@ -12,6 +12,8 @@ user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("keyword.enabled", true);
 /* 0804 */
 user_pref("browser.sessionhistory.max_entries", 50);
+/* 0830 */
+user_pref("browser.search.separatePrivateDefault", false);
 /* 0850a */
 user_pref("browser.urlbar.autocomplete.enabled", true);
 user_pref("browser.urlbar.suggest.history", true);
@@ -105,3 +107,8 @@ user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("findbar.highlightAll", true);
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
+
+user_pref("browser.promo.cookiebanners.enabled", true);
+user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("browser.tabs.hoverPreview.showThumbnails", false);

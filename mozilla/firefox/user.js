@@ -647,7 +647,7 @@ user_pref("browser.contentblocking.category", "strict"); // [HIDDEN PREF]
 user_pref("_user.js.parrot", "2800 syntax error: the parrot's bleedin' demised!");
 /* 2810: enable Firefox to clear items on shutdown
  * [NOTE] In FF129+ clearing "siteSettings" on shutdown (2811), or manually via site data (2820) and
- * via history (2830), will no longer remove sanitize on shutdown "cookie and site data" site exceptions (2815) 
+ * via history (2830), will no longer remove sanitize on shutdown "cookie and site data" site exceptions (2815)
  * [SETTING] Privacy & Security>History>Custom Settings>Clear history when Firefox closes | Settings ***/
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
@@ -1392,5 +1392,7 @@ user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
 
 user_pref("browser.promo.cookiebanners.enabled", true);
 user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
