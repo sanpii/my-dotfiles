@@ -219,6 +219,9 @@ bindsym Mod1+h exec dunstctl history-pop
 
 for_window [instance="^term-scratchpad$"] move to scratchpad
 for_window [class="pgmodeler" title="Édition des données"] floating disable;
+for_window [title="YAD"] floating enable;
+for_window [class="Godot_Engine"] floating enable;
+for_window [title="^Android Emulator - "] floating enable;
 
 exec_always --no-startup-id $HOME/.config/polybar/launch
 exec --no-startup-id i3-msg 'workspace 1; exec firefox; exec /usr/bin/wezterm'
