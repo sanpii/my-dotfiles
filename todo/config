@@ -82,3 +82,5 @@ export COLOR_CONTEXT=$BLUE
 # just before the list output is displayed.
 #
 export TODOTXT_FINAL_FILTER='~/.todo/futureTasks'
+
+export TODO_NOTE_FILTER='mdcat'
