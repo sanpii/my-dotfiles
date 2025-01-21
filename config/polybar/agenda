@@ -26,8 +26,18 @@ dialog() {
 
     if [[ -n "$events" ]]
     then
-        echo "$events" | yad --list --tree --tree-expanded --column=event --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+        echo "$events" | yad --list --tree --tree-expanded --expand-column=1 --column=event --column=img --column=url:HD --dclick-action='bash -c "xdg_open %s"' --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
     fi
 }
+
+xdg_open() {
+    local url=$3
+
+    if [[ -n "$url" ]]
+    then
+        xdg-open "$url"
+    fi
+}
+export -f xdg_open
 
 main $*
