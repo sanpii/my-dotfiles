@@ -112,3 +112,5 @@ user_pref("browser.promo.cookiebanners.enabled", true);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
