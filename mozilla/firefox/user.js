@@ -1414,5 +1414,7 @@ user_pref("browser.promo.cookiebanners.enabled", true);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
+user_pref("extensions.formautofill.addresses.enabled", fales);
+user_pref("extensions.formautofill.creditCards.enabled", fales);
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
