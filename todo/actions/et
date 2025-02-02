@@ -1,3 +1,4 @@
 #!/bin/bash
 
+shift
 GTK_THEME=Arc-Darker:dark ~/.local/bin/effitask $*
