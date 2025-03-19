@@ -25,6 +25,7 @@ alias mv='uu-mv -i'
 alias cp='uu-cp -i'
 alias make="make -j$(nproc)"
 alias cg='cargo'
+alias cargo-why='cargo tree --invert --package'
 
 lxc()
 {
