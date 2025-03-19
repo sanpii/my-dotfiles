@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [ -e Cargo.toml ]
+then
+    cargo fmt --check
+fi
