@@ -23,6 +23,7 @@ local keys = {
     {key="Insert", mods="SHIFT", action=wezterm.action{PasteFrom="Clipboard"}},
     {key="PageUp", mods="SHIFT", action=wezterm.action{ScrollByPage=-1}},
     {key="PageDown", mods="SHIFT", action=wezterm.action{ScrollByPage=1}},
+    {key="f", mods="LEADER", action=wezterm.action.Search{CaseSensitiveString=""}},
 };
 
 for x = 1, 9 do
