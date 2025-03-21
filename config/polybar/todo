@@ -25,9 +25,6 @@ short() {
             color="#EBCB8B"
         ;;
         "C")
-            color="#A3BE8C"
-        ;;
-        "D")
             color="#88C0D0"
         ;;
         *)
