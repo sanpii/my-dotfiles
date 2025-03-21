@@ -1,0 +1,4 @@
+if [[ -e export-esp.sh ]]
+then
+    source export-esp.sh
+fi
