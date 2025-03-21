@@ -9,6 +9,7 @@
 /config/nvim/spell
 /config/nvim/.netrwhist
 /local/share/mc/history
+/mozilla/firefox/chrome/userContent.css
 /ssh/authorized_keys
 /ssh/config
 /ssh/id_rsa
