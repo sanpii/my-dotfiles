@@ -97,3 +97,6 @@
 [submodule "config/nvim/pack/bundle/start/web-devicons"]
 	path = config/nvim/pack/bundle/start/web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons
+[submodule "config/nvim/pack/bundle/start/grug-far"]
+	path = config/nvim/pack/bundle/start/grug-far
+	url = https://github.com/MagicDuck/grug-far.nvim.git
