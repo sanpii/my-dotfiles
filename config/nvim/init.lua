@@ -15,9 +15,9 @@
     vim.o.wrap = false
 
     vim.api.nvim_create_autocmd("BufWritePost", {
-            pattern = vimfiles .. '/init.lua',
-            command = 'luafile %',
-            group = 'buffer',
+        pattern = vimfiles .. '/init.lua',
+        command = 'luafile %',
+        group = 'buffer',
     })
 
     vim.o.textwidth = 80
@@ -30,9 +30,6 @@
 -- }}}
 -- Apparence {{{
     vim.cmd('colorscheme tango-dark')
-
-    vim.cmd([[let &t_Cs = "\e[4:3m"]])
-    vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
     vim.o.list = true
     vim.o.listchars='tab:»·,trail:·,precedes:…,extends:…,nbsp:‗'
@@ -49,7 +46,6 @@
     vim.o.expandtab = true
     vim.o.breakindent = true
     vim.o.breakindentopt = 'shift:2'
-    vim.o.showbreak = '↳'
 -- }}}
 -- Sauvegardes {{{
     vim.o.backupdir = os.getenv('HOME') .. '/.local/share/nvim/backup'
