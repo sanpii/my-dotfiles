@@ -1,7 +1,7 @@
 local conditions = require('heirline.conditions')
 local utils = require('heirline.utils')
 
-local colors = require('tango.colors').setup()
+local colors = require('tango-dark.colors').setup()
 
 require('heirline').load_colors(colors)
 
@@ -83,12 +83,12 @@ local vimode = {
                 v = colors.light_blue,
                 V =  colors.light_blue,
                 ['\22'] =  colors.light_blue,
-                c =  colors.orange,
+                c =  colors.cyan,
                 s =  colors.purple,
                 S =  colors.purple,
                 ['\19'] =  colors.purple,
-                R =  colors.orange,
-                r =  colors.orange,
+                R =  colors.cyan,
+                r =  colors.cyan,
                 ['!'] =  colors.red,
                 t =  colors.red,
             }
@@ -170,7 +170,7 @@ local fileflags = {
             return not vim.bo.modifiable or vim.bo.readonly
         end,
         provider = ' ',
-        hl = { fg = colors.orange },
+        hl = { fg = colors.cyan },
     },
 }
 

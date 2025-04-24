@@ -64,9 +64,9 @@
 [submodule "config/nvim/pack/bundle/start/lsp_signature"]
 	path = config/nvim/pack/bundle/start/lsp_signature
 	url = https://github.com/ray-x/lsp_signature.nvim
-[submodule "config/nvim/pack/bundle/start/tango"]
-	path = config/nvim/pack/bundle/start/tango
-	url = https://github.com/sanpii/tango.vim
+[submodule "config/nvim/pack/bundle/start/tango-dark"]
+	path = config/nvim/pack/bundle/start/tango-dark
+	url = https://github.com/sanpii/tango-dark.vim
 [submodule "config/nvim/pack/bundle/start/retrail"]
 	path = config/nvim/pack/bundle/start/retrail
 	url = https://github.com/kaplanz/retrail.nvim

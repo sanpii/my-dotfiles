@@ -29,7 +29,7 @@
     vim.o.splitbelow = true
 -- }}}
 -- Apparence {{{
-    vim.cmd('colorscheme tango')
+    vim.cmd('colorscheme tango-dark')
 
     vim.cmd([[let &t_Cs = "\e[4:3m"]])
     vim.cmd([[let &t_Ce = "\e[4:0m"]])
