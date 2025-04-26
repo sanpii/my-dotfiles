@@ -48,7 +48,7 @@
     vim.o.breakindentopt = 'shift:2'
 -- }}}
 -- Sauvegardes {{{
-    vim.o.backupdir = os.getenv('HOME') .. '/.local/share/nvim/backup'
+    vim.o.backupdir = vim.fn.stdpath("state") .. '/backup//'
 
     vim.o.backup = true
     vim.o.undofile = true
