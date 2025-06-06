@@ -49,18 +49,6 @@
 [submodule "config/nvim/pack/bundle/start/lspkind"]
 	path = config/nvim/pack/bundle/start/lspkind
 	url = https://github.com/onsails/lspkind-nvim
-[submodule "config/nvim/pack/bundle/start/cmp"]
-	path = config/nvim/pack/bundle/start/cmp
-	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "config/nvim/pack/bundle/start/cmp-nvim-lsp"]
-	path = config/nvim/pack/bundle/start/cmp-nvim-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp
-[submodule "config/nvim/pack/bundle/start/cmp-buffer"]
-	path = config/nvim/pack/bundle/start/cmp-buffer
-	url = https://github.com/hrsh7th/cmp-buffer
-[submodule "config/nvim/pack/bundle/start/cmp-path"]
-	path = config/nvim/pack/bundle/start/cmp-path
-	url = https://github.com/hrsh7th/cmp-path
 [submodule "config/nvim/pack/bundle/start/lsp_signature"]
 	path = config/nvim/pack/bundle/start/lsp_signature
 	url = https://github.com/ray-x/lsp_signature.nvim
@@ -88,3 +76,6 @@
 [submodule "config/nvim/pack/bundle/start/snacks"]
 	path = config/nvim/pack/bundle/start/snacks
 	url = https://github.com/folke/snacks.nvim.git
+[submodule "config/nvim/pack/bundle/start/mini"]
+	path = config/nvim/pack/bundle/start/mini
+	url = https://github.com/echasnovski/mini.nvim/
