@@ -326,48 +326,6 @@ local statusline = {
     padding,
 }
 
-local tab = {
-    init = function(self)
-        local win = vim.api.nvim_tabpage_get_win(self.tabnr)
-        local buf = vim.api.nvim_win_get_buf(win)
-        self.filename = vim.api.nvim_buf_get_name(buf)
-    end,
-    hl = function(self)
-        if not self.is_active
-        then
-            return "TabLine"
-        else
-            return "TabLineSel"
-        end
-    end,
-    {
-        provider = function(self)
-            local file = vim.fn.fnamemodify(self.filename, ':t')
-
-            return '%' .. self.tabnr .. 'T ' .. self.tabpage .. '. %T'
-        end
-    },
-    fileicon,
-    {
-        provider = function(self)
-            if self.filename == ''
-            then
-                return '[No Name]'
-            else
-                return vim.fn.fnamemodify(self.filename, ':t')
-            end
-        end
-    },
-}
-
-local tabline = {
-    condition = function()
-        return #vim.api.nvim_list_tabpages() > 1
-    end,
-    utils.make_tablist(tab),
-}
-
 require('heirline').setup({
     statusline = statusline,
-    tabline = tabline,
 })
