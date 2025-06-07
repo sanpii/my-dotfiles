@@ -124,4 +124,4 @@ end
 vim.keymap.set('n', '<c-p>', function() open('files') end)
 vim.keymap.set('n', '<leader>u', '<cmd>lua Snacks.picker.undo()<cr>')
 
-vim.api.nvim_command('highlight! link SnacksPickerDir SnacksPickerFile')
+vim.api.nvim_set_hl(0, 'SnacksPickerDir', { link = 'SnacksPickerFile' })
