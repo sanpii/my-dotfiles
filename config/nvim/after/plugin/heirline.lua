@@ -115,29 +115,33 @@ local vimode = {
     close,
 }
 
+function icon(extension)
+    return require('mini.icons').get('file', 'file.' .. extension)
+end
+
 local filetype = {
     init = function(self)
         local extension = vim.fn.fnamemodify(self.filename, ':e')
-        _, self.icon_color = require('nvim-web-devicons').get_icon_color(self.filename, extension, { default = true })
+        _, self.icon_color, _ = icon(extension)
     end,
     provider = function(self)
         return vim.bo.filetype
     end,
     hl = function(self)
-        return { fg = self.icon_color }
+        return self.icon_color
     end
 }
 
 local fileicon = {
     init = function(self)
         local extension = vim.fn.fnamemodify(self.filename, ':e')
-        self.icon, self.icon_color = require('nvim-web-devicons').get_icon_color(self.filename, extension, { default = true })
+        self.icon, self.icon_color, _ = icon(extension)
     end,
     provider = function(self)
         return self.icon .. ' '
     end,
     hl = function(self)
-        return { fg = self.icon_color }
+        return self.icon_color
     end
 }
 
