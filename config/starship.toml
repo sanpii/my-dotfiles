@@ -1,0 +1,27 @@
+format = '$username[@](bold white)$hostname:$directory$git_branch$character'
+add_newline = false
+
+[character]
+success_symbol = '[\$](bold white)'
+error_symbol = '[\$](bold red)'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bold bright-blue'
+truncate_to_repo = false
+truncation_length = 8
+truncation_symbol = '…/'
+
+[git_branch]
+format = '[\($branch\)]($style)'
+style = 'green'
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style)'
+style = 'bold white'
+
+[username]
+show_always = true
+format = '[$user]($style)'
+style_user = 'bold white'

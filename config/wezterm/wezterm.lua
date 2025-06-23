@@ -36,6 +36,7 @@ end
 
 return {
     check_for_updates = false,
+    default_prog = { "/bin/bash" },
     harfbuzz_features = {"calt=0", "clig=0", "liga=0"},
     warn_about_missing_glyphs = false,
     color_scheme = "Builtin Tango Dark",

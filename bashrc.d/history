@@ -26,3 +26,5 @@ function _bash_history_sync()
     builtin history -c
     builtin history -r
 }
+
+export PROMPT_COMMAND=_bash_history_sync
