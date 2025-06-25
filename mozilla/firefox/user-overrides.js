@@ -109,6 +109,7 @@ user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
 
 user_pref("browser.promo.cookiebanners.enabled", true);
+user_pref("browser.urlbar.suggest.quickactions", false);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
