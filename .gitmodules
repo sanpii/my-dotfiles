@@ -40,9 +40,6 @@
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
 	url = https://github.com/wincent/loupe
-[submodule "config/nvim/pack/bundle/start/colorizer"]
-	path = config/nvim/pack/bundle/start/colorizer
-	url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "config/nvim/pack/bundle/start/dial"]
 	path = config/nvim/pack/bundle/start/dial
 	url = https://github.com/monaqa/dial.nvim

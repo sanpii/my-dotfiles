@@ -19,3 +19,12 @@ hi('MiniIconsGrey', colors.gray)
 hi('MiniIconsPurple', colors.purple)
 hi('MiniIconsRed', colors.light_red)
 hi('MiniIconsYellow', colors.light_yellow)
+
+local hipatterns = require('mini.hipatterns')
+
+hipatterns.setup({
+  highlighters = {
+    -- #rrggbb
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },
+})
