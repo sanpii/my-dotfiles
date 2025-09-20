@@ -34,9 +34,6 @@
 [submodule "config/nvim/bundle/shot-f"]
 	path = config/nvim/pack/bundle/start/shot-f
 	url = https://github.com/deris/vim-shot-f
-[submodule "config/nvim/bundle/openscad"]
-	path = config/nvim/pack/bundle/start/openscad
-	url = https://github.com/sirtaj/vim-openscad
 [submodule "config/nvim/pack/bundle/start/loupe"]
 	path = config/nvim/pack/bundle/start/loupe
 	url = https://github.com/wincent/loupe
