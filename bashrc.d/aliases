@@ -27,6 +27,7 @@ alias make="make -j$(nproc)"
 alias cg='cargo'
 alias cargo-why='cargo tree --invert --package'
 alias ip='ip -color=auto'
+alias see='xdg-open'
 
 lxc()
 {
