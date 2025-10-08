@@ -1328,8 +1328,6 @@ user_pref("media.peerconnection.enabled", true);
 user_pref("webgl.disabled", false);
 user_pref("webgl.min_capability_mode", false);
 user_pref("webgl.disable-extensions", false);
-/* 2012 */
-user_pref("webgl.enable-webgl2", false);
 /* 2030 */
 user_pref("media.autoplay.default", 2);
 /* 2418 */
