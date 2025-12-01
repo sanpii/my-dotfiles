@@ -31,12 +31,12 @@ dialog() {
 }
 
 xdg_open() {
-    local url=$3
+    local urls=$3
 
-    if [[ -n "$url" ]]
-    then
+    for url in $urls
+    do
         xdg-open "$url"
-    fi
+    done
 }
 export -f xdg_open
 
