@@ -4,6 +4,9 @@ return {
     root_markers = { 'Cargo.toml', 'Cargo.lock' },
     settings = {
         ["rust-analyzer"] = {
+            assist = {
+                preferSelf = true,
+            },
             cargo = {
                 features = "all",
             },
