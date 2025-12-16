@@ -1,8 +1,10 @@
 #!/bin/sh
 
-if [ -s /usr/bin/ck-launch-session ]
-then
-    exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.xstart
-else
-    exec ~/.xstart
+if [ -d "$xinitdir"/xinitrc.d ] ; then
+    for f in "$xinitdir/xinitrc.d"/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
+
+exec ~/.xstart

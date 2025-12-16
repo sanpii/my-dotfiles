@@ -27,4 +27,4 @@ then
     ~/.xstart.local
 fi
 
-i3
+dbus-run-session i3
