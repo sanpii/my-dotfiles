@@ -1,0 +1,20 @@
+user_pref("browser.download.dir", "/home/sanpi/Downloads");
+user_pref("general.smoothScroll", false);
+user_pref("browser.tabs.loadDivertedInBackground", true);
+user_pref("media.videocontrols.picture-in-picture.enabled", false);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+user_pref("findbar.highlightAll", true);
+user_pref("widget.gtk.overlay-scrollbars.enabled", false);
+user_pref("browser.urlbar.resultMenu.keyboardAccessible", false);
+
+user_pref("browser.promo.cookiebanners.enabled", true);
+user_pref("browser.urlbar.suggest.quickactions", false);
+user_pref("browser.urlbar.trimURLs", false);
+user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("browser.tabs.hoverPreview.showThumbnails", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
