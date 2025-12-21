@@ -14,6 +14,9 @@ return {
                 callable = {
                     snippets = "none",
                 },
+                autoimport = {
+                    enable = false,
+                },
             },
         },
     }
