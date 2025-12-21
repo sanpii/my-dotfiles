@@ -1,0 +1,27 @@
+@-moz-document domain(www.frustrationmagazine.fr) {
+    .container {
+        max-width: 768px !important;
+    }
+}
+
+@-moz-document domain(leconcorde.fr) {
+    html * {
+        cursor: default !important;
+    }
+
+    #cursor {
+        display: none;
+    }
+}
+
+@-moz-document domain(www.blast-info.fr) {
+    ::selection {
+        background-color: #d19ae9 !important;
+    }
+}
+
+@-moz-document domain(www.lefigaro.fr) {
+    .appconsent_noscroll {
+        overflow: auto !important;
+    }
+}
