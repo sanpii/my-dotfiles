@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 wezterm.on("format-window-title", function(tab, tabs, panes, config)
-    return tab.active_pane.title
+    return 'wezterm - ' .. tab.active_pane.title
 end)
 
 local keys = {
