@@ -8,7 +8,13 @@ return {
                 preferSelf = true,
             },
             cargo = {
+                allTargets = true,
                 features = "all",
+                targetDir = "target/ra",
+            },
+            checks = {
+                allTargets = true,
+                command = "clippy",
             },
             completion = {
                 callable = {
@@ -16,6 +22,15 @@ return {
                 },
                 autoimport = {
                     enable = false,
+                },
+            },
+            files = {
+                exclude = {
+                    "**/.git/**",
+                    "**/target/**",
+                    "**/node_modules/**",
+                    "**/dist/**",
+                    "**/out/**"
                 },
             },
         },
