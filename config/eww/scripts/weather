@@ -9,6 +9,9 @@ main() {
         "dialog")
             dialog
         ;;
+        "tooltip")
+            tooltip
+        ;;
         "short")
             short
         ;;
@@ -17,6 +20,10 @@ main() {
 
 short() {
     meteo short
+}
+
+tooltip() {
+    meteo tooltip
 }
 
 dialog() {

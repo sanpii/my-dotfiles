@@ -1,0 +1,81 @@
+$cyan: #88C0D0;
+$green: #A3BE8C;
+$grey: #3B4252;
+$lightgrey: #475359;
+$orange: #D08770;
+$purple: #B48EAD;
+$red: #BF616A;
+$white: #CFD8DC;
+$yellow: #EBCB8B;
+
+* {
+    font-family: "Hack Nerd Font";
+    font-size: 16px;
+    color: $white;
+}
+
+.bar {
+    background-color: $grey;
+    border-radius: 0 0 15px 15px;
+
+    button {
+        background-image: none;
+        border-color: $lightgrey;
+        background-color: $lightgrey;
+        margin: 5px;
+    }
+
+    .workspaces {
+        label {
+            color: $green;
+        }
+
+        .focused {
+            color: $yellow;
+        }
+    }
+}
+
+.metric {
+    scale {
+        &.good trough highlight {
+            background-color: $green;
+        }
+
+        &.warning trough highlight {
+            background-color: $orange;
+        }
+
+        &.danger trough highlight {
+            background-color: $red;
+        }
+
+        trough {
+            all: unset;
+            background-color: $lightgrey;
+            min-height: 10px;
+            min-width: 100px;
+            margin-left: 10px;
+            margin-right: 5px;
+
+            highlight {
+                all: unset;
+                color: #000000;
+            }
+        }
+
+        slider {
+            background-image: none;
+            border: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+.audio {
+    scale {
+        trough highlight {
+            background-color: $green;
+        }
+    }
+}

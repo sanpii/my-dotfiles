@@ -1,8 +1,0 @@
-#!/bin/bash
-
-killall polybar
-
-for monitor in $(xrandr | grep '\bconnected\b' | awk '{ print$1 }')
-do
-    MONITOR=$monitor polybar bottom
-done

@@ -1,0 +1,178 @@
+(defpoll agenda :interval "3s" "scripts/agenda")
+(defpoll clock :interval "1s" "date +'%d/%m/%Y %H:%M:%S'")
+(defpoll network :interval "3s" "scripts/network")
+(defpoll todo :interval "3s" "scripts/todo")
+(defpoll volume :interval "3s" "amixer -D pulse sget Master | awk -F '[^0-9]+' '/Left:/{OFS=\"\";print $3,\".\"}'")
+(defpoll weather_tooltip :interval "3s" "scripts/weather tooltip")
+(defpoll weather :interval "3s" "scripts/weather")
+(deflisten workspace "scripts/workspaces")
+
+(defwindow calendar
+    :geometry (geometry
+        :x "0px"
+        :y "-4%"
+        :anchor "bottom right"
+    )
+    (box
+        :orientation "v"
+        :space-evenly false
+        (calendar :show-week-numbers true)
+        (button :onclick "eww close calendar" "Close")
+    )
+)
+
+(defwindow bar
+    :monitor 0
+    :geometry (geometry
+        :x "0%"
+        :y "0px"
+        :width "100%"
+        :height "3%"
+        :anchor "bottom center"
+    )
+    :stacking "fg"
+    :windowtype "dock"
+    (eventbox
+        :onscroll "if [ {} == \"up\" ]; then i3-msg -t command 'workspace prev'; else i3-msg -t command 'workspace next'; fi"
+        (box
+            :class "bar"
+            :orientation "h"
+            (right)
+            (center)
+            (left)
+        )
+    )
+)
+
+(defwidget right []
+    (box
+        :orientation "h"
+        :halign "start"
+        :hexpand true
+        :vexpand true
+        (workspaces)
+    )
+)
+
+(defwidget workspaces []
+    (box
+        :class "workspaces"
+        :valign "center"
+        (literal :content workspace)
+    )
+)
+
+(defwidget center []
+    (box
+        :orientation "h"
+        :space-evenly false
+        :halign "center"
+        :spacing 10
+        (meteo)
+        (agenda)
+        (todo)
+        (network)
+        (cpu)
+        (memory)
+    )
+)
+
+(defwidget meteo []
+    (button
+        :onclick "scripts/weather dialog"
+        :width 50
+        :tooltip weather_tooltip
+        (literal :content weather)
+    )
+)
+
+(defwidget agenda []
+    (button
+        :onclick "scripts/agenda dialog"
+        :width 80
+        (label :text agenda)
+    )
+)
+
+(defwidget network []
+    (button
+        :onclick "scripts/network dialog"
+        (label :text network)
+    )
+)
+
+(defwidget todo []
+    (button
+        :onclick "scripts/todo dialog"
+        :width 60
+        (literal :content todo)
+    )
+)
+
+(defwidget left []
+    (box
+        :orientation "h"
+        :space-evenly false
+        :hexpand true
+        :halign "end"
+        :spacing 3
+        (audio)
+        (date)
+        (systray)
+    )
+)
+
+(defwidget cpu []
+    (box
+        :space-evenly false
+        :class "cpu"
+        :tooltip {round(EWW_CPU.avg, 2)}
+        (metric :label "" :value {EWW_CPU.avg} :onchange "")
+    )
+)
+
+(defwidget memory []
+    (box
+        :space-evenly false
+        :class "memory"
+        :tooltip "${round(EWW_RAM.used_mem_perc, 2)} %"
+        (metric :label "󰍛" :value {EWW_RAM.used_mem_perc} :onchange "")
+    )
+)
+
+(defwidget audio []
+    (eventbox
+        :class "audio"
+        :onclick "amixer -D pulse sset Master toggle"
+
+        (box
+            :space-evenly false
+            :orientation "h"
+            :spacing 3
+            (label :text "󰕾")
+            (scale
+                :orientation "h"
+                :min 0
+                :max 100
+                :value volume
+                :tooltip "${volume}%"
+                :onchange "amixer -D pulse sset Master {}%"
+                :width 120
+            )
+        )
+    )
+)
+
+(defwidget date []
+    (eventbox
+        :onclick "eww open calendar"
+        (label :text " ${clock}")
+    )
+)
+
+(defwidget metric [label value onchange]
+    (box :orientation "h" :class "metric" :space-evenly false
+        (box :class "label" label)
+        (scale :class {value > 40 ? "warning" : value > 60 ? "danger" : "good"} :min 0 :max 101 :active {onchange != ""} :value value :onchange onchange)
+    )
+)

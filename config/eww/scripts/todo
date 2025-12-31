@@ -8,14 +8,14 @@ main() {
             dialog
         ;;
         "short")
-            short 2> /dev/null || echo '×'
+            short
         ;;
     esac
 }
 
 short() {
     n=$(t | head -n -2 | wc -l)
-    pri=$(t listpri | head -1 | sed  's/.* (\([A-Z]\)) .*/\1/')
+    pri=$(t listpri | head --lines -2 | sed  's/.* (\([A-Z]\)) .*/\1/'  | sort | head -1)
 
     case $pri in
         "A")
@@ -28,7 +28,7 @@ short() {
             color="#88C0D0"
         ;;
         *)
-            color=""
+            color="#FFFFFF"
         ;;
     esac
 
@@ -37,7 +37,7 @@ short() {
         n='-'
     fi
 
-    echo -n "%{F$color} $n%{F-}"
+    echo -n "(label :style 'color: $color' :text ' $n')"
 }
 
 dialog() {

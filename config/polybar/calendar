@@ -1,6 +1,0 @@
-#!/bin/bash
-
-eval "$(xdotool getmouselocation --shell)"
-
-export GTK_THEME=Arc-Darker:dark
-yad --calendar --show-weeks  --undecorated --button yad-close:0 --mouse
