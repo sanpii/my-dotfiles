@@ -1,9 +1,3 @@
-@-moz-document domain(www.frustrationmagazine.fr) {
-    .container {
-        max-width: 768px !important;
-    }
-}
-
 @-moz-document domain(leconcorde.fr) {
     html * {
         cursor: default !important;
