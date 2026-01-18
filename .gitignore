@@ -14,6 +14,7 @@
 /ssh/config
 /ssh/id_rsa
 /ssh/known_hosts
+/ssh/gaeriss
 /ssh/*.ppk
 /ssh/*.pub
 /vimperator/info
