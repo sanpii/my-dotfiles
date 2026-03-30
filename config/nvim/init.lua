@@ -1,3 +1,4 @@
+require('plugins')
 require('main')
 require('appareance')
 require('indentation')

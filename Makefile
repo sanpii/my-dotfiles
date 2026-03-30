@@ -5,13 +5,9 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 PREFIX := $(HOME)/.local
 
-install: links modules
+install: links
 
 links: $(home-dotfiles)
-
-modules:
-	git submodule init
-	git submodule update
 
 $(HOME)/.%: %
 	[ -e `dirname $@` ] || mkdir -p `dirname $@`
