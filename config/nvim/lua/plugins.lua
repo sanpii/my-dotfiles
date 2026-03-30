@@ -2,7 +2,7 @@ local v = vim.version.range
 
 local plugins = {
     { name = 'abolish', src = 'https://github.com/tpope/vim-abolish', version = v('1.2') },
-    { name = 'auto-mkdir', src = 'https://github.com/DataWraith/auto_mkdir', version = v('1.0') },
+    { name = 'automkdir', src = 'https://github.com/mateuszwieloch/automkdir.nvim' },
     { name = 'clam', src = 'https://github.com/sjl/clam.vim', version = v('1.4') },
     { name = 'dial', src = 'https://github.com/monaqa/dial.nvim', version = v('0.5') },
     { name = 'eunuch', src = 'https://github.com/tpope/vim-eunuch', version = v('1.3') },
