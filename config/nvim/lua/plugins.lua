@@ -22,7 +22,7 @@ local plugins = {
     { name = 'snacks', src = 'https://github.com/folke/snacks.nvim', version = v('2.31') },
     { name = 'splice', src = 'https://github.com/sjl/splice.vim', version = v('1.1') },
     { name = 'tango-dark', src = 'https://github.com/sanpii/tango-dark.vim' },
-    { name = 'tint', src = 'https://github.com/levouh/tint.nvim' },
+    { name = 'vimade', src = 'https://github.com/TaDaa/vimade', version = v('2.5') },
     { name = 'troll-stopper', src = 'https://github.com/vim-utils/vim-troll-stopper' },
 }
 
