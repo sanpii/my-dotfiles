@@ -1,5 +1,7 @@
 vim.cmd('colorscheme tango-dark')
 
+require('vim._core.ui2').enable()
+
 vim.o.list = true
 vim.o.listchars='tab:»·,trail:·,precedes:…,extends:…,nbsp:‗'
 vim.o.showbreak='↪'
