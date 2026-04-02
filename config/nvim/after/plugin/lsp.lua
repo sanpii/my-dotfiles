@@ -1,5 +1,6 @@
 vim.lsp.enable({'rust-analyzer'})
 
+vim.lsp.log.set_level('off')
 vim.o.updatetime = 300
 
 vim.api.nvim_create_autocmd('CursorHold', {
