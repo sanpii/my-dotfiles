@@ -18,3 +18,4 @@ user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("dom.event.clipboardevents.enabled", false);
