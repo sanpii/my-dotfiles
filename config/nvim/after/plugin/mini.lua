@@ -1,9 +1,3 @@
-require('mini.completion').setup()
-vim.cmd([[au FileType snacks_picker_input lua vim.b.minicompletion_disable = true]])
-
-require('mini.icons').setup()
-MiniIcons.tweak_lsp_kind()
-
 function hi(group, color)
     vim.api.nvim_set_hl(0, group, { fg = color })
 end
@@ -19,12 +13,3 @@ hi('MiniIconsGrey', colors.gray)
 hi('MiniIconsPurple', colors.purple)
 hi('MiniIconsRed', colors.light_red)
 hi('MiniIconsYellow', colors.light_yellow)
-
-local hipatterns = require('mini.hipatterns')
-
-hipatterns.setup({
-  highlighters = {
-    -- #rrggbb
-    hex_color = hipatterns.gen_highlighter.hex_color(),
-  },
-})
