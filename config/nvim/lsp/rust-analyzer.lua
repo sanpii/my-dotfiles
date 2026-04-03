@@ -32,6 +32,7 @@ return {
                     "**/dist/**",
                     "**/out/**"
                 },
+                watcher = "server",
             },
         },
     }
