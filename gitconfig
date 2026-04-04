@@ -76,6 +76,7 @@
 	autosetuprebase = always
 [push]
 	default = simple
+	followTags = true
 [status]
 	submodulesummary = true
 [rebase]
