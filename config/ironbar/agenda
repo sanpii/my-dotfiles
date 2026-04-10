@@ -1,0 +1,48 @@
+#!/bin/bash
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    while true
+    do
+        next_appointment short 2> /dev/null || echo '×' &
+        next_appointment dialog > /tmp/next_appointment 2> /dev/null &
+        wait
+
+        sleep 2m
+    done
+}
+
+dialog() {
+    export GTK_THEME=Arc-Darker:dark
+
+    local events=$(cat /tmp/next_appointment)
+
+    if [[ -n "$events" ]]
+    then
+        echo "$events" | GDK_BACKEND=x11 yad --list --tree --tree-expanded --expand-column=1 --column=event --column=img --column=url:HD --dclick-action='bash -c "url_open %s"' --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+    fi
+}
+
+url_open() {
+    local urls=$3
+
+    for url in $urls
+    do
+        gio open "$url"
+    done
+}
+export -f url_open
+
+main $*

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main() {
+    local fn=${1-short}
+
+    case $fn in
+        "dialog")
+            dialog
+        ;;
+        "short")
+            short
+        ;;
+    esac
+}
+
+short() {
+    while true
+    do
+        wpctl get-volume @DEFAULT_SINK@ | grep -q MUTED && echo 󰖁 || echo 󰕾
+        sleep 1s
+    done
+}
+
+dialog() {
+    while true
+    do
+        wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}'
+        sleep 1s
+    done
+}
+
+main $*

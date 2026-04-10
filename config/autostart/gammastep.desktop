@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=xautolock
-Exec=/usr/bin/xautolock -locker 'i3lock-fancy'
+Name=gammastep
+Exec=/usr/bin/gammastep
 Terminal=false
 Type=Application
 StartupNotify=false

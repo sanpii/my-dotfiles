@@ -12,11 +12,26 @@ main() {
         "short")
             short
         ;;
+        "tooltip")
+            tooltip
+        ;;
     esac
 }
 
 short() {
-    meteo short
+    while true
+    do
+        meteo short
+        sleep 2m
+    done
+}
+
+tooltip() {
+    while true
+    do
+        meteo tooltip
+        sleep 2m
+    done
 }
 
 dialog() {
