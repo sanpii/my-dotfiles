@@ -1,0 +1,65 @@
+position: 'bottom'
+
+start:
+  - type: workspaces
+    on_scroll_up: 'swaymsg workspace prev_on_output'
+    on_scroll_down: 'swaymsg workspace next_on_output'
+
+center:
+  - type: custom
+    bar:
+      - label: '{{watch:~/.config/ironbar/weather}}'
+        type: button
+        tooltip: '{{watch:~/.config/ironbar/weather tooltip}}'
+        on_click: '!~/.config/ironbar/weather dialog'
+  - type: custom
+    bar:
+      - label: '{{watch:~/.config/ironbar/agenda}}'
+        type: button
+        on_click: '!~/.config/ironbar/agenda dialog'
+  - type: custom
+    bar:
+      - label: '{{watch:~/.config/ironbar/todo}}'
+        type: button
+        on_click: '!~/.config/ironbar/todo dialog'
+  - type: custom
+    bar:
+      - label: '{{watch:~/.config/ironbar/network}}'
+        type: button
+        on_click: '!~/.config/ironbar/network dialog'
+
+end:
+  - type: sys_info
+
+  - type: label
+    label: ''
+  - type: cairo
+    path: ~/.config/ironbar/cpu.lua
+    width: 112
+
+  - type: label
+    label: '󰍛'
+  - type: cairo
+    path: ~/.config/ironbar/memory.lua
+    width: 112
+
+  - type: custom
+    bar:
+      - type: button
+        label: '{{watch:~/.config/ironbar/volume short}}'
+        on_click: '!wpctl set-mute @DEFAULT_SINK@ toggle'
+  - type: custom
+    bar:
+      - type: slider
+        value: 'watch:~/.config/ironbar/volume dialog'
+        tooltip: '{{watch:~/.config/ironbar/scripts/volume dialog}} %'
+        show_label: false
+        length: 150
+        on_change: '!wpctl set-volume @DEFAULT_SINK@ $0%'
+        on_scroll_down: 'wpctl set-volume @DEFAULT_SINK@ 5%-'
+        on_scroll_up: 'wpctl set-volume @DEFAULT_SINK@ 5%+'
+
+  - type: clock
+    format: ' %d/%m/%Y %H:%M:%S'
+  - type: clipboard
+  - type: tray

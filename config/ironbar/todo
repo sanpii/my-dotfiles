@@ -14,6 +14,17 @@ main() {
 }
 
 short() {
+    source ~/.todo/config
+
+    do_short
+
+    inotifywait --event close_write --monitor "$TODO_FILE" | while read
+    do
+        do_short
+    done
+}
+
+do_short() {
     n=$(t | head -n -2 | wc -l)
     pri=$(t listpri | head -1 | sed  's/.* (\([A-Z]\)) .*/\1/')
 
@@ -28,7 +39,7 @@ short() {
             color="#88C0D0"
         ;;
         *)
-            color=""
+            color="#FFFFFF"
         ;;
     esac
 
@@ -37,7 +48,7 @@ short() {
         n='-'
     fi
 
-    echo -n "%{F$color} $n%{F-}"
+    echo "<span foreground='$color'> $n</span>"
 }
 
 dialog() {
@@ -46,7 +57,7 @@ dialog() {
 
     if [[ -n "$todo" ]]
     then
-        echo "$todo" | yad --list --column=task --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+        echo "$todo" | GDK_BACKEND=x11 yad --list --column=task --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
     fi
 }
 
