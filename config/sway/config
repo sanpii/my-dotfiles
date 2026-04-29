@@ -110,6 +110,7 @@ for_window [class="pgmodeler" title="Édition des données"] floating disable;
 for_window [title="YAD"] floating enable;
 for_window [class="Godot_Engine"] floating enable;
 for_window [title="^Android Emulator - "] floating enable;
+for_window [app_id="^.*"] inhibit_idle fullscreen
 
 exec --no-startup-id swaymsg 'workspace 1; exec librewolf; exec /usr/bin/wezterm'
 exec --no-startup-id swaymsg 'workspace 2; exec /usr/bin/thunderbird; exec /usr/bin/wezterm'
