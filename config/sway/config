@@ -1,5 +1,6 @@
 output DP-1 {
     mode 1920x1080@179.821Hz
+    adaptive_sync on
 }
 
 input * {
