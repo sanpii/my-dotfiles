@@ -1,0 +1,22 @@
+#!/bin/bash
+
+librewolf &
+thunderbird &
+
+wezterm &
+
+(
+    mount /mnt/data
+    wezterm start --class org.wezfurlong.wezterm.data --cwd '/mnt/data/À voir'
+)&
+
+wezterm start --class org.wezfurlong.wezterm.scratchpad &
+
+sleep 3s
+
+swaymsg [app_id=org.mozilla.Thunderbird] move to workspace 2
+swaymsg [app_id=org.mozilla.Thunderbird] move up
+swaymsg [app_id=org.wezfurlong.wezterm.data] move to workspace 2
+swaymsg [app_id=org.wezfurlong.wezterm.scratchpad] move to scratchpad
+swaymsg [app_id=librewolf] move up
+swaymsg [app_id=librewolf] focus
