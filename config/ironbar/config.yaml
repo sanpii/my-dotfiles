@@ -61,5 +61,6 @@ end:
 
   - type: clock
     format: ' %d/%m/%Y %H:%M:%S'
+    show_week_numbers: true
   - type: clipboard
   - type: tray
