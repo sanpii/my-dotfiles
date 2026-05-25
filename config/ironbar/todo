@@ -57,7 +57,7 @@ dialog() {
 
     if [[ -n "$todo" ]]
     then
-        echo "$todo" | GDK_BACKEND=x11 yad --list --column=task --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+        echo "$todo" | yad --name=yad.toolbar.todo --list --column=task --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
     fi
 }
 

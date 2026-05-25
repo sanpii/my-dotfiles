@@ -30,7 +30,7 @@ dialog() {
 
     if [[ -n "$ips" ]]
     then
-        echo "$ips" | GDK_BACKEND=x11 yad --list --tree --tree-expanded --column=ip --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+        echo "$ips" | yad --name=yad.toolbar.network --list --tree --tree-expanded --column=ip --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
     fi
 }
 

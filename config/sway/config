@@ -110,6 +110,7 @@ for_window [title="YAD"] floating enable;
 for_window [class="Godot_Engine"] floating enable;
 for_window [title="^Android Emulator - "] floating enable;
 for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [app_id="^yad\.toolbar\..*"] move position 700 710
 
 include /etc/sway/config.d/*
 

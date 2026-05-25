@@ -31,7 +31,7 @@ dialog() {
 
     if [[ -n "$events" ]]
     then
-        echo "$events" | GDK_BACKEND=x11 yad --list --tree --tree-expanded --expand-column=1 --column=event --column=img --column=url:HD --dclick-action='bash -c "url_open %s"' --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
+        echo "$events" | yad --name=yad.toolbar.agenda --list --tree --tree-expanded --expand-column=1 --column=event --column=img --column=url:HD --dclick-action='bash -c "url_open %s"' --no-headers --undecorated --button yad-close:0 --mouse --width=500 --height=300
     fi
 }
 
