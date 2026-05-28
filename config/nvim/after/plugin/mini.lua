@@ -1,3 +1,8 @@
+require('mini.trailspace').setup()
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    callback = MiniTrailspace.trim,
+})
+
 function hi(group, color)
     vim.api.nvim_set_hl(0, group, { fg = color })
 end
