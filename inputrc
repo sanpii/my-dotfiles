@@ -1,2 +1,3 @@
 set colored-completion-prefix on
 set show-all-if-ambiguous on
+set colored-stats on
