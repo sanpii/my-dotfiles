@@ -89,3 +89,10 @@ then
     source /usr/share/bash-completion/completions/git
     __git_complete g __git_main
 fi
+
+alias t='todo-txt-cli'
+if [ -e ~/.local/share/bash-completion/completions/todo-txt-cli ]
+then
+    source ~/.local/share/bash-completion/completions/todo-txt-cli
+    complete -o nospace -o bashdefault -o nosort -F _clap_complete_todo_txt_cli t
+fi
