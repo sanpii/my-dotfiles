@@ -25,8 +25,8 @@ short() {
 }
 
 do_short() {
-    n=$(t | head -n -2 | wc -l)
-    pri=$(t listpri | head -1 | sed  's/.* (\([A-Z]\)) .*/\1/')
+    n=$(todo-txt-cli | head -n -2 | wc -l)
+    pri=$(todo-txt-cli | head -n -2 | sed  's/.* (\([A-Z]\)) .*/\1/' | sort -u)
 
     case $pri in
         "A")
@@ -53,7 +53,7 @@ do_short() {
 
 dialog() {
     export GTK_THEME=Arc-Darker:dark
-    local todo=$(t | head -n -2)
+    local todo=$(todo-txt-cli | head -n -2)
 
     if [[ -n "$todo" ]]
     then
