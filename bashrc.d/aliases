@@ -81,7 +81,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PAGER='less'
 export LESS='--quit-if-one-screen --no-init --ignore-case --RAW-CONTROL-CHARS --quiet --dumb'
 
-export EDITOR=vim
+export EDITOR=nvim
 
 alias g='git'
 if [ -e /usr/share/bash-completion/completions/git ]
